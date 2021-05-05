@@ -4,7 +4,6 @@ author: "Zack Treisman"
 date: "Spring 2021"
 output: 
   beamer_presentation: 
-    keep_tex: yes
     includes: 
       in_header: ../slide_style.tex
 bibliography: ../bibliography.bib    
@@ -93,7 +92,7 @@ The **sample space** is the set of all possible **outcomes**. Each opportunity f
 \footnotesize
 Example: A feeder at my house is visited by various birds and mammals. Each visit is a trial. The set of all critters that visit the feeder is the sample space. A grey jay visiting is an event. By my estimation $P(\text{Grey Jay})=0.3$. One of the grey jays that visits I've named June. June visiting the feeder is an outcome.
 
-![](grey_jay.jpg){height=40%}
+![](../images/grey_jay.jpg){height=40%}
 
 ## Notation
 

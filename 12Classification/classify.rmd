@@ -4,7 +4,6 @@ author: "Zack Treisman"
 date: "Spring 2021"
 output: 
   beamer_presentation: 
-    keep_tex: yes
     includes: 
       in_header: ../slide_style.tex
 bibliography: ../bibliography.bib    
@@ -102,7 +101,7 @@ This is a linear function of $x$. It is easy to compute and $p_k(x)$ is greatest
 
 ## LDA illustration
 
-![](4.6.pdf)
+![](../images/4.6.pdf)
 
 This graphic is from @islr. It shows simulated data from Gaussian distributions indicated by the ovals. Dotted lines are optimal decision boundaries. Solid lines are decision boundaries from LDA. 
 
@@ -154,7 +153,7 @@ ggplot(lda.obs, aes(LD1, LD2))+
 ## Quadratic Discriminant Analysis
 
 
-![](4.9.pdf)
+![](../images/4.9.pdf)
 
 
 Keeping the normality assumption but relaxing the condition that all of the variances are equal leads to *quadratic discriminant analysis*. The decision boundaries are quadratic instead of linear.

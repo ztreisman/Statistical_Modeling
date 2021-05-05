@@ -4,9 +4,8 @@ author: "Zack Treisman"
 date: "Spring 2021"
 output: 
   beamer_presentation: 
-    keep_tex: yes
-    includes: 
-      in_header: ../slide_style.tex
+      includes: 
+        in_header: ../slide_style.tex
 bibliography: ../bibliography.bib    
 citecolor: blue
 ---
@@ -50,11 +49,11 @@ The usefulness of a model comes when the signal is not drowned out by the noise.
 
 ## xkcd
 
-![https://xkcd.com/2048](curve_fitting.png){height=75%}
+![https://xkcd.com/2048](../images/curve_fitting.png){height=75%}
 
 ## Model misuse is not a joke
 
-![https://twitter.com/WhiteHouseCEA/status/1257680258364555264](covid.jpeg){height=75%}
+![https://twitter.com/WhiteHouseCEA/status/1257680258364555264](../images/covid.jpeg){height=75%}
 
 ## Reducible and irreducible error
 

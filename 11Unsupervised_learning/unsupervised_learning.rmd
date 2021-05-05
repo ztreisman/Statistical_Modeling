@@ -4,7 +4,6 @@ author: "Zack Treisman"
 date: "Spring 2021"
 output: 
   beamer_presentation: 
-    keep_tex: yes
     includes: 
       in_header: ../slide_style.tex
 bibliography: ../bibliography.bib    
