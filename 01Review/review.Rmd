@@ -1,0 +1,133 @@
+---
+title: "Review of Introductory Statistics"
+author: "Zack Treisman"
+date: "Spring 2021"
+output: 
+  beamer_presentation: 
+    keep_tex: yes
+    includes: 
+      in_header: ../slide_style.tex
+bibliography: ../bibliography.bib    
+citecolor: blue
+---
+
+```{r setup, include=FALSE}
+
+library(MASS)
+
+```
+
+## Data
+
+An **observation** is a single unit.  A **variable** is a measurement made on that unit 
+
+* Record observations as **rows** and variables in **columns**.    
+* Variables can be **categorical** or **numerical**.
+    * Categorical variables can be **binary** or not, **ordered** or not.
+    * Numerical variables can be **discrete** or **continuous**.
+* Dates, times and locations merit special consideration.
+* Vocabulary is not universal: Factor, case, treatment \ldots
+
+```{r}
+head(Sitka) # from package MASS
+```
+
+
+## Distributions
+
+The **distribution** of a variable is a measure of how often it takes each possible value.
+
+* The distribution of a categorical variable is a list of the percentage of observations in each category.
+```{r echo=TRUE}
+table(Sitka$treat)/length(Sitka$treat)
+```
+
+## Distributions
+
+* Picture the distribution of a numerical variable with a histogram, boxplot or density estimate.
+```{r out.height="0.5\\textheight" }
+hist(Sitka$size)
+```
+
+* Shape: center, spread, skew, kurtosis
+
+##  Numerical summaries
+
+```{r echo=TRUE}
+summary(Sitka$size)
+```
+
+```{r}
+quantile(Sitka$size, c(0.025,0.975))
+```
+
+```{r}
+sd(Sitka$size)
+```
+
+```{r}
+var(Sitka$size)
+```
+
+```{r}
+IQR(Sitka$size)
+```
+
+## Common distributions
+
+* Normal distribution
+    * The sum of many independent effects tends to be normal.
+    * Formula that you never use: $\displaystyle N(\mu,\sigma^2)(x)=\frac{1}{\sigma\sqrt{2 \pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$
+    * Observations on disparate scales can be standardized with z scores: $\displaystyle z=\frac{x-\mu}{\sigma}$
+    
+\medskip    
+    
+* Other distributions from Intro Stats
+    * t - Like the normal distribution, but adjusted for small samples.
+    * $\chi^2$ - Sum of squared standard normals.
+    * F - Similar to $\chi^2$, used in ANOVA.
+    * Binomial - How many successes in $n$ trials?
+    * Poisson - Count of discrete events in fixed time or space.
+    * \ldots
+
+## Inference
+
+* Confidence intervals
+* Hypothesis tests
+    * p(robability)-values
+    * Null and alternate hypotheses
+    * t-tests, ANOVA, $\chi^2$ tests
+
+\footnotesize   
+```{r}
+t.test(size~treat, data = Sitka)
+```
+\normalsize
+
+## Always plot your data!
+
+```{r}
+boxplot(size~treat, data = Sitka)
+```
+
+## Linear models
+
+* Slope and intercept parameters
+* Correlation
+* Residuals
+* Inference
+
+\scriptsize   
+```{r}
+summary(lm(size~Time, data = Sitka))
+```
+\normalsize
+
+
+## Always plot your data!
+
+```{r out.height="0.7\\textheight"}
+plot(size~Time, data = Sitka)
+abline(lm(size~Time, data=Sitka))
+```
+

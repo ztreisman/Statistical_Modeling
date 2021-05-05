@@ -1,0 +1,483 @@
+---
+title: "Mixed Models"
+author: "Zack Treisman"
+date: "Spring 2021"
+output: 
+  beamer_presentation: 
+    keep_tex: yes
+    includes: 
+      in_header: ../slide_style.tex
+bibliography: ../bibliography.bib    
+citecolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(global.par = TRUE)
+library(dplyr)
+library(ggplot2)
+library(nlme)
+library(MuMIn)
+library(car)
+library(glmmTMB)
+library(mgcv)
+library(MASS)
+library(brms)
+set.seed(3)
+```
+
+```{r,include=FALSE}
+par(mar = c(4, 4, 0.5, 0.5)) # Set margins
+``` 
+
+## Philosophy
+
+The tools we will investigate this week address several related issues.
+
+* Heterogeneity of variance
+    * Sometimes this is definitely present, even after building an otherwise good model.
+* Nuisance variables
+    * Often, we have variables that we know we need to measure and account for, but they are not of primary interest.
+* Dependent observations
+    * The independence assumption implicit in all of our models thus far is often false.
+
+We do have tools that deal with these issues. If your data are especially nice and your analysis is fairly straightforward, so are the tools for building appropriate models. If you are not so lucky, then things get complicated.
+
+## Heterogeneity of variance
+
+Why is the variance heterogenous?
+
+* Because of a variable. Hopefully one in your data.
+
+It's possible that the heterogeneity is from not looking at the variables in your model at appropriate scales.
+
+* Were the data collected on the same scale that you are using, or have you transformed any variables? Recall that inverting a log-transform changes additive error into multiplicative error. Any nonlinear variable transform does this.
+
+## Nuisance variables
+
+There is no set definition of nuisance variable. These are any variables that you know are having an effect on your response but are not what you are trying to investigate.
+
+* Be sure you think about why you aren't interested.
+
+Accounting for these variables is essential for establishing appropriate baselines. Sometimes the signal that you are trying to measure is small compared to environmental variation. 
+
+* Effect of compost treatment on soil moisture retention is going to be smaller than rainfall, soil characteristics, etc. (Cooper)
+
+
+## Dependent observations
+
+Measurements on the same individual are not independent. 
+
+* Individual what? (organism, forest, drainage, \ldots)
+
+Even without discrete individuals, nearby observations can still be correlated.
+
+* Variograms show relationship between distance between observations and covariance. 
+
+Having dependent observations means that your data set is effectively smaller. 
+
+* Sample from enough individuals so that you get a statistically meaningful set of observations. An often cited minimum number of individuals is 5-6.   
+
+## Tools
+
+* **Mixed effects models** (LMM, GLMM, GAMM)
+    * Fixed effect variables modify the signal, random effect variables modify the noise.
+    * Many packages for this, no clear winner. (`lme4` has `lmer`, `glmer` and `nlmer`; `nlme` has `lme`; `MASS` has `glmmPQL`; `glmmTMB` has `glmmTMB`. Bayesian options include `brms::brm` and `MCMCglmm::MCMCglmm`.)
+    * Hopefully this will be easier in another decade or so.
+* Also see **Generalized least squares** (GLS) and **Generalized estimating equations** (GEE).
+
+Many of the tools for mixed modeling also allow the specification of structure to correlation (`corStruct`) and variance (`varStruct`).
+
+## Owls
+
+@owls (a running example in @zuur2009mixed) investigates begging behavior in nestling barn owls. They ask if vocal intensity of owl chick begging differs by parent.
+
+\tiny
+```{r}
+head(Owls,3) # Data are in glmmTMB
+```
+\normalsize
+Without other predictors, it does not appear so.
+```{r echo=FALSE, warning=FALSE, fig.height=3}
+ggplot(Owls, aes(SexParent, NegPerChick))+
+  geom_boxplot(outlier.shape = NA)+
+  geom_jitter(height = 0, width = 0.1)+
+  scale_y_log10()
+```
+
+## Food Treatment
+
+Begging behavior is likely affected by the hunger levels in the nest. Impose this as an experimental treatment to control for unknown variation. Feed some nests extra, deprive others, then swap treatments the following night.
+
+```{r echo=FALSE, warning=FALSE, fig.height=3}
+ggplot(Owls, aes(SexParent, NegPerChick, fill=FoodTreatment))+
+  geom_boxplot(outlier.shape = NA)+
+  scale_y_log10()
+```
+
+Still no visible difference between parents.
+
+## Nest is a nuisance varaible.
+
+\scriptsize
+```{r echo=F, warning=F}
+ggplot(Owls, aes(SexParent, NegPerChick, fill=FoodTreatment))+
+  geom_boxplot(position = position_dodge(preserve = "single"))+
+  facet_wrap(~Nest)+
+  scale_y_log10()
+```
+
+## Arrival time affects the variance.
+
+It could also be correlated with the sex of the parent.
+
+\scriptsize
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+ggplot(Owls, aes(ArrivalTime,NegPerChick, color=SexParent))+
+  geom_point()+
+  geom_smooth()
+```
+
+## Linear model
+
+First thing to try is basic linear regression (ANCOVA).
+
+\scriptsize
+```{r}
+M.lm <- lm(NegPerChick~SexParent*(FoodTreatment+ArrivalTime),data=Owls)
+```
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6}
+Elm=rstandard(M.lm);  Flm<-fitted(M.lm)
+op<-par(mfrow=c(2,2),mar=c(4,4,3,2)); MyYlab="Residuals"
+plot(x=Flm,y=Elm,xlab="Fitted values",ylab=MyYlab, main = "Fitted Values")
+boxplot(Elm~SexParent,data=Owls,main="Sex of parent",ylab=MyYlab)
+boxplot(Elm~FoodTreatment,data=Owls,main="Food treatment",ylab=MyYlab)
+plot(x=Owls$ArrivalTime,y=Elm,main="Arrival time",ylab=MyYlab,xlab="Time (hours)")
+par(op)
+```
+
+## Summary of `M.lm`
+
+\tiny
+```{r, echo=FALSE}
+summary(M.lm)
+```
+
+## Log-transform the negotiations per chick
+
+This helps some with the heteroscedasticity in variance.
+
+\scriptsize
+```{r}
+Owls$LogNeg<-log(Owls$NegPerChick+1)
+M2.lm=lm(LogNeg~SexParent*(FoodTreatment+ArrivalTime),data=Owls)
+```
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6}
+Elm2=rstandard(M2.lm);  Flm2<-fitted(M2.lm)
+op<-par(mfrow=c(2,2),mar=c(4,4,3,2)); MyYlab="Residuals"
+plot(x=Flm2,y=Elm2,xlab="Fitted values",ylab=MyYlab, main = "Fitted Values")
+boxplot(Elm2~SexParent,data=Owls,main="Sex of parent",ylab=MyYlab)
+boxplot(Elm2~FoodTreatment,data=Owls,main="Food treatment",ylab=MyYlab)
+plot(x=Owls$ArrivalTime,y=Elm2,main="Arrival time",ylab=MyYlab,xlab="Time (hours)")
+par(op)
+```
+
+## Summary of `M2.lm`
+
+\tiny
+```{r, echo=F}
+summary(M2.lm)
+```
+
+## A mixed model with `nlme::lme`
+
+Refit the linear model with `nlme::gls` so that it can be more easily compared to the mixed model. The fitted model is identical to the one above, but R puts it in a different namespace.
+
+* The argument `random=~1|Nest` in `lme` indicates that the intercept varies depending on the nest.
+* Since observations from the same nest are correlated, the effective number of observations is reduced.
+* The `anova` command carries out a likelihood ratio test since we give it `lme` objects.
+
+\scriptsize
+```{r}
+Form <- formula(LogNeg~SexParent*(FoodTreatment+ArrivalTime))
+M.gls <- gls(Form,data=Owls)
+M1.lme <- lme(Form,random=~1|Nest,data=Owls)
+anova(M.gls,M1.lme)
+```
+
+## Diagnostic plots of the mixed model
+
+\scriptsize
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=6}
+Elme<-resid(M1.lme,type="normalized"); Flme<-fitted(M1.lme)
+op<-par(mfrow=c(2,2),mar=c(4,4,3,2)); MyYlab="Residuals"
+plot(x=Flme,y=Elme,xlab="Fitted values",ylab=MyYlab, main = "Fitted Values")
+boxplot(Elme~SexParent,data=Owls,main="Sex of parent",ylab=MyYlab)
+boxplot(Elme~FoodTreatment,data=Owls,main="Food treatment",ylab=MyYlab)
+plot(x=Owls$ArrivalTime,y=Elme,main="Arrival time",ylab=MyYlab,xlab="Time (hours)")
+par(op)
+```
+
+## Summary of the mixed model
+
+\tiny
+```{r, echo=F}
+summary(M1.lme)
+```
+
+## Model selection
+
+\tiny
+```{r, message=FALSE}
+M1.lmeML=lme(Form,random=~1|Nest,method="ML",data=Owls)
+dredge(M1.lmeML)
+```
+
+\normalsize
+It does not appear that sex of the parent is a significant predictor. It is close though. Perhaps there is more work to do.
+
+## Fit the optimal linear mixed model
+
+Sex of the parent is not a predictor.
+\tiny
+```{r}
+M1.opt <- lme(LogNeg~FoodTreatment+ArrivalTime,random=~1|Nest,data=Owls)
+summary(M1.opt)
+```
+
+## What if we don't use `Nest` as a random effect?
+
+\scriptsize
+```{r}
+M1.wrong=lm(LogNeg~SexParent*(FoodTreatment+ArrivalTime)+Nest,data=Owls)
+Anova(M1.wrong)
+```
+\normalsize
+The result is similar, but it applies *only* to these 27 nests.
+
+## Comparison of parameter estimates 
+
+They are almost identical. The mixed model predicts a 3-6% smaller effect of food treatment.
+
+\scriptsize
+```{r}
+intervals(M1.lme)$fixed[2:4, c(1,3)]
+apply(intervals(M1.lme)$fixed[2:4, c(1,3)], 1, diff)
+confint(M1.wrong)[2:4,]
+apply(confint(M1.wrong)[2:4,], 1, diff)
+```
+## Comparison of predictions
+
+The model where `Nest` is a random effect makes predictions that are closer to the overall mean.
+
+```{r, echo=FALSE}
+Owls$predM1lme <- predict(M1.lme)
+Owls$predM1wrong <- predict(M1.wrong)
+
+ggplot(Owls, aes(y=Nest))+
+  stat_summary(aes(x=predM1lme, color="Nest random"), fun.data = "mean_cl_boot")+
+  stat_summary(aes(x=predM1wrong, color="Nest fixed"), fun.data = "mean_cl_boot")+
+  labs(x="Predicted Log Negotiations Per Chick", color="")+
+  geom_vline(xintercept = mean(Owls$LogNeg))
+```
+
+## A model built with `glmmTMB`
+
+Instead of log-transforming the negotiations, we could use a log link and a negative binomial error distribution. 
+
+* Include `offset(BroodSize)` instead of using `NegPerChick`.
+* Random effect of `1|Nest` is included in the main formula.
+* Include zero inflation with `zi = ~1`. The formula `~1` means that we expect there to be excess zeros in the data but we do not propose a reason for them.
+
+\scriptsize
+```{r, warning=F}
+M.tmb<-glmmTMB(SiblingNegotiation~SexParent*(FoodTreatment+ArrivalTime)+ 
+                    (1|Nest) + offset(BroodSize),
+                    family = nbinom1(), zi = ~1, data = Owls)
+```
+
+
+## Diagnostic plots of the TMB model
+
+\scriptsize
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=6}
+Etmb<-resid(M.tmb,type="response"); Ftmb<-fitted(M.tmb)
+op<-par(mfrow=c(2,2),mar=c(4,4,3,2)); MyYlab="Residuals"
+plot(x=Ftmb,y=Etmb,xlab="Fitted values",ylab=MyYlab, main = "Fitted Values")
+boxplot(Etmb~SexParent,data=Owls,main="Sex of parent",ylab=MyYlab)
+boxplot(Etmb~FoodTreatment,data=Owls,main="Food treatment",ylab=MyYlab)
+plot(x=Owls$ArrivalTime,y=Etmb,main="Arrival time",ylab=MyYlab,xlab="Time (hours)")
+par(op)
+```
+
+
+## Summary of `M1.tmb`
+
+\tiny
+```{r echo=FALSE}
+summary(M.tmb)
+```
+
+## The effect of arrival time is not linear 
+
+`SexParent`-`FoodTreatment` combinations show residual patterns. 
+
+\scriptsize
+```{r, message=FALSE, fig.height=6}
+Owls$Eopt <- resid(M1.opt,type="normalized")
+ggplot(Owls, aes(ArrivalTime, Eopt))+ geom_point()+geom_smooth()+
+  facet_grid(FoodTreatment~SexParent)+ylab("Residuals")
+```
+
+## GAMM
+
+A generalized additive mixed model gives flexibility to include nonlinear effects.
+
+* A black-box smooth function relating `ArrivalTime` to `SiblingNegotiation` is created with `s()`.
+* Including `by=SexParent` substitutes for the interaction.
+* Random effects go in a `list`.
+* Negative binomial errors aren't an option so we use Poisson.
+
+\scriptsize
+```{r message=FALSE}
+M.gamm<-gamm(SiblingNegotiation~offset(BroodSize)+
+                SexParent*FoodTreatment+s(ArrivalTime, by=SexParent),
+              random=list(Nest=~1),data=Owls,
+              family=poisson)
+```
+
+
+## Diagnostic plots of the generalized additive mixed model
+
+\scriptsize
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=6}
+Egamm<-resid(M.gamm$lme,type="normalized"); Fgamm<-fitted(M.gamm$lme)
+op<-par(mfrow=c(2,2),mar=c(4,4,3,2)); MyYlab="Residuals"
+plot(x=Fgamm,y=Egamm,xlab="Fitted values",ylab=MyYlab, main = "Fitted Values")
+boxplot(Egamm~SexParent,data=Owls,main="Sex of parent",ylab=MyYlab)
+boxplot(Egamm~FoodTreatment,data=Owls,main="Food treatment",ylab=MyYlab)
+plot(x=Owls$ArrivalTime,y=Egamm,main="Arrival time",ylab=MyYlab,xlab="Time (hours)")
+par(op)
+```
+
+## Using a GAMM straightens out the residuals 
+
+\scriptsize
+```{r, message=FALSE, fig.height=6}
+Owls$Egamm <- resid(M.gamm,type="normalized")
+ggplot(Owls, aes(ArrivalTime, Egamm))+ geom_point()+geom_smooth()+
+  facet_grid(FoodTreatment~SexParent)+ylab("Residuals")
+```
+
+## Summary of `M.gamm$gam`
+
+\tiny
+```{r echo =F}
+summary(M.gamm$gam)
+```
+
+Baby Owl says, "Hey Papa, bring us another mouse! The one the scientists left for us smells funny."
+
+## F tests on the GAMM
+
+\scriptsize
+```{r}
+anova(M.gamm$gam)
+```
+
+## Summary of `M.gamm$lme`
+
+`summary(M.gamm$lme)` includes the correlation matrix. 
+
+* Highly correlated parameters may warrant an explanation. 
+* Intercept is often highly correlated with slope for variables in linear models that are not centered.
+* Interaction terms tend to be correlated with the interacting variables. 
+
+\scriptsize
+```{r}
+sml <- summary(M.gamm$lme)
+colnames(sml$corFixed) <- abbreviate(colnames(sml$corFixed), minlength=8)
+rownames(sml$corFixed) <- abbreviate(rownames(sml$corFixed), minlength=8)
+round(sml$corFixed,3)
+```
+
+
+## AIC and significance of `SexParent`
+
+Fitting a model without `SexParent` gives a much higher AIC.
+
+\scriptsize
+```{r, message=FALSE, results=FALSE}
+M2.gamm <- gamm(SiblingNegotiation~offset(BroodSize)+
+                SexParent+FoodTreatment+s(ArrivalTime, by=SexParent),
+                random=list(Nest=~1), data=Owls, family=poisson)
+M3.gamm <- gamm(SiblingNegotiation~offset(BroodSize)+
+                SexParent*FoodTreatment+s(ArrivalTime),
+                random=list(Nest=~1), data=Owls, family=poisson)
+M4.gamm <- gamm(SiblingNegotiation~offset(BroodSize)+
+                SexParent+FoodTreatment+s(ArrivalTime),
+                random=list(Nest=~1), data=Owls, family=poisson)
+M5.gamm <- gamm(SiblingNegotiation~offset(BroodSize)+
+                FoodTreatment+s(ArrivalTime),
+                random=list(Nest=~1), data=Owls, family=poisson)
+```
+\scriptsize
+```{r}
+AIC(M.gamm, M2.gamm, M3.gamm, M4.gamm, M5.gamm)
+```
+
+## Summary of `M2.gamm$gam`
+
+\tiny
+```{r echo =F}
+summary(M2.gamm$gam)
+```
+
+Or, maybe Papa Owl and Mama Owl just visit at different times.
+
+
+## The smooth approximators
+
+```{r, fig.height=3.5}
+plot(M.gamm$gam)
+```
+
+
+## Questioning the result
+
+The p-value for `SexParent:FoodTreatmentSatiated` is just barely significant at the $\alpha=0.05$ level, and removing it gives a small improvement in AIC, so we should definitely temper our enthusiasm.
+
+* Are we overfitting?
+* Is the effect size large enough to care about?
+
+Cross validation and simulation could help answer these questions.
+
+
+## Enough owl models already
+
+@owls finds that the sex of the parent *is* significant without going further than a linear mixed model.
+
+The analysis there seems to hinge on the variable *amount of time in nestbox* which is missing from the data provided in @zuur2009mixed (which is the source of the data in `glmmTMB::Owls`).
+
+## Mixed model formula cheatsheet
+
+$Y$ is the response variable, $X$ is a fixed effect variable, $S$ and $T$ are random effect variables. Random terms $b$ are normally distributed with parameters determined by the variables in the subscript.
+
+\scriptsize
+\begin{tabular}{p{3.5cm}|p{3.5cm}|p{3.5cm}}
+Modeling goal & Formula specification & Mathematical specification $Y\sim$ \\
+\hline
+fixed effect only model & NA & $\beta_0 + \beta_1X + \epsilon$\\
+random group intercept & \texttt{(1|group)} & $(\beta_0 + b_{0S}) + \beta_1X + \epsilon$\\
+random slope of $X$ within group with correlated intercept & \texttt{(x|group) = (1+x|group)} 
+& $(\beta_0 + b_{0S}) +  (\beta_1 + b_{1S}) X + \epsilon$\\
+random slope of $X$ within group, no variation in intercept & \texttt{(0+x|group) = (-1+x|group)} 
+& $\beta_0  +  (\beta_1 + b_{1S}) X + \epsilon$\\
+intercept varying among sites and among blocks within sites (nested random effects) 
+& \texttt{(1|site/block) = (1|site)+(1|site:block)} 
+&  $(\beta_0 + b_{0S} + b_{0ST}) + \beta_1X + \epsilon$\\
+intercept varying among crossed random effects (e.g. site, year) 
+& \texttt{(1|group1)+(1|group2)} & $(\beta_0 + b_{0S} + b_{0T}) + \beta_1X + \epsilon$
+
+\end{tabular}
+
+## References

@@ -1,0 +1,295 @@
+---
+title: "Distance Sampling
+"
+output: 
+  html_document:
+    highlight: tango
+    theme: readable
+    toc: true
+    toc_float: true
+bibliography: "../bibliography.bib"   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(global.par = TRUE)
+```
+
+```{r message=FALSE}
+library(ggplot2)
+library(Distance)
+library(readxl)
+```
+
+## Overview
+
+```{r}
+BRSP<- data.frame(read_excel("data/BRSP+GTTO.xlsx", 
+                             sheet = "BRSP", col_types = c("date", 
+                                                           "numeric", "text", "skip", "skip", 
+                                                           "text", "numeric", "numeric", "text", "text", 
+                                                           "text", "numeric", "numeric", "numeric")))
+names(BRSP)<-sub("Observer", "obs", names(BRSP))
+names(BRSP)<-sub("BirdCode", "detection", names(BRSP))
+names(BRSP)<-sub("radialDistance", "distance", names (BRSP))
+names(BRSP)<-sub("CL_Count", "groupsize", names(BRSP))
+names(BRSP)<-sub("Full_ID", "siteID", names(BRSP))
+names(BRSP)<-sub("RealID", "Sample.Label", names(BRSP))
+View(BRSP)
+
+#flat files
+BRSPflatgrid<-(data.frame(read_excel("data/BRSP+GTTO.xlsx", 
+                                 sheet = "BRSP", col_types = c("skip", 
+                                                               "skip", "text", "skip", "skip", "skip", 
+                                                               "numeric", "skip", "text", "skip", "text", "numeric", "skip", "numeric"))))
+ 
+names(BRSPflatgrid)<-sub("radialDistance", "distance", names (BRSPflatgrid))
+names(BRSPflatgrid)<-sub("RealID", "Sample.Label", names (BRSPflatgrid))
+names(BRSPflatgrid)<-sub("gridID", "Region.Label", names (BRSPflatgrid))
+names(BRSPflatgrid)<-sub("effort", "Effort", names (BRSPflatgrid))
+names(BRSPflatgrid)<-sub("gridArea", "Area", names (BRSPflatgrid))
+names(BRSPflatgrid)<-sub("Observer", "obs", names (BRSPflatgrid))
+
+BRSPflatpt<-(data.frame(read_excel("data/BRSP+GTTO.xlsx", 
+                                   sheet = "BRSP", col_types = c("skip", 
+                                                                 "skip", "text", "skip", "skip", "skip", 
+                                                                 "numeric", "skip", "text", "skip", "text", "numeric", "numeric", "skip"))))
+
+names(BRSPflatpt)<-sub("radialDistance", "distance", names (BRSPflatpt))
+names(BRSPflatpt)<-sub("RealID", "Sample.Label", names (BRSPflatpt))
+names(BRSPflatpt)<-sub("gridID", "Region.Label", names (BRSPflatpt))
+names(BRSPflatpt)<-sub("effort", "Effort", names (BRSPflatpt))
+names(BRSPflatpt)<-sub("ptArea", "Area", names (BRSPflatpt))
+names(BRSPflatpt)<-sub("Observer", "obs", names (BRSPflatpt))
+
+# What do data look like?
+head(BRSP)
+
+# Fit half-normal detection function, no truncation
+BRSP.hn <- ds(data=BRSP, transect="point", key="hn")
+plot(BRSP.hn, pdf=TRUE) #?plot.ds
+summary(BRSP.hn) #?summary.ds
+##AIC: no cosine 141860.058
+    ##cosine(2) 14089.94
+    ##cosine(2,3) 13967.479
+    ##cosine(2,3,4) 13938.991
+    ##cosine(2,3,4,5) 13932.152
+    ##cosine(2,3,4,5,6) 13930.99
+
+# Try truncation of 100m based on preliminary fit
+
+# Half normal, no adjustments
+BRSP.hn.t100m <- ds(data=BRSP, transect="point", key="hn", truncation=100)
+plot(BRSP.hn.t100m, main = "Half-normal, no adjustments", pdf=TRUE)
+##AIC: no cosine 9344.246
+
+# Half normal, cos
+BRSP.hn.cos.t100m <- ds(data=BRSP, transect="point", key="hn", adjustment = "cos", truncation=100,
+                    convert.units=conversion.factor)
+plot(BRSP.hn.cos.t100m, main = "Half-normal, cosine", pdf=TRUE)
+##cosine(2) 9344.111
+
+# Half normal, herm
+BRSP.hn.herm.t100m <- ds(data=BRSP, transect="point", key="hn", adjustment = "herm", truncation=100,
+                        convert.units=conversion.factor)
+plot(BRSP.hn.herm.t100m, main = "Half-normal, hermite", pdf=TRUE)
+##herm(4) 9344.246
+##herm(4,6) 9343.196
+
+# Half normal, poly
+BRSP.hn.poly.t100m <- ds(data=BRSP, transect="point", key="hn", adjustment = "poly", truncation=100,
+                         convert.units=conversion.factor)
+plot(BRSP.hn.poly.t100m, main = "Half-normal, polynomial", pdf=TRUE)
+##poly(2) 9342.664
+##poly(2,4) 9344.664
+
+# Hazard rate, no adjustments
+BRSP.hr.t100m <- ds(data=BRSP, transect="point", key="hr", truncation=100,
+                         convert.units=conversion.factor)
+plot(BRSP.hr.t100m, main = "Hazard Rate, no adjustments", pdf=TRUE)
+##AIC: no cosine 9346.964
+
+# Hazard rate, cos
+BRSP.hr.cos.t100m <- ds(data=BRSP, transect="point", key="hr", adjustment = "cos", truncation=100,
+                        convert.units=conversion.factor)
+plot(BRSP.hr.cos.t100m, main = "Hazard Rate, cosine", pdf=TRUE)
+##cosine(2) 9348.269
+
+# Hazard rate, herm
+BRSP.hr.herm.t100m <- ds(data=BRSP, transect="point", key="hr", adjustment = "herm", truncation=100,
+                         convert.units=conversion.factor)
+plot(BRSP.hr.herm.t100m, main = "Hazard Rate, hermite", pdf=TRUE)
+##herm(4) 9346.964
+##herm(4,6) 9344.017
+
+# Hazard rate, poly
+BRSP.hr.poly.t100m <- ds(data=BRSP, transect="point", key="hr", adjustment = "poly", truncation=100,
+                         convert.units=conversion.factor)
+plot(BRSP.hr.poly.t100m, main = "Hazard Rate, polynomial", pdf=TRUE)
+##poly(2) 9348.964
+
+
+
+BRSP.tab <- data.frame(DetectionFunction=c("Half-normal","Half-normal",
+                                         "Half-normal","Half-normal",
+                                         "Hazard Rate","Hazard Rate"
+                                         ,"Hazard Rate","Hazard Rate"), 
+                     Adjustments=c("None","Cosine","Hermite","Polynomial",
+                                   "None","Cosine","Hermite","Polynomial"), Truncation=c(100,100,100,100,100,100,100,100), 
+                     AIC=rep(NA,8), Density=rep(NA,8), D.CV=rep(NA,8), Lower.CI=rep(NA,8), Upper.CI=rep(NA,8))
+
+get.results.f <- function(fit.model) {
+  list(AIC=summary(fit.model$ddf)$aic,
+       D=summary(fit.model$ddf)$average.p,
+       D.CV=summary(fit.model$ddf)$average.p.se/summary(fit.model$ddf)$average.p,
+       lCL=summary(fit.model$ddf)$average.p - 1.96*(summary(fit.model$ddf)$average.p.se),
+       uCL=summary(fit.model$ddf)$average.p + 1.96*(summary(fit.model$ddf)$average.p.se))
+}
+
+BRSP.tab[1,4:8] <- get.results.f(BRSP.hn.t100m)
+BRSP.tab[2,4:8] <- get.results.f(BRSP.hn.cos.t100m)
+BRSP.tab[3,4:8] <- get.results.f(BRSP.hn.herm.t100m)
+BRSP.tab[4,4:8] <- get.results.f(BRSP.hn.poly.t100m)
+BRSP.tab[5,4:8] <- get.results.f(BRSP.hr.t100m)
+BRSP.tab[6,4:8] <- get.results.f(BRSP.hr.cos.t100m)
+BRSP.tab[7,4:8] <- get.results.f(BRSP.hr.herm.t100m)
+BRSP.tab[8,4:8] <- get.results.f(BRSP.hr.poly.t100m)
+
+
+# Print results
+knitr::kable(BRSP.tab, caption="Results from simulated point transect data.", digits=3)
+
+# Plot detection functions
+par(mfrow=c(2,2))
+plot(BRSP.hn, main="Half normal, no truncation")
+plot(BRSP.hn.t100m, main="Half normal, truncation 100m")
+plot(BRSP.hr.t100m, main="Hazard rate, truncation 100m")
+
+
+
+# Plot probability density functions
+par(mfrow=c(2,2))
+plot(BRSP.hn, main="Half normal, no truncation", pdf=TRUE)
+plot(BRSP.hn.t100m, main="Half normal, truncation 100m", pdf=TRUE)
+plot(BRSP.hr.t100m, main="Hazard rate, truncation 100m", pdf=TRUE)
+
+
+#Observer as covariate
+par(mfrow=c(1,1))
+BRSP$fyear<-factor(BRSP$year)
+
+BRSP.hn.obs <- ds(data=BRSP, transect="point", formula = ~obs, key="hn", truncation = 100,  
+              convert.units=conversion.factor)
+plot(BRSP.hn.obs, main = "half-normal: obs covariate, 100m trunc", showpoints = FALSE, pdf=TRUE)
+add_df_covar_line(BRSP.hn.obs, data.frame(obs= "KROSS"),col = "green", pdf = TRUE)
+add_df_covar_line(BRSP.hn.obs, data.frame(obs= "PMAGE"), col = "blue", pdf = TRUE)
+add_df_covar_line(BRSP.hn.obs, data.frame(obs= "KBROD"), col = "red", pdf =TRUE)
+
+BRSP.hr.obs <- ds(data=BRSP, transect="point", formula = ~obs, key="hr", truncation = 100,   
+                  convert.units=conversion.factor)
+plot(BRSP.hr.obs, main = "hazard rate: obs covariate, 100m trunc", showpoints = FALSE, pdf=TRUE)
+add_df_covar_line(BRSP.hr.obs, data.frame(obs= "KROSS"),col = "green", pdf = TRUE)
+add_df_covar_line(BRSP.hr.obs, data.frame(obs= "PMAGE"), col = "blue", pdf = TRUE)
+add_df_covar_line(BRSP.hr.obs, data.frame(obs= "KBROD"), col = "red", pdf =TRUE)
+# Year
+BRSP.hn.yr <- ds(data=BRSP, transect="point", formula = ~fyear, key="hn", truncation = 100,  
+                  convert.units=conversion.factor)
+plot(BRSP.hn.yr, main = "half-normal: year covariate, 100m trunc", showpoints = FALSE, pdf=TRUE)
+add_df_covar_line(BRSP.hn.yr, data.frame(fyear = "2018"),col = "purple", pdf = TRUE)
+add_df_covar_line(BRSP.hn.yr, data.frame(fyear = "2019"), col = "orange", pdf = TRUE)
+add_df_covar_line(BRSP.hn.yr, data.frame(fyear = "2020"), col = "navy", pdf =TRUE)
+
+BRSP.hr.yr <- ds(data=BRSP, transect="point", formula = ~fyear, key="hr", truncation = 100,   
+                 convert.units=conversion.factor)
+plot(BRSP.hr.yr, main = "hazard rate: year covariate, 100m trunc", showpoints = FALSE, pdf=TRUE)
+add_df_covar_line(BRSP.hr.yr, data.frame(fyear = "2018"),col = "purple", pdf = TRUE)
+add_df_covar_line(BRSP.hr.yr, data.frame(fyear = "2019"), col = "orange", pdf = TRUE)
+add_df_covar_line(BRSP.hr.yr, data.frame(fyear = "2020"), col = "navy", pdf =TRUE)
+
+
+
+# Observer and Year as covariates
+BRSP.hn.t100m <- ds(data=BRSP, transect="point", formula = ~obs+fyear, key="hn", truncation = 100,  
+              convert.units=conversion.factor)
+plot(BRSP.hn.t100m, main = "half-normal, 100m trunc", showpoints = FALSE, pdf=TRUE)
+add_df_covar_line(BRSP.hr.obs, data.frame(obs= "KROSS"),col = "green", pdf = TRUE)
+add_df_covar_line(BRSP.hr.obs, data.frame(obs= "PMAGE"), col = "blue", pdf = TRUE)
+add_df_covar_line(BRSP.hr.obs, data.frame(obs= "KBROD"), col = "red", pdf =TRUE)
+add_df_covar_line(BRSP.hr.yr, data.frame(fyear = "2018"),col = "purple", pdf = TRUE)
+add_df_covar_line(BRSP.hr.yr, data.frame(fyear = "2019"), col = "orange", pdf = TRUE)
+add_df_covar_line(BRSP.hr.yr, data.frame(fyear = "2020"), col = "navy", pdf =TRUE)
+
+
+BRSP.hr.t100m <- ds(data=BRSP, transect="point", formula = ~obs+fyear, key="hr", truncation=100, 
+                    convert.units=conversion.factor)
+plot(BRSP.hr.t100m, main = "hazard rate, 100m trunc", showpoints = FALSE, pdf=TRUE)
+add_df_covar_line(BRSP.hr.obs, data.frame(obs= "KROSS"),col = "green", pdf = TRUE)
+add_df_covar_line(BRSP.hr.obs, data.frame(obs= "PMAGE"), col = "blue", pdf = TRUE)
+add_df_covar_line(BRSP.hr.obs, data.frame(obs= "KBROD"), col = "red", pdf =TRUE)
+add_df_covar_line(BRSP.hr.yr, data.frame(fyear = "2018"),col = "purple", pdf = TRUE)
+add_df_covar_line(BRSP.hr.yr, data.frame(fyear = "2019"), col = "orange", pdf = TRUE)
+add_df_covar_line(BRSP.hr.yr, data.frame(fyear = "2020"), col = "navy", pdf =TRUE)
+
+
+#table of results with covar
+BRSP.tab <- data.frame(DetectionFunction=c("Half-normal","Half-normal","Half-normal", "Hazard Rate", "Hazard Rate", "Hazard Rate"), 
+                       Covariate=c("Obs","Year","Obs+Year","Obs","Year","Obs+Year"), Truncation=c(100, 100, 100, 100, 100, 100), 
+                       AIC=rep(NA,6), Density=rep(NA,6), D.CV=rep(NA,6), Lower.CI=rep(NA,6), Upper.CI=rep(NA,6))
+
+get.results.f <- function(fit.model) {
+  list(AIC=summary(fit.model$ddf)$aic,
+           D=summary(fit.model$ddf)$average.p,
+           D.CV=summary(fit.model$ddf)$average.p.se/summary(fit.model$ddf)$average.p,
+           lCL=summary(fit.model$ddf)$average.p - 1.96*(summary(fit.model$ddf)$average.p.se),
+           uCL=summary(fit.model$ddf)$average.p + 1.96*(summary(fit.model$ddf)$average.p.se))
+}
+BRSP.tab[1,4:8]<-get.results.f(BRSP.hn.obs) 
+BRSP.tab[2,4:8]<-get.results.f(BRSP.hn.yr) 
+BRSP.tab[3,4:8]<-get.results.f(BRSP.hn.t100m) 
+BRSP.tab[4,4:8]<-get.results.f(BRSP.hr.obs) 
+BRSP.tab[5,4:8]<-get.results.f(BRSP.hr.yr) 
+BRSP.tab[6,4:8]<-get.results.f(BRSP.hr.t100m)
+
+# Print results
+knitr::kable(BRSP.tab, caption="Results from simulated point transect data with covariates (year, observer).", digits=3)
+
+
+#Goodness of Fit
+par(mfrow=c(1,1))
+##Cramer-von Mises goodness of fit test
+
+#half-normal, no adjustments - CvM
+BRSP.hn.obs.CvM<-gof_ds(BRSP.hn.obs, plot = TRUE, nboot = 1000, ks = FALSE)
+BRSP.hn.yr.CvM<-gof_ds(BRSP.hn.yr, plot = TRUE, nboot = 1000, ks = FALSE)
+#hazard rate, no adjustments - CvM
+BRSP.hr.obs.CvM<-gof_ds(BRSP.hr.obs, plot = TRUE, nboot = 1000, ks = FALSE)
+BRSP.hr.yr.CvM<-gof_ds(BRSP.hr.yr, plot = TRUE, nboot = 1000, ks = FALSE)
+
+
+#explore GOF metrics (looking for p value over 0.05)
+BRSP.hn.obs.CvM
+#Cramer test stat = 0.131281, p-vaule = 0.452011
+BRSP.hn.yr.CvM
+#Cramer test stat = 0.102449, p-vaule = 0.573002
+BRSP.hr.obs.CvM
+#Cramer test stat = 0.0531153, p-vaule = 0.857145
+BRSP.hr.yr.CvM
+#Cramer test stat = 0.0745683, p-vaule = 0.723848
+
+#density by grid
+conversion.factor.grid <- convert_units("meter", NULL, "square kilometre")
+BRSPgrid<-dht2(BRSP.hr.obs, flatfile = BRSPflatgrid,
+             strat_formula = ~Region.Label, convert_units = conversion.factor.grid)
+print(BRSPgrid, report = "both", groups =FALSE)
+write.csv(BRSPgrid, "data/BRSP.grid.csv")
+
+#density by point
+conversion.factor.pt <- convert_units("square metre", NULL, "hectare")
+BRSPpt<-dht2(BRSP.hr.obs, flatfile = BRSPflatpt,
+               strat_formula = ~Sample.Label, convert_units = conversion.factor.pt)
+options(max.print = 99999) ##need otherwise analysis will omit 100+ rows
+print(BRSPpt, report = "both", groups =FALSE)
+write.csv(BRSPpt, "data/BRSP.pt.csv")
+
+```
+

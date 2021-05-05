@@ -1,0 +1,79 @@
+---
+title: "Bayesian models"
+output: 
+  html_document:
+    highlight: tango
+    theme: readable
+    toc: true
+    toc_float: true
+bibliography: "../bibliography.bib"   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(global.par = TRUE)
+```
+
+```{r message=FALSE}
+library(ggplot2)
+library(brms)
+```
+
+## Overview
+
+Bayesian modeling is a useful framework, and can circumvent some problems encountered with traditional maximum likelihood methods.
+
+This lab uses material from a lab developed by Kevin McGarigal at UMass.
+
+## Setting
+
+Consider the same hypothetical study of moose movement patterns in relation to development intensity that we looked at last week. 
+
+```{r}
+moose <- data.frame(dev.intensity = c(2.9,8.5,7.0,1.3,9.7,7.5,0.4,6.2,0.9,3.8),
+                    dist.moved = c(456,141,47,1362,128,21,2123,189,899,38))
+ggplot(moose, aes(dev.intensity, dist.moved))+
+  geom_point()+ 
+  geom_rug()
+```
+
+
+## The model
+
+As before, we are proposing that `dist.moved` is distributed as 
+$$
+\texttt{dist.moved}\sim\text{Exp}\left(\text{rate}=\frac{1}{a \cdot \texttt{dev.intensity}^b}\right)
+$$
+for some values of $a$ and $b$, where the exponential distribution has the probability density function
+$$
+P(Y) = \lambda e^{-\lambda Y}
+$$
+where $\lambda$ is the rate parameter.
+
+## Adding prior information
+
+Suppose that you are building off of a previous study that developed a model of this form and established the values of $a=511$ (95%CI: 261,761) and $b=-0.9$ (95%CI: -1.0,0.8). You would like to include this information, but are not certain how strong to make your prior.
+
+(@) A strong prior might be to use normal distributions suggested by the confidence intervals for these parameters.
+$$
+\text{Prior}(a)=N(511, 125^2) \quad \text{Prior}(b)=N(-0.9, 0.05^2)
+$$
+If we assume independence (which is probably false but won't really matter), we can define the joint prior distribution as the product of the priors for $a$ and $b$. Compute the prior probabilities for some combinations of a some values of $a$ and $b$ from their 95% confidence intervals.
+
+(@) A weak prior might also use normal distributions with means given by the same point estimates from the previous study, but with larger variances, say $250^2$ and $0.1^2$. For the same values of $a$ and $b$ that you used above, compute the prior probabilities for the weak prior.
+
+(@) A uniform prior can be specified by arbitrarily choosing possible range for $a$ and $b$ and setting the probability densities to the constants $\frac{1}{\text{max}_a-\text{min}_a}$ and $\frac{1}{\text{max}_b-\text{min}_b}$. Choose appropriate ranges and determine these constants.
+
+## Comparing posterior distributions
+
+(@) To compute posterior probabilities, you first calculate the likelihood of the data for each specific $a$ and $b$ and multiply by the appropriate prior. This gives the posterior likelihood. To make this a probability, you have to divide by the probability of the data integrated over all possible values of the parameters. That can be difficult, but we can compare likelihoods without doing that latter part of the computation. Compute the posterior likelihoods for your selected combinations of $a$ and $b$ for each of the three choices of prior.
+
+(@) For a given prior, you can get a point estimate for your parameters by computing a weighted average of the parameter values that you have been working with. First, convert your posterior likelihoods into weights by dividing each by the sum of all of them. Then multiply each parameter pair by the appropriate weight and add them all up. Do this for your three choices of prior and find the resulting point estimates of your parameters.
+
+## Using `brms`
+
+(@) Use `brms` to find the posterior distributions for your three priors. Note that the default is for a flat prior, so you don't have to explicitly set a prior in this case.
+
+## Analysis
+
+(@) How do the parameter estimates you produced with the strong, weak and flat priors compare to each other and to the maximum likelihood model you produced last week?

@@ -1,0 +1,94 @@
+---
+title: "Mixed models"
+output: 
+  html_document:
+    highlight: tango
+    theme: readable
+    toc: true
+    toc_float: true
+bibliography: "../bibliography.bib"   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+knitr::opts_knit$set(global.par = TRUE)
+```
+
+```{r message=FALSE}
+library(car)
+library(glmmTMB)
+```
+
+
+## Overview
+
+Your array of modeling tools is now quite extensive. This lab sets you to work on reproducing the results of some complicated analysis.
+
+## Setting
+
+The paper you will analyze is @salamanders. It is available from the [Journal of Applied Ecology](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/1365-2664.12585). The data are in the `glmmTMB` package as `Salamanders` and are available from the [Dryad data repository](https://datadryad.org/stash/dataset/doi:10.5061/dryad.5m8f6). For a data dictionary and other information about the data see `?Salamanders`.
+
+## Linear models
+
+We can begin by asking the data a very simple question: "Were salamanders more abundant in areas that were not mined?" We'll use `glmmTMB` even though all we are doing is making a linear model with Gaussian errors (one-way ANOVA) so that when we compare models, all of them will have been built with the same tool.
+
+```{r}
+Msal1 <- glmmTMB(count~mined, data=Salamanders)
+summary(Msal1)
+```
+
+(@) What does this model tell us?
+
+We can add in other predictors from the data.
+
+```{r}
+Msal2 <- glmmTMB(count~mined+cover+DOP+Wtemp+DOY+spp, data = Salamanders)
+Anova(Msal2)
+```
+(@) Based on which variables appear significant in this model, make a graphic or graphics showing the relationships between some of these predictors and the response.
+
+## Extending to a GLM
+
+Since the response is a count, it might be better to model this with a Poisson or negative binomial GLM. In `glmmTMB`, there are two negative binomial families. What most others call negative binomial is `negbinom2`, and `negbinom1` is often called quasi-poisson.
+
+```{r}
+Msal3 <- glmmTMB(count~mined+cover+DOP+Wtemp+DOY+spp, data = Salamanders, 
+                 family = "poisson")
+Msal4 <- glmmTMB(count~mined+cover+DOP+Wtemp+DOY+spp, data = Salamanders, 
+                 family = "nbinom1")
+Msal5 <- glmmTMB(count~mined+cover+DOP+Wtemp+DOY+spp, data = Salamanders, 
+                 family = "nbinom2")
+```
+
+(@) Decide which distribution family seems most appropriate, and justify your decision.
+
+## Adding a random effect
+
+The data contains repeated samples of the same site, so there is pseudoreplication in the models we have built so far. This can be accounted for by including `site` as a random effect.
+
+```{r}
+Msal6 <- glmmTMB(count~mined+cover+DOP+Wtemp+DOY+spp + (1|site), 
+                 data = Salamanders, 
+                 family = "nbinom1") # Match this to your choice above.
+```
+
+(@) Report the results of including the random effect, and how this changed the model.
+
+## Zero inflation
+
+In the paper, they describe modeling occupancy distinctly from abundance. We can include step this via a zero inflation term. We'll follow the authors of the study and include only the environmental covariates `cover`, `DOP`, `Wtemp` and `DOY` in the occupancy part of the model.
+
+```{r}
+Msal7 <- glmmTMB(count~mined+cover+DOP+Wtemp+DOY+spp + (1|site), 
+                 data = Salamanders, 
+                 zi = ~cover+DOP+Wtemp+DOY,
+                 family = "nbinom1") # Again, match this to your choice above.
+```
+
+## Finding an optimal model and matching the results of the paper
+
+In the paper, they consider the interaction between mining and species `mined*spp` for predicting counts. Additionally, they include the environmental covariates `cover`, `DOP`, `Wtemp` and `DOY` only in the occupancy part of the model, not the abundance part.
+
+(@) Find your optimal model, using all of the ingredients discussed above. Do your results agree with those in the paper? (A Bayesian procedure was used to produce the published results.)
+
+## References

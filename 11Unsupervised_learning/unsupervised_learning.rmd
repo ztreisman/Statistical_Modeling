@@ -1,0 +1,341 @@
+---
+title: "Dimension Reduction and Clustering"
+author: "Zack Treisman"
+date: "Spring 2021"
+output: 
+  beamer_presentation: 
+    keep_tex: yes
+    includes: 
+      in_header: ../slide_style.tex
+bibliography: ../bibliography.bib    
+citecolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(global.par = TRUE)
+
+```
+
+\scriptsize
+```{r, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(vegan)
+#library(devtools)
+#install_github("ggbiplot")
+#library(ggbiplot)
+
+set.seed(23)
+```
+
+```{r,include=FALSE}
+par(mar = c(4, 4, 0.5, 0.5)) # Set margins
+scale_colour_continuous <- scale_colour_viridis_c
+scale_colour_discrete   <- scale_colour_brewer(palette="Dark2")
+scale_colour_binned     <- scale_colour_viridis_b
+``` 
+
+## Philosophy
+
+There are many situations where we would like to discover structure in data without explicitly specifying a predictor-response relationship between variables. Generally, this means creating new variables out of combinations of existing variables that provide more concise summaries.
+
+* Data with correlated predictors or high dimension (many predictors) can be problematic.
+    * Correlation leads to high variance in parameter estimates and significance levels.
+    * The curse of dimsionality (eg. $1-0.9^{20}\approx0.89$) means that high dimensional data are sparse, and statistical power is hard to come by.
+* Reparameterizing may remove correlations and reduce dimension.
+    
+## Dimension Reduction    
+    
+Variable selection is a *supervised* technique for dimension reduction (see also partial least squares), meaning that a response variable guides the process.
+
+*Unsupervised* techniques create a set of new variables to replace the existing ones.  No response variable is specified in the algorithms. Instead, we search for pattern within the predictors themselves. These algorithms fall into two categories, according to the sort of variable created.
+    
+* **Ordination** refers to tools that create new numeric variables.
+    * PCA, NMDS, etc.
+* Tools that perform **clustering** create new categorical variables.
+    * $K$-means, hierarchical clustering.
+
+## Scaling and centering
+
+All of the methods that we'll discuss expect that all variables in the data are either recorded on the same measurement scale or have been rescaled so that the numerical ranges are comparable.
+
+* Divide each variable by its standard deviation/(max-min)/IQR.
+* Centering is also a helpful thing to do. Subtract the mean of each variable from each observation, so that all variables have mean 0. 
+
+## $K$-means clustering
+
+Suppose you have a set of numeric variables $X=(X_1, \ldots, X_p)$, and a collection of observations $x_1, \ldots, x_n$, with $x_i=(x_{i1},\ldots,x_{ip})$.
+
+1. Choose a positive integer $K$. This is how many groups you plan to create in the data.
+2. Randomly select points $C_1, \ldots, C_K$ with coordinates in the range determined by the data.
+3. For each observation $x_i$, assign it to the group $j$ for which the distance from $x_i$ to the point $C_j$ is the smallest.
+4. For each group $j$, compute the centroid of the observations in that group and replace $C_j$ with this point.
+5. Repeat steps 3 and 4 until no points change groups in step 3 or some predefined stopping criterion is met.
+
+
+## $K$-means example
+
+\scriptsize
+```{r fig.height=5}
+x=matrix(rnorm(250*2), ncol=2) # 250 random 2D points 
+x[1:125,1]=x[1:125,1]+3; x[1:125,2]=x[1:125,2]-4 # Shift half right and down
+km.out=kmeans(x,2,nstart=20) # perform K-means with 2 clusters
+ggplot(data.frame(x), aes(X1, X2, color=factor(km.out$cluster))) +
+    geom_point()+labs(title="K-Means with K=2", x="", y="", color="Cluster")
+```
+
+## $K$-means example (cont.)
+
+\tiny
+```{r}
+km.out
+```
+
+
+## The number of clusters is a parameter to choose
+
+\scriptsize
+```{r}
+km.out=kmeans(x,3,nstart=20)
+```
+
+
+```{r, echo=FALSE}
+ggplot(data.frame(x), aes(X1, X2, color=factor(km.out$cluster))) +
+    geom_point()+labs(title="K-Means with K=3", x="", y="", color="Cluster")
+```
+
+## Another parameter is how many times to restart the algorithm
+
+A bad initial choice of $C_1 \ldots C_K$ can lead the algorithm to a local minimum that's not optimal.
+
+```{r}
+set.seed(1)
+km.out=kmeans(x,5,nstart=1)
+km.out$tot.withinss
+km.out=kmeans(x,5,nstart=20)
+km.out$tot.withinss
+```
+
+## Extensions and other considerations
+
+* $K$-means-like algorithms with other notions of distance can be done with the `flexclust` package.
+* Data that change multiplicatively (eg. percentages) should perhaps be log transformed first.
+* When plotting clusters in high dimensional data, it may not be possible to see the separation in a plot of only two dimensions.
+
+
+## Hierarchical clustering
+
+A totally different method of clustering is *hierarchical clustering*
+
+1. Each observation starts in its own cluster.
+2. Pairwise distances between clusters are computed.
+3. The two closest clusters are merged.
+4. Repeat steps 2 and 3 until all observations are in one cluster.
+5. The resulting tree of merging clusters can be cut at various levels to give set numbers of clusters.
+
+There are many ways to compute the distances in step 2.
+
+## West Fork Fire Complex Data
+
+This is a project I'm working on with Jonathan Coop. We're looking at vegetation data from sites in the San Juans recovering from impacts of beetles and fire.
+
+\scriptsize
+```{r}
+veg_data <- read.csv("data/West_Fork_Plants.csv")
+set.seed(1)
+sample_n(veg_data,10)[1:8]
+```
+
+## Pivot Wider
+
+Create a data matrix where the rows are sites and the columns are species, with the entries percent cover for that species at that site.
+
+\scriptsize
+```{r}
+spp_cov<-as_tibble(veg_data[c("Plot_ID", "Code", "Cover")])
+spp_cov<-with(spp_cov, spp_cov[order(spp_cov$Code), ])
+spp_cov<-spp_cov[!(spp_cov$Code == "Unknown"),] # get rid of unknowns
+spp_cov_matrix<-spp_cov %>% pivot_wider(names_from = Code, 
+                                        values_from = Cover,
+                                        values_fn = sum)
+spp_cov_matrix[is.na(spp_cov_matrix)] <- 0 # zeros instead of NAs
+head(spp_cov_matrix[,1:10],10)
+```
+
+
+## Compute the tree 
+
+Use Bray-Curtis dissimilarity to measure "distance" between clusters.
+\scriptsize
+```{r fig.height=5}
+bc_diss <- vegdist(spp_cov_matrix[,-1],"bray")
+diss_mat <- as.matrix(bc_diss)
+bc_tree <- hclust(bc_diss)
+plot(bc_tree)
+```
+
+
+## Determine optimal number of clusters (scree plot)
+
+Devise a metric of the information in the clustering and compute it as you vary $K$.
+
+\scriptsize
+```{r}
+k.max<-20
+dpc <- sapply(1:k.max, function(k){
+    bc<-cutree(bc_tree, k)
+    sum(sapply(1:k, function(x) sum(diss_mat[bc==x,bc==x]) )) 
+  } )
+```
+```{r, echo=FALSE, fig.height=4}
+plot(1:k.max, dpc, type="b", pch = 19, frame = FALSE, 
+     xlab="Number of clusters K",
+     ylab="Sum within-clusters dissimilarities")
+```
+\normalsize
+
+There's an elbow at 6 clusters, so that's $K$.
+\scriptsize
+```{r}
+bc6<-cutree(bc_tree, k=6)
+```
+
+## Interpreting the clusters
+
+\scriptsize
+```{r}
+plot_groups <- tibble(Plot_ID = spp_cov_matrix$Plot_ID, bc_6 = bc6)
+plot_groups$bc_6 <- factor(plot_groups$bc_6)
+veg_data <- merge(veg_data, plot_groups)
+west_fork_trees <- droplevels(veg_data[veg_data$LifeForm=="Tree", ])
+west_fork_trees$Form <- factor(ifelse(grepl("POTR",west_fork_trees$Code),
+                                      "aspen", "conifer"))
+```
+```{r fig.height=4, echo=FALSE}
+ggplot(west_fork_trees, aes(x=bc_6,  y=Height, color=Type, size=Cover, shape=Form))+
+  geom_point(position = position_jitterdodge(),alpha=0.5)+ggtitle("Trees")+ scale_x_discrete(drop=FALSE)
+```
+\normalsize
+Having created this variable, it remains to determine what it means.
+
+## Geographic distribution of the groups
+
+```{r, echo=FALSE}
+climate71_00 <- read.csv("data/mean_71_00.csv")
+climate71_00 <- merge(climate71_00, plot_groups, by.x = "ID2", by.y = "Plot_ID")
+climate71_00 <- na.omit(climate71_00)
+ggplot(climate71_00, aes(x=Longitude, y=Latitude, color=bc_6))+geom_point()+
+  scale_color_discrete(drop=F, limits = levels(climate71_00$bc_6))+
+  labs(title="Community Type", color="")
+```
+
+
+## What plants make up the communities?
+
+We might be interested in what plants are specific to each community.
+\scriptsize
+```{r}
+get_codes <- function(x)unique(veg_data[veg_data$bc_6==x,]$Code)
+only_here <- 
+    function(x) {
+    onlyX <- get_codes(x)
+    for(i in setdiff(1:6,x)) {onlyX <- setdiff(onlyX, get_codes(i))}
+    onlyX}
+only_here(1)
+only_here(2)
+```
+## What plants are most common in each community?
+
+\scriptsize
+```{r}
+group_summary_plants <- veg_data %>% dplyr::group_by(bc_6) %>%
+  dplyr::summarise(num_sites = length(unique(Plot_ID)), 
+            num_species = length(unique(Code)),
+            burn_prop = sum(Type=="Burned")/num_sites,
+            most_com = tail(names(sort(table(Code))), 1),
+            second_com = tail(names(sort(table(Code))), 2)[1],
+            third_com = tail(names(sort(table(Code))), 3)[1])
+group_summary_plants
+```
+
+
+## Ordination
+
+With the data that are correlated rather than clustered, the goal is to find a new set of directions in which the data are uncorrelated.
+
+* Ordination produces a low-dimensional representation of a dataset. It finds a sequence of combinations of the variables that have maximal variance, and are mutually uncorrelated.
+* Apart from producing derived variables for use in supervised learning problems, ordination also serves as a tool for data visualization. For example, this is useful after clustering for plotting and interpreting results.
+
+## Principal Components Analysis (PCA)
+
+Here, I am closely following @islr.
+
+* The *first principal component* of a set of features $X_1, X_2,\ldots, X_p$ is the normalized linear combination
+$$
+Z_1 = \phi_{11} X_1 + \phi_{21} X_2 + \cdots + \phi_{p1} X_p
+$$
+that has the largest variance. By *normalized*, we mean that $\sum_{j=1}^p \phi_{j1} = 1$.
+
+* We refer to the elements $\phi_{11}, \ldots , \phi_{p1}$ as the loadings of the first principal component; together, the loadings make up
+the principal component loading vector, $\phi_1 = (\phi_{11} \phi_{21} \ldots \phi_{p1} )^t$.
+
+* The second principal component is the linear combination of $X_1, X_2,\ldots, X_p$ that has maximal variance among all linear combinations that are uncorrelated with $Z_1$.
+
+* Further principal components are defined similarly.
+
+## Computation of principal components 
+
+To compute the principal components, continuing with the notation from above, the data are a matrix $M=[x_{ij}]$ where $i$ denotes the observation and $j$ the variable. Assume that the column means are zero (data are centered).
+
+* The *singular value decomposition* factors the matrix into $M=U\Sigma V^t$ where $U$ and $V$ are orthogonal and $\Sigma$ is diagonal. 
+* The columns of $V$ are called the **principal directions**.
+* The columns of $U\Sigma$ are the **principal components**
+
+The details of this computation are probably not important, but in order to understand what is going on with ordination in general, it is useful to think in terms of linear algebra.
+
+## PCA example
+
+The plot of the observations and the variables on the axes defined by the principal components is called a biplot.
+
+\scriptsize
+```{r, fig.width=3, fig.height=3, warning=FALSE, message=FALSE, fig.}
+pca.climate <- prcomp(climate71_00[,-c(1:5,29)], scale = TRUE)
+library(ggbiplot) # library(devtools); install_github("ggbiplot")
+ggbiplot(pca.climate, obs.scale = 1, var.scale = 1, circle = TRUE,
+         groups = climate71_00$bc_6) + theme(text = element_text(size = 8))
+```
+
+## Interpreting the components
+
+When working with PCA, we are often most interested in the loadings (representations of the features in terms of the principal components)
+\scriptsize
+```{r}
+climate_basis <- pca.climate$rotation
+climate_basis[1:5,1:3]
+```
+\normalsize
+and the scores (representations of the observations)
+\scriptsize
+```{r}
+climate_obs <- as.data.frame(pca.climate$x)
+climate_obs[1:5,1:3]
+```
+
+## How many components?
+
+Similar to choosing the number of groups for clustering, choosing the number of principal components to retain can be done by looking for an elbow in a scree plot. 2 or 3 is probably good.
+\scriptsize
+```{r, fig.height=4}
+ggscreeplot(pca.climate)
+summary(pca.climate)$importance[,1:5]
+```
+
+## Extensions and other considerations
+
+* PCA assumes that the structure in the data is that of a normally distributed ellipsoidal point cloud, just one that's not lined up with the axes.
+* Other techniques allow for different structures in data. This is an area that is not far from the frontiers of statistics.
+* One area that has not been much investigated by ecologists and may have some low-hanging fruit is *topological data analysis*.
+
+## References

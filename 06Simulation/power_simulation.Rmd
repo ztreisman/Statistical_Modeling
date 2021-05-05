@@ -1,0 +1,303 @@
+---
+title: "Power and Simulation"
+output: 
+  html_document:
+    highlight: tango
+    theme: readable
+    toc: true
+    toc_float: true
+bibliography: "../bibliography.bib"   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(global.par = TRUE)
+```
+
+```{r message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(pwr)
+library(paramtest)
+```
+
+## Overview
+
+Power calculations are an important part of study design, but power calculations based on all but relatively simple statistical models can be horribly complicated or even impossible. Simulation allows one to avoid these complicated or impossible calculations with a bit of programming.
+
+## Power calculations that can be done analytically
+
+Some power calculations can be solved with calculus. For these, there are off the shelf functions for computing power. Without loading any packages, you can use `power.t.test`, `power.prop.test` and `power.anova.test`. The `pwr` package gives a few more tools, such as `pwr.f2.test` for linear models. 
+
+For a first example, we'll look at a $t$-test. An key step in setting up a power calculation is determining effect size. (Power calculations can also be used to determine effect size if all other parameters are known, but this is less frequently done.) The effect size for a $t$-test used by `pwr.t.test` is the difference in means divided by the pooled standard deviation, known as Cohen's $d$, after @cohen.
+
+$$
+d=\frac{\mu_a-\mu_b}{\sigma_{pooled}}, \quad \sigma_{pooled}=\sqrt{\frac{(n_a-1)\sigma_a^2+(n_b-1)\sigma_b^2}{(n_a-1)+(n_b-1)}}
+$$
+To use any of the standard functions for computing power, specify the parameters you wish to fix, and the function will compute the one you leave unspecified. (Default significance level is 0.05, this does not have to be specified. If you want to compute the significance level where a certain power is achieved with fixed sample and effect sizes, you have to explicitly specify `sig.level=NULL`.) 
+
+Compute the required sample size for a $t$-test with an effect size of 1 and a desired power of 80%.
+
+```{r}
+tpow<-pwr.t.test(d=1, power = 0.8)
+tpow
+```
+
+We can also plot the result of this test, giving a bit more information about how our parameter of interest (sample size) affects the power.
+```{r}
+plot(tpow)
+```
+
+## Simulating a $t$-test
+
+To see how to use simulation to compute power, we can simulate to confirm this result. 
+```{r}
+d <- 1 #effect size
+N <- 17 #number per group
+num_sim <- 5000 #number of t tests to simulate
+sig <- logical(num_sim) #initialize
+for(i in 1:num_sim){
+  sim <- data.frame(group = c(rep("a",N), rep("b",N)), #simulate data
+                    value = c(rnorm(N,0,1), rnorm(N,d,1)))
+  ttest <- t.test(value~group, data=sim) #test for difference
+  p <- ttest$p.value #extract p value
+  sig[i] <- (p < 0.05) #record significance
+}
+cat("power =",mean(sig)) #compute and report power
+```
+
+This is quite close to the claimed power of 80%. If we want to find the sample size $N=17$ that gives this power, as we did using the analytic test above, we can run a series of simulations with increasing sample size until a power of 80% is reached. Be advised, this can take a while (about a minute on my machine for the following code). If you have a slower computer, you might try decreasing the number of simulations of the target power before you run the following code.
+
+```{r}
+d <- 1 #effect size
+num_sim <- 5000 #number of t tests to simulate for each N
+pow <- 0 #initialize power
+N <- 1 #initialize sample size
+while(pow<0.8){
+  N <- N+1 #increment sample size
+  sig <- logical(num_sim) #initialize significance
+  for(i in 1:num_sim){
+    sim <- data.frame(group = c(rep("a",N), rep("b",N)), #simulate data
+                      value = c(rnorm(N,0,1), rnorm(N,d,1)))
+    ttest <- t.test(value~group, data=sim) #test for difference
+    p <- ttest$p.value #extract p value
+    sig[i] <- (p < 0.05) #record significance
+  }
+  pow <- mean(sig) #compute power
+}
+cat("sample size =",N) #report result
+```
+### Using the `paramtest` package
+
+Simulating can be made a bit easier by using the `paramtest` package. The code that follows is taken from the `paramtest` vignette *Simulating Power*. Run `vignette("Simulating-Power")` to see the entire vignette.
+
+First we create a function that generates random data based on parameters and then tests those generated data.
+
+```{r}
+# create user-defined function to generate and analyze data
+t_func <- function(simNum, N, d) {
+    x1 <- rnorm(N, 0, 1)
+    x2 <- rnorm(N, d, 1)
+    
+    t <- t.test(x1, x2, var.equal=TRUE)  # run t-test on generated data
+    stat <- t$statistic
+    p <- t$p.value
+
+    return(c(t=stat, p=p, sig=(p < .05)))
+        # return a named vector with the results we want to keep
+}
+```
+
+Now we can use the `run_test` function to do the simulation.
+```{r}
+power_ttest <- run_test(t_func, n.iter=5000, 
+                        output='data.frame', N=17, d=1)  # simulate data
+results(power_ttest) %>%
+    summarise(power=mean(sig))
+```
+
+A great advantage of the `paramtest` package is the ability to vary parameters with the `grid_search` and `random_search` commands.
+
+```{r}
+# give 'params' a list of parameters we want to vary;
+# testing at sample sizes from 5, 10, 15 and 20.
+power_ttest_vary <- grid_search(t_func, params=list(N=c(5,10,15,20)),
+    n.iter=5000, output='data.frame', d=1)
+results(power_ttest_vary) %>%
+    group_by(N.test) %>%
+    summarise(power=mean(sig))
+```
+
+Another advantage is that if we want to vary across two separate parameters, that is easy to do as well:
+
+```{r}
+# varying N and Cohen's d
+power_ttest_vary2 <- grid_search(t_func, params=list(N=c(25, 50, 100), 
+                                                     d=c(.2, .5)),
+    n.iter=5000, output='data.frame')
+power <- results(power_ttest_vary2) %>%
+    group_by(N.test, d.test) %>%
+    summarise(power=mean(sig))
+print(power)
+ggplot(power, aes(x=N.test, y=power, 
+                  group=factor(d.test), color=factor(d.test))) +
+    geom_point() +
+    geom_line() +
+    ylim(c(0, 1)) +
+    labs(x='Sample Size', y='Power', colour="Cohen's d") +
+    theme_minimal()
+```
+
+(@) The `pwr.f2.test` function can be used to compute the power for a linear model. Parameters are $u$, the number of predictors and $v$, the sample size less the number of coefficients, including the intercept. So a model with formula `y~x1+x2` built with 100 data points would have $u=2$ and $v=97$. In general, to find sample size compute $u+v+1$ and round up to the next whole number. The measure of effect size is `f2` and it is the ratio of variance explained by predictors to variance not explained by predictors:
+$$
+f^2=\frac{R^2}{1-R^2}
+$$
+Find the sample size needed to detect a linear effect with an $R^2$ of 0.5 with a power of 80%, in the scenario with two predictors: $\hat y=\beta_0+\beta_1x_1+\beta_2x_2$.
+
+(@) Hopefully your answer to the above question was 14. Examples of linear models with a mean of about 0.5 for $R^2$ can be created by setting $\beta_1=0.7$ and the residual variance to $1-\beta_1^2$.
+```{r eval=FALSE}
+b0 <- 0
+b1 <- 0.7
+x <- rnorm(N, 0, 1)
+y <- rnorm(N, b0 + b1*x, sqrt(1 - b1^2))
+lm(y~x)
+```
+This can be used with `grid_search` to confirm the `pwr.f2.test` computation using simulation. The following function (adapted from the same vignette) creates simulated data for $x$ and $y$ and tests the linear relationship between them.
+```{r eval=FALSE}
+lm_test <- function(simNum, N, b1, b0=0, xm=0, xsd=1) {
+    x <- rnorm(N, xm, xsd)
+    y <- rnorm(N, b0 + b1*x, sqrt(1 - b1^2))  # var. approx. 1 after accounting
+                                              # for explained variance by x
+    model <- lm(y ~ x)
+
+    # pull output from model
+    est <- coef(summary(model))['x', 'Estimate']
+    se <- coef(summary(model))['x', 'Std. Error']
+    p <- coef(summary(model))['x', 'Pr(>|t|)'] 
+    r2 <- summary(model)$r.squared
+    f2 <- r2/(1-r2)
+
+    return(c(b1=b1, xm=mean(x), xsd=sd(x), ym=mean(y), ysd=sd(y), est=est, 
+             se=se, p=p, r2=r2, f2=f2, sig=(p < .05)))
+}
+```
+Use this and the `grid_search` function to confirm that a slope of 0.7 does lead to a $R^2$ of approximately 0.5, and that in this case, a sample size of 14 provides sufficient power. (Warning, this can take a minute or two to run.)
+```{r eval=FALSE}
+power_lm <- grid_search(lm_test, params=list(N=13:15, b1=c(0.6,0.7,0.8)), 
+                        n.iter=5000, output='data.frame')
+results(power_lm) %>%
+    group_by(N.test, b1) %>%
+    summarise(power=mean(sig),
+              r2 = mean(r2))
+```
+
+## Power calculations in more complicated scenarios
+
+Since most real world data doesn't fit perfectly into classical statistical analysis, it's great to be able to compute power by simulation in order to design a study.
+
+Consider the pigweed example from the lecture. Here is the code that randomly generates and computes a total seed set for a plot, encapsulated in a function.
+```{r}
+pigweed_seeds <- function(L=30, 
+                         nparents=50, offspr_per_parent = 10, dispdist=2,
+                         M=2.3, alpha=0.49,
+                         b = 271.6, k = 0.569){
+
+  parent_x = runif(nparents,min=0,max=L) 
+  parent_y = runif(nparents,min=0,max=L)
+  noffspr = nparents*offspr_per_parent
+  angle = runif(noffspr,min=0,max=2*pi) 
+  dist = rexp(noffspr,1/dispdist)
+
+  offspr_x = rep(parent_x,each=offspr_per_parent)+cos(angle)*dist
+  offspr_y = rep(parent_y,each=offspr_per_parent)+sin(angle)*dist
+  pos <- cbind(offspr_x,offspr_y); ndist <- as.matrix(dist(pos))
+
+  nbrcrowd = rowSums(ndist<2)-1 
+  ci = nbrcrowd*3 
+  
+  mass_det=M/(1+ci)
+  mass = rgamma(length(mass_det),scale=mass_det,shape=alpha)
+  
+  seed_det <- b*mass
+  seed <- rnbinom(length(seed_det),mu=seed_det,size=k)
+  
+  total_seeds <- sum(seed)
+  return(total_seeds)
+}
+```
+
+Calling this function runs a simulation and reports the total number of seeds in the simulation.
+```{r}
+pigweed_seeds()
+```
+(@) This function is missing the comments from the lecture, which you may wish to expand on. Comment the code above defining `pigweed_seeds` to describe what each part of the model is doing.
+
+To create a distribution of the expected seed set under these assumptions, we can just call this function in a `for` loop and record the output.
+
+```{r}
+num_sim <- 10000
+expected_seeds <- numeric(num_sim)
+for(i in 1:num_sim){
+  expected_seeds[i] <- pigweed_seeds()
+}
+```
+
+Now we can use this distribution to test if a seed set is unexpectedly large or small based on this model. Writing this test into a function designed to work with `paramtest` will allow us to compute power. We'll include $M$ and $b$ as adjustable parameters, since these have more clear biological meaning in terms of plant mass and seed production. 
+
+```{r}
+pigweed_test <- function(simNum, M=2.3, b=271.6){
+  test_seeds <- pigweed_seeds(M=M, b=b)
+  p_greater <- mean(test_seeds < expected_seeds)
+  p_less <- mean(test_seeds > expected_seeds)
+  sig <- (2*p_greater<0.05)|(2*p_less<0.05)
+  
+  return(c(sig=sig, p_greater=p_greater, p_less=p_less))
+}
+```
+
+Calling `pigweed_test` allows us to compare a plot with potentially alternate values of $M$ and $b$ to the expectation based on the model. For example, if the mass coefficient was increased to 3 and the seed production coefficient decreased to 250, we might see the following scenario, where approximately 80% of the plots in the simulated distribution have fewer seeds than the randomly generated test plot. 
+```{r echo=FALSE}
+set.seed(333)
+```
+
+```{r}
+pigweed_test(M=3, b=250)
+```
+To evaluate the power of experiments where we create test plots with pigweed variants having different values of $M$ and $b$, we can use `grid_search`. We'll only run 500 tests per combination of variables, since each test involves a simulation.
+
+```{r}
+power_pigweed_test <- grid_search(pigweed_test, 
+                                  params = list(M=c(2,2.3,3), 
+                                                b=c(200,271.6,300)), 
+                                  n.iter=500, output = 'data.frame')
+results(power_pigweed_test) %>%
+  group_by(M.test, b.test) %>%
+  summarise(power=mean(sig))
+```
+
+Apparently, these parameter shifts are not large enough to generate significant change in seed production very often. 
+
+(@) Using the tools we have developed, determine values of $M$ and $b$ that would be likely (power over 50%) to produce plots with significantly different seed production.
+
+## More Practice
+
+(@) The `lm_test` function above can be rewritten for a binomial glm:
+```{r}
+binom_glm_test <- function(simNum, N, b1, b0=1, xm=0, xsd=1) {
+  x <- rnorm(N, xm, xsd)
+  y <- rbinom(N, size=1, prob = plogis(b0 + b1*x))
+  model <- glm(y ~ x, family = binomial)
+  
+  # pull output from model
+  est <- coef(summary(model))['x', 'Estimate']
+  se <- coef(summary(model))['x', 'Std. Error']
+  p <- coef(summary(model))['x', 'Pr(>|z|)']
+  
+  return(c(xm=mean(x), xsd=sd(x), 
+           est=est, se=se, p=p, 
+           sig=(p < .05)))
+}
+```
+Effect size can be parameterized by the coefficient of $x$ in this model. Determine the sample size needed for 80% power if $\beta_1=1$.
+
+## References

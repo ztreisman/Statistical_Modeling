@@ -1,0 +1,107 @@
+---
+title: "Unsupervised Learning"
+output: 
+  html_document:
+    highlight: tango
+    theme: readable
+    toc: true
+    toc_float: true
+bibliography: "../bibliography.bib"   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(global.par = TRUE)
+```
+
+```{r message=FALSE}
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(vegan)
+#library(ggbiplot)  Generates headaches, so probably skip it
+```
+
+## Overview
+
+We'll return to some of the data that we looked at earlier in the semester: Jennie DeMarco's plant data, and Derek Houston's fish.
+
+## Dr. DeMarco's Plants
+
+In our first R lab, you cleaned and transformed data about plant communities in Siberian Larch forests. Here is the code that you ran in that lab to create a matrix of plots and plant counts at those plots. The namespaced commands (eg. `dplyr::group_by`) are needed because `ggbiplot` needs a package that also has commands with these names.
+
+```{r, warning=FALSE, message=FALSE}
+plants <- read.csv("data/Siberia_plant_data.csv")
+plants$transect <- factor(plants$transect)
+plants[plants$month == "June",]$month <- "june"
+plants[plants$month == "July",]$month <- "july"
+plants <- droplevels(plants) 
+plants$first_hit<-!is.na(plants$first_hit)
+plants$ground_cover <- factor(trimws(tolower(plants$ground_cover)))
+plants$species <- factor(trimws(plants$species))
+plant_plots <- plants %>%  
+  dplyr::group_by(site, treatment, plot, Func_group) %>%
+  dplyr::summarize(hits = sum(hits_count),
+            pins = n()) 
+plant_plot_matrix <- plants %>% 
+  dplyr::group_by(plot, Func_group) %>%
+  dplyr::summarise(hits = sum(hits_count)) %>% 
+  pivot_wider(names_from = Func_group, 
+              values_from = hits,
+              values_fill = list(hits = 0))
+plant_plot_matrix <- na.omit(plant_plot_matrix)
+```
+
+One visualization that can be useful for clustering is a heatmap. In fact R automatically does heirarchical clustering to draw the graphic.
+
+```{r}
+heatmap(as.matrix(plant_plot_matrix[,-1]))
+```
+
+To perform hierarchical clustering with 2 groups, we can do the following.
+
+```{r}
+plant_count_2<-cutree(hclust(dist(plant_plot_matrix[,-1])), k=2)
+```
+
+(@) Investigate these two groups. Can you describe them in terms of the plants present in each?
+
+Often the euclidean distance is not the most useful for clustering. The manhattan or Bray-Curtis distances can be used instead with the following code.
+
+```{r}
+plant_count_2m <- cutree(hclust(dist(plant_plot_matrix[,-1], method = "manhattan")), k=2)
+plant_count_2b <- cutree(hclust(vegdist(plant_plot_matrix[,-1],"bray")), k=2)
+```
+
+(@) Are there noticeable differences in the groupings that these other metrics have created?
+
+The code from the slides that I used to determine the optimal number of groups is below.
+
+```{r}
+bc_diss <- vegdist(plant_plot_matrix[,-1],"bray")
+diss_mat <- as.matrix(bc_diss)
+bc_tree <- hclust(bc_diss)
+k.max<-10
+dpc <- sapply(1:k.max, function(k){
+  bc<-cutree(bc_tree, k)
+  sum(sapply(1:k, function(x) sum(diss_mat[bc==x,bc==x]) ))
+} )
+plot(1:k.max, dpc, type="b", pch = 19, frame = FALSE, 
+     xlab="Number of clusters K",
+     ylab="Sum within-clusters dissimilarities")
+```
+
+(@) Develop a grouping variable that you can use to classify the sites. Choose a distance function and a number of groups. Can you say anything about the plant communities in described in your grouping?
+
+## Dr. Houston's fish
+
+Revisit the Regression and ANOVA lab. In the paper @houston it is commented that "We analyzed gain in length and gain in mass separately and the results were similar, so we used principal components analysis (PCA) to combine gain in length and gain in mass into a common growth variable for the final analysis. The first principal component (PC1) explained 97.6% of the variation in growth, so we used PC1 as the response variable."
+
+(@) See if you can replicate this finding, that PC1 explains 97.6% of the variation in growth, and then build a model, as you did in the original lab but using PC1 instead of mass or length as a predictor. You will want to compute differences in mass and length, and then perform PCA on the differences.
+
+```{r}
+shiners <- read.csv("data/redside_shiner.csv")
+shiners <- na.omit(shiners)
+shiners$temp <- factor(shiners$temp)
+```
+

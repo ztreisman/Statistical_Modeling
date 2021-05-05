@@ -1,0 +1,834 @@
+month,day,year,region,site,burn_year,transect,plot,book,species,height_cm,basal_diameter_cm,age,safe_site,radius_m,area_sampled_m2,notes
+june,25,2018,Cherskiy,CN,2001,1,-50,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2018,Cherskiy,CN,2001,1,-25,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2018,Cherskiy,CN,2001,1,25,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2018,Cherskiy,CN,2001,1,50,Siberia_2018_1,Larix cajanderi,19.7,0.578,3,no,2,12.5663706143592,NA
+june,25,2018,Cherskiy,CN,2001,1,50,Siberia_2018_1,Larix cajanderi,20.2,0.321,3,no,2,12.5663706143592,NA
+june,25,2018,Cherskiy,CN,2001,1,50,Siberia_2018_1,Larix cajanderi,13.7,0.179,2,no,2,12.5663706143592,NA
+june,25,2018,Cherskiy,CN,2001,1,50,Siberia_2018_1,Larix cajanderi,2.6,0.059,1,no,2,12.5663706143592,NA
+june,25,2018,Cherskiy,CN,2001,1,50,Siberia_2018_1,Larix cajanderi,16,0.32,4,no,2,12.5663706143592,NA
+june,25,2018,Cherskiy,CN,2001,1,75,Siberia_2018_1,Larix cajanderi,10,0.18,4,no,2,12.5663706143592,age from core
+june,25,2018,Cherskiy,CN,2001,1,75,Siberia_2018_1,Larix cajanderi,104,2,12,no,2,12.5663706143592,age from core
+june,25,2018,Cherskiy,CN,2001,1,75,Siberia_2018_1,Larix cajanderi,330,4.25,11,no,2,12.5663706143592,age from core
+june,25,2018,Cherskiy,CN,2001,1,75,Siberia_2018_1,Larix cajanderi,115,1.8,9,no,2,12.5663706143592,age from core
+june,25,2018,Cherskiy,CN,2001,1,100,Siberia_2018_1,Larix cajanderi,240,3.5,11,no,2,12.5663706143592,age from core
+june,25,2018,Cherskiy,CN,2001,1,100,Siberia_2018_1,Larix cajanderi,35,0.6,5,no,2,12.5663706143592,age from core
+june,25,2018,Cherskiy,CN,2001,1,100,Siberia_2018_1,Larix cajanderi,95,1.33,7,no,2,12.5663706143592,age from core
+june,25,2018,Cherskiy,CN,2001,1,100,Siberia_2018_1,Larix cajanderi,55,0.7,5,no,2,12.5663706143592,age from core
+june,25,2018,Cherskiy,CN,2001,1,100,Siberia_2018_1,Larix cajanderi,40,0.7,5,no,2,12.5663706143592,top dead; age from core
+june,25,2018,Cherskiy,CN,2001,1,150,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2018,Cherskiy,CN,2001,1,200,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,29,2018,Cherskiy,Gonzo,2001,1,-50,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,29,2018,Cherskiy,Gonzo,2001,1,-25,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,29,2018,Cherskiy,Gonzo,2001,1,25,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,29,2018,Cherskiy,Gonzo,2001,1,50,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,29,2018,Cherskiy,Gonzo,2001,1,75,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,29,2018,Cherskiy,Gonzo,2001,1,100,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,29,2018,Cherskiy,Gonzo,2001,1,150,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,29,2018,Cherskiy,Gonzo,2001,1,200,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,29,2018,Cherskiy,Gonzo,2001,2,-35,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,29,2018,Cherskiy,Gonzo,2001,2,-15,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,29,2018,Cherskiy,Gonzo,2001,2,25,Siberia_2018_1,Larix cajanderi,250,2.8,7,no,2,12.5663706143592,seedling ages obtained in field -  32 seedlings were growing clumped together in a 10x10 cm area! 
+june,29,2018,Cherskiy,Gonzo,2001,2,25,Siberia_2018_1,Larix cajanderi,150,1.6,6,no,2,12.5663706143592,seedling ages obtained in field -  32 seedlings were growing clumped together in a 10x10 cm area! 
+june,29,2018,Cherskiy,Gonzo,2001,2,25,Siberia_2018_1,Larix cajanderi,20,0.1,3,no,2,12.5663706143592,seedling ages obtained in field -  32 seedlings were growing clumped together in a 10x10 cm area! 
+june,29,2018,Cherskiy,Gonzo,2001,2,25,Siberia_2018_1,Larix cajanderi,20,0.1,3,no,2,12.5663706143592,seedling ages obtained in field -  32 seedlings were growing clumped together in a 10x10 cm area! 
+june,29,2018,Cherskiy,Gonzo,2001,2,25,Siberia_2018_1,Larix cajanderi,240,2.3,8,no,2,12.5663706143592,seedling ages obtained in field -  32 seedlings were growing clumped together in a 10x10 cm area! 
+june,29,2018,Cherskiy,Gonzo,2001,2,50,Siberia_2018_1,Larix cajanderi,90,1.2,6,no,2,12.5663706143592,NA
+june,29,2018,Cherskiy,Gonzo,2001,2,75,Siberia_2018_1,Larix cajanderi,65,0.58,3,no,2,12.5663706143592,NA
+june,29,2018,Cherskiy,Gonzo,2001,2,75,Siberia_2018_1,Larix cajanderi,50,0.8,3,no,2,12.5663706143592,NA
+june,29,2018,Cherskiy,Gonzo,2001,2,75,Siberia_2018_1,Larix cajanderi,180,3,9,no,2,12.5663706143592,NA
+june,29,2018,Cherskiy,Gonzo,2001,2,75,Siberia_2018_1,Larix cajanderi,170,2.2,9,no,2,12.5663706143592,NA
+june,29,2018,Cherskiy,Gonzo,2001,2,75,Siberia_2018_1,Larix cajanderi,65,0.62,3,no,2,12.5663706143592,NA
+june,29,2018,Cherskiy,Gonzo,2001,2,100,Siberia_2018_1,Larix cajanderi,190,1.35,9,no,2,12.5663706143592,NA
+june,29,2018,Cherskiy,Gonzo,2001,2,150,Siberia_2018_1,Larix cajanderi,70,1.2,7,no,2,12.5663706143592,NA
+june,29,2018,Cherskiy,Gonzo,2001,2,200,Siberia_2018_1,Larix cajanderi,15,0.2,2,no,2,12.5663706143592,NA
+june,29,2018,Cherskiy,Gonzo,2001,2,200,Siberia_2018_1,Larix cajanderi,24,0.3,3,no,2,12.5663706143592,NA
+june,29,2018,Cherskiy,Gonzo,2001,2,200,Siberia_2018_1,Larix cajanderi,21,0.7,3,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,-75,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,30,2018,Cherskiy,Gonzo,2001,3,-50,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,30,2018,Cherskiy,Gonzo,2001,3,25,Siberia_2018_1,Larix cajanderi,75,0.95,6,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,25,Siberia_2018_1,Larix cajanderi,18,0.3,3,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,25,Siberia_2018_1,Larix cajanderi,18,0.09,3,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,25,Siberia_2018_1,Larix cajanderi,6,0.08,2,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,25,Siberia_2018_1,Larix cajanderi,6,0.08,2,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,50,Siberia_2018_1,Larix cajanderi,37,0.87,5,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,50,Siberia_2018_1,Larix cajanderi,45,0.75,4,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,50,Siberia_2018_1,Larix cajanderi,57,0.9,6,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,50,Siberia_2018_1,Larix cajanderi,55,0.85,5,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,50,Siberia_2018_1,Larix cajanderi,100,1.2,9,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,75,Siberia_2018_1,Larix cajanderi,10,0.15,2,no,2,12.5663706143592,only 3 recruits measured even though 5 total recruits
+june,30,2018,Cherskiy,Gonzo,2001,3,75,Siberia_2018_1,Larix cajanderi,11,0.25,2,no,2,12.5663706143592,only 3 recruits measured even though 5 total recruits
+june,30,2018,Cherskiy,Gonzo,2001,3,75,Siberia_2018_1,Larix cajanderi,18,0.32,3,no,2,12.5663706143592,only 3 recruits measured even though 5 total recruits
+june,30,2018,Cherskiy,Gonzo,2001,3,100,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,30,2018,Cherskiy,Gonzo,2001,3,150,Siberia_2018_1,Larix cajanderi,70,1,2,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,150,Siberia_2018_1,Larix cajanderi,90,1.1,1,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,150,Siberia_2018_1,Larix cajanderi,80,1.3,8,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,200,Siberia_2018_1,Larix cajanderi,35,0.62,3,no,2,12.5663706143592,NA
+june,30,2018,Cherskiy,Gonzo,2001,3,200,Siberia_2018_1,Larix cajanderi,190,2.35,10.5,no,2,12.5663706143592,Age is listed as 10-11 years and enterred as 10.5
+june,30,2018,Cherskiy,FU,2015,1,-35,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,30,2018,Cherskiy,FU,2015,1,-15,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,1,2018,Cherskiy,FU,2015,2,-60,Siberia_2018_1,Larix cajanderi,5,0.11,2,no,2,12.5663706143592,lots of recruits - open mossy area with few shrubs
+july,1,2018,Cherskiy,FU,2015,2,-60,Siberia_2018_1,Larix cajanderi,5,0.1,2,no,2,12.5663706143592,lots of recruits - open mossy area with few shrubs
+july,1,2018,Cherskiy,FU,2015,2,-60,Siberia_2018_1,Larix cajanderi,6,0.14,2,no,2,12.5663706143592,lots of recruits - open mossy area with few shrubs
+july,1,2018,Cherskiy,FU,2015,2,-60,Siberia_2018_1,Larix cajanderi,5,0.08,2,no,2,12.5663706143592,lots of recruits - open mossy area with few shrubs
+july,1,2018,Cherskiy,FU,2015,2,-60,Siberia_2018_1,Larix cajanderi,5,0.01,2,no,2,12.5663706143592,lots of recruits - open mossy area with few shrubs
+july,1,2018,Cherskiy,FU,2015,2,-35,Siberia_2018_1,Larix cajanderi,10,0.15,4,woody_debris,2,12.5663706143592,NA
+july,1,2018,Cherskiy,FU,2015,2,25,Siberia_2018_1,Larix cajanderi,3,0.07,1,no,2,12.5663706143592,NA
+july,1,2018,Cherskiy,FU,2015,2,50,Siberia_2018_1,Larix cajanderi,3,0.06,1,no,2,12.5663706143592,NA
+july,1,2018,Cherskiy,FU,2015,2,50,Siberia_2018_1,Larix cajanderi,4,0.13,2,no,2,12.5663706143592,NA
+july,1,2018,Cherskiy,FU,2015,2,50,Siberia_2018_1,Larix cajanderi,7,0.12,3,no,2,12.5663706143592,NA
+july,1,2018,Cherskiy,FU,2015,2,75,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,1,2018,Cherskiy,FU,2015,2,100,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,1,2018,Cherskiy,FU,2015,2,150,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,1,2018,Cherskiy,FU,2015,2,200,Siberia_2018_1,Larix cajanderi,1,0.05,1,hummock,1,3.14159265358979,NA
+july,1,2018,Cherskiy,FU,2015,2,200,Siberia_2018_1,Larix cajanderi,1,0.05,1,hummock,1,3.14159265358979,NA
+july,1,2018,Cherskiy,FU,2015,3,-50,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,1,2018,Cherskiy,FU,2015,3,-25,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,1,2018,Cherskiy,FU,2015,3,25,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits; impossible to search larger area for seedlings with all the grass
+july,1,2018,Cherskiy,FU,2015,3,50,Siberia_2018_1,Larix cajanderi,0.5,0.06,1,no,1,3.14159265358979,NA
+july,1,2018,Cherskiy,FU,2015,3,50,Siberia_2018_1,Larix cajanderi,1,0.07,1,no,1,3.14159265358979,NA
+july,1,2018,Cherskiy,FU,2015,3,50,Siberia_2018_1,Larix cajanderi,0.5,0.06,1,no,1,3.14159265358979,NA
+july,1,2018,Cherskiy,FU,2015,3,50,Siberia_2018_1,Larix cajanderi,0.4,0.03,1,no,1,3.14159265358979,NA
+july,1,2018,Cherskiy,FU,2015,3,50,Siberia_2018_1,Larix cajanderi,0.1,0.01,1,no,1,3.14159265358979,NA
+july,1,2018,Cherskiy,FU,2015,3,75,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,1,2018,Cherskiy,FU,2015,3,100,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,1,2018,Cherskiy,FU,2015,3,150,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,1,2018,Cherskiy,FU,2015,3,200,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,2,2018,Cherskiy,FOC,2015,1,-15a,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,2,2018,Cherskiy,FOC,2015,1,-15b,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits; radius not specified and assumed to be 1m
+july,2,2018,Cherskiy,FOC,2015,1,25,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,2,2018,Cherskiy,FOC,2015,1,50,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,2,2018,Cherskiy,FOC,2015,1,75,Siberia_2018_1,Larix cajanderi,2,0.03,1,no_open_moss,1,3.14159265358979,NA
+july,2,2018,Cherskiy,FOC,2015,1,100,Siberia_2018_1,Larix cajanderi,1,0.02,1,no_open_moss,1,3.14159265358979,NA
+july,2,2018,Cherskiy,FOC,2015,1,150,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,2,2018,Cherskiy,FOC,2015,1,200,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,2,2018,Cherskiy,FOC,2015,2,-50,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,2,2018,Cherskiy,FOC,2015,2,-25,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits; radius not specified and assumed to be 1m
+july,2,2018,Cherskiy,FOC,2015,2,25,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,2,2018,Cherskiy,FOC,2015,2,50,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,2,2018,Cherskiy,FOC,2015,2,75,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits; radius not specified and assumed to be 1m
+july,2,2018,Cherskiy,FOC,2015,2,100,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits; radius not specified and assumed to be 1m
+july,2,2018,Cherskiy,FOC,2015,2,150,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,2,2018,Cherskiy,FOC,2015,2,200,Siberia_2018_1,Larix cajanderi,10,0.27,3,tussock,1,3.14159265358979,NA
+july,3,2018,Cherskiy,Shark,2010,1,-25a,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits; radius not specified and assumed to be 1m
+july,3,2018,Cherskiy,Shark,2010,1,-25b,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,1,3.14159265358979,zero recruits
+july,3,2018,Cherskiy,Shark,2010,1,25,Siberia_2018_1,Larix cajanderi,20.9,0.38,4,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,1,25,Siberia_2018_1,Larix cajanderi,10.1,0.2,3,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,1,50,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; radius not specified and assumed to be 2 m
+july,3,2018,Cherskiy,Shark,2010,1,75,Siberia_2018_1,Larix cajanderi,37,0.58,4,no,2,12.5663706143592,only 3 recruits measured even though 5 total recruits
+july,3,2018,Cherskiy,Shark,2010,1,75,Siberia_2018_1,Larix cajanderi,25,0.29,3,no,2,12.5663706143592,only 3 recruits measured even though 5 total recruits
+july,3,2018,Cherskiy,Shark,2010,1,75,Siberia_2018_1,Larix cajanderi,46,0.59,4,no,2,12.5663706143592,only 3 recruits measured even though 5 total recruits
+july,3,2018,Cherskiy,Shark,2010,1,100,Siberia_2018_1,Larix cajanderi,29,0.3,3,TT,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,1,100,Siberia_2018_1,Larix cajanderi,25,0.28,3,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,1,100,Siberia_2018_1,Larix cajanderi,15,0.2,3,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,1,100,Siberia_2018_1,Larix cajanderi,16,0.47,3,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,2,-50,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; radius not specified and assumed to be 2 m
+july,3,2018,Cherskiy,Shark,2010,2,-25,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; radius not specified and assumed to be 2 m
+july,3,2018,Cherskiy,Shark,2010,2,25,Siberia_2018_1,Larix cajanderi,11,0.15,3,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,2,25,Siberia_2018_1,Larix cajanderi,4,0.09,2,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,2,25,Siberia_2018_1,Larix cajanderi,26,0.31,3,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,2,25,Siberia_2018_1,Larix cajanderi,12,0.14,3,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,2,25,Siberia_2018_1,Larix cajanderi,8,0.08,2,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,2,50,Siberia_2018_1,Larix cajanderi,5,0.08,2,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,2,50,Siberia_2018_1,Larix cajanderi,15,0.25,3,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,-50,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; radius not specified and assumed to be 2 m
+july,3,2018,Cherskiy,Shark,2010,3,-25,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; radius not specified and assumed to be 2 m
+july,3,2018,Cherskiy,Shark,2010,3,25,Siberia_2018_1,Larix cajanderi,67,0.6,4,no_open_moss,1/2 of 1m radius,1.5707963267949,NA
+july,3,2018,Cherskiy,Shark,2010,3,25,Siberia_2018_1,Larix cajanderi,8.5,0.1,3,no,1/2 of 1m radius,1.5707963267949,NA
+july,3,2018,Cherskiy,Shark,2010,3,25,Siberia_2018_1,Larix cajanderi,30,0.35,4,no,1/2 of 1m radius,1.5707963267949,NA
+july,3,2018,Cherskiy,Shark,2010,3,25,Siberia_2018_1,Larix cajanderi,23,0.3,4,no,1/2 of 1m radius,1.5707963267949,NA
+july,3,2018,Cherskiy,Shark,2010,3,25,Siberia_2018_1,Larix cajanderi,12,0.21,4,no,1/2 of 1m radius,1.5707963267949,NA
+july,3,2018,Cherskiy,Shark,2010,3,50,Siberia_2018_1,Larix cajanderi,15,0.15,3,no,1,3.14159265358979,NA
+july,3,2018,Cherskiy,Shark,2010,3,50,Siberia_2018_1,Larix cajanderi,20.5,0.34,3,no,1,3.14159265358979,NA
+july,3,2018,Cherskiy,Shark,2010,3,50,Siberia_2018_1,Larix cajanderi,30,0.32,5,no,1,3.14159265358979,NA
+july,3,2018,Cherskiy,Shark,2010,3,50,Siberia_2018_1,Larix cajanderi,43,0.45,5,no,1,3.14159265358979,NA
+july,3,2018,Cherskiy,Shark,2010,3,50,Siberia_2018_1,Larix cajanderi,27,0.2,4,no,1,3.14159265358979,NA
+july,3,2018,Cherskiy,Shark,2010,3,75,Siberia_2018_1,Larix cajanderi,11.5,0.1,4,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,75,Siberia_2018_1,Larix cajanderi,15.5,0.08,4,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,75,Siberia_2018_1,Larix cajanderi,23,0.21,4,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,75,Siberia_2018_1,Larix cajanderi,17,0.16,4,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,75,Siberia_2018_1,Larix cajanderi,24,0.32,4,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,100,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,3,2018,Cherskiy,Shark,2010,3,150,Siberia_2018_1,Larix cajanderi,37,0.6,4,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,150,Siberia_2018_1,Larix cajanderi,32,0.38,4,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,150,Siberia_2018_1,Larix cajanderi,20,0.23,4,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,150,Siberia_2018_1,Larix cajanderi,21,0.45,4,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,150,Siberia_2018_1,Larix cajanderi,10,0.2,3,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,200,Siberia_2018_1,Larix cajanderi,22,0.58,4,no,1,3.14159265358979,NA
+july,3,2018,Cherskiy,Shark,2010,3,200,Siberia_2018_1,Larix cajanderi,30,0.44,4,no,1,3.14159265358979,NA
+july,3,2018,Cherskiy,Shark,2010,3,200,Siberia_2018_1,Larix cajanderi,30,0.5,4,no,1,3.14159265358979,NA
+july,3,2018,Cherskiy,Shark,2010,3,200,Siberia_2018_1,Larix cajanderi,18,0.28,4,no,1,3.14159265358979,NA
+july,3,2018,Cherskiy,Shark,2010,3,200,Siberia_2018_1,Larix cajanderi,30,0.36,4,no,1,3.14159265358979,NA
+july,3,2018,Cherskiy,Shark,2010,3,300,Siberia_2018_1,Larix cajanderi,54,0.68,4,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,300,Siberia_2018_1,Larix cajanderi,11,0.4,2,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,300,Siberia_2018_1,Larix cajanderi,31,0.6,4,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,300,Siberia_2018_1,Larix cajanderi,24,0.7,4,no,2,12.5663706143592,NA
+july,3,2018,Cherskiy,Shark,2010,3,400,Siberia_2018_1,Larix cajanderi,55,1,6,no,2,12.5663706143592,NA
+july,8,2018,Cherskiy,CN,2001,2,-60,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,2,-35,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,2,25,Siberia_2018_1,Larix cajanderi,14,0.35,8,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,2,25,Siberia_2018_1,Larix cajanderi,190,2.3,10,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,2,25,Siberia_2018_1,Larix cajanderi,160,2.27,10,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,2,25,Siberia_2018_1,Larix cajanderi,34,0.84,7,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,2,25,Siberia_2018_1,Larix cajanderi,130,1.64,8,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,2,50,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,2,75,Siberia_2018_1,Larix cajanderi,26,0.5,7,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,2,100,Siberia_2018_1,Larix cajanderi,180,2.85,10,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,2,100,Siberia_2018_1,Larix cajanderi,70,1.18,8,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,2,150,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,2,200,Siberia_2018_1,Larix cajanderi,185,2.67,10,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,-50,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,-25,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,25,Siberia_2018_1,Larix cajanderi,9,0.15,4,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,25,Siberia_2018_1,Larix cajanderi,13.8,0.26,7,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,25,Siberia_2018_1,Larix cajanderi,13.7,0.23,7,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,25,Siberia_2018_1,Larix cajanderi,29.5,0.55,7,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,25,Siberia_2018_1,Larix cajanderi,18,0.3,6,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,50,Siberia_2018_1,Larix cajanderi,31,0.55,7,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,50,Siberia_2018_1,Larix cajanderi,15.3,0.2,5,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,50,Siberia_2018_1,Larix cajanderi,29.5,0.55,7,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,75,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,100,Siberia_2018_1,Larix cajanderi,62.5,0.55,7,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,100,Siberia_2018_1,Larix cajanderi,10.5,0.18,4,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,100,Siberia_2018_1,Larix cajanderi,32,0.68,7,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,150,Siberia_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,200,Siberia_2018_1,Larix cajanderi,71,1.4,7,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,200,Siberia_2018_1,Larix cajanderi,55.5,0.89,7,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,200,Siberia_2018_1,Larix cajanderi,19,0.38,6,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,200,Siberia_2018_1,Larix cajanderi,57,0.75,7,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,8,2018,Cherskiy,CN,2001,3,200,Siberia_2018_1,Larix cajanderi,26,0.53,7,no,2,12.5663706143592,radius not specified and assumed to be 2 m
+july,14,2018,Yakutsk,Duck,2002,1,0,Yakutsk_2018_1,Larix cajanderi,19,0.17,7,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,1,0,Yakutsk_2018_1,Larix cajanderi,18,0.18,8,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,1,0,Yakutsk_2018_1,Larix cajanderi,10,0.08,7,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,1,0,Yakutsk_2018_1,Larix cajanderi,9,0.07,7,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,1,0,Yakutsk_2018_1,Larix cajanderi,14,0.18,6,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,1,0,Yakutsk_2018_1,Larix cajanderi,13,0.15,8,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,1,25,Yakutsk_2018_1,Larix cajanderi,93,0.9,11,no,1,3.14159265358979,NA
+july,14,2018,Yakutsk,Duck,2002,1,25,Yakutsk_2018_1,Larix cajanderi,63,0.61,9,no,1,3.14159265358979,NA
+july,14,2018,Yakutsk,Duck,2002,1,25,Yakutsk_2018_1,Larix cajanderi,53,0.33,9,no,1,3.14159265358979,NA
+july,14,2018,Yakutsk,Duck,2002,1,25,Yakutsk_2018_1,Larix cajanderi,29,0.32,7,no,1,3.14159265358979,NA
+july,14,2018,Yakutsk,Duck,2002,1,25,Yakutsk_2018_1,Larix cajanderi,70,0.85,10,no,1,3.14159265358979,NA
+july,14,2018,Yakutsk,Duck,2002,1,50,Yakutsk_2018_1,Larix cajanderi,5,0.12,7,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,1,50,Yakutsk_2018_1,Larix cajanderi,10,0.085,7,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,1,50,Yakutsk_2018_1,Larix cajanderi,16,0.09,7,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,1,50,Yakutsk_2018_1,Larix cajanderi,16,0.13,8,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,1,50,Yakutsk_2018_1,Larix cajanderi,23,0.095,7,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,NA,p1,Yakutsk_2018_1,Larix cajanderi,7,0.07,8,no,2,12.5663706143592,7 pine recruits are all <20 cm tall
+july,14,2018,Yakutsk,Duck,2002,NA,p1,Yakutsk_2018_1,Larix cajanderi,9,0.05,9,no,2,12.5663706143592,7 pine recruits are all <20 cm tall
+july,14,2018,Yakutsk,Duck,2002,NA,p1,Yakutsk_2018_1,Larix cajanderi,5,0.02,6,no,2,12.5663706143592,7 pine recruits are all <20 cm tall
+july,14,2018,Yakutsk,Duck,2002,NA,p1,Yakutsk_2018_1,Larix cajanderi,15,0.12,9,no,2,12.5663706143592,7 pine recruits are all <20 cm tall
+july,14,2018,Yakutsk,Duck,2002,NA,p1,Yakutsk_2018_1,Larix cajanderi,9,0.08,8,no,2,12.5663706143592,7 pine recruits are all <20 cm tall
+july,14,2018,Yakutsk,Duck,2002,NA,p2,Yakutsk_2018_1,Larix cajanderi,105,1.18,9,no,1,3.14159265358979,NA
+july,14,2018,Yakutsk,Duck,2002,NA,p2,Yakutsk_2018_1,Larix cajanderi,19.8,0.19,9,no,1,3.14159265358979,NA
+july,14,2018,Yakutsk,Duck,2002,NA,p2,Yakutsk_2018_1,Larix cajanderi,26,0.28,9,no,1,3.14159265358979,NA
+july,14,2018,Yakutsk,Duck,2002,NA,p2,Yakutsk_2018_1,Larix cajanderi,69.5,0.78,9,no,1,3.14159265358979,NA
+july,14,2018,Yakutsk,Duck,2002,NA,p2,Yakutsk_2018_1,Larix cajanderi,52,0.4,9,no,1,3.14159265358979,NA
+july,14,2018,Yakutsk,Duck,2002,NA,p3,Yakutsk_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,14,2018,Yakutsk,Duck,2002,NA,p4,Yakutsk_2018_1,Larix cajanderi,11.5,0.12,6,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,NA,p4,Yakutsk_2018_1,Larix cajanderi,10,0.12,6,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,NA,p4,Yakutsk_2018_1,Larix cajanderi,12,0.2,6,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,NA,p4,Yakutsk_2018_1,Larix cajanderi,15,0.13,6,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,NA,p4,Yakutsk_2018_1,Larix cajanderi,17,0.18,6,no,2,12.5663706143592,NA
+july,14,2018,Yakutsk,Duck,2002,NA,p4,Yakutsk_2018_1,Pinus sylvestris,39,0.65,6,no,2,12.5663706143592,counted whorls on pines to age
+july,14,2018,Yakutsk,Duck,2002,NA,p4,Yakutsk_2018_1,Pinus sylvestris,34,0.5,6,no,2,12.5663706143592,counted whorls on pines to age
+july,14,2018,Yakutsk,Duck,2002,NA,p4,Yakutsk_2018_1,Pinus sylvestris,13,0.22,3,no,2,12.5663706143592,counted whorls on pines to age
+july,14,2018,Yakutsk,Duck,2002,NA,p4,Yakutsk_2018_1,Pinus sylvestris,5,0.1,2,no,2,12.5663706143592,counted whorls on pines to age
+july,14,2018,Yakutsk,Duck,2002,NA,p4,Yakutsk_2018_1,Pinus sylvestris,3,0.05,1,no,2,12.5663706143592,counted whorls on pines to age
+july,15,2018,Yakutsk,Duck,2002,NA,p5,Yakutsk_2018_1,Larix cajanderi,16.8,0.16,6,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p5,Yakutsk_2018_1,Larix cajanderi,9,0.09,8,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p5,Yakutsk_2018_1,Larix cajanderi,26,0.3,9,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p5,Yakutsk_2018_1,Larix cajanderi,16,0.2,9,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p5,Yakutsk_2018_1,Larix cajanderi,15.5,0.13,9,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p6,Yakutsk_2018_1,Larix cajanderi,36,0.3,9,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p6,Yakutsk_2018_1,Larix cajanderi,14.5,0.18,8,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p6,Yakutsk_2018_1,Larix cajanderi,40,0.35,8,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p6,Yakutsk_2018_1,Larix cajanderi,9,0.1,5,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p6,Yakutsk_2018_1,Larix cajanderi,17,0.12,7,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p7,Yakutsk_2018_1,Larix cajanderi,34.5,0.22,9,hummock,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p7,Yakutsk_2018_1,Larix cajanderi,14.5,0.2,7,hummock,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p7,Yakutsk_2018_1,Larix cajanderi,11,0.09,8,hummock,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p7,Yakutsk_2018_1,Larix cajanderi,8.5,0.07,10,hummock,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p7,Yakutsk_2018_1,Larix cajanderi,11,0.09,9,hummock,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p8,Yakutsk_2018_1,Larix cajanderi,54,0.6,9,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p8,Yakutsk_2018_1,Larix cajanderi,13,0.1,9,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p8,Yakutsk_2018_1,Larix cajanderi,11,0.09,7,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p8,Yakutsk_2018_1,Larix cajanderi,21.8,0.12,7,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p8,Yakutsk_2018_1,Larix cajanderi,16,0.1,7,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p9,Yakutsk_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,15,2018,Yakutsk,Duck,2002,NA,p10,Yakutsk_2018_1,Larix cajanderi,34,0.37,11,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p10,Yakutsk_2018_1,Larix cajanderi,29,0.43,10,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p10,Yakutsk_2018_1,Larix cajanderi,33.5,0.28,9,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p10,Yakutsk_2018_1,Larix cajanderi,20,0.18,11,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p10,Yakutsk_2018_1,Larix cajanderi,19.5,0.2,10,no,2,12.5663706143592,NA
+july,15,2018,Yakutsk,Duck,2002,NA,p11,Yakutsk_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,15,2018,Yakutsk,Duck,2002,NA,p12,Yakutsk_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,16,2018,Yakutsk,Duck,2002,NA,p13,Yakutsk_2018_1,Larix cajanderi,37,0.35,8,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p13,Yakutsk_2018_1,Larix cajanderi,30.5,0.28,8,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p13,Yakutsk_2018_1,Larix cajanderi,26,0.32,7,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p13,Yakutsk_2018_1,Larix cajanderi,39,0.35,8,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p13,Yakutsk_2018_1,Larix cajanderi,23.5,0.33,8,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p14,Yakutsk_2018_1,Larix cajanderi,5,0.1,7,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p14,Yakutsk_2018_1,Larix cajanderi,14,0.2,7,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p14,Yakutsk_2018_1,Larix cajanderi,5,0.1,5,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p14,Yakutsk_2018_1,Larix cajanderi,7.5,0.11,7,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p14,Yakutsk_2018_1,Larix cajanderi,9,0.08,8,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p15,Yakutsk_2018_1,Larix cajanderi,93,1.3,9,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p15,Yakutsk_2018_1,Larix cajanderi,92,1.18,9,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p15,Yakutsk_2018_1,Larix cajanderi,52,0.56,9,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p15,Yakutsk_2018_1,Larix cajanderi,33,0.33,7,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p15,Yakutsk_2018_1,Larix cajanderi,82,0.68,9,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p16,Yakutsk_2018_1,Larix cajanderi,40,0.6,6,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p16,Yakutsk_2018_1,Larix cajanderi,29,0.23,7,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p16,Yakutsk_2018_1,Larix cajanderi,8,0.04,6,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p16,Yakutsk_2018_1,Larix cajanderi,12,0.1,6,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p16,Yakutsk_2018_1,Larix cajanderi,16,0.2,7,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p17,Yakutsk_2018_1,Larix cajanderi,37,0.39,7,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p17,Yakutsk_2018_1,Larix cajanderi,39,0.43,7,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p17,Yakutsk_2018_1,Larix cajanderi,37,0.32,7,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p17,Yakutsk_2018_1,Larix cajanderi,75,0.93,7,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p17,Yakutsk_2018_1,Larix cajanderi,38,0.65,7,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p18,Yakutsk_2018_1,Larix cajanderi,187,1.16,8,no,1,3.14159265358979,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p18,Yakutsk_2018_1,Larix cajanderi,84,0.48,8,no,1,3.14159265358979,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p18,Yakutsk_2018_1,Larix cajanderi,61,0.59,8,no,1,3.14159265358979,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p18,Yakutsk_2018_1,Larix cajanderi,56.5,0.46,8,no,1,3.14159265358979,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p18,Yakutsk_2018_1,Larix cajanderi,43,0.33,8,no,1,3.14159265358979,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p19,Yakutsk_2018_1,Larix cajanderi,12,0.15,8,no,1,3.14159265358979,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p19,Yakutsk_2018_1,Larix cajanderi,10,0.15,5,no,1,3.14159265358979,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p19,Yakutsk_2018_1,Larix cajanderi,6.5,0.1,4,no,1,3.14159265358979,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p19,Yakutsk_2018_1,Larix cajanderi,5.5,0.11,4,no,1,3.14159265358979,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p19,Yakutsk_2018_1,Larix cajanderi,9.5,0.1,5,no,1,3.14159265358979,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p20,Yakutsk_2018_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,16,2018,Yakutsk,Duck,2002,NA,p21,Yakutsk_2018_1,Larix cajanderi,6,0.08,6,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p21,Yakutsk_2018_1,Larix cajanderi,11,0.18,6,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p21,Yakutsk_2018_1,Larix cajanderi,5,0.1,6,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p21,Yakutsk_2018_1,Larix cajanderi,11.8,0.2,6,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p21,Yakutsk_2018_1,Larix cajanderi,15.5,0.23,6,no,2,12.5663706143592,NA
+july,16,2018,Yakutsk,Duck,2002,NA,p22,Yakutsk_2018_1,Larix cajanderi,113,0.9,7,no,2,12.5663706143592,not on safe site but somewhat hummocky
+july,16,2018,Yakutsk,Duck,2002,NA,p22,Yakutsk_2018_1,Larix cajanderi,81,0.76,7,no,2,12.5663706143592,not on safe site but somewhat hummocky
+july,16,2018,Yakutsk,Duck,2002,NA,p22,Yakutsk_2018_1,Larix cajanderi,40,0.33,7,no,2,12.5663706143592,not on safe site but somewhat hummocky
+july,16,2018,Yakutsk,Duck,2002,NA,p22,Yakutsk_2018_1,Larix cajanderi,142,0.95,8,no,2,12.5663706143592,not on safe site but somewhat hummocky
+july,16,2018,Yakutsk,Duck,2002,NA,p22,Yakutsk_2018_1,Larix cajanderi,78,0.68,7,no,2,12.5663706143592,not on safe site but somewhat hummocky
+june,9,2019,Yakutsk,FRK,2002,1,-50,Siberia_2019_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,9,2019,Yakutsk,FRK,2002,1,-50,Siberia_2019_1,Betula platyphylla,NA,NA,NA,NA,2,12.5663706143592,zero recruits; decided to measure all tree regeneration but not until plot -25 so these are not mentioned in field notebook but are added here
+june,9,2019,Yakutsk,FRK,2002,1,-50,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits; decided to measure all tree regeneration but not until plot -25 so these are not mentioned in field notebook but are added here
+june,9,2019,Yakutsk,FRK,2002,1,-25,Siberia_2019_1,Larix cajanderi,42,0.57,7,no,2,12.5663706143592,all heights measured in cm; count was originally 3 seedlings but one was later determined from aging wood slab to not be an actual recruit so was removed from dataset
+june,9,2019,Yakutsk,FRK,2002,1,-25,Siberia_2019_1,Larix cajanderi,77,1.14,NA,no,2,12.5663706143592,age not recorded; recorder error
+june,9,2019,Yakutsk,FRK,2002,1,-25,Siberia_2019_1,Pinus sylvestris,182,3,15,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,-25,Siberia_2019_1,Pinus sylvestris,240,3.9,18,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,-25,Siberia_2019_1,Betula platyphylla,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,9,2019,Yakutsk,FRK,2002,1,-25,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Larix cajanderi,45,0.32,9,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Larix cajanderi,200,1.65,13,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Larix cajanderi,81,0.65,13,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Larix cajanderi,58,0.46,10,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Larix cajanderi,44,0.48,8,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Pinus sylvestris,66,0.57,11,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Pinus sylvestris,113,1.24,12,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Pinus sylvestris,145,1.9,12,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Pinus sylvestris,28,0.33,9,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Pinus sylvestris,140,2.45,11,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Betula platyphylla,115,0.88,9,no,1,3.14159265358979,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Betula platyphylla,116,0.8,10,hummock,1,3.14159265358979,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Betula platyphylla,260,4.4,9,no,1,3.14159265358979,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Betula platyphylla,160,1.4,9,no,1,3.14159265358979,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Betula platyphylla,105,0.75,9,no,1,3.14159265358979,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Populus tremula,150,0.71,10,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Populus tremula,330,1.77,10,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Populus tremula,245,1.4,13,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Populus tremula,280,1.65,10,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,25,Siberia_2019_1,Populus tremula,285,1.42,9,no,2,12.5663706143592,NA
+june,9,2019,Yakutsk,FRK,2002,1,-50,Siberia_2019_3,Pinus sylvestris,NA,0.98,NA,NA,NA,5,Originally measured as part of shrub survey in 1 x 5 m belt transect; does not have height/age/safe_site/radius
+june,9,2019,Yakutsk,FRK,2002,1,-50,Siberia_2019_3,Pinus sylvestris,NA,1.5,NA,NA,NA,5,Originally measured as part of shrub survey in 1 x 5 m belt transect; does not have height/age/safe_site/radius
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Larix cajanderi,155,1.4,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Larix cajanderi,105,0.98,9,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Larix cajanderi,52,0.45,9,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Larix cajanderi,37,0.6,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Larix cajanderi,132,1.2,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Pinus sylvestris,130,1.64,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Pinus sylvestris,30,0.3,7,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Pinus sylvestris,260,3.55,9,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Pinus sylvestris,100,1,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Pinus sylvestris,98,1.1,9,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Betula platyphylla,82,0.65,6,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Betula platyphylla,205,1.28,10,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Betula platyphylla,310,2.52,9,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Betula platyphylla,140,0.92,10,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Betula platyphylla,80,0.53,5,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Populus tremula,220,1.38,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Populus tremula,355,2.52,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Populus tremula,255,0.8,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Populus tremula,450,1.7,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,50,Siberia_2019_1,Populus tremula,225,0.88,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Larix cajanderi,215,1.95,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Larix cajanderi,75,0.7,9,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Larix cajanderi,390,3.2,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Larix cajanderi,70,0.48,8,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Larix cajanderi,165,1.4,9,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Pinus sylvestris,210,2.87,14,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Pinus sylvestris,100,1.03,9,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Pinus sylvestris,125,1.12,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Pinus sylvestris,210,2.88,12,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Pinus sylvestris,110,1.6,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Betula platyphylla,185,1.28,11,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Betula platyphylla,280,1.4,13,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Betula platyphylla,320,2.25,NA,no,1,3.14159265358979,age not recorded; recorder error
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Betula platyphylla,340,2.18,10,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Betula platyphylla,310,3.25,10,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Populus tremula,340,1.9,11,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,75,Siberia_2019_1,Populus tremula,180,0.98,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Larix cajanderi,110,1.1,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Larix cajanderi,225,2.05,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Larix cajanderi,150,1.2,9,no,2,12.5663706143592,height recorded in notebook as 1.5 m; entered here as 150 cm
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Larix cajanderi,285,2.3,11,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Larix cajanderi,240,2.1,14,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Pinus sylvestris,240,3.25,13,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Pinus sylvestris,125,1.7,12,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Pinus sylvestris,115,1.39,13,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Pinus sylvestris,205,1.95,13,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Pinus sylvestris,90,1.13,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Betula platyphylla,250,1.59,10,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Betula platyphylla,260,1.48,9,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Betula platyphylla,280,2,8,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Betula platyphylla,290,2.18,10,no,1,3.14159265358979,height recorded in notebook as 2.9 m; entered here as 290 cm
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Betula platyphylla,210,0.9,9,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Populus tremula,220,1.12,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Populus tremula,125,1.03,8,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Populus tremula,260,1.27,8,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Populus tremula,440,2.8,11,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,100,Siberia_2019_1,Populus tremula,150,0.7,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Larix cajanderi,129,1.1,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Larix cajanderi,305,2.4,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Larix cajanderi,205,1.8,11,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Larix cajanderi,425,3.4,13,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Larix cajanderi,85,0.9,9,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Pinus sylvestris,260,4,11,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Pinus sylvestris,125,1.35,7,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Pinus sylvestris,105,0.95,11,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Pinus sylvestris,150,0.75,13,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Pinus sylvestris,530,1.6,14,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Betula platyphylla,450,3.3,10,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Betula platyphylla,155,0.85,7,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Betula platyphylla,310,2,11,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Betula platyphylla,260,2.5,9,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Betula platyphylla,180,1.2,9,no,1,3.14159265358979,NA
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Populus tremula,225,1.32,8,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Populus tremula,255,1.1,8,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Populus tremula,420,2.5,8,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Populus tremula,385,2.6,10,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,150,Siberia_2019_1,Populus tremula,250,1.6,8,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Larix cajanderi,135,0.95,11,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Larix cajanderi,80,0.8,12,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Larix cajanderi,47,0.67,7,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Larix cajanderi,55,0.65,9,no,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Larix cajanderi,130,1,8,hummock,2,12.5663706143592,only 3 seedlings in recruit plot but measured size and age on 5 seedlings; extra 2 near plot
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Pinus sylvestris,145,2,13,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Pinus sylvestris,100,1.35,11,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Pinus sylvestris,140,2.3,11,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Pinus sylvestris,160,2,12,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Pinus sylvestris,206,2.5,11,hummock,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Betula platyphylla,310,2.3,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Betula platyphylla,180,1.5,8,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Betula platyphylla,280,2.3,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Betula platyphylla,170,1,10,no,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Betula platyphylla,340,2.4,9,hummock,2,12.5663706143592,NA
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Populus tremula,200,1.4,9,no,2,12.5663706143592,only 2 seedlings in recruit plot but measured size and age on 3 seedlings; extra 1 near plot
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Populus tremula,190,0.9,9,no,2,12.5663706143592,only 2 seedlings in recruit plot but measured size and age on 3 seedlings; extra 1 near plot
+june,10,2019,Yakutsk,FRK,2002,1,200,Siberia_2019_1,Populus tremula,240,0.9,NA,no,2,12.5663706143592,no age recorded; recorder error; only 2 seedlings in recruit plot but measured size and age on 3 seedlings; extra 1 near plot
+june,10,2019,Yakutsk,FRK,2002,2,-50,Siberia_2019_1,Larix cajanderi,26,0.29,NA,no,2,12.5663706143592,decided to only record age of seedlings on transect 1 because it was taking too long; only plot sampled on this transect; decided not to continue sampling here
+june,10,2019,Yakutsk,FRK,2002,2,-50,Siberia_2019_1,Larix cajanderi,43,0.43,NA,no,2,12.5663706143592,decided to only record age of seedlings on transect 1 because it was taking too long; only plot sampled on this transect; decided not to continue sampling here
+june,10,2019,Yakutsk,FRK,2002,2,-50,Siberia_2019_1,Larix cajanderi,40,0.4,NA,no,2,12.5663706143592,decided to only record age of seedlings on transect 1 because it was taking too long; only plot sampled on this transect; decided not to continue sampling here
+june,10,2019,Yakutsk,FRK,2002,2,-50,Siberia_2019_1,Larix cajanderi,25,0.25,NA,no,2,12.5663706143592,decided to only record age of seedlings on transect 1 because it was taking too long; only plot sampled on this transect; decided not to continue sampling here
+june,10,2019,Yakutsk,FRK,2002,2,-50,Siberia_2019_1,Larix cajanderi,32,0.5,NA,no,2,12.5663706143592,decided to only record age of seedlings on transect 1 because it was taking too long; only plot sampled on this transect; decided not to continue sampling here
+june,10,2019,Yakutsk,FRK,2002,2,-50,Siberia_2019_1,Pinus sylvestris,165,2.5,NA,no,2,12.5663706143592,decided to only record age of seedlings on transect 1 because it was taking too long; only plot sampled on this transect; decided not to continue sampling here
+june,10,2019,Yakutsk,FRK,2002,2,-50,Siberia_2019_1,Pinus sylvestris,39,0.43,NA,no,2,12.5663706143592,decided to only record age of seedlings on transect 1 because it was taking too long; only plot sampled on this transect; decided not to continue sampling here
+june,10,2019,Yakutsk,FRK,2002,2,-50,Siberia_2019_1,Pinus sylvestris,168,3.85,NA,no,2,12.5663706143592,decided to only record age of seedlings on transect 1 because it was taking too long; only plot sampled on this transect; decided not to continue sampling here
+june,10,2019,Yakutsk,FRK,2002,2,-50,Siberia_2019_1,Pinus sylvestris,48,0.75,NA,no,2,12.5663706143592,decided to only record age of seedlings on transect 1 because it was taking too long; only plot sampled on this transect; decided not to continue sampling here
+june,10,2019,Yakutsk,FRK,2002,2,-50,Siberia_2019_1,Pinus sylvestris,56,0.88,NA,no,2,12.5663706143592,decided to only record age of seedlings on transect 1 because it was taking too long; only plot sampled on this transect; decided not to continue sampling here
+june,10,2019,Yakutsk,FRK,2002,2,-50,Siberia_2019_1,Betula platyphylla,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,10,2019,Yakutsk,FRK,2002,2,-50,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,11,2019,Yakutsk,Maya,2002,1,-50,Siberia_2019_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits; midway in sampling trees on this plot discovered that burned area had been logged so did not sample further
+june,11,2019,Yakutsk,Maya,2002,1,-50,Siberia_2019_1,Pinus sylvestris,77,0.75,6,depression,2,12.5663706143592,midway in sampling trees on this plot discovered that burned area had been logged so did not sample further
+june,11,2019,Yakutsk,Maya,2002,1,-50,Siberia_2019_1,Pinus sylvestris,47,0.45,7,depression,2,12.5663706143592,midway in sampling trees on this plot discovered that burned area had been logged so did not sample further
+june,11,2019,Yakutsk,Maya,2002,1,-50,Siberia_2019_1,Pinus sylvestris,84,0.84,6,depression,2,12.5663706143592,midway in sampling trees on this plot discovered that burned area had been logged so did not sample further
+june,11,2019,Yakutsk,Maya,2002,1,-50,Siberia_2019_1,Pinus sylvestris,42.5,0.53,6,no,2,12.5663706143592,midway in sampling trees on this plot discovered that burned area had been logged so did not sample further
+june,11,2019,Yakutsk,Maya,2002,1,-50,Siberia_2019_1,Pinus sylvestris,77.5,0.92,7,no,2,12.5663706143592,midway in sampling trees on this plot discovered that burned area had been logged so did not sample further
+june,11,2019,Yakutsk,Maya,2002,1,-50,Siberia_2019_1,Betula platyphylla,NA,NA,NA,NA,2,12.5663706143592,zero recruits; midway in sampling trees on this plot discovered that burned area had been logged so did not sample further
+june,11,2019,Yakutsk,Maya,2002,1,-50,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits; midway in sampling trees on this plot discovered that burned area had been logged so did not sample further
+june,11,2019,Yakutsk,ROB,2002,1,-25,Siberia_2019_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,"zero recruits; decided to reduce number of plots sampled to only -25, 25, 75, and 150"
+june,11,2019,Yakutsk,ROB,2002,1,-25,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,"zero recruits; decided to reduce number of plots sampled to only -25, 25, 75, and 150"
+june,11,2019,Yakutsk,ROB,2002,1,-25,Siberia_2019_1,Betula platyphylla,NA,NA,NA,NA,2,12.5663706143592,"zero recruits; decided to reduce number of plots sampled to only -25, 25, 75, and 150"
+june,11,2019,Yakutsk,ROB,2002,1,-25,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,"zero recruits; decided to reduce number of plots sampled to only -25, 25, 75, and 150"
+june,11,2019,Yakutsk,ROB,2002,1,25,Siberia_2019_1,Larix cajanderi,40,0.35,7,no,2,12.5663706143592,noted a lot of hare browse on larch recruits
+june,11,2019,Yakutsk,ROB,2002,1,25,Siberia_2019_1,Larix cajanderi,117,1.15,9,hummock,2,12.5663706143592,noted a lot of hare browse on larch recruits
+june,11,2019,Yakutsk,ROB,2002,1,25,Siberia_2019_1,Larix cajanderi,104,0.64,8,hummock,2,12.5663706143592,noted a lot of hare browse on larch recruits
+june,11,2019,Yakutsk,ROB,2002,1,25,Siberia_2019_1,Larix cajanderi,180,1.61,11,no,2,12.5663706143592,noted a lot of hare browse on larch recruits
+june,11,2019,Yakutsk,ROB,2002,1,25,Siberia_2019_1,Larix cajanderi,315,3.35,9,hummock,2,12.5663706143592,noted a lot of hare browse on larch recruits
+june,11,2019,Yakutsk,ROB,2002,1,25,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,11,2019,Yakutsk,ROB,2002,1,25,Siberia_2019_1,Betula platyphylla,230,1.04,10,no,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,25,Siberia_2019_1,Betula platyphylla,210,1.94,12,hummock,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,25,Siberia_2019_1,Betula platyphylla,75,0.75,8,no,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,25,Siberia_2019_1,Betula platyphylla,135,0.88,10,no,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,25,Siberia_2019_1,Betula platyphylla,62.5,0.4,6,no,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,25,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,11,2019,Yakutsk,ROB,2002,1,75,Siberia_2019_1,Larix cajanderi,106.5,0.78,8,hummock,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,75,Siberia_2019_1,Larix cajanderi,130,2.3,11,hummock,2,12.5663706143592,browsed
+june,11,2019,Yakutsk,ROB,2002,1,75,Siberia_2019_1,Larix cajanderi,140,1.45,10,hummock,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,75,Siberia_2019_1,Larix cajanderi,36.5,0.3,8,hummock,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,75,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,11,2019,Yakutsk,ROB,2002,1,75,Siberia_2019_1,Betula platyphylla,120,1.12,9,no,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,75,Siberia_2019_1,Betula platyphylla,151,2.18,9,no,2,12.5663706143592,browsed
+june,11,2019,Yakutsk,ROB,2002,1,75,Siberia_2019_1,Betula platyphylla,170,1.83,6,hummock,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,75,Siberia_2019_1,Betula platyphylla,67.5,0.52,6,hummock,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,75,Siberia_2019_1,Betula platyphylla,91,0.92,7,hummock,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,75,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,11,2019,Yakutsk,ROB,2002,1,150,Siberia_2019_1,Larix cajanderi,110,1.42,11,hummock,2,12.5663706143592,almost all recruits browsed by hare; chose unbrowsed seedlings for measurements
+june,11,2019,Yakutsk,ROB,2002,1,150,Siberia_2019_1,Larix cajanderi,52,0.82,8,hummock,2,12.5663706143592,browsed
+june,11,2019,Yakutsk,ROB,2002,1,150,Siberia_2019_1,Larix cajanderi,56,0.64,12,woody_debris,2,12.5663706143592,dw equals downed wood
+june,11,2019,Yakutsk,ROB,2002,1,150,Siberia_2019_1,Larix cajanderi,52.3,0.43,8,no,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,150,Siberia_2019_1,Larix cajanderi,42.5,0.55,7,no,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,150,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,11,2019,Yakutsk,ROB,2002,1,150,Siberia_2019_1,Betula platyphylla,180,2.32,12,hummock,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,150,Siberia_2019_1,Betula platyphylla,85,0.81,10,no,2,12.5663706143592,browsed
+june,11,2019,Yakutsk,ROB,2002,1,150,Siberia_2019_1,Betula platyphylla,164,1.47,10,woody_debris,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,150,Siberia_2019_1,Betula platyphylla,150,1.05,10,hummock,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,150,Siberia_2019_1,Betula platyphylla,172,1.37,11,no,2,12.5663706143592,NA
+june,11,2019,Yakutsk,ROB,2002,1,150,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,12,2019,Yakutsk,Maya,2002,2,-25,Siberia_2019_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,12,2019,Yakutsk,Maya,2002,2,-25,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,12,2019,Yakutsk,Maya,2002,2,-25,Siberia_2019_1,Betula platyphylla,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,12,2019,Yakutsk,Maya,2002,2,-25,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Larix cajanderi,37.6,0.42,7,hummock,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Larix cajanderi,27.5,0.34,7,hummock,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Larix cajanderi,13.3,0.2,5,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Larix cajanderi,32,0.38,6,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Larix cajanderi,340,4.41,11,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Pinus sylvestris,31,0.35,4,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Pinus sylvestris,38.8,0.49,4,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Pinus sylvestris,17.8,0.24,4,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Pinus sylvestris,18.2,0.25,4,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Pinus sylvestris,20.2,0.28,4,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Betula platyphylla,360,4.4,10,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Betula platyphylla,380,4.2,11,hummock,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Populus tremula,56.2,0.68,6,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Populus tremula,278,1.66,9,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Populus tremula,9.8,0.13,4,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Populus tremula,35.2,0.5,6,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,25,Siberia_2019_1,Populus tremula,9.5,0.12,4,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,75,Siberia_2019_1,Larix cajanderi,185,3,9,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,75,Siberia_2019_1,Larix cajanderi,85.6,0.75,4,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,75,Siberia_2019_1,Larix cajanderi,210,2.55,9,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,75,Siberia_2019_1,Larix cajanderi,330,3.68,9,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,75,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,12,2019,Yakutsk,Maya,2002,2,75,Siberia_2019_1,Betula platyphylla,245,2.74,6,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,75,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,12,2019,Yakutsk,Maya,2002,2,150,Siberia_2019_1,Larix cajanderi,160,2.45,7,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,150,Siberia_2019_1,Larix cajanderi,345,4.58,11,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,150,Siberia_2019_1,Larix cajanderi,220,2.6,8,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,150,Siberia_2019_1,Larix cajanderi,310,3.61,9,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,150,Siberia_2019_1,Pinus sylvestris,290,5.84,10,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,150,Siberia_2019_1,Betula platyphylla,285,3.03,8,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,150,Siberia_2019_1,Betula platyphylla,220,2.01,10,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,150,Siberia_2019_1,Betula platyphylla,195,1.4,9,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,150,Siberia_2019_1,Betula platyphylla,340,4,9,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,150,Siberia_2019_1,Betula platyphylla,370,3.2,12,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,150,Siberia_2019_1,Populus tremula,330,3.13,11,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,2,150,Siberia_2019_1,Populus tremula,110,1.38,NA,no,2,12.5663706143592,browsed; no age recorded; sample not found
+june,12,2019,Yakutsk,Maya,2002,3,-40,Siberia_2019_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,12,2019,Yakutsk,Maya,2002,3,-40,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,12,2019,Yakutsk,Maya,2002,3,-40,Siberia_2019_1,Betula platyphylla,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,12,2019,Yakutsk,Maya,2002,3,-40,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,12,2019,Yakutsk,Maya,2002,3,25,Siberia_2019_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,12,2019,Yakutsk,Maya,2002,3,25,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,12,2019,Yakutsk,Maya,2002,3,25,Siberia_2019_1,Betula platyphylla,200,2.82,NA,no,2,12.5663706143592,no age recorded; sample not found
+june,12,2019,Yakutsk,Maya,2002,3,25,Siberia_2019_1,Betula platyphylla,210,2.58,9,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,3,25,Siberia_2019_1,Betula platyphylla,51,0.5,5,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,3,25,Siberia_2019_1,Populus tremula,85,0.96,4,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,3,25,Siberia_2019_1,Populus tremula,170,1.38,5,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,3,25,Siberia_2019_1,Populus tremula,163,1.15,6,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,3,25,Siberia_2019_1,Populus tremula,164,1.42,5,no,2,12.5663706143592,NA
+june,12,2019,Yakutsk,Maya,2002,3,25,Siberia_2019_1,Populus tremula,120,0.92,5,no,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,-25,Siberia_2019_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,13,2019,Yakutsk,Korova,2002,1,-25,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,13,2019,Yakutsk,Korova,2002,1,-25,Siberia_2019_1,Betula platyphylla,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,13,2019,Yakutsk,Korova,2002,1,-25,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,13,2019,Yakutsk,Korova,2002,1,25,Siberia_2019_1,Larix cajanderi,56,0.58,7,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,25,Siberia_2019_1,Larix cajanderi,47,0.6,4,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,25,Siberia_2019_1,Larix cajanderi,98,1.51,7,hummock,2,12.5663706143592,browsed
+june,13,2019,Yakutsk,Korova,2002,1,25,Siberia_2019_1,Larix cajanderi,93,1.2,7,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,25,Siberia_2019_1,Larix cajanderi,127,1.45,7,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,25,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,13,2019,Yakutsk,Korova,2002,1,25,Siberia_2019_1,Betula platyphylla,73,0.75,6,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,25,Siberia_2019_1,Betula platyphylla,44,0.2,4,no,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,25,Siberia_2019_1,Betula platyphylla,76,0.58,6,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,25,Siberia_2019_1,Betula platyphylla,167,1.1,6,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,25,Siberia_2019_1,Betula platyphylla,208,2.12,6,no,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,25,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,13,2019,Yakutsk,Korova,2002,1,75,Siberia_2019_1,Larix cajanderi,23.5,0.25,4,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,75,Siberia_2019_1,Larix cajanderi,44.5,0.55,5,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,75,Siberia_2019_1,Larix cajanderi,18,0.3,4,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,75,Siberia_2019_1,Larix cajanderi,54,0.73,5,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,75,Siberia_2019_1,Larix cajanderi,134,1.42,5,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,75,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,13,2019,Yakutsk,Korova,2002,1,75,Siberia_2019_1,Betula platyphylla,53,0.55,7,no,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,75,Siberia_2019_1,Betula platyphylla,73,0.78,7,hummock,2,12.5663706143592,browsed
+june,13,2019,Yakutsk,Korova,2002,1,75,Siberia_2019_1,Betula platyphylla,212,2.22,7,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,75,Siberia_2019_1,Betula platyphylla,74,0.73,7,no,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,75,Siberia_2019_1,Betula platyphylla,255,2.9,7,no,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,75,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,13,2019,Yakutsk,Korova,2002,1,150,Siberia_2019_1,Larix cajanderi,43.5,0.51,5,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,150,Siberia_2019_1,Larix cajanderi,91,1.1,4,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,150,Siberia_2019_1,Larix cajanderi,21.5,0.3,5,depression,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,150,Siberia_2019_1,Larix cajanderi,57.5,0.74,5,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,150,Siberia_2019_1,Larix cajanderi,187,1.8,5,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,150,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,13,2019,Yakutsk,Korova,2002,1,150,Siberia_2019_1,Betula platyphylla,225,2.45,5,depression,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,150,Siberia_2019_1,Betula platyphylla,130,1.07,5,hummock,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,150,Siberia_2019_1,Betula platyphylla,310,3.12,5,no,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,150,Siberia_2019_1,Betula platyphylla,21.9,0.6,5,hummock,2,12.5663706143592,height listed as 219 in notebook but entered here as 21.9 to match basal diameter
+june,13,2019,Yakutsk,Korova,2002,1,150,Siberia_2019_1,Betula platyphylla,102,0.84,5,no,2,12.5663706143592,NA
+june,13,2019,Yakutsk,Korova,2002,1,150,Siberia_2019_1,Populus tremula,89,0.82,7,depression,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,-25,Siberia_2019_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,2,-25,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,2,-25,Siberia_2019_1,Betula platyphylla,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,2,-25,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,2,25,Siberia_2019_1,Larix cajanderi,42,0.65,6,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,25,Siberia_2019_1,Larix cajanderi,145,1.95,7,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,25,Siberia_2019_1,Larix cajanderi,109,2,7,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,25,Siberia_2019_1,Larix cajanderi,240,2.56,7,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,25,Siberia_2019_1,Larix cajanderi,520,6.22,13,no,2,12.5663706143592,height listed as 5.20 in notebook but entered here as 520
+june,14,2019,Yakutsk,ROB,2002,2,25,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,2,25,Siberia_2019_1,Betula platyphylla,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,2,25,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits; some aspen recruits noted outside of plot
+june,14,2019,Yakutsk,ROB,2002,2,75,Siberia_2019_1,Larix cajanderi,425,3.46,13,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,75,Siberia_2019_1,Larix cajanderi,395,3.66,13,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,75,Siberia_2019_1,Larix cajanderi,89,1.35,6,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,75,Siberia_2019_1,Larix cajanderi,605,5.06,13,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,75,Siberia_2019_1,Larix cajanderi,510,5.95,13,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,75,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,2,75,Siberia_2019_1,Betula platyphylla,280,1.79,8,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,75,Siberia_2019_1,Betula platyphylla,85,0.71,5,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,75,Siberia_2019_1,Betula platyphylla,340,2.55,10,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,75,Siberia_2019_1,Betula platyphylla,259,1.33,10,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,75,Siberia_2019_1,Betula platyphylla,395,3.22,10,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,75,Siberia_2019_1,Populus tremula,275,1.68,8,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,75,Siberia_2019_1,Populus tremula,141,1.2,7,no,2,12.5663706143592,browsed
+june,14,2019,Yakutsk,ROB,2002,2,150,Siberia_2019_1,Larix cajanderi,310,3.05,13,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,150,Siberia_2019_1,Larix cajanderi,158,1.75,9,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,150,Siberia_2019_1,Larix cajanderi,200,2,8,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,150,Siberia_2019_1,Larix cajanderi,27,0.32,6,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,150,Siberia_2019_1,Larix cajanderi,49,0.95,7,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,150,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,2,150,Siberia_2019_1,Betula platyphylla,162,1.44,9,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,150,Siberia_2019_1,Betula platyphylla,316,4.22,11,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,150,Siberia_2019_1,Betula platyphylla,282,2.12,9,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,150,Siberia_2019_1,Betula platyphylla,162,1.18,8,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,150,Siberia_2019_1,Betula platyphylla,168,1.88,8,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,2,150,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,3,-25,Siberia_2019_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,3,-25,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,3,-25,Siberia_2019_1,Betula platyphylla,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,3,-25,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,3,25,Siberia_2019_1,Larix cajanderi,30.5,0.38,6,woody_debris,2,12.5663706143592,most larch recruits have browse evidence at ~70-80 cm high
+june,14,2019,Yakutsk,ROB,2002,3,25,Siberia_2019_1,Larix cajanderi,128,1.23,6,no,2,12.5663706143592,"browsed, most larch recruits have browse evidence at ~70-80 cm high"
+june,14,2019,Yakutsk,ROB,2002,3,25,Siberia_2019_1,Larix cajanderi,155,1.38,6,no,2,12.5663706143592,"browsed, most larch recruits have browse evidence at ~70-80 cm high"
+june,14,2019,Yakutsk,ROB,2002,3,25,Siberia_2019_1,Larix cajanderi,98,0.68,6,no,2,12.5663706143592,most larch recruits have browse evidence at ~70-80 cm high
+june,14,2019,Yakutsk,ROB,2002,3,25,Siberia_2019_1,Larix cajanderi,62,0.51,6,no,2,12.5663706143592,most larch recruits have browse evidence at ~70-80 cm high
+june,14,2019,Yakutsk,ROB,2002,3,25,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,3,25,Siberia_2019_1,Betula platyphylla,92,0.82,7,no,2,12.5663706143592,a lot of birch recruits appear to be resprouts because coming up in clumps
+june,14,2019,Yakutsk,ROB,2002,3,25,Siberia_2019_1,Betula platyphylla,190,1.59,8,no,2,12.5663706143592,"browsed, a lot of birch recruits appear to be resprouts because coming up in clumps"
+june,14,2019,Yakutsk,ROB,2002,3,25,Siberia_2019_1,Betula platyphylla,400,3.29,8,no,2,12.5663706143592,a lot of birch recruits appear to be resprouts because coming up in clumps
+june,14,2019,Yakutsk,ROB,2002,3,25,Siberia_2019_1,Betula platyphylla,172,1.35,8,no,2,12.5663706143592,a lot of birch recruits appear to be resprouts because coming up in clumps
+june,14,2019,Yakutsk,ROB,2002,3,25,Siberia_2019_1,Betula platyphylla,126,0.95,8,no,2,12.5663706143592,a lot of birch recruits appear to be resprouts because coming up in clumps
+june,14,2019,Yakutsk,ROB,2002,3,25,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,3,75,Siberia_2019_1,Larix cajanderi,54,0.8,6,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,3,75,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,3,75,Siberia_2019_1,Betula platyphylla,112,0.98,10,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,3,75,Siberia_2019_1,Betula platyphylla,310,2.25,12,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,3,75,Siberia_2019_1,Betula platyphylla,343,2.58,11,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,3,75,Siberia_2019_1,Betula platyphylla,280,2.6,10,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,3,75,Siberia_2019_1,Betula platyphylla,537,4.1,12,no,2,12.5663706143592,resprout
+june,14,2019,Yakutsk,ROB,2002,3,75,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,3,150,Siberia_2019_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,3,150,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,14,2019,Yakutsk,ROB,2002,3,150,Siberia_2019_1,Betula platyphylla,210,2.45,8,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,3,150,Siberia_2019_1,Betula platyphylla,92,1.1,7,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,3,150,Siberia_2019_1,Betula platyphylla,145,1.5,8,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,3,150,Siberia_2019_1,Betula platyphylla,287,2.23,9,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,3,150,Siberia_2019_1,Betula platyphylla,448,6.45,9,no,2,12.5663706143592,NA
+june,14,2019,Yakutsk,ROB,2002,3,150,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,15,2019,Yakutsk,FRK,2002,3,-25,Siberia_2019_1,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,15,2019,Yakutsk,FRK,2002,3,-25,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,15,2019,Yakutsk,FRK,2002,3,-25,Siberia_2019_1,Betula platyphylla,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,15,2019,Yakutsk,FRK,2002,3,-25,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,15,2019,Yakutsk,FRK,2002,3,25,Siberia_2019_1,Larix cajanderi,137,1.2,7,tree_root,2,12.5663706143592,root = larch
+june,15,2019,Yakutsk,FRK,2002,3,25,Siberia_2019_1,Larix cajanderi,88,0.85,6,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,25,Siberia_2019_1,Larix cajanderi,33,0.35,6,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,25,Siberia_2019_1,Larix cajanderi,385,3.65,10,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,25,Siberia_2019_1,Larix cajanderi,113,1.22,6,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,25,Siberia_2019_1,Pinus sylvestris,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,15,2019,Yakutsk,FRK,2002,3,25,Siberia_2019_1,Betula platyphylla,200,1.34,10,tree_root,2,12.5663706143592,root = larch
+june,15,2019,Yakutsk,FRK,2002,3,25,Siberia_2019_1,Betula platyphylla,340,4.45,10,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,25,Siberia_2019_1,Betula platyphylla,81,0.4,10,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,25,Siberia_2019_1,Betula platyphylla,134,0.9,10,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,25,Siberia_2019_1,Betula platyphylla,220,2.23,10,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,25,Siberia_2019_1,Populus tremula,NA,NA,NA,NA,2,12.5663706143592,zero recruits; a couple of aspen recruits near plot but not in it
+june,15,2019,Yakutsk,FRK,2002,3,75,Siberia_2019_1,Larix cajanderi,133,1.52,9,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,75,Siberia_2019_1,Larix cajanderi,143,1.45,9,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,75,Siberia_2019_1,Larix cajanderi,334,3.12,9,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,75,Siberia_2019_1,Larix cajanderi,90,1.05,9,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,75,Siberia_2019_1,Larix cajanderi,37,0.45,10,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,75,Siberia_2019_1,Pinus sylvestris,91,1.33,9,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,75,Siberia_2019_1,Pinus sylvestris,55,0.6,4,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,75,Siberia_2019_1,Betula platyphylla,112,0.95,7,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,75,Siberia_2019_1,Populus tremula,310,2,12,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,75,Siberia_2019_1,Populus tremula,216,1.1,10,hummock,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,75,Siberia_2019_1,Populus tremula,250,1.92,10,hummock,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,75,Siberia_2019_1,Populus tremula,242,1.9,10,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Larix cajanderi,85,0.83,8,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Larix cajanderi,58,0.57,8,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Larix cajanderi,410,3.96,13,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Larix cajanderi,137,1.3,8,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Larix cajanderi,82,0.95,7,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Pinus sylvestris,11,0.18,2,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Pinus sylvestris,12,0.2,2,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Betula platyphylla,308,3.54,10,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Betula platyphylla,319,3.26,10,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Betula platyphylla,152,1,10,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Betula platyphylla,380,3.55,10,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Betula platyphylla,152,1.1,10,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Populus tremula,52,0.25,4,no,2,12.5663706143592,NA
+june,15,2019,Yakutsk,FRK,2002,3,150,Siberia_2019_1,Populus tremula,410,3.05,12,no,2,12.5663706143592,NA
+june,22,2019,Cherskiy,ANS,2003,1,-25a,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,22,2019,Cherskiy,ANS,2003,1,-25b,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,22,2019,Cherskiy,ANS,2003,1,25,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,22,2019,Cherskiy,ANS,2003,1,50,Siberia_2019_5,Larix cajanderi,28.2,0.28,7,no,2,12.5663706143592,NA
+june,22,2019,Cherskiy,ANS,2003,1,50,Siberia_2019_5,Larix cajanderi,24.5,0.33,6,no,2,12.5663706143592,NA
+june,22,2019,Cherskiy,ANS,2003,1,50,Siberia_2019_5,Larix cajanderi,72,1.39,6,hummock,2,12.5663706143592,NA
+june,22,2019,Cherskiy,ANS,2003,1,50,Siberia_2019_5,Larix cajanderi,47.8,0.62,6,hummock,2,12.5663706143592,NA
+june,22,2019,Cherskiy,ANS,2003,1,50,Siberia_2019_5,Larix cajanderi,60.8,0.75,6,hummock,2,12.5663706143592,NA
+june,22,2019,Cherskiy,ANS,2003,1,75,Siberia_2019_5,Larix cajanderi,49.5,0.75,6,no,2,12.5663706143592,NA
+june,22,2019,Cherskiy,ANS,2003,1,75,Siberia_2019_5,Larix cajanderi,33.8,0.45,6,no,2,12.5663706143592,NA
+june,22,2019,Cherskiy,ANS,2003,1,75,Siberia_2019_5,Larix cajanderi,42.2,0.73,6,no,2,12.5663706143592,NA
+june,22,2019,Cherskiy,ANS,2003,1,75,Siberia_2019_5,Larix cajanderi,74.7,1.13,6,no,2,12.5663706143592,NA
+june,22,2019,Cherskiy,ANS,2003,1,75,Siberia_2019_5,Larix cajanderi,56,0.65,6,hummock,2,12.5663706143592,NA
+june,22,2019,Cherskiy,ANS,2003,1,100,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,22,2019,Cherskiy,ANS,2003,1,150,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,22,2019,Cherskiy,ANS,2003,1,250,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,23,2019,Cherskiy,ANS,2003,2,-50,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,23,2019,Cherskiy,ANS,2003,2,-25,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,23,2019,Cherskiy,ANS,2003,2,25,Siberia_2019_5,Larix cajanderi,25.6,0.3,5,tussock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,2,25,Siberia_2019_5,Larix cajanderi,24.8,0.38,7,tussock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,2,25,Siberia_2019_5,Larix cajanderi,6.5,0.14,6,tussock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,2,50,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,23,2019,Cherskiy,ANS,2003,2,75,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,23,2019,Cherskiy,ANS,2003,2,100,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,23,2019,Cherskiy,ANS,2003,2,150,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,23,2019,Cherskiy,ANS,2003,2,200,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,23,2019,Cherskiy,ANS,2003,3,-25b,Siberia_2019_5,Larix cajanderi,5.4,0.18,7,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,-25b,Siberia_2019_5,Larix cajanderi,6.6,0.12,4,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,-25b,Siberia_2019_5,Larix cajanderi,17.5,0.22,8,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,-25b,Siberia_2019_5,Larix cajanderi,41.5,0.46,6,no,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,-25b,Siberia_2019_5,Larix cajanderi,19.5,0.22,7,no,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,-25a,Siberia_2019_5,Larix cajanderi,48.5,0.52,12,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,-25a,Siberia_2019_5,Larix cajanderi,26.8,0.35,9,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,-25a,Siberia_2019_5,Larix cajanderi,36.8,0.35,10,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,-25a,Siberia_2019_5,Larix cajanderi,58.2,0.69,11,no,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,-25a,Siberia_2019_5,Larix cajanderi,66.5,0.75,9,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,25,Siberia_2019_5,Larix cajanderi,295,2.64,11,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,25,Siberia_2019_5,Larix cajanderi,88.1,0.82,11,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,25,Siberia_2019_5,Larix cajanderi,65.4,1.04,7,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,25,Siberia_2019_5,Larix cajanderi,114,1.18,8,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,25,Siberia_2019_5,Larix cajanderi,155,1.54,11,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,50,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,23,2019,Cherskiy,ANS,2003,3,75,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,23,2019,Cherskiy,ANS,2003,3,100,Siberia_2019_5,Larix cajanderi,192,2.88,12,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,100,Siberia_2019_5,Larix cajanderi,173,2.48,13,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,100,Siberia_2019_5,Larix cajanderi,151.5,1.93,12,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,100,Siberia_2019_5,Larix cajanderi,44.5,0.81,9,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,100,Siberia_2019_5,Larix cajanderi,7.9,0.26,9,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,150,Siberia_2019_5,Larix cajanderi,70,1.05,8,tussock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,150,Siberia_2019_5,Larix cajanderi,28.5,0.52,6,base_of_tree,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,150,Siberia_2019_5,Larix cajanderi,59.2,0.74,6,base_of_tree,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,150,Siberia_2019_5,Larix cajanderi,24.5,0.33,5,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,150,Siberia_2019_5,Larix cajanderi,39.5,0.48,5,hummock,2,12.5663706143592,NA
+june,23,2019,Cherskiy,ANS,2003,3,200,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,24,2019,Cherskiy,Alnus,1984,1,-50,Siberia_2019_5,Larix cajanderi,125,1.84,25,no,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,-25,Siberia_2019_5,Larix cajanderi,390,2.95,35,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,-25,Siberia_2019_5,Larix cajanderi,244,2.18,18,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,-25,Siberia_2019_5,Larix cajanderi,92.5,0.77,11,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,-25,Siberia_2019_5,Larix cajanderi,735,6.67,24,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,-25,Siberia_2019_5,Larix cajanderi,195,1.88,24,hummock,2,12.5663706143592,height listed as 1.95 in notebook but entered here as 195
+june,24,2019,Cherskiy,Alnus,1984,1,25,Siberia_2019_5,Larix cajanderi,445,3.97,24,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,25,Siberia_2019_5,Larix cajanderi,108,0.88,12,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,25,Siberia_2019_5,Larix cajanderi,194,1.63,24,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,25,Siberia_2019_5,Larix cajanderi,271,2.18,31,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,25,Siberia_2019_5,Larix cajanderi,163,1.13,20,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,50,Siberia_2019_5,Larix cajanderi,139.5,1.4,21,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,50,Siberia_2019_5,Larix cajanderi,240,1.95,24,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,50,Siberia_2019_5,Larix cajanderi,780,5.34,24,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,50,Siberia_2019_5,Larix cajanderi,163,1.6,22,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,50,Siberia_2019_5,Larix cajanderi,134,1.79,21,no,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,75,Siberia_2019_5,Larix cajanderi,134,1.48,22,no,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,75,Siberia_2019_5,Larix cajanderi,159,1.7,22,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,75,Siberia_2019_5,Larix cajanderi,400,4.6,22,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,75,Siberia_2019_5,Larix cajanderi,550,5.18,27,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,75,Siberia_2019_5,Larix cajanderi,330,3.38,31,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,100,Siberia_2019_5,Larix cajanderi,350,2.72,17,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,100,Siberia_2019_5,Larix cajanderi,477,3.74,31,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,100,Siberia_2019_5,Larix cajanderi,265,1.98,21,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,100,Siberia_2019_5,Larix cajanderi,80,0.9,16,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,100,Siberia_2019_5,Larix cajanderi,230,1.43,21,woody_debris,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,150,Siberia_2019_5,Larix cajanderi,127,1.15,21,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,150,Siberia_2019_5,Larix cajanderi,430,3.68,24,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,150,Siberia_2019_5,Larix cajanderi,430,4.45,24,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,150,Siberia_2019_5,Larix cajanderi,160,1.19,21,hummock,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,150,Siberia_2019_5,Larix cajanderi,175,1.72,24,no,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,200,Siberia_2019_5,Larix cajanderi,185,2.64,21,no,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,200,Siberia_2019_5,Larix cajanderi,81,0.76,12,no,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,200,Siberia_2019_5,Larix cajanderi,109,1.63,12,no,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,200,Siberia_2019_5,Larix cajanderi,66,0.85,12,tip_up_mound,2,12.5663706143592,NA
+june,24,2019,Cherskiy,Alnus,1984,1,200,Siberia_2019_5,Larix cajanderi,347,3.88,12,tip_up_mound,2,12.5663706143592,NA
+june,25,2019,Cherskiy,BP,1983,1,-25b,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2019,Cherskiy,BP,1983,1,-25a,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2019,Cherskiy,BP,1983,1,25,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2019,Cherskiy,BP,1983,1,50,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2019,Cherskiy,BP,1983,1,75,Siberia_2019_5,Larix cajanderi,152,2.25,10,hummock,2,12.5663706143592,NA
+june,25,2019,Cherskiy,BP,1983,1,75,Siberia_2019_5,Larix cajanderi,139,2.05,10,hummock,2,12.5663706143592,NA
+june,25,2019,Cherskiy,BP,1983,1,100,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2019,Cherskiy,BP,1983,1,150,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2019,Cherskiy,BP,1983,1,200,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2019,Cherskiy,BP,1983,2,-25b,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2019,Cherskiy,BP,1983,2,-25a,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2019,Cherskiy,BP,1983,2,25,Siberia_2019_5,Larix cajanderi,22.2,0.42,8,hummock,2,12.5663706143592,NA
+june,25,2019,Cherskiy,BP,1983,2,25,Siberia_2019_5,Larix cajanderi,25.2,0.52,9,hummock,2,12.5663706143592,NA
+june,25,2019,Cherskiy,BP,1983,2,25,Siberia_2019_5,Larix cajanderi,27.3,0.78,10,hummock,2,12.5663706143592,Lost 14 cm top kill
+june,25,2019,Cherskiy,BP,1983,2,25,Siberia_2019_5,Larix cajanderi,68.8,1,10,hummock,2,12.5663706143592,NA
+june,25,2019,Cherskiy,BP,1983,2,50,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2019,Cherskiy,BP,1983,2,75,Siberia_2019_5,Larix cajanderi,79.5,1.33,10,depression,2,12.5663706143592,NA
+june,25,2019,Cherskiy,BP,1983,2,100,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2019,Cherskiy,BP,1983,2,150,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+june,25,2019,Cherskiy,BP,1983,2,200,Siberia_2019_5,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,1,-50,Siberia_2019_8,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,1,-20,Siberia_2019_8,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,1,25,Siberia_2019_8,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,1,50,Siberia_2019_8,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,1,75,Siberia_2019_8,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,1,100,Siberia_2019_8,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,1,150,Siberia_2019_8,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,1,200,Siberia_2019_8,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,2,-50,Siberia_2019_8,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,2,-25,Siberia_2019_8,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,2,25,Siberia_2019_8,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,2,50,Siberia_2019_8,Larix cajanderi,175,2.25,8,hummock,2,12.5663706143592,NA
+july,2,2019,Cherskiy,HR,1990,2,50,Siberia_2019_8,Larix cajanderi,69.5,1.08,8,no,2,12.5663706143592,NA
+july,2,2019,Cherskiy,HR,1990,2,50,Siberia_2019_8,Larix cajanderi,33.1,0.65,8,no,2,12.5663706143592,NA
+july,2,2019,Cherskiy,HR,1990,2,50,Siberia_2019_8,Larix cajanderi,8.75,0.28,7,no,2,12.5663706143592,NA
+july,2,2019,Cherskiy,HR,1990,2,50,Siberia_2019_8,Larix cajanderi,45.5,0.62,8,no,2,12.5663706143592,NA
+july,2,2019,Cherskiy,HR,1990,2,75,Siberia_2019_8,Larix cajanderi,62.5,1.08,8,hummock,2,12.5663706143592,NA
+july,2,2019,Cherskiy,HR,1990,2,75,Siberia_2019_8,Larix cajanderi,65.5,1.32,8,hummock,2,12.5663706143592,seedling has cones
+july,2,2019,Cherskiy,HR,1990,2,75,Siberia_2019_8,Larix cajanderi,98,2.01,9,hummock,2,12.5663706143592,seedling has cones
+july,2,2019,Cherskiy,HR,1990,2,75,Siberia_2019_8,Larix cajanderi,7.23,0.23,7,no,2,12.5663706143592,NA
+july,2,2019,Cherskiy,HR,1990,2,100,Siberia_2019_8,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,2,150,Siberia_2019_8,Larix cajanderi,NA,NA,NA,NA,2,12.5663706143592,zero recruits
+july,2,2019,Cherskiy,HR,1990,2,200,Siberia_2019_8,Larix cajanderi,100,1.66,9,hummock,2,12.5663706143592,seedling has cones
+july,2,2019,Cherskiy,HR,1990,2,200,Siberia_2019_8,Larix cajanderi,68,1.22,8,hummock,2,12.5663706143592,NA

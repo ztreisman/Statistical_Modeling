@@ -1,0 +1,144 @@
+---
+title: "Review questions solutions"
+author: "Zack Treisman"
+date: "Spring 2021"
+output: html_document
+---
+
+# 1 
+
+There are many possible ways to answer this question. Here is one.
+
+(a) i: Cases are observations of individual sheep at a particular place and time, ii: possible variables are sex, age, location
+
+(b) Sex and location are categorical, though location might be usefully numerically coded, say with lat and long. Age could be numerical if we have a way of knowing, or it could be an ordered categorical variable (for example: young, adult, old).
+
+(c) Do male and female sheep frequent the same areas?
+
+(d) Sex is explanatory, location is response.
+
+# 4
+
+
+(a) What proportion of the fruit flies have thorax length less than 0.72 mm?
+```{r}
+pnorm(0.72,0.8,0.078)
+```
+
+(b) What proportion of the fruit flies have thorax length greater than 0.82 mm?
+```{r}
+pnorm(0.82,0.8,0.078, lower.tail = FALSE)
+```
+
+(c) What proportion of the fruit flies have thorax length between 0.7 and 0.9 mm?
+```{r}
+pnorm(0.9,0.8,0.078) - pnorm(0.7,0.8,0.078)
+```
+
+(d) We wish to select the fruit flies with the highest 20% of thorax length. What is
+the shortest thorax length we should consider?
+```{r}
+qnorm(0.8,0.8,0.078)
+```
+
+# 5
+
+(a) Which of these five variables are numerical? income and age
+
+(b) Which type of plot would be appopriate to use to view the relationship between
+income and gender? hollow histograms or side by side boxplots
+
+(c) All but iii are true.
+
+(d) Only iii is true.
+
+# 8 
+
+(a) What is your point estimate for the proportion of Western students who would
+consider a physics major who are female?
+```{r}
+ptEst <- 23/50
+```
+
+(b) Using a normal model for the proportion, what is the standard error in your
+estimate?
+```{r}
+se <- sqrt(23/50*27/50/50)
+se
+```
+
+(c) Give a 95% confidence interval for the proportion of potential physics majors at
+Western who are female.
+```{r}
+prop.test(23,50)
+```
+alternatively
+```{r}
+lower <- ptEst - 2*se
+upper <- ptEst + 2*se
+conf.interval <- c(lower,upper)
+conf.interval
+```
+
+(d) If you would like your margin of error to be at most ±5%, assuming that the
+proportion of potential physics majors who are female does not change, how
+many potential physics majors would you have to include in your sample?
+```{r}
+(23/50)*(27/50)/(.05/1.96)^2
+```
+
+# 12
+
+(a) What are your null and alternate hypotheses? $H_0$: The distributions of fish are the same in both lakes. $H_a$: The lakes do not have the same distribuitons of fish.
+
+(b) How many of fish A do we expect to see in Green Lake if the distributions are
+the same in both lakes?
+
+```{r}
+1182*1058/2045
+```
+
+(c) What are the degrees of freedom, the $\chi^2$ statistic, and the p-value?
+
+```{r}
+fish<-matrix(c(650, 412, 120, 408, 387,68), ncol=2)
+chisq.test(fish)
+```
+
+We can also answer (b) using:
+```{r}
+chisq.test(fish)$expected[1,2]
+```
+
+(d) Do you think that the distributions of fish types are the same in both lakes?
+Explain. The p-value is very small, it seems unlikely that the true distributions are the same in both lakes.
+
+# 13
+
+(a) Give appropriate null and alternative hypotheses.
+$H_0: \mu=1500$, $H_a: \mu\neq1500$
+
+(b) Give the test statistic, degrees of freedom, and p-value for the test.
+(c) Give a 95% confidence interval for the mean metabolic rate in this group.
+
+```{r}
+rates<-c(995, 1425, 1396, 1418, 1502, 1256, 1189, 913, 1124, 1052, 1347, 1204)
+t.test(rates, mu=1500)
+```
+
+(d) Clearly interpret your results in a sentence. The p-value is small, it seems unlikely that the mean metabolic rate in this population from which this sample was taken is 1500 kCal/day.
+
+# 16
+
+(c) is the correct calculation.
+
+# 17
+
+(a) Do you trust the regression line? Why or why not? Sure. The residuals show no clear pattern, and the correlation coefficient is reasonably large.
+
+(b) What is the biological meaning of the intercept $395.01$? Do you trust this? Why
+or why not? This would be the area of a wing with zero weight. Not a meaningful extrapolation.
+
+(c) What is the biological meaning of the slope $38.23$? This is the expected increase in wing area per unit increase in wing weight, or the average area of one mg of butterfly wing.
+
+(d) What does the model predict for the area of a wing weighing 10 milligrams? $395.01+38.23 \times 10=777.31$

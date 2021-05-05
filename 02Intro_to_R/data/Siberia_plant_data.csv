@@ -1,0 +1,2438 @@
+month,day,year,site,topography,burn_year,transect,plot,treatment,point_nmbr,species,Func_group,hits_count,first_hit,ground_cover
+june,25,2018,CN,upland,2001,1,p1,moderate,1,Moss spp.,MOSS,1,y,moss
+june,25,2018,CN,upland,2001,1,p1,moderate,2,Salix spp.,DESH,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,3,Moss spp.,MOSS,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,4,Carex spp.,GRAM,1,y,betula litter
+june,25,2018,CN,upland,2001,1,p1,moderate,5,Carex spp.,GRAM,1,y,betula litter
+june,25,2018,CN,upland,2001,1,p1,moderate,6,None,NONE,0,NA,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,7,None,NONE,0,NA,moss
+june,25,2018,CN,upland,2001,1,p1,moderate,8,Equisetum spp.,EQUI,1,y,lichen
+june,25,2018,CN,upland,2001,1,p1,moderate,8,Rhododendron groenlandicum,EVSH,1,NA,lichen
+june,25,2018,CN,upland,2001,1,p1,moderate,8,Moss spp.,MOSS,1,NA,lichen
+june,25,2018,CN,upland,2001,1,p1,moderate,9,None,NONE,0,NA,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,10,None,NONE,0,NA,betula litter
+june,25,2018,CN,upland,2001,1,p1,moderate,11,Carex spp.,GRAM,2,y,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,12,Carex spp.,GRAM,2,y,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,13,Carex spp.,GRAM,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,14,Carex spp.,GRAM,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,15,None,NONE,0,NA,lichen
+june,25,2018,CN,upland,2001,1,p1,moderate,16,Carex spp.,GRAM,2,y,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,17,Carex spp.,GRAM,2,y,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,18,None,NONE,0,NA,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,19,None,NONE,0,NA,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,20,None,NONE,0,NA,moss
+june,25,2018,CN,upland,2001,1,p1,moderate,21,Carex spp.,GRAM,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,22,Vaccinium vitis-idaea,EVSH,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,23,Epilobium angustifolium,FORB,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,24,Vaccinium vitis-idaea,EVSH,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p1,moderate,25,Equisetum spp.,EQUI,1,y,moss
+june,25,2018,CN,upland,2001,1,p2,no_seedling,1,Betula nana,DESH,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,2,Carex spp.,GRAM,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,2,Vaccinium vitis-idaea,EVSH,1,NA,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,3,None,NONE,0,NA,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,4,None,NONE,0,NA,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,5,None,NONE,0,NA,CWD
+june,25,2018,CN,upland,2001,1,p2,no_seedling,6,Betula nana,DESH,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,7,Betula nana,DESH,3,y,betula litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,7,Vaccinium vitis-idaea,EVSH,2,NA,betula litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,8,Betula nana,DESH,3,y,betula litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,9,Vaccinium vitis-idaea,EVSH,2,y,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,10,Vaccinium vitis-idaea,EVSH,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,11,Betula nana,DESH,2,y,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,12,Betula nana,DESH,4,y,betula litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,12,Vaccinium vitis-idaea,EVSH,3,NA,betula litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,13,Betula nana,DESH,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,13,Vaccinium vitis-idaea,EVSH,1,NA,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,14,None,NONE,0,NA,betula litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,15,Vaccinium vitis-idaea,EVSH,2,y,betula litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,16,Carex spp.,GRAM,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,17,Carex spp.,GRAM,1,y,betula litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,18,Vaccinium uliginosum,DESH,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,18,Betula nana,DESH,1,NA,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,19,None,NONE,0,NA,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,20,None,NONE,0,NA,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,21,None,NONE,0,NA,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,22,Carex spp.,GRAM,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,23,Betula nana,DESH,1,y,betula litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,23,Vaccinium uliginosum,DESH,1,NA,betula litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,24,Vaccinium vitis-idaea,EVSH,2,y,grass litter
+june,25,2018,CN,upland,2001,1,p2,no_seedling,25,Carex spp.,GRAM,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,1,None,NONE,0,NA,betula litter
+june,25,2018,CN,upland,2001,1,p3,high,2,Salix spp.,DESH,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,2,Vaccinium uliginosum,DESH,1,NA,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,2,Equisetum spp.,EQUI,1,NA,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,3,Vaccinium uliginosum,DESH,2,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,4,None,NONE,0,NA,CWD
+june,25,2018,CN,upland,2001,1,p3,high,5,Vaccinium uliginosum,DESH,4,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,5,Rhododendron groenlandicum,EVSH,2,NA,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,6,None,NONE,0,NA,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,7,None,NONE,0,NA,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,8,Rhododendron groenlandicum,EVSH,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,9,None,NONE,0,NA,CWD
+june,25,2018,CN,upland,2001,1,p3,high,10,Vaccinium uliginosum,DESH,2,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,11,Salix spp.,DESH,6,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,11,Rhododendron groenlandicum,EVSH,3,NA,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,12,Salix spp.,DESH,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,12,Vaccinium uliginosum,DESH,3,NA,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,13,Rhododendron groenlandicum,EVSH,6,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,13,Vaccinium uliginosum,DESH,2,NA,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,14,None,NONE,0,NA,CWD
+june,25,2018,CN,upland,2001,1,p3,high,15,None,NONE,0,NA,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,16,Salix spp.,DESH,5,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,16,Carex spp.,GRAM,1,NA,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,17,Carex spp.,GRAM,1,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,18,Carex spp.,GRAM,3,y,CWD
+june,25,2018,CN,upland,2001,1,p3,high,19,Rhododendron groenlandicum,EVSH,2,y,CWD
+june,25,2018,CN,upland,2001,1,p3,high,20,Salix spp.,DESH,3,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,20,Vaccinium uliginosum,DESH,4,NA,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,21,Vaccinium uliginosum,DESH,2,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,21,Rhododendron groenlandicum,EVSH,1,NA,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,22,None,NONE,0,NA,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,23,Carex spp.,GRAM,2,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,24,Carex spp.,GRAM,2,y,grass litter
+june,25,2018,CN,upland,2001,1,p3,high,25,None,NONE,0,NA,CWD
+july,8,2018,CN,upland,2001,2,p45,unburned,1,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,2,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,3,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,3,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,4,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,5,Betula nana,DESH,3,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,6,Vaccinium vitis-idaea,EVSH,2,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,7,Betula nana,DESH,5,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,8,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,9,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,10,Vaccinium vitis-idaea,EVSH,3,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,11,Vaccinium vitis-idaea,EVSH,2,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,12,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,12,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,13,Betula nana,DESH,3,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,14,Betula nana,DESH,2,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,14,Vaccinium vitis-idaea,EVSH,2,NA,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,15,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,15,Vaccinium vitis-idaea,EVSH,2,NA,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,16,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,17,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,18,Equisetum spp.,EQUI,1,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,19,Vaccinium vitis-idaea,EVSH,3,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,20,Vaccinium vitis-idaea,EVSH,6,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,21,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,22,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,23,Equisetum spp.,EQUI,1,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,24,Vaccinium vitis-idaea,EVSH,3,y,litter
+july,8,2018,CN,upland,2001,2,p45,unburned,25,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,1,coarse woody debris,CWD,1,y,CWD
+july,8,2018,CN,upland,2001,2,p46,no_seedling,2,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,3,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,4,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,5,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,6,Grass spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,6,coarse woody debris,CWD,1,NA,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,7,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,8,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,9,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,10,Vaccinium vitis-idaea,EVSH,2,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,11,coarse woody debris,CWD,1,y,CWD
+july,8,2018,CN,upland,2001,2,p46,no_seedling,12,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,13,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,14,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,15,Unknown forb,FORB,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,15,Carex spp.,GRAM,1,NA,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,16,coarse woody debris,CWD,1,y,CWD
+july,8,2018,CN,upland,2001,2,p46,no_seedling,17,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,18,Carex spp.,GRAM,3,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,19,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,20,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,21,Unknown forb,FORB,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,22,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,23,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,24,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p46,no_seedling,25,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,1,Carex spp.,GRAM,2,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,2,Larix cajanderi,LACA,1,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,2,Carex spp.,GRAM,1,NA,litter
+july,8,2018,CN,upland,2001,2,p47,high,2,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,2,p47,high,3,Carex spp.,GRAM,3,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,4,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,5,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,6,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,7,Carex spp.,GRAM,2,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,8,None,NONE,0,NA,moss
+july,8,2018,CN,upland,2001,2,p47,high,9,coarse woody debris,CWD,1,y,CWD
+july,8,2018,CN,upland,2001,2,p47,high,10,Eriophorum spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,11,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p47,high,12,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,13,Vaccinium vitis-idaea,EVSH,3,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,14,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p47,high,15,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,16,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,17,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,18,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p47,high,19,None,NONE,0,NA,moss
+july,8,2018,CN,upland,2001,2,p47,high,20,Eriophorum spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,21,Eriophorum spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,21,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,2,p47,high,22,Carex spp.,GRAM,5,y,litter
+july,8,2018,CN,upland,2001,2,p47,high,23,None,NONE,0,NA,moss
+july,8,2018,CN,upland,2001,2,p47,high,24,None,NONE,0,NA,moss
+july,8,2018,CN,upland,2001,2,p47,high,25,Vaccinium vitis-idaea,EVSH,2,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,1,coarse woody debris,CWD,3,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,2,coarse woody debris,CWD,1,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,3,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,3,coarse woody debris,CWD,1,NA,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,4,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,5,Carex spp.,GRAM,2,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,6,coarse woody debris,CWD,1,y,moss
+july,8,2018,CN,upland,2001,2,p48,moderate,7,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,8,coarse woody debris,CWD,2,y,moss
+july,8,2018,CN,upland,2001,2,p48,moderate,9,coarse woody debris,CWD,1,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,10,Unknown forb,FORB,1,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,11,Epilobium angustifolium,FORB,1,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,11,Carex spp.,GRAM,1,NA,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,12,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,13,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,14,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,15,Unknown forb,FORB,1,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,16,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,17,coarse woody debris,CWD,1,y,CWD
+july,8,2018,CN,upland,2001,2,p48,moderate,18,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,19,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,20,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,21,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,22,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,23,Salix spp.,DESH,3,y,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,24,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,2,p48,moderate,25,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,3,p49,high,1,None,NONE,0,NA,moss
+july,8,2018,CN,upland,2001,3,p49,high,2,Larix cajanderi,LACA,3,y,moss
+july,8,2018,CN,upland,2001,3,p49,high,2,Vaccinium vitis-idaea,EVSH,1,NA,moss
+july,8,2018,CN,upland,2001,3,p49,high,3,Larix cajanderi,LACA,1,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,3,Vaccinium vitis-idaea,EVSH,2,NA,litter
+july,8,2018,CN,upland,2001,3,p49,high,4,Rhododendron groenlandicum,EVSH,1,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,4,Andromeda spp.,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p49,high,5,Larix cajanderi,LACA,1,y,moss
+july,8,2018,CN,upland,2001,3,p49,high,5,Salix spp.,DESH,2,NA,moss
+july,8,2018,CN,upland,2001,3,p49,high,6,Larix cajanderi,LACA,2,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,6,Carex spp.,GRAM,1,NA,litter
+july,8,2018,CN,upland,2001,3,p49,high,7,Larix cajanderi,LACA,4,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,8,Vaccinium vitis-idaea,EVSH,2,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,9,Larix cajanderi,LACA,4,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,10,Larix cajanderi,LACA,1,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,10,Vaccinium uliginosum,DESH,2,NA,litter
+july,8,2018,CN,upland,2001,3,p49,high,11,Larix cajanderi,LACA,2,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,11,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p49,high,12,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,3,p49,high,13,Vaccinium uliginosum,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,14,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,15,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,16,Salix spp.,DESH,2,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,16,Carex spp.,GRAM,1,NA,litter
+july,8,2018,CN,upland,2001,3,p49,high,17,Carex spp.,GRAM,2,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,18,Carex spp.,GRAM,2,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,18,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p49,high,19,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,19,Larix cajanderi,LACA,1,NA,litter
+july,8,2018,CN,upland,2001,3,p49,high,19,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p49,high,20,Carex spp.,GRAM,2,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,21,Carex spp.,GRAM,3,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,21,Larix cajanderi,LACA,1,NA,litter
+july,8,2018,CN,upland,2001,3,p49,high,22,Equisetum spp.,EQUI,1,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,23,Carex spp.,GRAM,2,y,litter
+july,8,2018,CN,upland,2001,3,p49,high,24,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,3,p49,high,25,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,1,Vaccinium uliginosum,DESH,4,y,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,1,Grass spp.,GRAM,2,NA,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,2,Vaccinium uliginosum,DESH,2,y,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,3,Vaccinium uliginosum,DESH,1,y,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,4,Vaccinium uliginosum,DESH,1,y,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,5,Vaccinium uliginosum,DESH,1,y,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,6,Vaccinium uliginosum,DESH,2,y,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,7,Salix spp.,DESH,1,y,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,7,Vaccinium uliginosum,DESH,1,NA,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,8,Betula nana,DESH,1,y,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,9,Vaccinium uliginosum,DESH,2,NA,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,9,Grass spp.,GRAM,1,y,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,10,Betula nana,DESH,2,y,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,10,Vaccinium uliginosum,DESH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,11,Salix spp.,DESH,2,y,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,12,Salix spp.,DESH,3,y,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,12,Betula nana,DESH,2,NA,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,13,Grass spp.,GRAM,1,y,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,13,Vaccinium uliginosum,DESH,1,NA,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,14,Grass spp.,GRAM,1,y,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,14,Betula nana,DESH,1,NA,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,14,Vaccinium uliginosum,DESH,1,NA,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,15,Vaccinium uliginosum,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,15,Equisetum spp.,EQUI,1,NA,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,16,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,17,Salix spp.,DESH,3,y,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,17,Equisetum spp.,EQUI,1,NA,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,18,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,19,Grass spp.,GRAM,2,y,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,19,Betula nana,DESH,2,NA,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,19,Vaccinium vitis-idaea,EVSH,2,NA,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,20,Betula nana,DESH,2,y,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,20,Vaccinium vitis-idaea,EVSH,1,NA,moss
+july,8,2018,CN,upland,2001,3,p50,moderate,21,Salix spp.,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,21,Betula nana,DESH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,21,Grass spp.,GRAM,1,NA,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,22,Grass spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,22,Betula nana,DESH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,23,Grass spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,23,Betula nana,DESH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,24,Grass spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,24,Equisetum spp.,EQUI,2,NA,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,24,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,25,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p50,moderate,25,Grass spp.,GRAM,1,NA,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,1,None,NONE,0,NA,moss
+july,8,2018,CN,upland,2001,3,p51,no_seedling,2,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,3,Betula nana,DESH,3,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,4,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,5,Equisetum spp.,EQUI,1,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,6,None,NONE,0,NA,moss
+july,8,2018,CN,upland,2001,3,p51,no_seedling,7,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,7,Carex spp.,GRAM,1,NA,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,8,Betula nana,DESH,3,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,9,Carex spp.,GRAM,2,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,10,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,11,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,12,Betula nana,DESH,3,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,13,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,14,Grass spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,15,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,16,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,17,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,18,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,19,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,20,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,21,Salix spp.,DESH,5,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,22,Carex spp.,GRAM,1,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,22,Equisetum spp.,EQUI,2,NA,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,23,Salix spp.,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,23,Betula nana,DESH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,24,Salix spp.,DESH,3,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,24,Betula nana,DESH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,25,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p51,no_seedling,25,Carex spp.,GRAM,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,1,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,1,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,2,Betula nana,DESH,3,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,2,Equisetum spp.,EQUI,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,2,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,3,Betula nana,DESH,2,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,4,Betula nana,DESH,2,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,4,Vaccinium vitis-idaea,EVSH,2,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,5,Betula nana,DESH,2,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,6,Vaccinium vitis-idaea,EVSH,4,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,7,Betula nana,DESH,2,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,8,Betula nana,DESH,3,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,8,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,9,Betula nana,DESH,2,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,9,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,10,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,10,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,11,Vaccinium uliginosum,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,11,Salix spp.,DESH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,11,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,12,Vaccinium vitis-idaea,EVSH,2,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,13,None,NONE,0,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,14,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,14,Vaccinium vitis-idaea,EVSH,2,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,15,Betula nana,DESH,3,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,15,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,16,Salix spp.,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,16,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,17,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,18,Betula nana,DESH,2,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,18,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,19,Betula nana,DESH,3,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,19,Vaccinium vitis-idaea,EVSH,2,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,20,Vaccinium vitis-idaea,EVSH,2,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,21,Betula nana,DESH,2,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,21,Salix spp.,DESH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,21,Vaccinium vitis-idaea,EVSH,3,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,22,Betula nana,DESH,2,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,22,Vaccinium vitis-idaea,EVSH,2,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,23,Betula nana,DESH,2,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,23,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,24,Betula nana,DESH,1,y,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,24,Vaccinium vitis-idaea,EVSH,3,NA,litter
+july,8,2018,CN,upland,2001,3,p52,unburned,25,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,1,Equisetum spp.,EQUI,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,2,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,3,Equisetum spp.,EQUI,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,4,Grass spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,4,Equisetum spp.,EQUI,1,NA,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,5,Equisetum spp.,EQUI,2,y,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,6,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,7,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,8,Grass spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,8,Equisetum spp.,EQUI,2,NA,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,9,Grass spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,10,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,11,coarse woody debris,CWD,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,12,coarse woody debris,CWD,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,13,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,14,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,15,Equisetum spp.,EQUI,2,y,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,16,coarse woody debris,CWD,1,y,CWD
+july,2,2018,FOC,lowland,2015,1,p25,unburned,17,coarse woody debris,CWD,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,18,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,19,Equisetum spp.,EQUI,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,20,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,21,Equisetum spp.,EQUI,2,y,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,22,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,23,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,24,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p25,unburned,25,None,NONE,0,NA,CWD
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,1,Eriophorum spp.,GRAM,5,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,2,Eriophorum spp.,GRAM,2,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,3,Carex spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,4,Carex spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,5,Carex spp.,GRAM,4,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,6,Eriophorum spp.,GRAM,10,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,7,Eriophorum spp.,GRAM,4,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,8,Eriophorum spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,8,Carex spp.,GRAM,4,NA,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,9,Carex spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,10,Carex spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,11,Eriophorum spp.,GRAM,12,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,12,Eriophorum spp.,GRAM,4,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,13,Eriophorum spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,14,Eriophorum spp.,GRAM,2,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,14,Carex spp.,GRAM,1,NA,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,15,Eriophorum spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,16,Eriophorum spp.,GRAM,11,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,17,Eriophorum spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,18,Carex spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,18,Eriophorum spp.,GRAM,4,NA,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,19,Eriophorum spp.,GRAM,12,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,20,Eriophorum spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,20,Carex spp.,GRAM,2,NA,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,21,Eriophorum spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,22,Eriophorum spp.,GRAM,2,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,23,Eriophorum spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,24,Eriophorum spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p26,no_seedling,25,None,NONE,0,NA,CWD
+july,2,2018,FOC,lowland,2015,1,p27,high,1,Eriophorum spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,2,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,3,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,4,Carex spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,5,Carex spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,6,Carex spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,7,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,8,Carex spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,9,Eriophorum spp.,GRAM,4,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,10,Eriophorum spp.,GRAM,9,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,11,Eriophorum spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,12,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,13,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,14,Eriophorum spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,15,Eriophorum spp.,GRAM,2,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,16,Eriophorum spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,17,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,18,Eriophorum spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,19,Eriophorum spp.,GRAM,1,y,moss
+july,2,2018,FOC,lowland,2015,1,p27,high,20,Eriophorum spp.,GRAM,2,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,21,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,22,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,23,Eriophorum spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,24,Eriophorum spp.,GRAM,2,y,litter
+july,2,2018,FOC,lowland,2015,1,p27,high,25,Eriophorum spp.,GRAM,2,y,litter
+july,2,2018,FOC,lowland,2015,1,p28,moderate,1,Unknown forb,FORB,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p28,moderate,2,Carex spp.,GRAM,1,y,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,3,Carex spp.,GRAM,9,y,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,4,Carex spp.,GRAM,3,y,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,5,Carex spp.,GRAM,3,y,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,6,Carex spp.,GRAM,2,y,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,7,Carex spp.,GRAM,1,y,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,8,Carex spp.,GRAM,4,y,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,9,None,NONE,0,NA,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,10,Carex spp.,GRAM,1,y,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,11,Carex spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p28,moderate,12,Carex spp.,GRAM,2,y,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,13,Carex spp.,GRAM,1,y,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,14,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p28,moderate,15,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p28,moderate,16,Carex spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,1,p28,moderate,17,Carex spp.,GRAM,5,y,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,18,Carex spp.,GRAM,4,y,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,19,Carex spp.,GRAM,3,y,moss
+july,2,2018,FOC,lowland,2015,1,p28,moderate,20,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p28,moderate,21,Carex spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p28,moderate,22,Carex spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p28,moderate,23,Carex spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,1,p28,moderate,24,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,1,p28,moderate,25,Carex spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,1,Eriophorum spp.,GRAM,6,y,CWD
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,2,Eriophorum spp.,GRAM,3,y,moss
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,3,Eriophorum spp.,GRAM,1,y,moss
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,4,Eriophorum spp.,GRAM,5,y,moss
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,5,Eriophorum spp.,GRAM,6,y,moss
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,6,Eriophorum spp.,GRAM,5,y,litter
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,7,Eriophorum spp.,GRAM,3,y,CWD
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,8,Eriophorum spp.,GRAM,5,y,litter
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,9,Eriophorum spp.,GRAM,4,y,moss
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,10,Eriophorum spp.,GRAM,3,y,litter tussock
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,11,Eriophorum spp.,GRAM,2,y,litter tussock
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,12,Eriophorum spp.,GRAM,4,y,bare
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,12,Vaccinium uliginosum,DESH,3,NA,bare
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,13,Eriophorum spp.,GRAM,2,y,bare
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,14,Eriophorum spp.,GRAM,2,y,bare
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,15,None,NONE,0,NA,litter tussock
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,16,Eriophorum spp.,GRAM,6,y,litter
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,17,Eriophorum spp.,GRAM,12,y,bare
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,17,Vaccinium uliginosum,DESH,4,NA,bare
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,18,Eriophorum spp.,GRAM,2,y,bare
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,19,Eriophorum spp.,GRAM,3,y,bare
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,20,Eriophorum spp.,GRAM,4,y,bare
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,21,Eriophorum spp.,GRAM,7,y,litter tussock
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,22,Eriophorum spp.,GRAM,3,y,litter tussock
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,22,Vaccinium uliginosum,DESH,2,NA,NA
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,23,Eriophorum spp.,GRAM,3,y,bare
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,23,Vaccinium uliginosum,DESH,1,NA,bare
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,24,Eriophorum spp.,GRAM,2,y,bare
+july,2,2018,FOC,lowland,2015,2,p29,no_seedling,25,None,NONE,0,NA,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,1,Eriophorum spp.,GRAM,2,y,litter
+july,2,2018,FOC,lowland,2015,2,p30,moderate,1,Vaccinium uliginosum,DESH,2,NA,litter
+july,2,2018,FOC,lowland,2015,2,p30,moderate,2,Eriophorum spp.,GRAM,1,y,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,3,Rhododendron groenlandicum,EVSH,2,y,litter
+july,2,2018,FOC,lowland,2015,2,p30,moderate,4,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,2,2018,FOC,lowland,2015,2,p30,moderate,5,None,NONE,0,NA,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,6,Betula nana,DESH,1,y,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,7,Rhododendron groenlandicum,EVSH,1,y,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,8,Vaccinium uliginosum,DESH,1,y,moss
+july,2,2018,FOC,lowland,2015,2,p30,moderate,8,Rhododendron groenlandicum,EVSH,3,NA,moss
+july,2,2018,FOC,lowland,2015,2,p30,moderate,9,Eriophorum spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,2,p30,moderate,10,Eriophorum spp.,GRAM,2,y,litter
+july,2,2018,FOC,lowland,2015,2,p30,moderate,11,None,NONE,0,NA,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,12,Betula nana,DESH,1,y,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,13,Betula nana,DESH,3,y,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,13,Vaccinium uliginosum,DESH,2,NA,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,14,Eriophorum spp.,GRAM,2,y,litter
+july,2,2018,FOC,lowland,2015,2,p30,moderate,14,Vaccinium uliginosum,DESH,2,NA,litter
+july,2,2018,FOC,lowland,2015,2,p30,moderate,14,Rhododendron groenlandicum,EVSH,2,NA,litter
+july,2,2018,FOC,lowland,2015,2,p30,moderate,15,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,2,p30,moderate,16,Rhododendron groenlandicum,EVSH,1,y,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,17,Betula nana,DESH,2,y,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,17,Eriophorum spp.,GRAM,2,NA,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,18,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,2,p30,moderate,19,Eriophorum spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,2,p30,moderate,20,Eriophorum spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,2,p30,moderate,21,Eriophorum spp.,GRAM,1,y,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,22,Eriophorum spp.,GRAM,2,y,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,23,Eriophorum spp.,GRAM,3,y,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,24,Eriophorum spp.,GRAM,2,y,bare
+july,2,2018,FOC,lowland,2015,2,p30,moderate,25,Eriophorum spp.,GRAM,1,y,bare
+july,2,2018,FOC,lowland,2015,2,p31,high,NA,NA,NONE,NA,NA,NA
+july,2,2018,FOC,lowland,2015,2,p32,unburned,1,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,2,Vaccinium uliginosum,DESH,5,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,3,Vaccinium uliginosum,DESH,2,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,4,Eriophorum spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,5,Eriophorum spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,6,Eriophorum spp.,GRAM,2,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,6,Vaccinium uliginosum,DESH,1,NA,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,7,Vaccinium uliginosum,DESH,2,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,8,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,9,Vaccinium uliginosum,DESH,2,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,10,Eriophorum spp.,GRAM,1,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,11,Vaccinium uliginosum,DESH,4,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,12,None,NONE,0,NA,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,13,Eriophorum spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,14,None,NONE,0,NA,NA
+july,2,2018,FOC,lowland,2015,2,p32,unburned,15,Eriophorum spp.,GRAM,3,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,16,Vaccinium uliginosum,DESH,1,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,16,Chamaedaphne calyculata,EVSH,1,NA,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,17,Chamaedaphne calyculata,EVSH,2,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,18,Chamaedaphne calyculata,EVSH,2,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,19,Eriophorum spp.,GRAM,2,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,20,Eriophorum spp.,GRAM,2,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,21,Eriophorum spp.,GRAM,1,y,bare
+july,2,2018,FOC,lowland,2015,2,p32,unburned,22,Vaccinium uliginosum,DESH,3,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,23,Vaccinium uliginosum,DESH,3,y,litter
+july,2,2018,FOC,lowland,2015,2,p32,unburned,24,Eriophorum spp.,GRAM,1,y,bare
+july,2,2018,FOC,lowland,2015,2,p32,unburned,25,Chamaedaphne calyculata,EVSH,1,y,bare
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,1,Grass spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,2,Grass spp.,GRAM,4,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,3,Grass spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,4,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,5,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,6,Grass spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,7,Grass spp.,GRAM,6,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,8,Grass spp.,GRAM,4,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,9,Grass spp.,GRAM,5,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,10,Grass spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,11,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,12,Grass spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,13,Grass spp.,GRAM,6,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,14,Grass spp.,GRAM,4,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,15,Grass spp.,GRAM,5,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,16,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,16,Equisetum spp.,EQUI,1,NA,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,17,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,18,Grass spp.,GRAM,4,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,19,None,NONE,0,NA,NA
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,20,Grass spp.,GRAM,6,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,21,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,22,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,23,Grass spp.,GRAM,5,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,24,Grass spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,2,p17,no_seedling,25,Grass spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,1,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,2,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,3,Carex spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,4,Carex spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,5,None,NONE,0,NA,moss
+july,1,2018,FU,lowland,2015,2,p18,moderate,6,Carex spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,7,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,8,Carex spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,9,Carex spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,10,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,11,None,NONE,0,NA,NA
+july,1,2018,FU,lowland,2015,2,p18,moderate,12,None,NONE,0,NA,moss
+july,1,2018,FU,lowland,2015,2,p18,moderate,13,Carex spp.,GRAM,2,y,moss
+july,1,2018,FU,lowland,2015,2,p18,moderate,14,Carex spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,15,Vaccinium uliginosum,DESH,3,y,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,16,Rosa acicularis,DESH,1,y,moss
+july,1,2018,FU,lowland,2015,2,p18,moderate,16,Carex spp.,GRAM,1,NA,moss
+july,1,2018,FU,lowland,2015,2,p18,moderate,17,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,18,Carex spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,19,Grass spp.,GRAM,1,y,moss
+july,1,2018,FU,lowland,2015,2,p18,moderate,20,None,NONE,0,NA,moss
+july,1,2018,FU,lowland,2015,2,p18,moderate,21,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,22,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,23,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p18,moderate,24,Grass spp.,GRAM,1,y,moss
+july,1,2018,FU,lowland,2015,2,p18,moderate,25,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,1,Grass spp.,GRAM,4,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,2,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,3,Equisetum spp.,EQUI,1,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,4,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,5,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,6,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,6,Vaccinium uliginosum,DESH,1,NA,litter
+july,1,2018,FU,lowland,2015,2,p19,high,7,Equisetum spp.,EQUI,1,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,7,Grass spp.,GRAM,1,NA,litter
+july,1,2018,FU,lowland,2015,2,p19,high,7,Vaccinium uliginosum,DESH,2,NA,litter
+july,1,2018,FU,lowland,2015,2,p19,high,8,Grass spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,9,Grass spp.,GRAM,2,y,NA
+july,1,2018,FU,lowland,2015,2,p19,high,10,Grass spp.,GRAM,4,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,10,Vaccinium uliginosum,DESH,1,NA,litter
+july,1,2018,FU,lowland,2015,2,p19,high,11,Vaccinium uliginosum,DESH,1,y,NA
+july,1,2018,FU,lowland,2015,2,p19,high,12,Vaccinium uliginosum,DESH,3,y,NA
+july,1,2018,FU,lowland,2015,2,p19,high,13,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,14,Grass spp.,GRAM,1,y,CWD
+july,1,2018,FU,lowland,2015,2,p19,high,14,Vaccinium uliginosum,DESH,1,NA,CWD
+july,1,2018,FU,lowland,2015,2,p19,high,15,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,16,Vaccinium uliginosum,DESH,1,y,moss
+july,1,2018,FU,lowland,2015,2,p19,high,17,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,17,Vaccinium uliginosum,DESH,1,NA,litter
+july,1,2018,FU,lowland,2015,2,p19,high,18,Grass spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,19,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,20,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,21,Vaccinium vitis-idaea,EVSH,2,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,22,Vaccinium uliginosum,DESH,1,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,23,Vaccinium uliginosum,DESH,2,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,24,Vaccinium uliginosum,DESH,3,y,litter
+july,1,2018,FU,lowland,2015,2,p19,high,25,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,2,p20,unburned,1,Moss spp.,MOSS,1,y,moss
+july,1,2018,FU,lowland,2015,2,p20,unburned,2,None,NONE,0,NA,moss
+july,1,2018,FU,lowland,2015,2,p20,unburned,3,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p20,unburned,4,Moss spp.,MOSS,1,y,moss
+july,1,2018,FU,lowland,2015,2,p20,unburned,5,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p20,unburned,6,Carex spp.,GRAM,1,y,moss
+july,1,2018,FU,lowland,2015,2,p20,unburned,7,Vaccinium uliginosum,DESH,1,y,moss
+july,1,2018,FU,lowland,2015,2,p20,unburned,8,Vaccinium uliginosum,DESH,2,y,moss
+july,1,2018,FU,lowland,2015,2,p20,unburned,9,Carex spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,2,p20,unburned,10,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p20,unburned,11,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p20,unburned,12,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p20,unburned,13,Vaccinium uliginosum,DESH,1,y,moss
+july,1,2018,FU,lowland,2015,2,p20,unburned,14,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p20,unburned,15,None,NONE,0,NA,CWD
+july,1,2018,FU,lowland,2015,2,p20,unburned,16,None,NONE,0,NA,moss
+july,1,2018,FU,lowland,2015,2,p20,unburned,17,None,NONE,0,NA,moss
+july,1,2018,FU,lowland,2015,2,p20,unburned,18,None,NONE,0,NA,moss
+july,1,2018,FU,lowland,2015,2,p20,unburned,19,Carex spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,2,p20,unburned,20,None,NONE,0,NA,CWD
+july,1,2018,FU,lowland,2015,2,p20,unburned,21,Rosa acicularis,DESH,1,y,CWD
+july,1,2018,FU,lowland,2015,2,p20,unburned,22,None,NONE,0,NA,moss
+july,1,2018,FU,lowland,2015,2,p20,unburned,23,None,NONE,0,NA,moss
+july,1,2018,FU,lowland,2015,2,p20,unburned,24,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,2,p20,unburned,25,None,NONE,0,NA,CWD
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,1,Grass spp.,GRAM,8,y,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,2,Grass spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,3,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,4,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,5,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,6,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,7,Grass spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,8,Grass spp.,GRAM,5,y,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,9,None,NONE,0,NA,burnt tussock
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,10,Grass spp.,GRAM,1,y,bare
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,11,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,12,Equisetum spp.,EQUI,1,y,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,13,None,NONE,0,NA,bare
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,14,Grass spp.,GRAM,2,y,bare
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,15,Grass spp.,GRAM,1,y,bare
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,16,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,17,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,18,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,19,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,20,None,NONE,0,NA,bare
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,21,Grass spp.,GRAM,3,y,bare
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,22,None,NONE,0,NA,bare
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,23,None,NONE,0,NA,bare
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,24,Grass spp.,GRAM,1,y,bare
+july,1,2018,FU,lowland,2015,3,p21,no_seedling,25,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,1,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,2,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,3,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,4,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,5,Grass spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,6,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,7,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,8,Rosa acicularis,DESH,2,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,8,Grass spp.,GRAM,2,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,9,Rosa acicularis,DESH,4,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,10,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,11,Grass spp.,GRAM,3,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,12,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,13,Rosa acicularis,DESH,1,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,13,Grass spp.,GRAM,1,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,14,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,15,Vaccinium vitis-idaea,EVSH,2,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,15,Grass spp.,GRAM,1,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,16,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,16,Vaccinium vitis-idaea,EVSH,2,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,17,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,18,Vaccinium vitis-idaea,EVSH,2,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,18,Grass spp.,GRAM,1,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,19,Rosa acicularis,DESH,1,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,19,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,20,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,20,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,21,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p22,high,22,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,23,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,24,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,1,2018,FU,lowland,2015,3,p22,high,25,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,1,Vaccinium vitis-idaea,EVSH,2,y,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,2,Rhododendron groenlandicum,EVSH,3,y,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,2,Vaccinium vitis-idaea,EVSH,2,NA,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,3,Vaccinium vitis-idaea,EVSH,1,y,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,4,Rhododendron groenlandicum,EVSH,7,y,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,5,Rhododendron groenlandicum,EVSH,1,y,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,5,Vaccinium vitis-idaea,EVSH,2,NA,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,6,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,7,None,NONE,0,NA,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,8,Grass spp.,GRAM,1,y,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,9,Rhododendron groenlandicum,EVSH,3,y,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,9,Vaccinium vitis-idaea,EVSH,1,NA,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,10,Rhododendron groenlandicum,EVSH,1,y,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,11,Rhododendron groenlandicum,EVSH,3,y,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,12,Vaccinium vitis-idaea,EVSH,2,y,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,13,Vaccinium vitis-idaea,EVSH,1,y,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,14,Vaccinium vitis-idaea,EVSH,3,y,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,15,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,16,Lichen spp.,LICHEN,1,y,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,17,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,18,Grass spp.,GRAM,1,y,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,19,None,NONE,0,NA,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,20,Vaccinium vitis-idaea,EVSH,1,y,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,21,Rhododendron groenlandicum,EVSH,2,y,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,21,Vaccinium vitis-idaea,EVSH,2,NA,moss
+july,1,2018,FU,lowland,2015,3,p23,unburned,22,Rhododendron groenlandicum,EVSH,5,y,lichen
+july,1,2018,FU,lowland,2015,3,p23,unburned,23,Vaccinium vitis-idaea,EVSH,2,y,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,24,Vaccinium vitis-idaea,EVSH,2,y,litter
+july,1,2018,FU,lowland,2015,3,p23,unburned,25,Vaccinium vitis-idaea,EVSH,3,y,lichen
+july,1,2018,FU,lowland,2015,3,p24,moderate,NA,NA,NONE,NA,NA,NA
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,1,None,NONE,0,NA,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,2,Vaccinium uliginosum,DESH,3,y,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,3,None,NONE,0,NA,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,4,Grass spp.,GRAM,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,5,None,NONE,0,NA,lichen
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,6,stb_unknown,UNK,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,7,None,NONE,0,NA,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,8,None,NONE,0,NA,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,9,Grass spp.,GRAM,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,10,None,NONE,0,NA,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,11,None,NONE,0,NA,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,12,Vaccinium uliginosum,DESH,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,13,Vaccinium uliginosum,DESH,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,14,None,NONE,0,NA,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,15,Grass spp.,GRAM,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,16,coarse woody debris,CWD,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,17,None,NONE,0,NA,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,18,None,NONE,0,NA,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,19,coarse woody debris,CWD,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,20,Equisetum spp.,EQUI,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,21,None,NONE,0,NA,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,22,coarse woody debris,CWD,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,23,Grass spp.,GRAM,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,23,coarse woody debris,CWD,1,NA,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,24,Vaccinium uliginosum,DESH,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,1,p4,unburned,25,None,NONE,0,NA,betula litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,1,None,NONE,0,NA,CWD
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,2,stb_unknown,UNK,1,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,3,Grass spp.,GRAM,1,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,3,Equisetum spp.,EQUI,3,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,3,stb_unknown,UNK,1,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,4,Equisetum spp.,EQUI,5,y,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,5,Rhododendron groenlandicum,EVSH,12,y,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,6,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,7,Equisetum spp.,EQUI,1,y,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,7,stb_unknown,UNK,1,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,8,Equisetum spp.,EQUI,1,y,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,8,Grass spp.,GRAM,1,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,8,Eriophorum angustifolium,GRAM,1,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,8,stb_unknown,UNK,1,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,9,Rhododendron groenlandicum,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,9,stb_unknown,UNK,3,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,10,stb_unknown,UNK,1,y,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,11,Salix spp.,DESH,3,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,12,Salix spp.,DESH,3,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,12,Unknown forb,FORB,1,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,13,Grass spp.,GRAM,1,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,13,Equisetum spp.,EQUI,2,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,13,stb_unknown,UNK,1,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,14,Equisetum spp.,EQUI,3,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,14,Grass spp.,GRAM,1,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,14,stb_unknown,UNK,1,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,15,Salix spp.,DESH,10,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,16,coarse woody debris,CWD,1,y,moss
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,17,Rhododendron groenlandicum,EVSH,2,y,moss
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,17,Equisetum spp.,EQUI,3,NA,moss
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,18,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,19,Equisetum spp.,EQUI,4,y,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,19,Rhododendron groenlandicum,EVSH,3,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,20,Salix spp.,DESH,4,y,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,20,Grass spp.,GRAM,2,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,20,stb_unknown,UNK,1,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,21,Salix spp.,DESH,2,y,moss
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,21,coarse woody debris,CWD,2,NA,moss
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,22,Eriophorum angustifolium,GRAM,2,y,lichen
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,23,Equisetum spp.,EQUI,5,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,24,Salix spp.,DESH,6,y,lichen
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,25,Salix spp.,DESH,5,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,25,Grass spp.,GRAM,2,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p13,moderate,25,Vaccinium vitis-idaea,EVSH,2,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,1,Salix spp.,DESH,3,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,1,Betula nana,DESH,3,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,2,Salix spp.,DESH,3,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,2,Betula nana,DESH,1,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,3,Salix spp.,DESH,2,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,3,Equisetum spp.,EQUI,1,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,4,Salix spp.,DESH,4,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,5,Carex spp.,GRAM,1,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,6,Salix spp.,DESH,2,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,7,Salix spp.,DESH,3,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,8,Salix spp.,DESH,3,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,9,Salix spp.,DESH,4,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,10,Salix spp.,DESH,3,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,11,Salix spp.,DESH,4,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,12,Salix spp.,DESH,6,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,13,Salix spp.,DESH,4,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,14,Salix spp.,DESH,6,y,salix litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,15,Salix spp.,DESH,3,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,16,Salix spp.,DESH,4,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,17,Salix spp.,DESH,7,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,18,Salix spp.,DESH,3,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,19,Salix spp.,DESH,6,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,19,Equisetum spp.,EQUI,2,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,20,Salix spp.,DESH,3,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,21,Salix spp.,DESH,5,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,22,Salix spp.,DESH,3,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,23,Salix spp.,DESH,3,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,23,Equisetum spp.,EQUI,2,NA,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,24,Salix spp.,DESH,2,y,litter
+june,29,2018,Gonzo,upland,2001,1,p14,high,25,Salix spp.,DESH,5,y,litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,1,Equisetum spp.,EQUI,1,y,lichen
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,2,Castilleja spp.,FORB,1,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,2,Equisetum spp.,EQUI,3,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,3,Equisetum spp.,EQUI,3,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,4,Epilobium angustifolium,FORB,1,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,4,Equisetum spp.,EQUI,2,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,5,None,NONE,0,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,6,Equisetum spp.,EQUI,1,y,lichen
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,7,Castilleja spp.,FORB,1,y,salix litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,8,Carex spp.,GRAM,1,y,moss
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,9,Equisetum spp.,EQUI,1,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,10,Equisetum spp.,EQUI,1,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,11,None,NONE,0,NA,salix litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,12,Carex spp.,GRAM,2,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,13,Equisetum spp.,EQUI,1,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,14,Equisetum spp.,EQUI,3,y,salix litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,15,None,NONE,0,NA,salix litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,16,None,NONE,0,NA,CWD
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,17,None,NONE,0,NA,salix litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,18,Equisetum spp.,EQUI,3,y,salix litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,18,Epilobium angustifolium,FORB,1,NA,salix litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,19,Equisetum spp.,EQUI,2,y,moss
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,19,Epilobium angustifolium,FORB,1,NA,moss
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,20,None,NONE,0,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,21,None,NONE,0,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,22,None,NONE,0,NA,CWD
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,23,Salix spp.,DESH,2,y,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,23,Carex spp.,GRAM,2,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,24,None,NONE,0,NA,grass litter
+june,29,2018,Gonzo,upland,2001,1,p15,no_seedling,25,Equisetum spp.,EQUI,3,y,moss
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,1,Alnus spp.,DESH,1,y,moss
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,2,None,NONE,0,NA,larch litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,3,None,NONE,0,NA,alder litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,4,None,NONE,0,NA,alder litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,5,Vaccinium uliginosum,DESH,2,y,alder litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,6,None,NONE,0,NA,alder litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,7,Vaccinium uliginosum,DESH,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,8,Rhododendron groenlandicum,EVSH,3,y,larch litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,9,Equisetum spp.,EQUI,1,y,moss
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,10,Equisetum spp.,EQUI,1,y,alder litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,11,Vaccinium uliginosum,DESH,1,y,moss
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,12,Vaccinium uliginosum,DESH,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,13,Vaccinium uliginosum,DESH,3,y,alder litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,14,Vaccinium uliginosum,DESH,1,y,alder litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,15,Grass spp.,GRAM,1,y,alder litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,16,Vaccinium uliginosum,DESH,3,y,larch litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,17,Vaccinium uliginosum,DESH,1,y,alder litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,18,Vaccinium uliginosum,DESH,1,y,larch litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,19,None,NONE,0,NA,alder litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,20,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,21,Rhododendron groenlandicum,EVSH,1,y,alder litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,22,Vaccinium vitis-idaea,EVSH,1,y,alder litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,23,Vaccinium vitis-idaea,EVSH,1,y,alder litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,24,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p5,unburned,25,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,1,Grass spp.,GRAM,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,2,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,3,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,4,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,5,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,6,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,7,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,8,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,9,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,10,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,11,Unknown forb,FORB,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,12,Unknown forb,FORB,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,13,Unknown forb,FORB,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,14,Unknown forb,FORB,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,15,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,16,Vaccinium vitis-idaea,EVSH,2,y,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,17,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,17,Unknown forb,FORB,1,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,18,Vaccinium vitis-idaea,EVSH,2,y,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,19,Vaccinium vitis-idaea,EVSH,2,y,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,20,Vaccinium vitis-idaea,EVSH,3,y,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,21,Unknown forb,FORB,3,y,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,22,Unknown forb,FORB,3,y,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,23,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,24,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p6,moderate,25,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,1,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,2,Vaccinium vitis-idaea,EVSH,2,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,3,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,4,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,5,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,6,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,7,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,8,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,9,Vaccinium vitis-idaea,EVSH,3,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,10,Vaccinium vitis-idaea,EVSH,4,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,11,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,12,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,13,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,14,Unknown forb,FORB,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,15,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,16,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,17,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,18,Larix cajanderi,LACA,5,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,18,Vaccinium vitis-idaea,EVSH,1,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,19,Larix cajanderi,LACA,7,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,19,Vaccinium vitis-idaea,EVSH,2,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,20,Larix cajanderi,LACA,3,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,20,Vaccinium vitis-idaea,EVSH,1,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,21,Salix spp.,DESH,3,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,22,Salix spp.,DESH,4,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,22,Larix cajanderi,LACA,1,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,22,Unknown forb,FORB,1,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,23,Larix cajanderi,LACA,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,23,Unknown forb,FORB,1,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,24,Larix cajanderi,LACA,6,y,litter
+june,29,2018,Gonzo,upland,2001,2,p7,high,25,Larix cajanderi,LACA,5,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,1,None,NONE,0,NA,moss
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,2,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,3,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,4,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,5,Vaccinium vitis-idaea,EVSH,2,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,5,Moss spp.,MOSS,1,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,6,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,7,Rhododendron groenlandicum,EVSH,2,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,8,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,8,Moss spp.,MOSS,2,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,9,Vaccinium vitis-idaea,EVSH,3,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,10,Vaccinium vitis-idaea,EVSH,4,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,11,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,12,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,13,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,14,None,NONE,0,NA,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,15,Vaccinium vitis-idaea,EVSH,2,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,16,Vaccinium vitis-idaea,EVSH,4,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,17,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,18,Vaccinium vitis-idaea,EVSH,2,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,19,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,20,Vaccinium vitis-idaea,EVSH,2,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,21,Vaccinium vitis-idaea,EVSH,2,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,22,Vaccinium vitis-idaea,EVSH,3,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,23,Vaccinium vitis-idaea,EVSH,2,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,24,Vaccinium vitis-idaea,EVSH,1,y,litter
+june,29,2018,Gonzo,upland,2001,2,p8,no_seedling,25,Vaccinium vitis-idaea,EVSH,2,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,1,Vaccinium uliginosum,DESH,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,2,Vaccinium uliginosum,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,3,Vaccinium uliginosum,DESH,4,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,4,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,5,Equisetum spp.,EQUI,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,6,Vaccinium uliginosum,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,7,Vaccinium uliginosum,DESH,5,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,8,Vaccinium uliginosum,DESH,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,9,Grass spp.,GRAM,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,10,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,11,Rhododendron groenlandicum,EVSH,2,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,11,Grass spp.,GRAM,2,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,12,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,13,Vaccinium uliginosum,DESH,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,14,Vaccinium uliginosum,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,15,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,16,Vaccinium uliginosum,DESH,4,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,17,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,18,Rhododendron groenlandicum,EVSH,5,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,18,Vaccinium uliginosum,DESH,1,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,19,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,20,Vaccinium uliginosum,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,21,Grass spp.,GRAM,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,22,None,NONE,0,NA,moss
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,23,None,NONE,0,NA,moss
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,24,Vaccinium uliginosum,DESH,4,y,litter
+june,30,2018,Gonzo,upland,2001,3,p9,no_seedling,25,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,1,Equisetum spp.,EQUI,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,2,Betula nana,DESH,5,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,2,Grass spp.,GRAM,1,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,3,Betula nana,DESH,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,3,Equisetum spp.,EQUI,5,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,4,Betula nana,DESH,7,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,4,Eriophorum angustifolium,GRAM,1,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,5,Betula nana,DESH,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,5,Vaccinium vitis-idaea,EVSH,2,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,6,Equisetum spp.,EQUI,2,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,6,Grass spp.,GRAM,1,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,7,Betula nana,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,7,Equisetum spp.,EQUI,2,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,8,Betula nana,DESH,4,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,8,Equisetum spp.,EQUI,1,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,9,Betula nana,DESH,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,10,Betula nana,DESH,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,11,Rhododendron groenlandicum,EVSH,4,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,11,Grass spp.,GRAM,1,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,12,Equisetum spp.,EQUI,2,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,13,Grass spp.,GRAM,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,14,Equisetum spp.,EQUI,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,15,Equisetum spp.,EQUI,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,16,Equisetum spp.,EQUI,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,17,None,NONE,0,NA,moss
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,18,Equisetum spp.,EQUI,6,y,moss
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,19,Equisetum spp.,EQUI,4,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,20,Equisetum spp.,EQUI,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,21,Equisetum spp.,EQUI,5,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,22,Salix spp.,DESH,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,22,Equisetum spp.,EQUI,1,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,23,Equisetum spp.,EQUI,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,24,Equisetum spp.,EQUI,1,y,betula litter
+june,30,2018,Gonzo,upland,2001,3,p10,moderate,25,Equisetum spp.,EQUI,2,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,1,Larix cajanderi,LACA,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,1,Alnus spp.,DESH,1,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,1,Equisetum spp.,EQUI,1,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,1,Betula nana,DESH,1,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,2,Equisetum spp.,EQUI,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,3,Salix spp.,DESH,1,y,lichen
+june,30,2018,Gonzo,upland,2001,3,p11,high,4,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,5,Equisetum spp.,EQUI,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,6,Alnus spp.,DESH,4,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,6,Grass spp.,GRAM,1,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,7,Alnus spp.,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,8,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,9,Salix spp.,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,10,Salix spp.,DESH,4,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,11,Alnus spp.,DESH,2,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,12,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,13,Betula nana,DESH,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,14,Salix spp.,DESH,4,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,15,Salix spp.,DESH,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,16,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,17,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,18,Vaccinium uliginosum,DESH,1,y,moss
+june,30,2018,Gonzo,upland,2001,3,p11,high,19,Salix spp.,DESH,3,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,20,Salix spp.,DESH,6,y,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,21,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p11,high,22,None,NONE,0,NA,moss
+june,30,2018,Gonzo,upland,2001,3,p11,high,23,None,NONE,0,NA,moss
+june,30,2018,Gonzo,upland,2001,3,p11,high,24,None,NONE,0,NA,moss
+june,30,2018,Gonzo,upland,2001,3,p11,high,25,Salix spp.,DESH,2,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,1,Vaccinium uliginosum,DESH,5,y,lichen
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,2,Vaccinium uliginosum,DESH,5,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,3,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,4,Vaccinium uliginosum,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,5,Vaccinium uliginosum,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,6,Vaccinium uliginosum,DESH,4,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,7,Vaccinium uliginosum,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,8,Vaccinium uliginosum,DESH,2,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,9,Vaccinium uliginosum,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,10,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,11,Vaccinium uliginosum,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,12,Vaccinium uliginosum,DESH,2,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,13,Vaccinium uliginosum,DESH,2,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,14,Vaccinium uliginosum,DESH,7,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,15,Vaccinium uliginosum,DESH,6,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,16,None,NONE,0,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,17,Betula nana,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,17,Vaccinium uliginosum,DESH,3,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,18,Equisetum spp.,EQUI,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,19,Betula nana,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,19,Vaccinium uliginosum,DESH,3,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,20,Vaccinium uliginosum,DESH,6,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,21,Betula nana,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,21,Grass spp.,GRAM,1,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,22,Betula nana,DESH,1,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,23,Vaccinium uliginosum,DESH,2,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,24,Betula nana,DESH,2,y,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,24,Vaccinium uliginosum,DESH,2,NA,litter
+june,30,2018,Gonzo,upland,2001,3,p12,unburned,25,Vaccinium uliginosum,DESH,1,y,litter
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,1,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,2,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,3,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,4,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,5,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,6,coarse woody debris,CWD,1,y,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,7,coarse woody debris,CWD,1,y,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,8,coarse woody debris,CWD,1,y,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,9,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,10,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,11,Epilobium angustifolium,FORB,2,y,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,12,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,13,Carex spp.,GRAM,2,y,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,14,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,15,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,16,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,17,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,18,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,19,None,NONE,0,NA,lichen
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,20,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,20,coarse woody debris,CWD,1,NA,litter
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,21,None,NONE,0,NA,lichen
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,22,None,NONE,0,NA,lichen
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,23,Carex spp.,GRAM,1,y,lichen
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,24,Carex spp.,GRAM,2,y,CWD
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,24,coarse woody debris,CWD,1,NA,CWD
+july,3,2018,Shark,upland,2010,1,p33,no_seedling,25,None,NONE,0,NA,lichen
+july,3,2018,Shark,upland,2010,1,p34,moderate,1,Carex spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,2,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,3,Carex spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,4,Carex spp.,GRAM,3,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,5,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,6,Grass spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,7,Carex spp.,GRAM,2,NA,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,7,Grass spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,8,Epilobium angustifolium,FORB,1,y,NA
+july,3,2018,Shark,upland,2010,1,p34,moderate,9,Epilobium angustifolium,FORB,3,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,10,None,NONE,0,NA,grass litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,11,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,12,Grass spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,13,Grass spp.,GRAM,3,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,14,Epilobium angustifolium,FORB,2,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,15,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,16,None,NONE,0,NA,grass litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,17,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,18,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,19,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,20,Carex spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,21,Grass spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,22,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,23,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,24,Grass spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,24,Carex spp.,GRAM,1,NA,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,25,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,1,p34,moderate,25,Epilobium angustifolium,FORB,2,NA,litter
+july,3,2018,Shark,upland,2010,1,p35,high,1,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p35,high,2,Carex spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,1,p35,high,3,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,4,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,1,p35,high,5,coarse woody debris,CWD,1,y,CWD
+july,3,2018,Shark,upland,2010,1,p35,high,6,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p35,high,7,Carex spp.,GRAM,4,y,litter
+july,3,2018,Shark,upland,2010,1,p35,high,8,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,1,p35,high,9,Carex spp.,GRAM,2,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,10,Carex spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,1,p35,high,11,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,11,Larix cajanderi,LACA,1,NA,moss
+july,3,2018,Shark,upland,2010,1,p35,high,12,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,1,p35,high,13,Carex spp.,GRAM,3,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,14,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,15,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,16,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,17,Carex spp.,GRAM,2,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,18,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,19,Larix cajanderi,LACA,1,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,20,Larix cajanderi,LACA,1,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,21,Larix cajanderi,LACA,1,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,22,Larix cajanderi,LACA,2,y,litter
+july,3,2018,Shark,upland,2010,1,p35,high,23,Larix cajanderi,LACA,1,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,24,Carex spp.,GRAM,2,y,moss
+july,3,2018,Shark,upland,2010,1,p35,high,25,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,1,p36,unburned,1,Alnus spp.,DESH,1,y,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,2,Alnus spp.,DESH,2,y,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,3,Alnus spp.,DESH,3,y,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,4,Alnus spp.,DESH,2,y,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,5,Alnus spp.,DESH,1,y,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,6,Alnus spp.,DESH,3,y,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,7,Alnus spp.,DESH,1,y,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,7,coarse woody debris,CWD,1,NA,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,8,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,9,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,10,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,11,Alnus spp.,DESH,1,y,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,12,Alnus spp.,DESH,2,y,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,13,Alnus spp.,DESH,1,y,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,14,Alnus spp.,DESH,2,y,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,15,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,16,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,17,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,18,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,19,Alnus spp.,DESH,1,y,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,20,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,21,Alnus spp.,DESH,1,y,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,22,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,23,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,24,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,1,p36,unburned,25,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,1,Vaccinium vitis-idaea,EVSH,3,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,2,coarse woody debris,CWD,1,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,3,coarse woody debris,CWD,3,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,4,coarse woody debris,CWD,4,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,5,coarse woody debris,CWD,3,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,6,coarse woody debris,CWD,1,y,CWD
+july,3,2018,Shark,upland,2010,2,p37,unburned,7,coarse woody debris,CWD,1,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,8,coarse woody debris,CWD,2,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,9,coarse woody debris,CWD,3,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,10,coarse woody debris,CWD,2,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,11,coarse woody debris,CWD,1,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,11,Carex spp.,GRAM,1,NA,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,12,coarse woody debris,CWD,2,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,13,coarse woody debris,CWD,3,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,14,coarse woody debris,CWD,1,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,15,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,16,coarse woody debris,CWD,3,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,17,coarse woody debris,CWD,5,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,18,coarse woody debris,CWD,2,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,19,Vaccinium vitis-idaea,EVSH,3,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,20,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,21,coarse woody debris,CWD,7,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,22,coarse woody debris,CWD,5,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,23,coarse woody debris,CWD,3,y,litter
+july,3,2018,Shark,upland,2010,2,p37,unburned,24,Vaccinium vitis-idaea,EVSH,1,y,moss
+july,3,2018,Shark,upland,2010,2,p37,unburned,25,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,1,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,2,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,3,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,4,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,5,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,6,Salix spp.,DESH,2,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,7,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p38,high,8,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,9,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,10,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,11,Epilobium angustifolium,FORB,2,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,12,Carex spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,13,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p38,high,14,Salix spp.,DESH,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,14,Carex spp.,GRAM,1,NA,litter
+july,3,2018,Shark,upland,2010,2,p38,high,15,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,16,Salix spp.,DESH,3,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,17,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p38,high,18,Salix spp.,DESH,2,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,18,Carex spp.,GRAM,2,NA,litter
+july,3,2018,Shark,upland,2010,2,p38,high,19,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p38,high,20,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,21,Salix spp.,DESH,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,22,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p38,high,23,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,24,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p38,high,25,Carex spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,1,Equisetum spp.,EQUI,2,y,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,1,Carex spp.,GRAM,1,NA,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,2,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,3,Equisetum spp.,EQUI,1,y,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,4,Equisetum spp.,EQUI,2,y,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,5,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,6,Equisetum spp.,EQUI,3,y,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,7,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,8,Equisetum spp.,EQUI,1,y,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,9,Equisetum spp.,EQUI,1,y,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,10,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,11,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,12,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,13,Carex spp.,GRAM,1,y,lichen
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,13,Equisetum spp.,EQUI,1,NA,lichen
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,14,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,15,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,16,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,17,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,18,Equisetum spp.,EQUI,1,y,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,19,Equisetum spp.,EQUI,1,y,moss
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,20,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,21,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,22,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,23,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,24,Equisetum spp.,EQUI,3,y,litter
+july,3,2018,Shark,upland,2010,2,p39,no_seedling,25,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,1,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,2,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,3,Carex spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,4,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,5,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,6,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,7,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,8,Equisetum spp.,EQUI,2,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,9,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,10,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,11,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,12,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,13,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,14,coarse woody debris,CWD,1,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,15,Equisetum spp.,EQUI,1,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,16,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,17,Equisetum spp.,EQUI,2,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,18,Equisetum spp.,EQUI,2,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,19,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,20,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,21,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,21,coarse woody debris,CWD,1,NA,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,22,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,23,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,24,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,2,p40,moderate,25,Epilobium angustifolium,FORB,1,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,1,Vaccinium vitis-idaea,EVSH,3,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,2,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,3,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,3,Betula nana,DESH,1,NA,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,4,Betula nana,DESH,4,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,4,Alnus spp.,DESH,1,NA,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,4,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,5,Rhododendron groenlandicum,EVSH,2,y,CWD
+july,3,2018,Shark,upland,2010,3,p41,unburned,5,coarse woody debris,CWD,1,NA,CWD
+july,3,2018,Shark,upland,2010,3,p41,unburned,6,Rhododendron groenlandicum,EVSH,3,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,6,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,7,Alnus spp.,DESH,2,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,7,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,8,coarse woody debris,CWD,1,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,8,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,9,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,10,Rhododendron groenlandicum,EVSH,1,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,11,Alnus spp.,DESH,2,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,12,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,13,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,14,Alnus spp.,DESH,2,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,15,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,16,Alnus spp.,DESH,2,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,17,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,18,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,19,coarse woody debris,CWD,1,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,19,Vaccinium vitis-idaea,EVSH,1,NA,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,20,Alnus spp.,DESH,1,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,21,Rhododendron groenlandicum,EVSH,2,y,CWD
+july,3,2018,Shark,upland,2010,3,p41,unburned,22,Rhododendron groenlandicum,EVSH,1,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,23,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,24,Vaccinium vitis-idaea,EVSH,1,y,litter
+july,3,2018,Shark,upland,2010,3,p41,unburned,25,Alnus spp.,DESH,1,y,CWD
+july,3,2018,Shark,upland,2010,3,p41,unburned,25,coarse woody debris,CWD,1,NA,CWD
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,1,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,2,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,3,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,4,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,5,Betula nana,DESH,1,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,6,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,7,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,8,Carex spp.,GRAM,3,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,9,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,10,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,11,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,12,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,13,Carex spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,14,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,15,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,16,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,17,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,18,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,19,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,20,Carex spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,21,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,22,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,23,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,24,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p42,no_seedling,25,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,1,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,2,Larix cajanderi,LACA,3,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,3,Larix cajanderi,LACA,2,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,4,Larix cajanderi,LACA,5,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,5,Larix cajanderi,LACA,1,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,6,Larix cajanderi,LACA,2,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,7,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p43,high,8,Carex spp.,GRAM,2,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,9,Carex spp.,GRAM,3,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,10,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,11,None,NONE,0,NA,lichen
+july,3,2018,Shark,upland,2010,3,p43,high,12,Larix cajanderi,LACA,3,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,13,Larix cajanderi,LACA,3,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,14,Epilobium angustifolium,FORB,1,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,15,Carex spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,16,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p43,high,17,None,NONE,0,NA,litter
+july,3,2018,Shark,upland,2010,3,p43,high,18,Larix cajanderi,LACA,3,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,19,Larix cajanderi,LACA,2,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,20,None,NONE,0,NA,lichen
+july,3,2018,Shark,upland,2010,3,p43,high,21,Larix cajanderi,LACA,6,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,22,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,23,Grass spp.,GRAM,1,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,24,Larix cajanderi,LACA,1,y,litter
+july,3,2018,Shark,upland,2010,3,p43,high,25,Larix cajanderi,LACA,1,y,litter
+july,3,2018,Shark,upland,2010,3,p44,moderate,1,Grass spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,2,Grass spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,3,Grass spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,4,coarse woody debris,CWD,1,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,5,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,6,Larix cajanderi,LACA,2,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,7,Larix cajanderi,LACA,3,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,8,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,9,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,10,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,11,Larix cajanderi,LACA,3,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,12,Larix cajanderi,LACA,1,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,13,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,14,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,15,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,16,Grass spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,17,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,18,Grass spp.,GRAM,2,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,18,Carex spp.,GRAM,1,NA,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,19,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,20,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,21,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,22,None,NONE,0,NA,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,23,Grass spp.,GRAM,2,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,23,Carex spp.,GRAM,2,NA,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,24,Carex spp.,GRAM,1,y,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,24,Grass spp.,GRAM,1,NA,moss
+july,3,2018,Shark,upland,2010,3,p44,moderate,25,None,NONE,0,NA,NA
+June,22,2019,ANS,lowland,2002,1,p61,high,1,Grass spp.,GRAM,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,2,Unknown Forb,FORB,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,3,None,NONE,0,NA,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,4,Grass spp.,GRAM,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,5,Salix spp. ,DESH,3,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,6,Grass spp.,GRAM,2,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,7,Grass spp.,GRAM,3,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,8,Grass spp.,GRAM,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,9,Unknown Forb,FORB,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,10,Unknown Forb,FORB,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,11,Unknown Forb,FORB,2,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,11,Grass spp.,GRAM,1,NA,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,12,Unknown Forb,FORB,3,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,13,Unknown Forb,FORB,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,14,None,NONE,0,NA,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,15,Grass spp.,GRAM,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,16,Grass spp.,GRAM,3,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,17,Grass spp.,GRAM,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,18,Grass spp.,GRAM,2,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,19,Unknown Forb,FORB,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,20,Grass spp.,GRAM,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,21,None,NONE,0,NA,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,22,Unknown Forb,FORB,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,23,None,NONE,0,NA,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,24,None,NONE,0,NA,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p61,high,25,None,NONE,0,NA,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,1,coarse woody debris,CWD,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,2,coarse woody debris,CWD,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,3,None,NONE,0,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,4,Grass spp.,GRAM,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,5,Grass spp.,GRAM,2,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,6,coarse woody debris,CWD,4,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,7,Grass spp.,GRAM,1,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,8,Grass spp.,GRAM,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,8,coarse woody debris,CWD,3,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,9,Grass spp.,GRAM,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,9,Unknown Forb,FORB,3,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,10,Unknown Forb,FORB,1,y,Grass Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,11,coarse woody debris,CWD,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,12,coarse woody debris,CWD,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,13,None,NONE,0,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,14,None,NONE,0,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,15,Grass spp.,GRAM,1,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,15,coarse woody debris,CWD,1,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,16,Grass spp.,GRAM,1,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,16,coarse woody debris,CWD,1,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,17,Grass spp.,GRAM,1,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,18,Grass spp.,GRAM,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,18,coarse woody debris,CWD,1,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,19,Grass spp.,GRAM,1,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,20,Grass spp.,GRAM,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,21,None,NONE,0,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,22,coarse woody debris,CWD,1,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,23,Vaccinium uliginosum,DESH,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,24,Vaccinium uliginosum,DESH,4,y,Litter
+June,22,2019,ANS,lowland,2002,1,p62,unburned,25,Vaccinium uliginosum,DESH,1,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,1,Grass spp.,GRAM,4,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,2,Grass spp.,GRAM,6,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,3,Grass spp.,GRAM,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,4,Grass spp.,GRAM,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,5,Grass spp.,GRAM,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,6,None,NONE,0,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,7,Grass spp.,GRAM,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,8,Grass spp.,GRAM,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,9,Grass spp.,GRAM,1,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,10,None,NONE,0,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,11,coarse woody debris,CWD,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,12,Grass spp.,GRAM,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,13,Grass spp.,GRAM,2,y,Moss
+June,22,2019,ANS,lowland,2002,1,p64,moderate,14,Larix cajanderi,LACA,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,15,None,NONE,0,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,16,None,NONE,0,NA,Moss
+June,22,2019,ANS,lowland,2002,1,p64,moderate,17,Grass spp.,GRAM,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,18,Grass spp.,GRAM,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,19,Grass spp.,GRAM,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,20,Grass spp.,GRAM,6,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,21,None,NONE,0,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,22,Grass spp.,GRAM,1,y,Moss
+June,22,2019,ANS,lowland,2002,1,p64,moderate,23,Grass spp.,GRAM,6,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,24,Grass spp.,GRAM,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p64,moderate,25,Grass spp.,GRAM,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,1,Grass spp.,GRAM,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,2,Grass spp.,GRAM,1,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,3,Grass spp.,GRAM,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,4,Grass spp.,GRAM,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,5,Grass spp.,GRAM,4,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,6,Grass spp.,GRAM,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,7,Grass spp.,GRAM,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,8,Grass spp.,GRAM,4,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,9,Grass spp.,GRAM,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,10,Grass spp.,GRAM,4,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,11,Grass spp.,GRAM,5,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,12,Grass spp.,GRAM,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,13,Grass spp.,GRAM,4,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,14,Grass spp.,GRAM,6,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,15,Grass spp.,GRAM,7,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,16,Grass spp.,GRAM,5,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,17,Grass spp.,GRAM,6,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,18,Grass spp.,GRAM,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,19,Grass spp.,GRAM,6,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,20,Grass spp.,GRAM,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,21,Vaccinium uliginosum,DESH,1,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,21,Grass spp.,GRAM,2,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,22,Vaccinium uliginosum,DESH,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,22,Grass spp.,GRAM,2,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,23,Grass spp.,GRAM,3,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,23,Vaccinium uliginosum,DESH,1,NA,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,24,Grass spp.,GRAM,2,y,Litter
+June,22,2019,ANS,lowland,2002,1,p65,no_seedling,25,Grass spp.,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,1,Alnus spp. ,DESH,4,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,1,Unknown forb,FORB,2,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,1,Rhododendron groenlandicum,EVSH,5,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,2,Alnus spp. ,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,2,Rhododendron groenlandicum,EVSH,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,3,Vaccinium uliginosum,DESH,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,4,Vaccinium uliginosum,DESH,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,5,Alnus spp. ,DESH,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,6,Alnus spp. ,DESH,4,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,6,Unknown forb,FORB,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,7,coarse woody debris,CWD,4,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,8,Alnus spp. ,DESH,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,8,Rhododendron groenlandicum,EVSH,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,8,Grass spp.,GRAM,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,9,Alnus spp. ,DESH,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,10,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,11,Betula nana,DESH,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,11,Vaccinium uliginosum,DESH,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,12,Alnus spp. ,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,12,Unknown forb,FORB,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,13,Alnus spp. ,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,14,Alnus spp. ,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,15,Alnus spp. ,DESH,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,15,coarse woody debris,CWD,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,16,Alnus spp. ,DESH,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,17,Alnus spp. ,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,18,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,19,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,20,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,21,Alnus spp. ,DESH,4,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,21,Grass spp.,GRAM,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,21,Rhododendron groenlandicum,EVSH,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,22,Alnus spp. ,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,22,Rhododendron groenlandicum,EVSH,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,22,Vaccinium uliginosum,DESH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,22,Grass spp.,GRAM,3,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,23,Alnus spp. ,DESH,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,24,Vaccinium uliginosum,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p66,unburned,25,Alnus spp. ,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,1,Carex spp. ,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,1,Vaccinium uliginosum,DESH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,2,Carex spp. ,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,3,Carex spp. ,GRAM,4,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,3,Vaccinium uliginosum,DESH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,4,Carex spp. ,GRAM,6,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,4,Vaccinium uliginosum,DESH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,5,Grass spp.,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,5,Vaccinium uliginosum,DESH,3,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,6,Vaccinium uliginosum,DESH,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,7,Carex spp. ,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,7,Vaccinium uliginosum,DESH,4,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,8,Carex spp. ,GRAM,4,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,8,Vaccinium uliginosum,DESH,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,9,Carex spp. ,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,9,Vaccinium uliginosum,DESH,3,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,10,Carex spp. ,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,11,Carex spp. ,GRAM,5,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,11,Vaccinium uliginosum,DESH,4,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,12,Vaccinium uliginosum,DESH,5,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,13,Carex spp. ,GRAM,6,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,13,Vaccinium uliginosum,DESH,3,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,14,Vaccinium uliginosum,DESH,5,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,14,Betula nana,DESH,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,15,Vaccinium uliginosum,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,15,Betula nana,DESH,7,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,16,Carex spp. ,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,16,Vaccinium uliginosum,DESH,5,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,17,Vaccinium uliginosum,DESH,7,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,18,Betula nana,DESH,4,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,18,Vaccinium uliginosum,DESH,3,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,19,Carex spp. ,GRAM,4,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,19,Betula nana,DESH,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,20,Betula nana,DESH,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,21,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,22,Betula nana,DESH,5,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,22,Vaccinium uliginosum,DESH,4,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,23,Betula nana,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,24,Carex spp. ,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,24,Vaccinium uliginosum,DESH,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p67,no_seedling,25,Vaccinium uliginosum,DESH,5,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,1,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,2,Carex spp. ,GRAM,5,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,3,Carex spp. ,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,3,Rhododendron groenlandicum,EVSH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,4,Vaccinium uliginosum,DESH,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,4,Rhododendron groenlandicum,EVSH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,4,Carex spp. ,GRAM,2,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,5,Rhododendron groenlandicum,EVSH,8,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,5,Carex spp. ,GRAM,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,6,Carex spp. ,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,7,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,7,Carex spp. ,GRAM,3,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,7,Vaccinium uliginosum,DESH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,8,Vaccinium uliginosum,DESH,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,8,Carex spp. ,GRAM,5,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,8,Rhododendron groenlandicum,EVSH,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,9,Carex spp. ,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,10,Carex spp. ,GRAM,10,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,11,Betula nana,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,11,Carex spp. ,GRAM,3,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,12,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,13,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,13,Carex spp. ,GRAM,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,14,Carex spp. ,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,14,Rhododendron groenlandicum,EVSH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,15,Carex spp. ,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,15,Vaccinium uliginosum,DESH,5,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,16,Betula nana,DESH,5,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,17,Carex spp. ,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,18,Carex spp. ,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,19,Carex spp. ,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,19,Vaccinium uliginosum,DESH,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,20,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,20,Carex spp. ,GRAM,2,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,21,Vaccinium uliginosum,DESH,6,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,22,Vaccinium uliginosum,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,22,Carex spp. ,GRAM,1,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,23,Betula nana,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,23,Carex spp. ,GRAM,3,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,24,Carex spp. ,GRAM,5,y,Litter
+June,23,2019,ANS,lowland,2003,2,p68,high,25,Carex spp. ,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,1,Carex spp. ,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,1,Vaccinium uliginosum,DESH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,2,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,3,Carex spp. ,GRAM,5,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,4,Carex spp. ,GRAM,4,y,Moss
+June,23,2019,ANS,lowland,2003,2,p69,moderate,5,Carex spp. ,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,6,Vaccinium uliginosum,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,7,Carex spp. ,GRAM,4,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,8,Carex spp. ,GRAM,3,y,Moss
+June,23,2019,ANS,lowland,2003,2,p69,moderate,9,Carex spp. ,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,10,Carex spp. ,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,11,Carex spp. ,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,12,Carex spp. ,GRAM,5,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,13,Carex spp. ,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,14,Carex spp. ,GRAM,5,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,15,Carex spp. ,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,15,Vaccinium uliginosum,DESH,1,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,16,Carex spp. ,GRAM,4,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,17,Carex spp. ,GRAM,5,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,18,Vaccinium uliginosum,DESH,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,19,Carex spp. ,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,20,Vaccinium uliginosum,DESH,4,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,21,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,22,Carex spp. ,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,23,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,24,Carex spp. ,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,2,p69,moderate,25,Carex spp. ,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,1,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,2,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,3,Grass spp.,GRAM,2,y,CWD
+June,23,2019,ANS,lowland,2003,3,p70,unburned,4,Pyrola spp. ,FORB,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,5,coarse woody debris,CWD,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,6,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,7,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,8,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,9,None,NONE,0,NA,CWD
+June,23,2019,ANS,lowland,2003,3,p70,unburned,10,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,11,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,12,coarse woody debris,CWD,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,13,coarse woody debris,CWD,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,14,Grass spp.,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,15,Grass spp.,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,15,Pyrola spp. ,FORB,1,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,16,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,17,Pyrola spp. ,FORB,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,18,coarse woody debris,CWD,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,18,Pyrola spp. ,FORB,1,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,19,Grass spp.,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,20,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,21,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,22,Grass spp.,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,23,coarse woody debris,CWD,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,24,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p70,unburned,25,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,1,Rhododendron groenlandicum,EVSH,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,1,Grass spp.,GRAM,2,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,2,Rhododendron groenlandicum,EVSH,4,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,3,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,4,Rhododendron groenlandicum,EVSH,4,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,4,Grass spp.,GRAM,1,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,5,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,6,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,7,Rhododendron groenlandicum,EVSH,8,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,7,Grass spp.,GRAM,2,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,8,Grass spp.,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,9,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,10,Rhododendron groenlandicum,EVSH,6,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,10,Grass spp.,GRAM,1,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,11,Rhododendron groenlandicum,EVSH,4,y,CWD
+June,23,2019,ANS,lowland,2003,3,p71,high,12,Rhododendron groenlandicum,EVSH,5,y,CWD
+June,23,2019,ANS,lowland,2003,3,p71,high,13,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,14,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,15,Rhododendron groenlandicum,EVSH,6,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,16,Betula nana,DESH,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,16,Grass spp.,GRAM,2,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,17,None,NONE,0,NA,CWD
+June,23,2019,ANS,lowland,2003,3,p71,high,18,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,19,None,NONE,0,NA,CWD
+June,23,2019,ANS,lowland,2003,3,p71,high,20,Grass spp.,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,21,Betula nana,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,21,Rhododendron groenlandicum,EVSH,3,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,22,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,22,Grass spp.,GRAM,1,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,23,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,24,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p71,high,25,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,1,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,1,Rhododendron groenlandicum,EVSH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,2,Grass spp.,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,3,Vaccinium uliginosum,DESH,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,3,Grass spp.,GRAM,1,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,4,Grass spp.,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,5,Rhododendron groenlandicum,EVSH,5,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,6,Grass spp.,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,6,Vaccinium uliginosum,DESH,1,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,7,Grass spp.,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,8,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,9,Grass spp.,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,10,Rhododendron groenlandicum,EVSH,4,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,11,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,12,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,13,Vaccinium uliginosum,DESH,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,14,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,15,Grass spp.,GRAM,5,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,16,Grass spp.,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,17,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,18,Vaccinium uliginosum,DESH,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,18,Rhododendron groenlandicum,EVSH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,19,Grass spp.,GRAM,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,19,Rhododendron groenlandicum,EVSH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,20,Vaccinium uliginosum,DESH,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,21,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,22,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,22,Rhododendron groenlandicum,EVSH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,23,Larix cajanderi,LACA,5,y,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,24,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p72,moderate,25,Vaccinium uliginosum,DESH,6,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,1,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,2,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,3,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,4,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,5,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,6,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,7,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,7,Grass spp.,GRAM,1,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,7,Linnaea borealis,EVSH,2,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,8,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,9,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,9,Grass spp.,GRAM,1,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,10,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,11,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,12,Rhododendron groenlandicum,EVSH,5,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,12,Grass spp.,GRAM,1,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,13,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,14,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,15,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,16,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,17,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,18,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,19,Grass spp.,GRAM,3,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,19,Rhododendron groenlandicum,EVSH,1,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,20,Grass spp.,GRAM,1,y,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,21,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,22,None,NONE,0,NA,Litter
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,23,None,NONE,0,NA,Moss
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,24,Grass spp.,GRAM,1,y,Moss
+June,23,2019,ANS,lowland,2003,3,p73,no_seedling,25,Grass spp.,GRAM,3,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,1,Alnus spp. ,DESH,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,1,Linnaea borealis,EVSH,2,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,2,Alnus spp. ,DESH,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,3,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,4,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,5,Grass spp.,GRAM,3,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,6,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,7,Linnaea borealis,EVSH,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,8,Linnaea borealis,EVSH,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,8,Grass spp.,GRAM,1,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,9,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,10,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,11,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,12,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,12,Linnaea borealis,EVSH,1,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,13,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,14,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,15,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,16,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,17,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,18,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,19,Grass spp.,GRAM,3,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,20,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,21,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,22,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,23,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,24,Grass spp.,GRAM,3,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p74,unburned,25,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,1,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,2,Grass spp.,GRAM,3,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,3,Alnus spp. ,DESH,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,4,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,5,Alnus spp. ,DESH,3,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,6,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,7,Grass spp.,GRAM,3,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,8,Alnus spp. ,DESH,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,8,Grass spp.,GRAM,3,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,9,Salix spp. ,DESH,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,9,Grass spp.,GRAM,1,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,10,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,11,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,12,Salix spp. ,DESH,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,12,Grass spp.,GRAM,1,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,13,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,14,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,15,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,16,Grass spp.,GRAM,3,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,17,Alnus spp. ,DESH,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,18,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,19,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,20,Grass spp.,GRAM,4,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,21,Grass spp.,GRAM,4,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,22,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,23,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,24,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p75,no_seedling,25,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,1,Unknown forb,FORB,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,2,Salix spp. ,DESH,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,3,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,4,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,5,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,6,None,NONE,0,NA,Moss
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,7,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,8,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,9,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,10,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,11,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,12,Grass spp.,GRAM,1,y,Moss
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,13,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,14,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,15,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,16,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,17,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,18,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,19,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,20,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,21,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,22,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,23,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,24,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p76,moderate,25,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,1,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,2,Grass spp.,GRAM,3,y,Moss
+June,24,2019,ALNUS,lowland,1984,1,p77,high,3,Grass spp.,GRAM,2,y,Moss
+June,24,2019,ALNUS,lowland,1984,1,p77,high,4,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,5,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,6,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,7,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,8,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,9,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,10,Grass spp.,GRAM,1,y,Moss
+June,24,2019,ALNUS,lowland,1984,1,p77,high,11,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,12,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,13,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,14,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,15,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,16,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,17,Grass spp.,GRAM,2,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,18,None,NONE,0,NA,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,19,Larix cajanderi,LACA,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,20,Larix cajanderi,LACA,4,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,21,Grass spp.,GRAM,3,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,22,Larix cajanderi,LACA,6,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,23,Grass spp.,GRAM,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,24,Larix cajanderi,LACA,1,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,25,Larix cajanderi,LACA,5,y,Litter
+June,24,2019,ALNUS,lowland,1984,1,p77,high,25,Grass spp.,GRAM,3,NA,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,1,Vaccinium vitis-idaea,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,2,Vaccinium vitis-idaea,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,3,Rhododendron groenlandicum,EVSH,4,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,3,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,4,Grass spp.,GRAM,2,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,4,Rhododendron groenlandicum,EVSH,2,NA,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,5,Vaccinium vitis-idaea,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,6,Rhododendron groenlandicum,EVSH,7,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,6,Grass spp.,GRAM,1,NA,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,7,Rhododendron groenlandicum,EVSH,10,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,8,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,9,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,10,Vaccinium uliginosum,DESH,1,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,10,Rhododendron groenlandicum,EVSH,1,NA,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,11,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,11,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,12,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,13,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,14,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,15,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,16,Vaccinium vitis-idaea,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,17,Vaccinium vitis-idaea,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,18,Vaccinium vitis-idaea,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,19,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,20,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,21,Rhododendron groenlandicum,EVSH,1,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,22,Rhododendron groenlandicum,EVSH,4,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,23,Rhododendron groenlandicum,EVSH,1,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,23,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,24,coarse woody debris,CWD,1,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,24,Lichen spp.,LICHEN,1,y,Litter
+June,25,2019,BP,upland,1983,1,p78,unburned,25,Vaccinium vitis-idaea,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,1,Grass spp.,GRAM,2,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,2,Unknown evergreen shrub,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,3,Vaccinium vitis-idaea,EVSH,1,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,4,Grass spp.,GRAM,2,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,4,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,5,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,6,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,6,Unknown evergreen shrub,EVSH,2,NA,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,6,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,7,Unknown evergreen shrub,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,8,Grass spp.,GRAM,1,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,9,Unknown evergreen shrub,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,10,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,11,Betula nana,DESH,1,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,11,Equisetum spp. ,EQUI,2,NA,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,12,Unknown evergreen shrub,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,13,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,14,Grass spp.,GRAM,1,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,15,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,15,Unknown evergreen shrub,EVSH,6,NA,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,15,Vaccinium vitis-idaea,EVSH,3,NA,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,16,Vaccinium vitis-idaea,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,17,Vaccinium vitis-idaea,EVSH,1,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,18,None,NONE,0,NA,Moss
+June,25,2019,BP,upland,1983,1,p79,moderate,19,Rhododendron groenlandicum,EVSH,5,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,20,Unknown evergreen shrub,EVSH,3,y,Lichen
+June,25,2019,BP,upland,1983,1,p79,moderate,21,Larix cajanderi,LACA,8,y,Lichen
+June,25,2019,BP,upland,1983,1,p79,moderate,22,Larix cajanderi,LACA,12,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,23,Larix cajanderi,LACA,6,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,23,Rhododendron groenlandicum,EVSH,3,y,Litter 
+June,25,2019,BP,upland,1983,1,p79,moderate,24,Grass spp.,GRAM,2,y,Litter
+June,25,2019,BP,upland,1983,1,p79,moderate,24,Vaccinium vitis-idaea,EVSH,1,NA,Moss
+June,25,2019,BP,upland,1983,1,p79,moderate,25,Vaccinium vitis-idaea,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,1,Vaccinium vitis-idaea,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,2,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,3,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,4,Betula nana,DESH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,4,Vaccinium vitis-idaea,EVSH,3,NA,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,5,Betula nana,DESH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,5,Vaccinium vitis-idaea,EVSH,3,NA,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,6,Vaccinium vitis-idaea,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,7,Vaccinium vitis-idaea,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,8,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,9,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,10,Rhododendron groenlandicum,EVSH,1,y,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,11,Vaccinium vitis-idaea,EVSH,4,y,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,12,Vaccinium vitis-idaea,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,13,None,NONE,0,NA,Lichen
+June,25,2019,BP,upland,1983,1,p80,no_seedling,14,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,15,Grass spp.,GRAM,1,y,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,16,None,NONE,0,NA,Lichen 
+June,25,2019,BP,upland,1983,1,p80,no_seedling,17,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p80,no_seedling,18,None,NONE,0,NA,Lichen
+June,25,2019,BP,upland,1983,1,p80,no_seedling,19,None,NONE,0,NA,Lichen
+June,25,2019,BP,upland,1983,1,p80,no_seedling,20,Rhododendron groenlandicum,EVSH,3,y,Lichen
+June,25,2019,BP,upland,1983,1,p80,no_seedling,21,None,NONE,0,NA,Lichen
+June,25,2019,BP,upland,1983,1,p80,no_seedling,22,None,NONE,0,NA,Lichen
+June,25,2019,BP,upland,1983,1,p80,no_seedling,23,None,NONE,0,NA,Lichen
+June,25,2019,BP,upland,1983,1,p80,no_seedling,24,None,NONE,0,NA,Lichen
+June,25,2019,BP,upland,1983,1,p80,no_seedling,25,Vaccinium vitis-idaea,EVSH,2,y,Lichen
+June,25,2019,BP,upland,1983,1,p81,high,1,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,2,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,3,Grass spp.,GRAM,2,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,3,Rhododendron groenlandicum,EVSH,5,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,4,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,4,Vaccinium uliginosum,DESH,1,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,5,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,6,Grass spp.,GRAM,2,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,7,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,8,Grass spp.,GRAM,1,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,9,Rhododendron groenlandicum,EVSH,1,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,10,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,11,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,12,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,12,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,13,Rhododendron groenlandicum,EVSH,1,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,13,Grass spp.,GRAM,1,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,14,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,15,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,16,Vaccinium vitis-idaea,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,17,Larix cajanderi,LACA,7,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,17,Grass spp.,GRAM,1,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,18,Vaccinium vitis-idaea,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,19,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,20,Larix cajanderi,LACA,2,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,20,Rhododendron groenlandicum,EVSH,3,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,21,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,21,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,22,Larix cajanderi,LACA,6,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,23,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,1,p81,high,23,Grass spp.,GRAM,2,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,24,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,1,p81,high,25,Larix cajanderi,LACA,10,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,1,Betula nana,DESH,2,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,1,Rhododendron groenlandicum,EVSH,4,NA,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,1,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,2,Betula nana,DESH,3,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,2,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,3,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,4,None,NONE,0,NA,Lichen
+June,25,2019,BP,upland,1983,2,p82,unburned,5,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,5,Grass spp.,GRAM,3,NA,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,6,Vaccinium vitis-idaea,EVSH,1,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,7,Betula nana,DESH,2,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,7,Vaccinium vitis-idaea,EVSH,3,NA,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,7,Vaccinium uliginosum,DESH,1,NA,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,8,Betula nana,DESH,1,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,9,None,NONE,0,NA,Lichen
+June,25,2019,BP,upland,1983,2,p82,unburned,10,Grass spp.,GRAM,1,y,Moss
+June,25,2019,BP,upland,1983,2,p82,unburned,10,Betula nana,DESH,1,NA,Moss
+June,25,2019,BP,upland,1983,2,p82,unburned,22,Betula nana,DESH,2,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,12,Betula nana,DESH,1,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,12,Vaccinium uliginosum,DESH,2,NA,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,23,Rhododendron groenlandicum,EVSH,4,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,23,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,14,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,15,Grass spp.,GRAM,1,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,16,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,17,Betula nana,DESH,1,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,18,Betula nana,DESH,1,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,18,Grass spp.,GRAM,2,NA,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,18,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,19,Grass spp.,GRAM,1,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,20,None,NONE,0,NA,Lichen
+June,25,2019,BP,upland,1983,2,p82,unburned,21,Rhododendron groenlandicum,EVSH,1,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,22,Rhododendron groenlandicum,EVSH,1,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,23,Rhododendron groenlandicum,EVSH,1,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,24,Betula nana,DESH,3,y,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,24,Rhododendron groenlandicum,EVSH,1,NA,Litter
+June,25,2019,BP,upland,1983,2,p82,unburned,25,Betula nana,DESH,1,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,1,Vaccinium vitis-idaea,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,2,Vaccinium vitis-idaea,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,3,Grass spp.,GRAM,1,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,4,Grass spp.,GRAM,1,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,5,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,6,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,7,Rhododendron groenlandicum,EVSH,5,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,7,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,8,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,9,Vaccinium uliginosum,DESH,2,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,10,Vaccinium uliginosum,DESH,2,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,11,Rhododendron groenlandicum,EVSH,4,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,12,Rhododendron groenlandicum,EVSH,6,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,13,Rhododendron groenlandicum,EVSH,1,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,14,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,14,Vaccinium uliginosum,DESH,3,NA,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,15,Vaccinium uliginosum,DESH,3,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,16,Grass spp.,GRAM,2,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,17,Vaccinium uliginosum,DESH,3,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,18,Vaccinium uliginosum,DESH,2,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,18,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,19,Rhododendron groenlandicum,EVSH,5,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,20,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,21,Grass spp.,GRAM,1,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,21,Rhododendron groenlandicum,EVSH,2,NA,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,22,Rhododendron groenlandicum,EVSH,5,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,23,Vaccinium vitis-idaea,EVSH,1,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,24,Vaccinium vitis-idaea,EVSH,2,y,Litter
+June,25,2019,BP,upland,1983,2,p83,moderate,25,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,1,Vaccinium uliginosum,DESH,1,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,1,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,2,Rhododendron groenlandicum,EVSH,1,NA,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,3,Rhododendron groenlandicum,EVSH,4,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,4,Vaccinium vitis-idaea,EVSH,5,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,5,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,5,Vaccinium vitis-idaea,EVSH,1,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,6,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,7,Vaccinium vitis-idaea,EVSH,1,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,8,Vaccinium uliginosum,DESH,3,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,9,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,10,Vaccinium uliginosum,DESH,1,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,11,Vaccinium uliginosum,DESH,2,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,12,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,13,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,13,Grass spp.,GRAM,1,NA,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,14,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,15,Vaccinium uliginosum,DESH,2,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,16,Rhododendron groenlandicum,EVSH,3,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,17,Vaccinium vitis-idaea,EVSH,4,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,18,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,19,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,20,Vaccinium uliginosum,DESH,2,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,21,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,22,Rhododendron groenlandicum,EVSH,4,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,22,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,23,Rhododendron groenlandicum,EVSH,2,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,23,Vaccinium uliginosum,DESH,2,NA,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,23,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,24,Vaccinium vitis-idaea,EVSH,3,y,Litter
+June,25,2019,BP,upland,1984,2,p84,no_seedling,25,None,NONE,0,NA,Litter
+June,25,2019,BP,upland,1984,2,p85,high,1,Vaccinium uliginosum,DESH,4,y,Moss
+June,25,2019,BP,upland,1984,2,p85,high,2,Vaccinium uliginosum,DESH,5,y,Moss
+June,25,2019,BP,upland,1984,2,p85,high,3,Vaccinium vitis-idaea,EVSH,2,y,Moss
+June,25,2019,BP,upland,1984,2,p85,high,4,None,NONE,0,NA,Moss
+June,25,2019,BP,upland,1984,2,p85,high,5,None,NONE,0,NA,Moss
+June,25,2019,BP,upland,1984,2,p85,high,6,Grass spp.,GRAM,1,y,Moss
+June,25,2019,BP,upland,1984,2,p85,high,7,None,NONE,0,NA,Moss
+June,25,2019,BP,upland,1984,2,p85,high,8,Larix cajanderi,LACA,11,y,Litter
+June,25,2019,BP,upland,1984,2,p85,high,8,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+June,25,2019,BP,upland,1984,2,p85,high,9,Grass spp.,GRAM,2,y,Litter
+June,25,2019,BP,upland,1984,2,p85,high,9,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+June,25,2019,BP,upland,1984,2,p85,high,10,None,NONE,0,NA,Moss
+June,25,2019,BP,upland,1984,2,p85,high,11,None,NONE,0,NA,Moss
+June,25,2019,BP,upland,1984,2,p85,high,12,Rhododendron groenlandicum,EVSH,2,y,Moss
+June,25,2019,BP,upland,1984,2,p85,high,12,Grass spp.,GRAM,3,NA,Moss
+June,25,2019,BP,upland,1984,2,p85,high,13,Grass spp.,GRAM,1,y,Moss
+June,25,2019,BP,upland,1984,2,p85,high,14,None,NONE,0,NA,Moss
+June,25,2019,BP,upland,1984,2,p85,high,15,None,NONE,0,NA,Moss
+June,25,2019,BP,upland,1984,2,p85,high,16,None,NONE,0,NA,Moss
+June,25,2019,BP,upland,1984,2,p85,high,17,Rhododendron groenlandicum,EVSH,2,y,Moss
+June,25,2019,BP,upland,1984,2,p85,high,18,Rhododendron groenlandicum,EVSH,6,y,Moss
+June,25,2019,BP,upland,1984,2,p85,high,19,Rhododendron groenlandicum,EVSH,1,y,Moss
+June,25,2019,BP,upland,1984,2,p85,high,20,Vaccinium vitis-idaea,EVSH,5,y,Moss
+June,25,2019,BP,upland,1984,2,p85,high,21,None,NONE,0,NA,Moss
+June,25,2019,BP,upland,1984,2,p85,high,22,None,NONE,0,NA,Lichen
+June,25,2019,BP,upland,1984,2,p85,high,23,Vaccinium vitis-idaea,EVSH,3,y,Moss
+June,25,2019,BP,upland,1984,2,p85,high,24,Vaccinium vitis-idaea,EVSH,2,y,Moss
+June,25,2019,BP,upland,1984,2,p85,high,25,Vaccinium vitis-idaea,EVSH,2,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,1,Empetrum nigrum,EVSH,3,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,2,coarse woody debris,CWD,1,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,2,Vaccinium uliginosum,DESH,3,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,2,Empetrum nigrum,EVSH,2,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,3,Vaccinium uliginosum,DESH,2,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,3,Vaccinium vitis-idaea,EVSH,2,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,4,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,5,Vaccinium uliginosum,DESH,5,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,6,Grass spp.,GRAM,1,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,6,Vaccinium uliginosum,DESH,2,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,6,coarse woody debris,CWD,1,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,7,Betula nana,DESH,1,y,CWD
+July,2,2019,HR,upland,1990,1,p86,unburned,7,Grass spp.,GRAM,1,NA,CWD
+July,2,2019,HR,upland,1990,1,p86,unburned,8,Vaccinium uliginosum,DESH,3,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,8,Empetrum nigrum,EVSH,4,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,9,Vaccinium vitis-idaea,EVSH,1,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,10,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,11,Grass spp.,GRAM,1,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,11,coarse woody debris,CWD,1,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,12,Grass spp.,GRAM,2,y,Lichen
+July,2,2019,HR,upland,1990,1,p86,unburned,13,Vaccinium uliginosum,DESH,4,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,14,Vaccinium uliginosum,DESH,5,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,14,Vaccinium vitis-idaea,EVSH,1,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,15,Vaccinium uliginosum,DESH,1,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,15,Vaccinium vitis-idaea,EVSH,1,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,16,Grass spp.,GRAM,1,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,16,Vaccinium vitis-idaea,EVSH,1,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,17,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,18,Vaccinium uliginosum,DESH,3,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,18,Vaccinium vitis-idaea,EVSH,1,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,19,Vaccinium uliginosum,DESH,2,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,20,Vaccinium uliginosum,DESH,3,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,20,Vaccinium vitis-idaea,EVSH,2,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,21,Grass spp.,GRAM,1,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,21,Empetrum nigrum,EVSH,5,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,21,Vaccinium uliginosum,DESH,1,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,22,Betula nana,DESH,2,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,22,Vaccinium uliginosum,DESH,2,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,23,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,24,Betula nana,DESH,2,y,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,24,Vaccinium uliginosum,DESH,2,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,24,Vaccinium vitis-idaea,EVSH,1,NA,Moss
+July,2,2019,HR,upland,1990,1,p86,unburned,25,Betula nana,DESH,1,y,Moss
+July,2,2019,HR,upland,1990,1,p87,no_seedling,1,Vaccinium uliginosum,DESH,5,y,Lichen
+July,2,2019,HR,upland,1990,1,p87,no_seedling,2,Vaccinium uliginosum,DESH,4,y,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,3,Vaccinium uliginosum,DESH,4,y,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,4,Vaccinium uliginosum,DESH,4,y,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,4,Equisetum spp. ,EQUI,5,NA,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,5,Vaccinium uliginosum,DESH,3,y,Moss
+July,2,2019,HR,upland,1990,1,p87,no_seedling,6,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,1,p87,no_seedling,7,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,1,p87,no_seedling,8,Equisetum spp. ,EQUI,1,y,Lichen 
+July,2,2019,HR,upland,1990,1,p87,no_seedling,8,Vaccinium vitis-idaea,EVSH,3,NA,Lichen
+July,2,2019,HR,upland,1990,1,p87,no_seedling,9,Vaccinium uliginosum,DESH,4,y,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,9,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,10,Salix spp. ,DESH,1,y,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,10,Equisetum spp. ,EQUI,3,NA,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,10,Vaccinium uliginosum,DESH,2,NA,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,11,Vaccinium uliginosum,DESH,2,y,Moss
+July,2,2019,HR,upland,1990,1,p87,no_seedling,12,Vaccinium uliginosum,DESH,3,y,Moss
+July,2,2019,HR,upland,1990,1,p87,no_seedling,13,Betula nana,DESH,4,y,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,14,Betula nana,DESH,1,y,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,15,None,NONE,0,NA,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,16,Salix spp. ,DESH,3,y,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,16,Vaccinium vitis-idaea,EVSH,4,NA,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,17,Salix spp. ,DESH,1,y,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,18,Salix spp. ,DESH,2,y,Moss
+July,2,2019,HR,upland,1990,1,p87,no_seedling,19,Betula nana,DESH,1,y,Moss
+July,2,2019,HR,upland,1990,1,p87,no_seedling,19,Vaccinium uliginosum,DESH,3,NA,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,20,None,NONE,0,NA,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,21,None,NONE,0,NA,Lichen
+July,2,2019,HR,upland,1990,1,p87,no_seedling,22,Vaccinium uliginosum,DESH,3,y,Lichen
+July,2,2019,HR,upland,1990,1,p87,no_seedling,23,None,NONE,0,NA,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,24,Vaccinium uliginosum,DESH,6,y,Litter
+July,2,2019,HR,upland,1990,1,p87,no_seedling,25,None,NONE,0,NA,Litter
+July,2,2019,HR,upland,1990,1,p88,moderate,1,Betula nana,DESH,1,y,Litter
+July,2,2019,HR,upland,1990,1,p88,moderate,2,Equisetum spp. ,EQUI,1,y,Litter
+July,2,2019,HR,upland,1990,1,p88,moderate,3,Grass spp.,GRAM,1,y,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,4,None,NONE,0,NA,Litter
+July,2,2019,HR,upland,1990,1,p88,moderate,5,Grass spp.,GRAM,1,y,Litter
+July,2,2019,HR,upland,1990,1,p88,moderate,5,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+July,2,2019,HR,upland,1990,1,p88,moderate,6,Epilobium angustifolium,FORB,3,y,Litter
+July,2,2019,HR,upland,1990,1,p88,moderate,7,Unknown forb,FORB,1,y,Litter
+July,2,2019,HR,upland,1990,1,p88,moderate,8,Equisetum spp. ,EQUI,1,y,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,9,Unknown forb,FORB,1,y,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,9,Unknown forb,FORB,1,NA,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,10,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,11,Equisetum spp. ,EQUI,3,y,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,12,Equisetum spp. ,EQUI,2,y,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,13,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,14,Equisetum spp. ,EQUI,1,y,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,15,Equisetum spp. ,EQUI,1,y,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,16,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,17,Vaccinium vitis-idaea,EVSH,1,y,Litter
+July,2,2019,HR,upland,1990,1,p88,moderate,18,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,19,Epilobium angustifolium,FORB,1,y,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,19,Vaccinium vitis-idaea,EVSH,1,NA,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,20,Equisetum spp. ,EQUI,3,y,Litter 
+July,2,2019,HR,upland,1990,1,p88,moderate,21,Betula nana,DESH,1,y,Litter
+July,2,2019,HR,upland,1990,1,p88,moderate,22,Equisetum spp. ,EQUI,1,y,Litter
+July,2,2019,HR,upland,1990,1,p88,moderate,23,Equisetum spp. ,EQUI,1,y,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,24,Betula nana,DESH,1,y,Moss
+July,2,2019,HR,upland,1990,1,p88,moderate,25,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,2,p89,unburned,1,Betula nana,DESH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,1,Equisetum spp. ,EQUI,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,2,Vaccinium uliginosum,DESH,4,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,2,Empetrum nigrum,EVSH,4,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,3,Vaccinium uliginosum,DESH,5,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,4,Vaccinium uliginosum,DESH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,4,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,5,Vaccinium vitis-idaea,EVSH,3,y,Moss
+July,2,2019,HR,upland,1990,2,p89,unburned,6,Vaccinium vitis-idaea,EVSH,1,y,Moss
+July,2,2019,HR,upland,1990,2,p89,unburned,6,Vaccinium uliginosum,DESH,1,NA,Moss
+July,2,2019,HR,upland,1990,2,p89,unburned,7,Vaccinium uliginosum,DESH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,8,Vaccinium uliginosum,DESH,3,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,8,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,9,Vaccinium uliginosum,DESH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,10,Betula nana,DESH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,10,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,10,Empetrum nigrum,EVSH,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,11,Betula nana,DESH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,11,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,12,Betula nana,DESH,1,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,12,Empetrum nigrum,EVSH,5,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,12,Vaccinium vitis-idaea,EVSH,3,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,13,Betula nana,DESH,3,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,13,Vaccinium vitis-idaea,EVSH,1,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,13,Empetrum nigrum,EVSH,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,14,Betula nana,DESH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,14,Vaccinium uliginosum,DESH,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,14,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,15,Vaccinium vitis-idaea,EVSH,3,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,15,Empetrum nigrum,EVSH,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,16,Vaccinium uliginosum,DESH,3,y,Lichen
+July,2,2019,HR,upland,1990,2,p89,unburned,16,Grass spp.,GRAM,1,NA,Lichen
+July,2,2019,HR,upland,1990,2,p89,unburned,16,Rhododendron groenlandicum,EVSH,2,NA,Lichen
+July,2,2019,HR,upland,1990,2,p89,unburned,16,Vaccinium vitis-idaea,EVSH,2,NA,Lichen
+July,2,2019,HR,upland,1990,2,p89,unburned,17,Vaccinium uliginosum,DESH,4,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,17,Betula nana,DESH,1,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,17,Empetrum nigrum,EVSH,3,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,17,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,18,Vaccinium uliginosum,DESH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,18,Vaccinium vitis-idaea,EVSH,3,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,19,Vaccinium vitis-idaea,EVSH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,20,Vaccinium vitis-idaea,EVSH,3,y,Moss
+July,2,2019,HR,upland,1990,2,p89,unburned,21,Vaccinium uliginosum,DESH,3,y,Lichen 
+July,2,2019,HR,upland,1990,2,p89,unburned,22,Betula nana,DESH,3,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,22,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,23,Vaccinium vitis-idaea,EVSH,3,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,24,Equisetum spp. ,EQUI,2,y,Litter
+July,2,2019,HR,upland,1990,2,p89,unburned,25,Vaccinium vitis-idaea,EVSH,3,y,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,1,Equisetum spp. ,EQUI,6,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,1,Vaccinium uliginosum,DESH,1,NA,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,2,Equisetum spp. ,EQUI,3,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,2,Vaccinium uliginosum,DESH,1,NA,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,3,Grass spp.,GRAM,2,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,4,Vaccinium uliginosum,DESH,5,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,5,Equisetum spp. ,EQUI,1,y,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,6,Equisetum spp. ,EQUI,1,y,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,6,Vaccinium uliginosum,DESH,1,NA,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,7,Vaccinium vitis-idaea,EVSH,1,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,8,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,9,Vaccinium uliginosum,DESH,3,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,10,Equisetum spp. ,EQUI,2,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,11,Equisetum spp. ,EQUI,3,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,11,Vaccinium uliginosum,DESH,1,NA,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,12,Equisetum spp. ,EQUI,5,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,13,Vaccinium uliginosum,DESH,3,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,14,Vaccinium uliginosum,DESH,5,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,15,Betula nana,DESH,4,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,15,Vaccinium uliginosum,DESH,4,NA,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,16,Betula nana,DESH,1,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,16,Vaccinium uliginosum,DESH,1,NA,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,17,Salix spp. ,DESH,5,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,17,Vaccinium uliginosum,DESH,3,NA,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,18,Vaccinium uliginosum,DESH,5,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,19,Betula nana,DESH,3,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,19,Equisetum spp. ,EQUI,1,NA,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,20,Betula nana,DESH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,20,Equisetum spp. ,EQUI,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,21,Salix spp. ,DESH,1,y,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,21,Vaccinium uliginosum,DESH,5,NA,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,21,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,21,Equisetum spp. ,EQUI,3,NA,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,22,Salix spp. ,DESH,3,y,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,22,Vaccinium uliginosum,DESH,3,NA,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,23,Betula nana,DESH,2,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,23,Vaccinium uliginosum,DESH,1,NA,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,24,Vaccinium uliginosum,DESH,6,y,Moss
+July,2,2019,HR,upland,1990,2,p90,no_seedling,25,Betula nana,DESH,3,y,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,25,Vaccinium uliginosum,DESH,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p90,no_seedling,25,Vaccinium vitis-idaea,EVSH,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,1,Vaccinium uliginosum,DESH,3,y,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,2,Equisetum spp. ,EQUI,2,y,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,3,Grass spp.,GRAM,1,y,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,3,Vaccinium uliginosum,DESH,4,NA,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,4,Grass spp.,GRAM,1,y,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,5,Grass spp.,GRAM,1,y,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,6,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,7,Grass spp.,GRAM,1,y,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,8,None,NONE,0,NA,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,9,Equisetum spp. ,EQUI,5,y,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,10,Grass spp.,GRAM,3,y,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,10,Equisetum spp. ,EQUI,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,11,None,NONE,0,NA,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,12,Equisetum spp. ,EQUI,1,y,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,12,Grass spp.,GRAM,1,NA,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,13,Vaccinium uliginosum,DESH,3,y,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,13,Equisetum spp. ,EQUI,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,13,Arctostaphylos rubra,EVSH,3,NA,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,14,Equisetum spp. ,EQUI,1,y,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,15,Vaccinium uliginosum,DESH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,16,Equisetum spp. ,EQUI,2,y,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,16,Vaccinium vitis-idaea,EVSH,1,NA,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,17,Vaccinium uliginosum,DESH,3,y,Litter 
+July,2,2019,HR,upland,1990,2,p91,moderate,17,Equisetum spp. ,EQUI,1,NA,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,18,Vaccinium uliginosum,DESH,2,y,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,19,Equisetum spp. ,EQUI,1,y,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,20,Betula nana,DESH,1,y,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,20,Vaccinium uliginosum,DESH,3,NA,Litter
+July,2,2019,HR,upland,1990,2,p91,moderate,21,Equisetum spp. ,EQUI,4,y,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,21,Vaccinium uliginosum,DESH,3,NA,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,21,Grass spp.,GRAM,1,NA,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,22,Larix cajanderi,LACA,8,y,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,23,Betula nana,DESH,2,y,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,23,Grass spp.,GRAM,1,NA,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,24,Grass spp.,GRAM,2,y,Moss
+July,2,2019,HR,upland,1990,2,p91,moderate,25,Betula nana,DESH,2,y,Moss
+July,2,2019,HR,upland,1990,2,p92,high,1,Vaccinium vitis-idaea,EVSH,2,y,Moss
+July,2,2019,HR,upland,1990,2,p92,high,2,Grass spp.,GRAM,2,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,3,Betula nana,DESH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,3,Grass spp.,GRAM,1,NA,Litter
+July,2,2019,HR,upland,1990,2,p92,high,4,Salix spp. ,DESH,3,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,4,Vaccinium vitis-idaea,EVSH,2,NA,Moss
+July,2,2019,HR,upland,1990,2,p92,high,5,Salix spp. ,DESH,1,y,Lichen
+July,2,2019,HR,upland,1990,2,p92,high,6,Betula nana,DESH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,7,Betula nana,DESH,8,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,7,Grass spp.,GRAM,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p92,high,8,Betula nana,DESH,5,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,9,Betula nana,DESH,5,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,9,Equisetum spp. ,EQUI,1,NA,Litter
+July,2,2019,HR,upland,1990,2,p92,high,10,Betula nana,DESH,1,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,11,Betula nana,DESH,2,y,Moss
+July,2,2019,HR,upland,1990,2,p92,high,11,Equisetum spp. ,EQUI,3,NA,Moss
+July,2,2019,HR,upland,1990,2,p92,high,12,Betula nana,DESH,8,y,Lichen
+July,2,2019,HR,upland,1990,2,p92,high,13,Betula nana,DESH,1,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,13,Equisetum spp. ,EQUI,2,NA,Litter
+July,2,2019,HR,upland,1990,2,p92,high,14,Salix spp. ,DESH,1,y,Moss
+July,2,2019,HR,upland,1990,2,p92,high,14,Betula nana,DESH,2,NA,Moss
+July,2,2019,HR,upland,1990,2,p92,high,14,Grass spp.,GRAM,3,NA,Moss
+July,2,2019,HR,upland,1990,2,p92,high,14,Equisetum spp. ,EQUI,1,NA,Moss
+July,2,2019,HR,upland,1990,2,p92,high,15,Salix spp. ,DESH,1,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,15,Rhododendron groenlandicum,EVSH,3,NA,Litter
+July,2,2019,HR,upland,1990,2,p92,high,15,Equisetum spp. ,EQUI,3,NA,Litter
+July,2,2019,HR,upland,1990,2,p92,high,16,Betula nana,DESH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,16,Grass spp.,GRAM,1,NA,Litter
+July,2,2019,HR,upland,1990,2,p92,high,17,Betula nana,DESH,1,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,17,Equisetum spp. ,EQUI,1,NA,Litter
+July,2,2019,HR,upland,1990,2,p92,high,18,Equisetum spp. ,EQUI,1,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,19,Vaccinium vitis-idaea,EVSH,2,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,20,Betula nana,DESH,3,y,Litter
+July,2,2019,HR,upland,1990,2,p92,high,20,Vaccinium uliginosum,DESH,6,NA,Litter
+July,2,2019,HR,upland,1990,2,p92,high,21,Betula nana,DESH,5,y,Moss
+July,2,2019,HR,upland,1990,2,p92,high,21,Equisetum spp. ,EQUI,5,NA,Moss
+July,2,2019,HR,upland,1990,2,p92,high,22,Betula nana,DESH,3,y,Moss
+July,2,2019,HR,upland,1990,2,p92,high,22,Grass spp.,GRAM,2,NA,Moss
+July,2,2019,HR,upland,1990,2,p92,high,23,Betula nana,DESH,1,y,Lichen
+July,2,2019,HR,upland,1990,2,p92,high,23,Vaccinium uliginosum,DESH,2,NA,Lichen
+July,2,2019,HR,upland,1990,2,p92,high,24,Salix spp. ,DESH,1,y,Moss
+July,2,2019,HR,upland,1990,2,p92,high,24,Grass spp.,GRAM,1,NA,Moss
+July,2,2019,HR,upland,1990,2,p92,high,25,Vaccinium uliginosum,DESH,1,y,Moss
+July,2,2019,HR,upland,1990,2,p92,high,25,Salix spp. ,DESH,1,NA,Moss

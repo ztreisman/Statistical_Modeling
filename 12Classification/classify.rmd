@@ -1,0 +1,279 @@
+---
+title: "Classification"
+author: "Zack Treisman"
+date: "Spring 2021"
+output: 
+  beamer_presentation: 
+    keep_tex: yes
+    includes: 
+      in_header: ../slide_style.tex
+bibliography: ../bibliography.bib    
+citecolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(global.par = TRUE)
+
+```
+
+```{r,include=FALSE}
+par(mar = c(4, 4, 0.5, 0.5)) # Set margins
+``` 
+
+
+```{r, message=FALSE}
+library(tidyverse)
+library(caret)
+library(MASS)
+library(e1071)
+library(tree)
+library(randomForest)
+set.seed(3)
+```
+
+## Philosophy
+
+In all of the modeling we have done so far, the response variable has been numeric.
+
+* A binomial glm is used when the response is a binary categorical variable, but the response in the model is the probability of observing the level designated success.
+
+What are our options if we wish to predict a categorical response with more than two levels?
+
+* Nearest-neighbor averaging (KNN, `class::knn`) 
+* Multinomial logistic regression
+* Discriminant analysis (linear, quadratic, naive Bayes, \ldots)
+* Classification trees or Random Forests
+* Support vector machines, neural networks and other machine learning methods
+
+## Binomial GLMs
+
+Consider a binary categorical variable $Y$ with classes 0 and 1. 
+
+In a binomial GLM, we model the expected probability $p(x)=P(Y=1|X=x)$ using
+$$
+\text{logit}(p(x))=\beta_0+\beta_1x_1+\cdots+\beta_mx_m
+$$
+where 
+$$
+\text{logit}(p(x))=\log\left(\frac{p(x)}{1-p(x)}\right).
+$$
+Equivalently
+$$
+p(x)=\frac{e^{\beta_0+\beta_1x_1+\cdots+\beta_mx_m}}{1+e^{\beta_0+\beta_1x_1+\cdots+\beta_mx_m}}.
+$$
+When $Y$ is a categorical variable with more than 2 levels, it continues to be useful to model the probabilities that it takes each individual level.
+
+## Multinomial regression
+
+This technique seems like it doesn't get used as much. If you are interested, the tools that do it are `glmnet::glmnet` with `family=multinomial` or `nnet::multinom`.
+
+`glmnet` also does Lasso and Ridge Regression, which do something like dimension reduction by feature selection. See Chapter 6 of @islr.
+
+## Discriminant Analysis
+
+Model the distribution of $X$ for each class, then apply Bayes' theorem. We'll follow @islr and use the following notation:
+
+* $f_k(x)=P(X=x|Y=k)$ is the distribution of $X$ for class $k$. 
+* $\pi_k=P(Y=k)$ is the prior probability for class $k$.
+* $p_k(x)=P(Y=k|X=x)$ is the posterior probability for class $k$.
+
+Bayes' theorem says
+
+$$
+p_k(x)=\frac{\pi_kf_k(x)}{\sum_{l=1}^{K}\pi_lf_l(x)}.
+$$
+Given $X=x$, we can choose the class $k$ for $Y$ such that $p_k(x)$ is largest. Alternatively, we may wish to report all of the probabilities $p_k(x)$.
+
+## Linear Discriminant Analysis
+
+Two strong assumptions make finding the largest $p_k(x)$ much easier.
+
+* The distributions $f_k(x)$ are normal. $f_k(x)=\frac{1}{\sigma_k\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu_k}{\sigma_k}\right)^2}$
+* The variance is the same for all classes: $\sigma_k=\sigma$.
+
+Taking logs of the resulting formulas for $p_k(x)$ and discarding terms that don't depend on $k$ gives the *discriminant*:
+
+$$
+\delta_k(x)=x\frac{\mu_k}{\sigma^2} - \frac{\mu_k^2}{2\sigma^2}+\log(\pi_k).
+$$
+This is a linear function of $x$. It is easy to compute and $p_k(x)$ is greatest when $\delta_k(x)$ is greatest. Find the *decision boundary* between class $j$ and class $k$ by solving $\delta_j(x)=\delta_k(x)$. 
+
+* The above is written assuming that there is only a single predictor $x$. For multiple predictors, the math is similar, with $x$ replaced by the vector of predictors and $\sigma$ by the covariance matrix. Decision boundaries are linear.
+
+## LDA illustration
+
+![](4.6.pdf)
+
+This graphic is from @islr. It shows simulated data from Gaussian distributions indicated by the ovals. Dotted lines are optimal decision boundaries. Solid lines are decision boundaries from LDA. 
+
+## LDA example
+
+We'll study Fisher's iris data. 
+
+\scriptsize
+```{r}
+pairs(iris[,1:4], col=iris$Species, pch=19)
+```
+
+## LDA example (model fitting)
+
+The `lda` command from `MASS` performs LDA. The LD1 and LD2 vectors make a nice basis for the plane spanned by the centroids of the 3 species.
+
+\tiny
+```{r}
+lda.mod <- lda(Species~., data = iris)
+lda.mod
+```
+
+## LDA example (model evaluation)
+
+The model is correct in all but 3 cases.
+\scriptsize
+```{r, fig.height=4}
+lda.pred <- predict(lda.mod)
+mean(lda.pred$class==iris$Species)
+sum(lda.pred$class!=iris$Species)
+lda.obs <- as.data.frame(lda.pred$x)
+ggplot(lda.obs, aes(LD1, LD2, color=lda.pred$class))+geom_point()
+```
+
+## LDA example (posterior probabilities)
+
+Posterior probabilities are also available from `predict.lda`.
+\scriptsize
+```{r, fig.height=4}
+lda.post <- as.data.frame(lda.pred$posterior)
+ggplot(lda.obs, aes(LD1, LD2))+
+  geom_point(aes(size=lda.post$setosa, color="setosa"), alpha=0.5)+
+  geom_point(aes(size=lda.post$virginica, color="virginica"), alpha=0.5)+
+  geom_point(aes(size=lda.post$versicolor, color="versicolor"), alpha=0.5)+
+  labs(size="Confidence", color="Species")
+```
+
+
+## Quadratic Discriminant Analysis
+
+
+![](4.9.pdf)
+
+
+Keeping the normality assumption but relaxing the condition that all of the variances are equal leads to *quadratic discriminant analysis*. The decision boundaries are quadratic instead of linear.
+
+* Smaller data sets do better with LDA. 
+
+
+## QDA example (model fitting)
+
+QDA doesn't do dimension reduction as a byproduct like LDA.
+
+\scriptsize
+```{r}
+qda.mod <- qda(Species~., data = iris)
+qda.mod
+```
+
+## QDA example (model evaluation)
+
+The predictions from QDA are the same as LDA on these data.
+\scriptsize
+```{r, fig.height=3}
+qda.pred <- predict(qda.mod)
+sum(qda.pred$class!=iris$Species)
+qda.post <- as.data.frame(qda.pred$posterior)
+ggplot(lda.obs, aes(LD1, LD2))+
+  geom_point(aes(size=qda.post$setosa, color="setosa"), alpha=0.5)+
+  geom_point(aes(size=qda.post$virginica, color="virginica"), alpha=0.5)+
+  geom_point(aes(size=qda.post$versicolor, color="versicolor"), alpha=0.5)+
+  labs(size="Confidence", color="Species")
+```
+
+## Naive Bayes
+
+With multiple predictors $x=(x_1, \ldots, x_m)$, assuming that the distribution $f_k(x)$ is a product of terms involving only one $x_i$ at a time gives a form for $\delta_k(x)$ that is useful for large numbers of predictors. ($m>>0$)
+
+\scriptsize
+```{r, fig.height=3}
+nb.mod <- naiveBayes(Species~., data=iris)
+nb.pred <- predict(nb.mod, newdata = iris)
+sum(nb.pred!=iris$Species)
+ggplot(lda.obs, aes(LD1, LD2, color=nb.pred))+geom_point()+
+  labs(color="Naive Bayes Prediction")
+```
+
+
+## Trees
+
+Decision trees are very intuitive.
+
+\scriptsize
+```{r, fig.height=3}
+tree.iris=prune.tree(tree(Species~.,iris), best=4); summary(tree.iris)
+plot(tree.iris); text(tree.iris,pretty=0)
+```
+
+## Tree Building
+
+Building a tree consists of recursively splitting the data into regions using thresholds on the predictors. 
+
+The process is *top-down* and *greedy*.
+
+* Top-down because we start with unlabeled data and perform the best split.
+* Greedy because we don't look ahead and make any sub-optimal split that will then allow for better splits further down the tree.
+
+After building a tree, we need to prune it back to avoid overfitting. The degree of pruning is a parameter that can be tuned using cross validation.
+
+## Tree Building Details
+
+To determine the best split, we use *Gini index* or *cross-entropy*. Both are defined for a region (subset of the data domain) corresponding to a node/leaf of the tree.
+
+* The Gini index: 
+$$
+G=\sum_{k=1}^K\hat p_{k}(1-\hat p_{k})
+$$
+where $\hat p_{k}$ is the proportion of training observations in the region that are from the $k$th class.
+* The cross-entropy:
+$$
+D=-\sum_{k=1}^K\hat p_{k}\log\hat p_{k}
+$$
+
+These two measures are similar numerically. Small values indicate that the region in question is homogeneous.
+
+## Unfortunately \ldots
+
+Single trees do poorly at predicting compared to the other methods we have studied.
+
+## Random Forests and Bagging
+
+By building a lot of trees, adding noise to the process as we do so, and then aggregating the predictions we can build very effective predictive models.
+
+* *Bagging* (bootstrap aggregation) in a general technique for building many models and averaging them. Bootstrap samples of the data are used to create replicates of the data for training models.
+* The *Random Forest* algorithm builds trees on bootstrapped training samples, but at each step, only a random subset of the predictors are considered as options for defining a split.
+* These additions of noise result in models with lower variance and higher predictive power.
+
+
+## Random Forest Example
+
+\scriptsize
+```{r, fig.height=4}
+west_fork <- read.csv("data/FieldPlots_WithSpatial.csv")
+west_fork$bc_sqrt_7 <- factor(west_fork$bc_sqrt_7)
+rf.mod <- randomForest(bc_sqrt_7~.,
+                       data = west_fork[, c(4,8:32)], importance=TRUE)
+
+accuracy <- function(tab)sum(sapply(1:nrow(tab), 
+                                    function(x)tab[x,x]))/(sum(tab))
+rf.tab <- table(predict(rf.mod),west_fork$bc_sqrt_7)
+rf.tab
+accuracy(rf.tab)
+```
+
+## Variable Importance 
+
+Interpretation of a Random Forest is challenging, but we can get relative levels of variable importance by looking at decreases in the Gini index over all the splits where a particular variable is used.
+
+\scriptsize
+```{r, fig.height=6}
+varImpPlot(rf.mod)
+```
+
+## References

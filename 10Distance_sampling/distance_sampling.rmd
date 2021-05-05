@@ -1,0 +1,309 @@
+---
+title: "Population Assessment and Distance Sampling"
+author: "Zack Treisman"
+date: "Spring 2021"
+output: 
+  beamer_presentation: 
+    keep_tex: yes
+    includes: 
+      in_header: ../slide_style.tex
+bibliography: ../bibliography.bib    
+citecolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(global.par = TRUE)
+library(ggplot2)
+library(Distance)
+set.seed(33)
+```
+
+```{r,include=FALSE}
+par(mar = c(4, 4, 0.5, 0.5)) # Set margins
+scale_colour_continuous <- scale_colour_viridis_c
+scale_colour_discrete   <- scale_colour_brewer(palette="Dark2")
+scale_colour_binned     <- scale_colour_viridis_b
+``` 
+
+## Philosophy
+
+Wildlife population assessment -  *How many are there?* 
+
+## Simpler questions:
+
+* rank
+* occupancy
+* index
+
+## Population
+
+* census
+* mark-recapture
+* removal
+* plot sampling
+* distance sampling
+
+## A simulated example
+
+We'll use some of the code from the section on simulation to generate random arrangements of populations.
+
+```{r, include=FALSE}
+random_pop <- function(Lx=30, Ly=30,
+                         nparents=50, offspr_per_parent = 10, dispdist=2){
+
+  parent_x = runif(nparents,min=0,max=Lx) 
+  parent_y = runif(nparents,min=0,max=Ly)
+  noffspr = nparents*offspr_per_parent
+  angle = runif(noffspr,min=0,max=2*pi) 
+  dist = rexp(noffspr,1/dispdist)
+
+  offspr_x = rep(parent_x,each=offspr_per_parent)+cos(angle)*dist
+  offspr_y = rep(parent_y,each=offspr_per_parent)+sin(angle)*dist
+  pos <- as.data.frame(cbind(offspr_x,offspr_y))[(offspr_y>0)&(offspr_y<Ly)&(offspr_x>0)&(offspr_x<Lx),]
+
+  return(pos)
+}
+```
+
+\scriptsize
+```{r}
+pos <- random_pop()
+```
+\normalsize
+The simulated population size is `r nrow(pos)`.
+\scriptsize
+```{r  fig.height = 3, fig.width = 6}
+ggplot(data=pos, aes(offspr_x, offspr_y))+geom_point()+labs(x="", y="")
+```
+
+## Capture-mark-recapture
+
+* Capture a subset of the population and mark them. 
+* Release. After sufficient time for the released subset to have fully mixed with the population, capture another subset. 
+* The fraction of the second capture that is marked estimates the fraction of the population in the first capture. 
+* As a formula: $\hat P = C_1/p_m$ where 
+    * $\hat P$ is the population estimate, 
+    * $C_1$ is the size of the first captured group and
+    * $p_m$ is the marked proportion in the second captured group.
+
+\scriptsize
+```{r}
+capture1 <- sample(nrow(pos), 50) 
+pos$mark <- 1:nrow(pos) %in% capture1
+
+capture2 <-  sample(nrow(pos), 50)
+pos$recapture <- (1:nrow(pos) %in% capture2) & pos$mark
+```
+\normalsize
+
+* There are `r sum(pos$recapture)` recaptures. 
+* This is  `r sum(pos$recapture)/length(capture2)` of the second captured group.
+* The population estimate is `r length(capture1)`/`r (sum(pos$recapture)/length(capture2))`=`r round(length(capture1)/(sum(pos$recapture)/length(capture2)))`.
+
+## Plot of captures and recaptures
+
+This method is not particularly well suited to populations that don't move around and mingle.
+
+\scriptsize
+```{r  fig.height = 3, fig.width = 6}
+ggplot(data=pos, aes(offspr_x, offspr_y, color=mark, shape=recapture))+
+  geom_point()+labs(x="", y="")
+```
+
+
+## Capture-mark-recapture is fundamentally Bayesian
+
+Population estimates can be improved over time by repeating the experiment. 
+
+## Plot Sampling
+
+Even if the individuals being counted don't move around, it is often impractical/unreasonable/impossible to census an entire area of interest. Instead, we often census appropriately chosen subplots.
+
+* Subplots are often laid out along transects.
+
+```{r  echo=F, fig.height = 3, fig.width = 6}
+pos$in_plot <- ((pos$offspr_x+2.5)%%5<1)|((pos$offspr_x+2.5)%%5>4)
+ggplot(data=pos, aes(offspr_x, offspr_y, color=in_plot))+geom_point()+labs(x="", y="")+
+  geom_vline(xintercept=(5*(0:5)+2.5))+
+  geom_vline(xintercept=(5*(0:5)+1.5), lty=2)+
+  geom_vline(xintercept=(5*(0:5)+3.5), lty=2) + 
+  theme(legend.position = "none") 
+```
+
+## Computing population from plot sampling
+
+Divide the number counted in the plots by the fraction of the area that is covered by the plots.
+
+\scriptsize
+```{r}
+num_plots <- 5
+half_width <- 1
+Lx <- 30; Ly <- 30
+counted <- sum(pos$in_plot)
+area_plots <- Ly*2*half_width*num_plots
+total_area <- Lx*Ly
+area_fraction <- area_plots/total_area
+(pop_estimate <- counted/area_fraction)
+```
+\normalsize
+We can use a bootstrap to get a confidence interval for this estimate.
+
+## Distance sampling
+
+What if detecting the individuals in the population is challenging?
+
+* In many surveys, the further the individual is from the observer, the lower the probability of observation.
+
+\scriptsize
+```{r, include=FALSE}
+pos$d <- NA
+pos$d[(pos$offspr_x+2.5)%%5<1] <- (pos$offspr_x+2.5)[(pos$offspr_x+2.5)%%5<1]%%5
+pos$d[(pos$offspr_x+2.5)%%5>4] <- 5-(pos$offspr_x+2.5)[(pos$offspr_x+2.5)%%5>4]%%5
+
+pos$prob_detected <- 0
+pos$prob_detected[(pos$offspr_x+2.5)%%5<1] <- dnorm((pos$offspr_x[(pos$offspr_x+2.5)%%5<1]+2.5)%%5,sd=0.5)/dnorm(0, sd=0.5)
+pos$prob_detected[(pos$offspr_x+2.5)%%5>4] <- dnorm(5-(pos$offspr_x[(pos$offspr_x+2.5)%%5>4]+2.5)%%5,sd=0.5)/dnorm(0, sd=0.5)
+
+pos$detected <- as.logical(rbinom(nrow(pos),1,pos$prob_detected))
+
+```
+
+
+```{r  echo=F, fig.height = 3, fig.width = 6}
+ggplot(data=pos, aes(offspr_x, offspr_y, color=detected))+geom_point()+labs(x="", y="")+
+  geom_vline(xintercept=(5*(0:5)+2.5))+
+  geom_vline(xintercept=(5*(0:5)+1.5), lty=2)+
+  geom_vline(xintercept=(5*(0:5)+3.5), lty=2) + 
+  theme(legend.position = "none") 
+```
+
+```{r}
+counted <- sum(pos$detected)
+(pop_estimate <- counted/area_fraction)
+```
+## Overall detection probability
+
+It is useful to look at a histogram of the distance of detected individuals.
+
+* Goal: fit a detection probability function to these data.
+
+```{r echo=F, fig.height = 3, fig.width = 6}
+prob_detect <- function(x) dnorm(x,sd=0.5)/dnorm(0, sd=0.5)
+ggplot(pos[pos$detected,], aes(d))+geom_histogram(breaks=(0:10)/10, aes(y = 6 * stat(count) / sum(count)))+labs(x="Distance from Centerline", y="Probability of Detection")+geom_function(fun=prob_detect, aes(color="red")) + 
+  theme(legend.position = "none") 
+overall_prob <- integrate(prob_detect, lower = 0, upper = 1)$value # in general, divide by w
+```
+The overall probability of detection is $\hat P=$ `r round(overall_prob, 4)`.
+
+## Estimation using $\hat P$
+
+To get an estimated count from a count where the probability of detection is not 100%, divide the actual count by the overall probability of detection. 
+
+\scriptsize
+```{r}
+est_count <- counted/overall_prob
+(pop_estimate <- est_count/area_fraction)
+```
+## Guessing the detection probability function
+
+We have some data that we would like to use to define a curve.
+
+* Propose a shape for the detection probability function (half-normal, hazard rate, uniform, \ldots).
+    * $p_{det}(0)=1$ (objects at the centerline are detected)
+    * $p'_{det}(0)=0$ (detection probability is rather flat around 0)
+    * $p'_{det}(x)\leq0$ (detection probability decreases with distance)
+    
+* Use maximum likelihood to find parameters of the most appropriate curve in the family.
+
+The $\hat P$ above comes from rescaling a normal distribution with $\sigma=0.5$ so that $p_{det}(0)=1$. The choice of $\sigma$ was from fitting by eye. The code below finds the $\sigma$ for the maximum likelihood. 
+\scriptsize
+```{r, warning=FALSE}
+samp_ind<-pos[pos$in_plot,]
+prob_detect2 <- function(x,s) dnorm(x,sd=s)/dnorm(0, sd=s)
+nll_fn<-function(s) -sum(dbinom(samp_ind$detected,
+                                1,prob_detect2(samp_ind$d,s),
+                                log = TRUE))
+opt1 <- optim(fn = nll_fn, par = list(s=0.5), method="BFGS"); opt1$par
+```
+## Using the optimal half-normal detection probability
+
+```{r echo=F, fig.height = 3, fig.width = 6}
+ggplot(pos[pos$detected,], aes(d))+geom_histogram(breaks=(0:10)/10, aes(y = 6 * stat(count) / sum(count)))+labs(x="Distance from Centerline", y="Probability of Detection")+geom_function(fun=prob_detect2, aes(color="red"), args = c(s=0.434)) + 
+  theme(legend.position = "none") 
+```
+
+\scriptsize
+```{r}
+overall_prob2 <- integrate(function(x) prob_detect2(x,s=opt1$par),0,1)$value 
+est_count2 <- counted/overall_prob2
+(pop_estimate2 <- est_count2/area_fraction)
+```
+
+## Hazard rate detection probaility functions.
+
+A half-normal detection probability function may not be best.
+
+The hazard rate detection probability is defined by
+$$
+p_{det}(x)=1-\exp(-(x/\sigma)^{-b}).
+$$
+This function has two parameters, $\sigma$ which controls the width of the shoulder, and $b$ which controls the steepness of the dropoff.
+
+```{r echo=F, fig.height = 3, fig.width = 6}
+prob_detect_hr <- function(x,s,b) 1-exp(-(x/s)^(-b))
+ggplot(pos[pos$detected,], aes(d))+geom_histogram(breaks=(0:10)/10, aes(y = 6 * stat(count) / sum(count)))+labs(x="Distance from Centerline", y="Probability of Detection")+geom_function(fun=prob_detect_hr, aes(color="red"), args = c(s=0.5,b=4)) + 
+  theme(legend.position = "none") 
+```
+
+## Maximum likelihood to find the optimal hazard rate
+
+Again, we can use maximum likelihood to estimate the parameters.
+
+\scriptsize
+```{r, warning=FALSE}
+prob_detect_hr <- function(x,s,b) 1-exp(-(x/s)^(-b))
+nll_fn_hr <- function(pars){s<-pars[1];b<-pars[2]
+-sum(dbinom(samp_ind$detected,1,prob_detect_hr(samp_ind$d,s,b), log = TRUE))}
+opt2 <- optim(fn = nll_fn_hr, par = list(s=0.25, b=4)); opt2$par
+```
+
+## The optimal Hazard Rate detection curve
+
+```{r echo=F, fig.height = 3, fig.width = 6}
+ggplot(pos[pos$detected,], aes(d))+geom_histogram(breaks=(0:10)/10, aes(y = 6 * stat(count) / sum(count)))+labs(x="Distance from Centerline", y="Probability of Detection")+geom_function(fun=prob_detect_hr, aes(color="red"), args = opt2$par) + 
+  theme(legend.position = "none") 
+```
+
+## Using the optimal Hazard Rate function to predict $\hat P$
+
+And then we estimate 
+
+* the overall probability $\hat P$ by integrating the detection probability function, 
+* the number of individuals within the sampling region by dividing the count by $\hat P$, and 
+* the population by dividing the number of individuals by the area fraction.
+
+\scriptsize
+```{r}
+overall_prob3<-integrate(function(x){
+  prob_detect_hr(x,s=opt2$par[1],b=opt2$par[2])},0,1)$value  
+est_count3 <- counted/overall_prob3
+(pop_estimate3 <- est_count3/area_fraction)
+```
+
+## Assumptions and issues
+
+* If the individuals that are being counted are clustered (pods of whales, clusters of plants, \ldots), this can cause problems.
+
+    * Estimate the distance to the center of the cluster.
+    * Record the size of each cluster and estimate the mean cluster size.
+
+* Often, instead of using all observations, it makes sense to truncate observations above some effecting strip width.
+
+* If there is avoidance of the observer, this can cause problems.
+
+## Point-transect distance sampling
+
+For studies where the observer is stationary, the process is quite similar.
+ 
+
+## References

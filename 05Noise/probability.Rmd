@@ -1,0 +1,222 @@
+---
+title: "Stochastic models in R"
+output: 
+  html_document:
+    highlight: tango
+    theme: readable
+    toc: true
+    toc_float: true
+bibliography: "../bibliography.bib"   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(global.par = TRUE)
+library(ggplot2)
+library(dominanceanalysis)
+```
+
+# Overview
+
+The goal for today is to explore different conditional distributions. Most real world uses of the `glm` function either use a `binomial` or a `poisson` family. We looked at Poisson models last week (though we found that a negative binomial model was more appropriate) so today we will focus on models with binomial conditional distributions.
+
+# Binomial GLM
+
+A binomial GLM is usually what is called a *logistic regression model*. The terminology comes from the typical link function, the logistic function. The domain of the logistic function is the interval $(0,1)$ so it makes sense for a link when modeling probabilities. Given a predicted probability $\hat{p}$, the fraction of trials that result in success follows a binomial distribution, so when predicting probabilities, the appropriate conditional distribution is binomial.     
+
+## The data
+
+There's a nice data set for doing logistic regression in the `dominanceanalysis` package. Install and load that library, and take a look at the `tropicbird` data.
+
+The following description of the dataset is from @soares20.
+
+"We explore the distribution of a tropical native bird species inhabiting a small oceanic island. Since human occupation, the island’s forests have disappeared from the flat lowland areas, located closer to the coastline. Nowadays, these areas are considered anthropogenic areas, which include cities, agricultural areas (e.g., horticultures), savannas, and oil-palm monocultures.
+
+We use the tropicbird dataset, which is a collection of points distributed across the island (Soares, 2017). In each of these points, a 10-minute count was carried out to record the species presence (assuming 1 if the species was present, or 0 if it was absent). The species’ presence/absence is the binary response variable (i.e., dependent variable). Additionally, we characterized all sampled points for each of the following environmental variables (i.e., independent variables, or predictors):
+
+* remoteness (rem) is an index that represents the difficulty of movement through the landscape, with the highest values corresponding to the most remote areas;
+
+* land use (land) is an index that represents the land-use intensification, with the highest values corresponding to the more humanized areas (e.g., cities, agricultural areas, horticultures, oil-palm monocultures);
+
+* altitude (alt) is a continuous variable, with the highest values corresponding to the higher altitude areas;
+
+* slope (slo) is a continuous variable, with the highest values corresponding to the steepest areas;
+
+* rainfall (rain) is a continuous variable, with the highest values corresponding to the rainy wet areas;
+
+* distance to the coast (coast) is the minimum linear distance between each point and the coast line, with the highest values corresponding to the points further away from the coastline.
+
+Please note that in this dataset there are no false negatives, hence the bird was always recorded if present. Also, the dataset has no missing values, so it is already prepared for the analysis."
+
+The relationship between each predictor and the response can be visualized by a series of boxplots. (These are made with base graphics, not ggplot.) 
+
+```{r}
+par(mfrow=c(2,3)) # to draw multiple plots in one window
+boxplot(rem~pres, data=tropicbird, main="remoteness")
+points(x=jitter(tropicbird$pres+1), y=tropicbird$rem, col=rgb(0,0.2,0.5,0.5)) 
+# the +1 is because boxplot made the 0 and 1 of pres into 
+# levels 1 and 2 of a factor...
+# the inputs to rgb are red, green, blue, transparency
+boxplot(alt~pres, data=tropicbird, main="altitude")
+points(x=jitter(tropicbird$pres+1), y=tropicbird$alt, col=rgb(0,0.2,0.5,0.5))
+boxplot(slo~pres, data=tropicbird, main="slope")
+points(x=jitter(tropicbird$pres+1), y=tropicbird$slo, col=rgb(0,0.2,0.5,0.5))
+boxplot(rain~pres, data=tropicbird, main="rainfall")
+points(x=jitter(tropicbird$pres+1), y=tropicbird$rain, col=rgb(0,0.2,0.5,0.5))
+boxplot(coast~pres, data=tropicbird, main="dist. to coast")
+points(x=jitter(tropicbird$pres+1), y=tropicbird$coast, col=rgb(0,0.2,0.5,0.5))
+boxplot(land~pres, data=tropicbird, main="land use")
+points(x=jitter(tropicbird$pres+1), y=tropicbird$land, col=rgb(0,0.2,0.5,0.5))
+par(mfrow=c(1,1)) # To stop drawing multiple plots
+```
+
+## Model predictions
+
+One of the great things about having a model is that it can be used to predict. In the case of a logistic regression model, we can use the generated probabilities to make presence-absence predictions, which are especially easy to use because they are either right or wrong.
+
+## A one predictor model
+
+Start with a model that only uses remoteness to predict the probability of finding a bird.
+
+```{r}
+modpres1 <- glm(pres~rem, data=tropicbird, family=binomial)
+summary(modpres1)
+```
+
+We can see how well this model does by comparing predictions to data. First, we calculate the probabilities using the model. Let's do this in three different ways. First, we use the model coefficients directly, and the `plogis` function to invert the logit link. Second, we use the `fitted` command to pull the predictions out of the model object. Third, we use the `predict` command, and give it the original data. The `type="response"` is equivalent to the `plogis` command in the first computation. It tells R that we want the predictions on the scale of the response variable. The advantage to using `predict` is that if we want to make predictions on data other than the data that was used to build the model, we just give it appropriate `newdata`.
+```{r}
+probs1 <- plogis(coef(modpres1)[1]+coef(modpres1)[2]*tropicbird$rem)
+probs1a <- fitted(modpres1) 
+probs1b <- predict(modpres1, newdata=tropicbird, type="response")
+```
+Check that the above three vectors of predictions are the same. 
+
+One of the ways that we can use the `predict` function with new data is to make a common sort of graph to depict this logistic regression model. In addition to showing the predictions for a sequence of points from 0 to 6, spaced at intervals of 0.1, this plot adds "rugs" of points on the bottom and the top of the graph to indicate the values of remoteness for sites where birds were in fact found or not.
+```{r}
+# Create sequence of values for predictor
+newdata <- data.frame(rem=seq(0,6,0.1)) 
+# Use model to predict response
+newdata$pres <-predict(modpres1, newdata, type="response") 
+
+ggplot(tropicbird, aes(rem, pres)) +
+  geom_line(data=newdata)+
+  geom_rug(data=tropicbird[tropicbird$pres==0,], sides = "b") +
+  geom_rug(data=tropicbird[tropicbird$pres==1,], sides = "t")
+```
+
+Now suppose we want to use this model to decide where to go look for birds. We can set a threshold probability and go to the sites where the predicted probabilities are above that probability. Deciding where to set that threshold is a matter of balancing our desire to find a bird with the effort involved in going to look for one that is wasted if there are no birds present. We can use the distribution of the predicted probabilities to guide our decision.
+```{r}
+hist(probs1)
+```
+
+It looks like birds are rather rare, and the model never predicts a probability higher than 25%. Let's set our threshold at 10% - so if the model predicts a greater than 10% chance of finding a bird, we will flag that site for a visit.
+
+```{r}
+pred1 <- ifelse(probs1 > 0.1, "yes", "no")
+```
+
+We can compare these predictions to reality: were there birds present at the sites we flagged to go and visit?
+```{r}
+table(pred1,tropicbird$pres)
+```
+It seems that we can expect to be disappointed and not find any birds 230 out of 288 times, or about 80% of the time, and we'll miss out on 23 of 81 or about 28% of the sites where birds were actually present. We could adjust our threshold probability from 10% to get different results here depending on how we value missing bird sites against spending time looking for nonexistent birds. Alternatively, we could say that we have created a test for bird presence with an estimated sensitivity of 72% and an estimated specificity of 99%.
+
+
+## A model with more predictors
+
+We can follow a very similar process after making a more complete model using all of the predictors.
+
+```{r}
+modpres <- glm(pres~rem+land+alt+slo+rain+coast, 
+               data=tropicbird, family=binomial)
+summary(modpres)
+```
+
+(@) Evaluate `modpres` as a bird locating model as we did with `modpres1` above. How does adding the rest of the predictors improve the resulting model? Two things to note: First, when calculating probabilities, `probs1a` and `probs1b` will translate with almost no modification, but to translate `probs1`, you will have to add the rest of the terms into the linear part of the predictor. Second, making a plot of the model with six predictors is more complicated - we discuss it below.
+
+Making a graph using the resulting model is more complicated because there are more variables that need to be provided as new data and represented in the graph. Instead of making a sequence of points filling out all possible combinations across the ranges of each variable (which would lead to an absolutely huge `newdata`), we can instead generate random values within those ranges. Defining the function `pts` to do this saves a bit of typing.
+
+```{r}
+pts <- function(x){runif(10000,min(x),max(x))}
+newdata <- with(tropicbird, data.frame(rem=pts(rem),
+                                      land=pts(land),
+                                      alt=pts(alt),
+                                      slo=pts(slo),
+                                      rain=pts(rain),
+                                      coast=pts(coast)))
+```
+
+We have six predictors, so we will have to use some creativity and discretion to display appropriate information. Based on the output of `summary(modpres)` we can not bother to display `land` and `slo` since they do not register as statistically significant. We'll keep `rem` as the x variable, and can assign `alt` to color. Faceting only works for categorical variables, but we can use the `cut_number` function to divide `coast` and `rain` into three intervals.
+
+```{r}
+newdata$coast_discrete <- cut_number(newdata$coast,3, 
+                                     labels=c("coastal", "med", "inland"))
+newdata$rain_discrete <- cut_number(newdata$rain,3, 
+                                    labels=c("dry", "med", "wet"))
+```
+
+As before, we finally add predictions to the new data and make the plot.
+
+```{r}
+newdata$pres <-predict(modpres, newdata, type="response")
+ggplot(tropicbird, aes(rem, pres, color=alt)) +
+  geom_point(data=newdata, alpha=0.5)+
+  geom_rug(data=tropicbird[tropicbird$pres==0,], sides = "b") +
+  geom_rug(data=tropicbird[tropicbird$pres==1,], sides = "t") +
+  facet_grid(rain_discrete~coast_discrete)
+```
+
+(@) Remix this graphic. Some things you might try are changing which variable is represented by which aesthetic or by facets, or the number of splits for the faceting variable, or the color palette. You might also experiment with using both x and y for predictors and representing the prediction for presence by color. (If you do this, the `geom_rug` should be removed or repurposed.) What story does your graphic tell about this model?
+
+# Coefficients and log-odds
+
+When we looked at linear models or models with a log link, the coefficients had interpretations in terms of rates of change in the response as the various predictors changed. With a logit link, which is the default for binomial glms, there is a similar interpretation but it is a bit more subtle.
+
+## The logit function, probability and odds
+
+The formula for the standard logistic function is 
+$$
+\sigma(t)=\frac{e^t}{1+e^t}
+$$
+The inverse function is called the *logit*, and it is defined by the formula
+$$
+\sigma^{-1}(p)=\log\left(\frac{p}{1-p}\right)
+$$
+In a binomial glm, we consider a logistic transform of a linear predictor to predict the probability of a binary response: $p=\sigma(\beta_0+\beta_1x)$. This means that
+$$
+\log\left(\frac{p}{1-p}\right)=\beta_0+\beta_1x
+$$
+Equivalently, 
+$$
+\frac{p}{1-p}=\exp\left(\beta_0+\beta_1x\right)
+$$
+For a probability $p$, the expression $\frac{p}{1-p}$ is called the *odds*. For example if the probability of some event is $p=0.75$ then the odds of that event are 
+\begin{align*}
+\frac{0.75}{1-0.75} &=\frac{0.75}{0.25}\\
+                    &=\frac{3}{1}
+\end{align*}
+which are generally referred to as *3 to 1 odds*, meaning that the probability that the event happens is three times greater than the probability that it doesn't happen.
+
+## Resource selection functions
+
+What all of this means is that the coefficients of a logistic regression model can be interpreted as fractional changes in the odds of the event whose probability is being predicted, much as the coefficients in a Poisson or negative binomial regression model (with a log link) can be interpreted as fractional changes in the count being predicted.
+
+In a context where the response variable is a presence/ absence, such as in the `tropicbird` data, we can consider each of the predictor variables as *resources* that contribute to this presence or absence, and the coefficients are then indicators of the degree to which these resources are selected for or against by whatever is present or absent.
+
+For example, in `modpres1`, the predictor remoteness (`rem`) has coefficient 1.1. Since this is positive, we can say that remoteness is selected *for* in determining the presence of birds. If we want to be more thorough, we can exponentiate coefficients and interpret them as factors by which the odds change in relation to changes in the resource. Additionally, computing confidence intervals for the coefficients can add to the analysis. 
+
+
+
+```{r}
+exp(coef(modpres1))
+exp(confint(modpres1))
+```
+Thus we can say that a 95% confidence interval for the expected factor by which the odds of a bird being present changes in response to a one unit increase in remoteness is (2.44,3.79). Our point estimate for this factor is $\exp(1.1)\approx3.00$. 
+
+Looking at the intercept, we see that our point estimate for the baseline odds of finding a bird at a site with a remoteness of 0 is $\exp(-7.68)\approx0.0005$ or approximately 1 to 2164. Remoteness is measured on a scale of 0 to 6 so we are interested in the numbers $3^0$ to $3^6$. For example the odds of finding a bird at a site with remoteness equal to the mean of `rem` (2.47) are predicted to increase from the baseline by a factor of approximately $3^{2.47}\approx15.1$. This factor could also be calculated by multiplying the coefficient and the mean remoteness value before exponentiating: $\exp(1.1\times 2.46)\approx15.1$.
+
+(@) Analyze `modpres` as a resource selection function. Which resources are significant? What are the point estimates and 95% confidence intervals for the effects of each resource? Analyze the numerical ranges and distributions of the resources, and try to determine which ones have the greatest effect on the predicted odds. 
+
+# References
+
+

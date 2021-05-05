@@ -1,0 +1,424 @@
+---
+title: "Bayesian Statistics"
+author: "Zack Treisman"
+date: "Spring 2021"
+output: 
+  beamer_presentation: 
+    keep_tex: yes
+    includes: 
+      in_header: ../slide_style.tex
+bibliography: ../bibliography.bib    
+citecolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(global.par = TRUE)
+library(ggplot2)
+library(emdbook)
+library(MASS)
+library(bbmle)
+library(MuMIn)
+library(brms)
+set.seed(3)
+```
+
+```{r,include=FALSE}
+par(mar = c(4, 4, 0.5, 0.5)) # Set margins
+``` 
+
+## Philosophy
+
+Bayesian statistics is based on a fairly simple procedure, not dissimilar to what is done in the non-Bayesian scenario.
+
+* Propose a form for a model. (For example, define a deterministic function and a stochastic error distribution.)
+* Set probability distributions of parameters of the model based on *prior* information. (This is the controversial part.)
+* Update the parameter distributions based on data. (This is the part that can be computationally challenging.)
+
+The initial part of a Bayesian analysis is exactly the same as a frequentist analysis: Explore the data graphically and numerically, and come up with appropriate forms for models.
+
+## Bayes' Rule
+
+Supposing a model with parameters $\theta$, and given observed data $x$, compute the probability distribution for $\theta$ conditioned on the observations $x$ using Bayes' Rule.
+$$
+P(\theta|x)=\frac{P(x|\theta)P(\theta)}{P(x)}
+$$
+If we consider the data to be fixed, then $P(x)$ is the same for all possible models, so if we only want to compare models with different values of $\theta$, we can ignore the denominator.
+$$
+P(\theta|x)\propto P(x|\theta)P(\theta)
+$$
+Or, more colloquially:
+$$
+\text{Posterior} \propto \text{Likelihood} \times \text{Prior}
+$$
+
+## Distributions of parameters
+
+A key difference between Bayesian analysis and frequentist analysis is that the parameters $\theta$ of the model are not fixed but described by probability distributions.
+
+* Maximum likelihood estimation (and thus `lm`, `glm`, etc.) selects the *mode*\footnote{\emph{Mode} is another word for \emph{local maximum}.} of the likelihood. 
+* A Bayesian point estimate of a parameter is more likely to be the *mean* of the posterior distribution.
+
+## The problem with priors
+
+If a prior distribution has too much information, then it will require a lot of data to alter the posterior.
+
+For example, suppose that we are quite certain that $\theta=\theta_0$, and so we choose a prior 
+$$
+Prior(\theta)\sim N(\theta_0,\delta) 
+$$
+with $\delta$ some very small number. The graph of this distribution is basically a spike at $\theta_0$ and approximately zero everywhere else.
+
+Then for any $\theta$ that is very different from $\theta_0$, the posterior is still going to be approximately zero, and the data won't be able to change our minds.
+
+## Flat or uninformative priors
+
+The solution to this issue is to work with a suitably uninformative prior. 
+
+* A uniform distribution can make a good prior.
+    * Uniform on what scale?
+
+For a flat prior, the posterior distribution is proportional to the likelihood.
+
+## Conjugate priors
+
+Binary classification is particularly simple with a Bayesian method.
+
+Recall the binomial distribution for $x$ successes in $N$ trials with probability $p$ of success.
+$$
+P(x|p) = {N\choose x} p^x(1-p)^{N-x}
+$$
+Fixing $x$ and $N$ as coming from observed data and thinking of $p$ as the variable makes $N\choose x$ a constant. 
+
+Previous observation of $s$ successes and $r$ failures would lead one to set the prior $P(p)$ to follow a Beta distribution, which takes a similar form:
+$$
+P(p)\propto p^s(1-p)^r
+$$
+Thus, by Bayes' rule:
+$$
+P(p|x) \propto p^{x+s}(1-p)^{N-x+r}
+$$
+the posterior is another Beta distribution.
+
+## Tadpole predation
+
+In the subset of the tadpole data we looked at last week, there were 30 out of 40 tadpoles that survived the experiment.
+
+```{r, echo=FALSE, fig.height=4, fig.width=7}
+x = subset(ReedfrogPred,pred=="pred" & density==10 & size=="small")
+k = x$surv
+a=121
+b=81
+curve(dbeta(x,shape1=sum(k)+1,shape2=40-sum(k)+1),
+      xlab="Predation probability\nper capita",
+      ylab="Probability density",
+      from=0,to=1,ylim=c(0,13))
+#curve(dbeta(x,shape1=sum(k),shape2=40-sum(k)),
+#      add=TRUE,lwd=3)
+curve(dbeta(x,shape1=1,shape2=1),col="darkgray",add=TRUE,
+      type="s")
+curve(dbeta(x,shape1=121,shape2=81),
+      add=TRUE,lty=2,col="darkgray")
+curve(dbeta(x,shape1=151,shape2=91),
+      add=TRUE,lty=2,n=200)
+tlocs <- list(x=c(0.44,0.13,0.82,0.75),
+              y=c(10,3.1,10.8,8))
+text(tlocs$x,tlocs$y,c("prior\nBeta(121,81)",
+                       "prior\nBeta(1,1)",
+                       "posterior\nBeta(151,111)",
+                       "posterior\nBeta(31,11)"),
+     cex=0.6)
+alocs <- list(x=c(0.151,0.464,0.734,0.720,
+                  0.18, 0.547,0.656,0.725),
+              y=c(2.3,9.047,10.806,7.241,
+                  1.02,7.195,9.973,5.898))
+arrows(alocs$x[1:4],alocs$y[1:4],alocs$x[5:8],alocs$y[5:8],
+       angle=15,col=rep(c("darkgray","black"),c(2,2)))
+```
+
+Figure 6.3 from @bolker.
+
+## Some things to note
+
+* With a flat prior, the posterior has mode equal to the maximum likelihood estimate. The mean is shifted slightly towards the mean of the prior. 
+
+    * Mode of Beta(31,11) is $(31-1)/(31+11-2)=0.75$.
+    * Mean of Beta(31,11) is $31/(31+11)=0.738$.
+
+* Having a conjugate prior like Binomial/ Beta can make the math easy but is not typical, and there are problems that can arise with some conjugate priors.
+
+* One big experiment or many small experiments? Doesn't matter. The posterior can be updated one observation at a time if we want.
+
+## Bayesian tools in R
+
+Many options. Bayesian Regression Models with Stan\footnote{Stan is a program outside of R that does the computational heavy lifting.} (`brms`) seems good. See @brms. 
+
+Start by fitting an error only (null) model for the tadpole data. Be warned, Bayesian computations can take some time.
+
+\scriptsize
+```{r, results='hide', message=FALSE}
+fit_tad0 <- brm(surv | trials(density) ~ 1, 
+               family=binomial(), data=ReedfrogPred)
+```
+
+```{r}
+summary(fit_tad0)
+```
+
+## Plot
+
+\scriptsize
+```{r, fig.height=4}
+plot(fit_tad0)
+```
+
+\normalsize
+This plot shows a density estimate for the model parameter, and a diagnostic graph of the convergence of the algorithm used to arrive at that estimate. The graph on the right indicates a problem if it looks like anything but random noise.
+
+## Accessing model parameters
+
+* The coefficients of the `brm` object are accessed with `$fixed`.
+
+\scriptsize
+```{r}
+summary(fit_tad0)$fixed
+```
+
+\normalsize
+
+* The intercept can be converted to a probability with the inverse link function.
+
+\scriptsize
+```{r}
+plogis(summary(fit_tad0)$fixed[1])
+```
+
+\normalsize
+
+* As expected, this is the overall probability of survival in the data.
+
+\scriptsize
+```{r}
+sum(ReedfrogPred$surv)/sum(ReedfrogPred$density)
+```
+
+## Set an informative prior
+
+We can impose an informative prior, say of a 75% survival rate. 
+
+* Convert 75% to the model scale using the link function.
+
+\scriptsize
+```{r}
+qlogis(0.75)
+```
+\normalsize
+
+* Because `brm` creates code that is compiled outside of R, this number has to be included explicitly in the prior.
+
+\scriptsize
+```{r, results='hide', message=FALSE}
+fit_tad0_prior <- brm(surv | trials(density) ~ 1, 
+                      family=binomial(), data=ReedfrogPred, 
+                      prior = set_prior("normal(1.098612,0.1)", 
+                                        class = "Intercept"))
+```
+
+```{r fig.height=2}
+plot(fit_tad0_prior)
+```
+
+## A model with predictors
+
+\scriptsize
+```{r, results='hide', message=FALSE}
+fit_tad <- brm(surv | trials(density) ~ pred + size, 
+               family=binomial(), data=ReedfrogPred)
+```
+```{r}
+summary(fit_tad)
+```
+
+## Plot `brm` output
+
+\scriptsize
+```{r}
+plot(fit_tad)
+```
+
+## The `brm` with an uninformative prior is close to a `glm`
+
+\scriptsize
+```{r}
+summary(fit_tad)$fixed[,1:4]
+plogis(summary(fit_tad)$fixed["Intercept", "Estimate"])
+exp(summary(fit_tad)$fixed[,"Estimate"])
+
+glm_fit_tad <- glm(cbind(surv, density-surv) ~ pred + size, 
+                   family = binomial(), data = ReedfrogPred)
+coef(summary(glm_fit_tad))
+```
+
+
+## Set an informative prior
+
+Priors can be set on many parameters of the model.
+\scriptsize
+```{r, results='hide', message=FALSE}
+fit_tad_prior <- brm(surv | trials(density) ~ pred + size, 
+                     family=binomial(), data=ReedfrogPred, 
+                     prior = set_prior("normal(-1,0.1)", 
+                                       class = "b", 
+                                       coef = "sizebig"))
+```
+
+```{r}
+summary(fit_tad_prior)
+```
+
+## A nonlinear model
+
+The `brm` command will fit nonlinear models, such as the Myxomatosis example in Section 6.3 of @bolker.
+
+* You have to specify a prior, there's no default. Specify priors for nonlinear parameters with `nlpar`.
+* The formula goes inside the function `bf` (for `brms` formula).
+* Parameters of the nonlinear function are defined by formulas.
+* Set `nl=TRUE` (for nonlinear).
+
+\scriptsize
+```{r, results='hide', message=FALSE}
+MyxoTiter_sum$fgrade <- factor(MyxoTiter_sum$grade)
+prior1 <- prior(normal(1, 2), nlpar = "a") +
+  prior(normal(0.2, 0.4), nlpar = "b") + 
+  prior(gamma(50, 0.1), class="shape")
+fit_myx <- brm(bf(titer ~ a*day*exp(-b*day), a~fgrade, b~fgrade, nl=TRUE), 
+               data = MyxoTiter_sum, 
+               prior = prior1, 
+               family=Gamma(link = "identity"))
+```
+\normalsize
+
+The function we are using, $\mu_{titer}=a_{g}te^{-b_{g}t}$ is a reasonable model for a quantity that grows from zero to a peak, and then decays back to zero.
+
+## Nonlinear model diagnostic plots
+
+See `?plot.brmsfit` or `?bayesplot` for options. This model seems to converge okay.
+
+\scriptsize
+```{r fig.height=5}
+plot(fit_myx, pars=c("b_a_Intercept", "b_b_Intercept", "shape"))
+```
+
+## Model parameters
+
+\tiny
+```{r}
+summary(fit_myx)
+```
+\normalsize
+Grade 1 (the intercept) looks more virulent than the others.
+
+## Interpreting the deterministic model
+
+Our deterministic model takes the form
+$$
+\mu_{titer}=a_{g}te^{-b_{g}t}
+$$
+The parameters relate to the onset rapidity and the recovery rate for each grade of the virus.
+
+* $a_g$ is the initial slope
+* $1/b_g$ is the $t$-coordinate of the maximum.
+
+\scriptsize
+```{r}
+x <- summary(fit_myx)$fixed[,"Estimate"]
+myx_det <- function(day, grade){
+  a <- x[1] + x[2]*(grade==3) + x[3]*(grade==4) + x[4]*(grade==5)
+  b <- x[5] + x[6]*(grade==3) + x[7]*(grade==4) + x[8]*(grade==5)
+  a*day*exp(-b*day)
+}
+```
+
+## Comparing the model to the data
+
+```{r echo=FALSE, fig.height=5}
+s <- 32.6
+ggplot(MyxoTiter_sum, aes(day, titer))+
+  geom_point()+
+  geom_function(data=MyxoTiter_sum[MyxoTiter_sum$grade==1,], fun=myx_det, args = list(grade=1))+
+  geom_function(data=MyxoTiter_sum[MyxoTiter_sum$grade==1,], fun=function(day){qgamma(0.025, shape=s, scale=myx_det(day,1)/s)}, lty=2)+
+  geom_function(data=MyxoTiter_sum[MyxoTiter_sum$grade==1,], fun=function(day){qgamma(0.975, shape=s, scale=myx_det(day,1)/s)}, lty=2)+
+  geom_function(data=MyxoTiter_sum[MyxoTiter_sum$grade==3,], fun=myx_det, args = list(grade=3))+
+  geom_function(data=MyxoTiter_sum[MyxoTiter_sum$grade==3,], fun=function(day){qgamma(0.025, shape=s, scale=myx_det(day,3)/s)}, lty=2)+
+  geom_function(data=MyxoTiter_sum[MyxoTiter_sum$grade==3,], fun=function(day){qgamma(0.975, shape=s, scale=myx_det(day,3)/s)}, lty=2)+
+  geom_function(data=MyxoTiter_sum[MyxoTiter_sum$grade==4,], fun=myx_det, args = list(grade=4))+
+  geom_function(data=MyxoTiter_sum[MyxoTiter_sum$grade==4,], fun=function(day){qgamma(0.025, shape=s, scale=myx_det(day,4)/s)}, lty=2)+
+  geom_function(data=MyxoTiter_sum[MyxoTiter_sum$grade==4,], fun=function(day){qgamma(0.975, shape=s, scale=myx_det(day,4)/s)}, lty=2)+
+  geom_function(data=MyxoTiter_sum[MyxoTiter_sum$grade==5,], fun=myx_det, args = list(grade=5))+
+  geom_function(data=MyxoTiter_sum[MyxoTiter_sum$grade==5,], fun=function(day){qgamma(0.025, shape=s, scale=myx_det(day,5)/s)}, lty=2)+
+  geom_function(data=MyxoTiter_sum[MyxoTiter_sum$grade==5,], fun=function(day){qgamma(0.975, shape=s, scale=myx_det(day,5)/s)}, lty=2)+
+  facet_wrap(~fgrade)
+```
+
+
+The code to create this plot is ugly, so it's not included on the slide. It looks like the model does okay, but there might be some dynamics to the virus in the second week of infection that the model misses.
+
+Note that all the rabbits infected with grade 1 die before day 10.
+
+
+
+
+## Leave-one-out cross validation
+
+* For each observation, build a model excluding that observation.
+* Compute the log-likelihood of the excluded observation.
+* Combine all these log-likelihoods to assess the model.
+
+\tiny
+```{r}
+loo(fit_myx, moment_match = TRUE)
+```
+
+## How does a `glm` do?
+
+Try a quadratic in `day` for the deterministic part of the model.
+\tiny
+```{r}
+myx_glm <- glm(titer~poly(day,2)*fgrade, 
+               family = Gamma(link = "identity"), data=MyxoTiter_sum)
+summary(myx_glm)
+```
+
+## The GLM fits well but is less interpretable
+
+```{r echo=FALSE, fig.height=5}
+MyxoTiter_sum$glm_preds <- predict(myx_glm, se.fit=T)$fit
+MyxoTiter_sum$glm_se <- predict(myx_glm, se.fit=T)$se.fit
+MyxoTiter_sum$glm_lower <- MyxoTiter_sum$glm_preds-2*MyxoTiter_sum$glm_se
+MyxoTiter_sum$glm_upper <- MyxoTiter_sum$glm_preds+2*MyxoTiter_sum$glm_se
+
+
+ggplot(MyxoTiter_sum, aes(day, titer))+
+  geom_point()+
+  facet_wrap(MyxoTiter_sum$fgrade)+
+  geom_line(aes(y=glm_preds))+
+  geom_line(aes(y=glm_lower), lty=2)+
+  geom_line(aes(y=glm_upper), lty=2)
+```
+
+If we just want to interpolate, this seems like a good model.
+
+## AIC
+
+`brms` doesn't support AIC, but we can compute it if we want to. `AIC_maybe` of the Bayesian model looks reasonable - it's similar to the `looic` and not too far from the AIC for the `glm`, which is perhaps overfit. I did have to build it by hand, the `numeric(0)` means there isn't a `brmsfit` method for `AIC`. 
+
+\scriptsize
+```{r}
+AIC(myx_glm)
+AIC(fit_myx)
+llMyx <- log_lik(fit_myx)
+# ?brms::logLik.brmsfit
+nllMyx <- -sum(colMeans(llMyx))
+(AIC_maybe <- 2*nllMyx-2*dim(fit_myx$data)[2])
+```
+
+## References
