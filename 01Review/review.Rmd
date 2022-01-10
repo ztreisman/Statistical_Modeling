@@ -1,7 +1,7 @@
 ---
 title: "Review of Introductory Statistics"
 author: "Zack Treisman"
-date: "Spring 2021"
+date: "Spring 2022"
 output: 
   beamer_presentation: 
     includes: 
@@ -16,9 +16,9 @@ library(MASS)
 
 ```
 
-## Data
+## Data frame $\to$ Statistical analysis $\to$ Model
 
-An **observation** is a single unit.  A **variable** is a measurement made on that unit 
+Data frames are arrangements of **observations** of **variables**. An **observation** is a single unit.  A **variable** is a measurement made on that unit 
 
 * Record observations as **rows** and variables in **columns**.    
 * Variables can be **categorical** or **numerical**.
@@ -27,30 +27,50 @@ An **observation** is a single unit.  A **variable** is a measurement made on th
 * Dates, times and locations merit special consideration.
 * Vocabulary is not universal: Factor, case, treatment \ldots
 
+\footnotesize
 ```{r}
 head(Sitka) # from package MASS
 ```
-
+\normalsize
 
 ## Distributions
 
-The **distribution** of a variable is a measure of how often it takes each possible value.
+The **distribution** of a variable is a description of how often it takes each possible value.
+
+* An **observed distribution** is what we actually see.
+    * "the sample"
+    * column of a data frame
+    * summarized by computing means, standard deviations, medians, sample proportions, et cetera.
+    
+* A **theoretical distribution** is a mathematical guess.
+    * "assume $X$ is normally distributed"
+    * "assume the probability of success is 50%"
+    * might come from a formula
+    * might come from randomization/ simulation
+    
+Much of statistics is concerned with comparing observed distributions to theoretical distributions.
+
+We often discuss distributions of variables other than those explicitly in our data, such as the mean of a variable in our data, a test statistic like $\chi^2$, or the residuals of a linear model.
+
+## Distributions of Categorical Variables
 
 * The distribution of a categorical variable is a list of the percentage of observations in each category.
-```{r echo=TRUE}
+```{r echo=TRUE, fig.height=4}
 table(Sitka$treat)/length(Sitka$treat)
+barplot(table(Sitka$treat))
 ```
 
-## Distributions
 
-* Picture the distribution of a numerical variable with a histogram, boxplot or density estimate.
+## Distributions of Numeric Variables
+
+* Picture the distribution of a numeric variable with a histogram, boxplot or density estimate.
 ```{r out.height="0.5\\textheight" }
 hist(Sitka$size)
 ```
 
 * Shape: center, spread, skew, kurtosis
 
-##  Numerical summaries
+## Summaries of Numeric Variables
 
 ```{r echo=TRUE}
 summary(Sitka$size)
@@ -72,30 +92,64 @@ var(Sitka$size)
 IQR(Sitka$size)
 ```
 
-## Common distributions
+## A familiar theoretical distribution: the Normal distribution
 
-* Normal distribution
-    * The sum of many independent effects tends to be normal.
-    * Formula that you never use: $\displaystyle N(\mu,\sigma^2)(x)=\frac{1}{\sigma\sqrt{2 \pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$
-    * Observations on disparate scales can be standardized with z scores: $\displaystyle z=\frac{x-\mu}{\sigma}$
+* Sums of many independent effects are normally distributed.
+* Means are normally distributed.
+* Proportions of successes are eventually normally distributed.
+* Formula that you never use: $\displaystyle N(\mu,\sigma^2)(x)=\frac{1}{\sigma\sqrt{2 \pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$
+* The **standard normal distribution** has $\mu=0$, $\sigma=1$.
+* Observations on disparate scales can be standardized with z scores: $\displaystyle z=\frac{x-\mu}{\sigma}$
     
-\medskip    
+![](../images/6895997.pdf){height=35%}
     
-* Other distributions from Intro Stats
-    * t - Like the normal distribution, but adjusted for small samples.
-    * $\chi^2$ - Sum of squared standard normals.
-    * F - Similar to $\chi^2$, used in ANOVA.
-    * Binomial - How many successes in $n$ trials?
-    * Poisson - Count of discrete events in fixed time or space.
-    * \ldots
+## Randomization for a Theoretical Distribution
 
-## Inference
+\scriptsize
+```{r, fig.height=4}
+n <- nrow(Sitka); num_ozone <- sum(Sitka$treat=="ozone"); num_sim <- 1000
+set.seed(17)                # initialize the random number generator
+diffs <- numeric(num_sim)   # initialize a vector to hold the differences
+for(i in 1:num_sim){          # loop: repeat the following num_sim times
+  ozone <- sample(1:n,num_ozone)        # 1. randomly select observations
+  ozone_mean <- mean(Sitka$size[ozone]) # 2. mean of selected observations
+  control_mean <- mean(Sitka$size[-ozone])# 3. mean of the others
+  diffs[i] <- ozone_mean - control_mean}  # 4. store difference in means
+hist(diffs)     # plot the resulting distribution
+```
+\normalsize    
+    
+## Other Theoretical Distributions from Intro Stats
+  
+Your first statistics class introduced you to several useful distributions: 
+    
+* t - Like the normal distribution, but adjusted for describing means of small samples.
+* $\chi^2$ - Sum of several squared standard normal distributions. Useful when discussing several proportions at once, such as when considering categorical variables with more than two possible values.
+* F - Similar to $\chi^2$, used in ANOVA.
 
-* Confidence intervals
-* Hypothesis tests
-    * p(robability)-values
-    * Null and alternate hypotheses
-    * t-tests, ANOVA, $\chi^2$ tests
+And maybe\ldots
+
+* Binomial - How many successes in $n$ trials?
+* Poisson - Count of discrete events in fixed time or space.
+* Perhaps others? We'll see lots more\ldots
+
+## Sampling Distributions
+
+Given a data set (the sample) and a quantity that we can calculate from the data (a sample or test statistic) we propose an expected distribution for that calculated quantity (the sampling distribution).
+
+* Sampling distributions are never observed, always theoretical.
+
+Having a sampling distribution allows us to do inference.
+
+## Inference: Confidence Intervals
+
+Often, we assume the shape of a sampling distribution, but not its specific parameters. By using the data to estimate those parameters, we get a guess at the sampling distribution that we can use to compute a confidence interval.
+
+![](../images/middle95.pdf)
+
+## Inference: Hypothesis Tests
+
+A null hypothesis is used to determine a sampling distribution, and then the actual data are compared to that proposed distribution. If the data are sufficiently unlikely, we reject the null hypothesis.
 
 \footnotesize   
 ```{r}
