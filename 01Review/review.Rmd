@@ -1,5 +1,5 @@
 ---
-title: "Review of Introductory Statistics"
+title: "Review of Introductory Statistics and Motivation for This Class"
 author: "Zack Treisman"
 date: "Spring 2022"
 output: 
@@ -15,17 +15,53 @@ citecolor: blue
 library(MASS)
 library(openintro)
 
+library(tidyverse)
+library(lubridate)
+library(MASS)
+
+by_zone <- read.csv("data/by_zone.csv")
+by_zone$rating_below <- factor(by_zone$rating_below)
+by_zone$rating_near <- factor(by_zone$rating_near)
+by_zone$rating_above <- factor(by_zone$rating_above)
+by_zone$modality <- factor(by_zone$modality, levels = c("Non.motorized", "Mechanized", "Hybrid", "Motorized"))
+by_zone$Zone <- factor(by_zone$Zone, levels = c("Kebler", "Slate River Rd", "Washington Gulch", "East River", "Brush/Cement"))
+
 ```
 
 ## Philosophy
 
-This class builds on the knowledge and skills you acquired in your previous study of Statistics. We are going to use mathematical language to develop a framework for bringing what may have seemed like a disparate collection of topics and tools into a unified way of thinking. With that framework in place we'll see what we can say about some of the problems that were too difficult for Introductory Statistics. For example, after this class you will be able to tackle
+This class builds on the knowledge and skills you acquired in your previous study of statistics. We are going to use mathematical language to develop a framework for bringing what may have seemed like a disparate collection of topics and tools into a unified way of thinking. With that framework in place we'll see what we can say about some of the problems that were too difficult for Introductory Statistics. 
 
-* multiple predictor variables,
-* non-normal data,
+For example, after this class you will be able to tackle
+
+* multiple variables and high dimensional data,
+* situations where assuming normality is a bad idea,
 * classification problems,
 * and more.
 
+##  Winter Recreation: Modeling Multiple Variables
+
+This plot shows visitation rates as a function of new snow in the previous three days for a variety of modalities and trailhead locations over the past four winters. Motorized users head to Kebler, non-motorized users to Snodgrass. Some shift in these patterns year to year is visible.
+
+```{r,echo=F, warning = F, fig.height=5}
+ggplot(by_zone, aes(past3snow, user.count, color = Zone))+
+  geom_jitter(height = 0, width = 0.2, alpha = 0.5)+
+  facet_grid(modality~year)+
+  scale_y_log10()+
+  labs(x="Past 3 Days Snow (in)", y="# Users")
+```
+
+## SRA: Simulation and Nonparametric Models
+
+Western's Strategic Resource Allocation process needed to avoid assuming normal distributions. Instead, randomization determined how a program's rankings compared with the rest of campus.
+
+![](../images/MATH.pdf)
+
+## Forest Fire Recovery: Plant Community Classifications
+
+Unsupervised learning discovered plant communities from transect data. Gradient boosted regression trees detect these communities in satellite data. 
+
+![](../images/brt_preds.png)
 
 ## Data frame $\to$ Statistical analysis $\to$ Model
 
