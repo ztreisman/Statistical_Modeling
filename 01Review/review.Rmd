@@ -13,8 +13,19 @@ citecolor: blue
 ```{r setup, include=FALSE}
 
 library(MASS)
+library(openintro)
 
 ```
+
+## Philosophy
+
+This class builds on the knowledge and skills you acquired in your previous study of Statistics. We are going to use mathematical language to develop a framework for bringing what may have seemed like a disparate collection of topics and tools into a unified way of thinking. With that framework in place we'll see what we can say about some of the problems that were too difficult for Introductory Statistics. For example, after this class you will be able to tackle
+
+* multiple predictor variables,
+* non-normal data,
+* classification problems,
+* and more.
+
 
 ## Data frame $\to$ Statistical analysis $\to$ Model
 
@@ -111,9 +122,9 @@ n <- nrow(Sitka); num_ozone <- sum(Sitka$treat=="ozone"); num_sim <- 1000
 set.seed(17)                # initialize the random number generator
 diffs <- numeric(num_sim)   # initialize a vector to hold the differences
 for(i in 1:num_sim){          # loop: repeat the following num_sim times
-  ozone <- sample(1:n,num_ozone)        # 1. randomly select observations
-  ozone_mean <- mean(Sitka$size[ozone]) # 2. mean of selected observations
-  control_mean <- mean(Sitka$size[-ozone])# 3. mean of the others
+  ozone <- sample(1:n,num_ozone)       # 1. randomly select observations
+  ozone_mean <- mean(Sitka$size[ozone])# 2. average selected observations
+  control_mean <- mean(Sitka$size[-ozone])# 3. average the others
   diffs[i] <- ozone_mean - control_mean}  # 4. store difference in means
 hist(diffs)     # plot the resulting distribution
 ```
@@ -141,46 +152,61 @@ Given a data set (the sample) and a quantity that we can calculate from the data
 
 Having a sampling distribution allows us to do inference.
 
+```{r, echo=F, fig.height=5}
+normTail(M = c(-1.96,1.96), col = COL[6,4], cex.axis = 1.25, xLab = "symbol")
+text(x = 0, y = 0.25, "0.95", col = COL[4], cex = 1.5)
+lines(x = c(-1.96,-1.96), y = c(0, 0.15), lty = 2)
+lines(x = c(1.96,1.96), y = c(0, 0.15), lty = 2)
+text(x = -1.96, y = 0.20, "z = -1.96", col = COL[1], cex = 1.5)
+text(x = 1.96, y = 0.20, "z = 1.96", col = COL[1], cex = 1.5)
+text(x = -2.7, y = 0.07, "0.025", col = COL[4], cex = 1.5)
+text(x = 2.7, y = 0.07, "0.025", col = COL[4], cex = 1.5)
+```
+
 ## Inference: Confidence Intervals
 
 Often, we assume the shape of a sampling distribution, but not its specific parameters. By using the data to estimate those parameters, we get a guess at the sampling distribution that we can use to compute a confidence interval.
 
-![](../images/middle95.pdf)
+\footnotesize
+```{r}
+(x_bar = mean(Sitka$size))
+s = sd(Sitka$size); n = nrow(Sitka); (se = s/sqrt(n))
+```
+\normalsize
+```{r, echo=F, fig.height=4}
+normTail(x_bar, se, M = c(-1.96*se,1.96*se)+x_bar, col = COL[6,4], cex.axis = 1.25, xLab = "number")
+text(x = x_bar, y = 5, "0.95", col = COL[4], cex = 1.5)
+lines(x = c(x_bar-1.96*se,x_bar-1.96*se), y = c(0, 3), lty = 2)
+lines(x = c(1.96*se,1.96*se)+x_bar, y = c(0, 3), lty = 2)
+text(x = x_bar-1.96*se, y = 5, "z = -1.96*se", col = COL[1], cex = 1.5)
+text(x = x_bar+1.96*se, y = 5, "z = 1.96*se", col = COL[1], cex = 1.5)
+text(x = x_bar-2.7*se, y = 1, "0.025", col = COL[4], cex = 1.5)
+text(x = x_bar+2.7*se, y = 1, "0.025", col = COL[4], cex = 1.5)
+```
 
 ## Inference: Hypothesis Tests
 
-A null hypothesis is used to determine a sampling distribution, and then the actual data are compared to that proposed distribution. If the data are sufficiently unlikely, we reject the null hypothesis.
+A null hypothesis determines a sampling distribution. Compare data to that proposed distribution. If the data are sufficiently unlikely, we reject the null hypothesis.
 
-\footnotesize   
-```{r}
+\scriptsize   
+```{r fig.height=3.2, echo=FALSE}
+boxplot(size~treat, data = Sitka, horizontal = T)
 t.test(size~treat, data = Sitka)
 ```
 \normalsize
 
-## Always plot your data!
+## The Key Question of Intro Stats: \alert{Which test to use?!}
 
-```{r}
-boxplot(size~treat, data = Sitka)
-```
+One variable:
 
-## Linear models
+* Numeric: t-test for the mean (`t.test`)
+* Binary categorical: z-test or binomial test for the proportion of success (`prop.test` or `binom.test`)
+* Nonbinary categorical: $\chi^2$ test for goodness of fit (`chisq.test`)
 
-* Slope and intercept parameters
-* Correlation
-* Residuals
-* Inference
+Two variables:
 
-\scriptsize   
-```{r}
-summary(lm(size~Time, data = Sitka))
-```
-\normalsize
-
-
-## Always plot your data!
-
-```{r out.height="0.7\\textheight"}
-plot(size~Time, data = Sitka)
-abline(lm(size~Time, data=Sitka))
-```
-
+* Both numeric: linear regression (`lm`)
+* One numeric, one binary categorical: t-test for a difference of means (`t.test`)
+* One numeric, one nonbinary categorical: analysis of variance (`lm` and `anova` or `aov`)
+* Both binary categorical: z-test or binomial test for equality of proportions (`prop.test` or `binom.test`)
+* Two categorical, at least one nonbinary: $\chi^2$ test for independence (`chisq.test`)
