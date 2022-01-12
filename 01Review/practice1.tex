@@ -1,0 +1,379 @@
+\documentclass[11pt,fullpage]{amsart}
+\usepackage[]{amsmath,graphicx,fullpage, multicol}
+\graphicspath{{../images/}}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\newcommand{\ds}{\displaystyle}\input{/home/treisman/tex/macros}
+
+
+
+\begin{document}
+
+
+
+\textbf{Math 213 \quad\ddag\quad Practice Test \#1 \quad\ddag\quad Fall 2021}
+
+\hrulefill
+\medskip
+\begin{enumerate}
+
+\item The Monte Vista Bird Refuge in the San Luis Valley is a stop in the migration path of a population of Sandhill Cranes. You would like to build a database in order to more effectively monitor this population.
+\begin{enumerate}
+\item Describe a data matrix that you might collect.
+  \begin{enumerate}
+  \item What are three possible variables in the data that you might collect?
+    \item What are the individuals/observations?
+\end{enumerate}
+\item For each of your three variables: is it categorical or numerical?
+
+\item Give a question that you could ask about a possible correlation between two variables in these data. 
+
+\item For your question directly above, what are the explanatory and response variables?
+
+\end{enumerate}
+
+\vfill
+
+\item Researchers randomly assigned 72 chronic users of cocaine into three groups: desipramine (antidepressant), lithium (standard treatment for cocaine) and placebo. Results of the study are summarized below.
+
+\begin{center}
+\begin{tabular}{l | c c | c}
+			& 		& no 		&  \\
+			& relapse	& relapse	& total \\
+\hline
+desipramine	& 10		& 14		& 24 \\
+lithium		& 18		& 6		& 24 \\
+placebo		& 20		& 4		& 24 \\
+\hline
+total			& 48		& 24		& 72
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item What percentage of the patients relapsed in each of the three treatment groups (desipramine, lithium, and placebo)?
+\item At first glance, does it appear that desipramine is more effective than a placebo for preventing relapse? Is the standard lithium treatment more effective than a placebo? Is desipramine more effective than lithium?
+  \item Is it possible to conclude from the sample proportions alone that there is a significant difference in the efficacy of the treatments?
+\end{enumerate}
+
+\vfill
+
+\item The values 38  53  41  55  56  61  62  48  43  47  56  65  19  61  32 105 are empathy scores recorded for 16 participants in a study relating empathy to certain types of brain activity.
+  \begin{enumerate}
+    \item Find the 
+
+\begin{enumerate}
+\item mean
+
+\item median
+
+\item standard deviation
+
+\item Q1
+
+\item Q3
+
+  \item IQR
+
+\end{enumerate}
+
+
+\item Draw a boxplot of the data. Your plot should represent the 5 number summary, as well as any outliers falling more than $1.5\times IQR$ away from the median. 
+
+  \end{enumerate}
+
+\vfill
+  
+\item Under what conditions is it appropriate to summarize data with
+  the mean and standard deviation?  When should you use median and quartiles?
+
+\vfill
+  
+\item Consider the histogram shown below.  Which statistic would you
+  use to report the center of the distribution?  Which statistic
+  would you use to report the spread? Why?
+
+\includegraphics[scale=0.35]{histogram}
+
+\vfill
+
+\item A study of characters in 100 top grossing American films from 2007--2009 examined 4,342 speaking characters for gender. The researchers found that 32.8\% of the speaking characters are female. They also found that when the director of the film is female, 61.2\% of the speaking characters are female. The study concludes that characters in films with a female director are more likely to be female. Identify the population of interest and the sample. Can the results of the study be generalized to the population? Can this study be used to establish a causal relationship?
+
+
+\vfill
+
+\item In a study of prairie dog communities the number of young prairie
+  dogs in each of 20 burrows was counted.  The data are 7, 5, 3, 10, 2,
+  5, 13, 3, 12, 4, 4, 1, 9, 7, 5, 6, 3, 5, 12, 1
+  \begin{enumerate}
+ 
+  \item What percent of the burrows had fewer than 8 young?
+
+  \item What percent of the burrows had 10 or more young?
+
+  \item Make a dotplot or histogram of the data.
+
+  \item Describe the distribution.
+  
+
+\end{enumerate}
+
+  \vfill
+
+\item
+A comprehensive survey by the college reports that the true proportion of all students at the college who use drugs is 0.3.  You survey 100 students in your dorm and record that the proportion of students who use drugs is 0.15.  The proportion of all students at this college who use drugs is a \underline{\hspace{1in}} and the proportion of students who use drugs in your dorm is a \underline{\hspace{1in}}.
+\begin{enumerate}
+\item   statistic; parameter
+\item	parameter; statistic
+\item	population; sample
+\item measure of central tendency, measure of variability
+\item none of the above
+\end{enumerate}
+
+\newpage
+
+\item This table represents the first 8 observations from a sample of 200 individuals, who reported their age, race, income, and job satisfaction score on a scale from 0 to 100.
+\begin{center}
+\begin{tabular}{llll}
+\hline
+\texttt{Age}	& \texttt{Race}	& \texttt{Income} &	\texttt{Score}\\
+\hline
+21	& W	& less than \$10,000	& 29 \\
+33	& B	& \$20,000-23,000	& 32 \\
+41	& B	& more than \$100,000	& 84 \\
+26	& A	& \$30,000-40,000	& 78 \\
+22	& O	& \$10,000-20,000	& 87 \\
+19	& A	& \$40,000-50,000	& 42 \\
+34	& W	& \$50,000-60,000	& 21 \\
+26	& W	& less than \$10,000	& 91 \\
+\vdots & \vdots & \vdots & \vdots  \\
+\hline
+\end{tabular}
+\end{center}
+\begin{enumerate}
+\item
+Which of the following best describes the \texttt{Income} variable?
+\begin{enumerate}
+   \item
+    categorical
+    \item
+    geographic
+    \item
+    numerical
+    \item
+    logical
+    \item
+    observational
+ \end{enumerate}
+\item
+Which type of plot would be most useful for visualizing the relationship between \texttt{Age} and job satisfaction \texttt{Score}?
+\begin{enumerate}
+    \item
+    histogram
+    \item
+    single box plot
+    \item
+    side by side box plot
+    \item
+    scatter plot
+    \item
+    dot plot
+\end{enumerate}
+\item
+Below are some summary statistics from the \texttt{score} variable.  Which of the following is \underline{true}?
+\begin{verbatim}
+min Q1 median   Q3 max   mean       sd   n missing
+ 30 57   69.5   77  99 65.075 16.09361 200       0
+\end{verbatim}
+\begin{enumerate}
+    \item
+    the standard deviation estimate is not possible because \texttt{score} is a whole number
+    \item
+    there is evidence that the distribution of \texttt{score} is right-skewed
+    \item
+    the minimum value of 30 would be identified as out outlier in a box plot
+    \item
+    there were more survey respondents who reported job satisfaction scores less than 57 than survey respondents reported job satisfaction scores greater than 77
+    \item
+    none of the above are true
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+
+
+\item
+A political scientist is interested in the effect of government type on economic development. She wants to use a sample of 30 countries evenly represented among the Americas, Europe, Asia, and Africa to conduct her analysis. What type of study should she use to ensure that countries are selected from each region of the world?
+\begin{enumerate}
+\item Observational - simple random sample
+\item Observational - cluster
+\item Observational - stratified
+\item Experimental
+\end{enumerate}
+
+\vfill
+
+\item
+A researcher is interested in seeing if there is an association between whether or not an individual uses a smart phone right before bed and how well an individual sleeps.  Participants in the study report whether or not they used a smart phone before bed and then rate their quality of sleep as either ``very poor,'' ``poor,'' ``average,'' ``good,'' or ``very good.''  The researcher concludes at the end of the study that there is an association between the two variables. Which of the following statements are \underline{true}?
+\begin{enumerate}
+\item	The explanatory variable is whether or not a participant uses a smart phone and the response variable is sleep quality.  An association was present, so the researcher can say the response and explanatory variables are independent.
+\item	The explanatory variable is sleep quality and the response variable is whether or not a participant uses a smart phone.  An association was present, so the researcher can say the response and explanatory variables are not independent.
+\item	The explanatory variable is whether or not a participant uses a smart phone and the response variable is sleep quality.  An association was present, so the researcher can say the response and explanatory variables are not independent.
+\item	The explanatory variable is whether or not a participant uses a smart phone and the response variable is sleep quality.  An association was present, so the researcher can determine that smart phone use right before bed causes change in quality of sleep.
+\item	The explanatory variable is sleep quality and the response variable is whether or not a participant uses a smart phone.  An association was present, so the researcher can determine that smart phone use right before bed causes change in quality of sleep.
+\end{enumerate}
+
+\vfill
+
+\item The table below describes residents of an Atlanta neighborhood based on their car ownership and public transportation usage.
+\begin{center}
+\begin{tabular}{|l|cc|c|}
+    \hline
+                    & Owns car & Does not own car & Total \\
+    \hline
+    Uses public transport             & 34 & 94 & 128\\
+    Does not use public transport     & 126 & 17 & 143\\
+    \hline
+    Total                             & 160 & 111 & 271\\
+    \hline
+\end{tabular}
+\end{center}
+\begin{enumerate}
+\item
+What is the probability that a randomly selected resident of this neighborhood both owns a car and uses public transport?
+\begin{enumerate}
+\item 0.125
+\item 0.153
+\item 0.213
+\item 0.266
+\end{enumerate}
+\item
+Which proportions should we examine if we want to compare the proportion of individuals who use public transport among those who do and do not own a car?
+\begin{enumerate}
+    \item
+    34/128 vs 126/143
+    \item
+    160/271 vs 128/271
+    \item
+    34/271 vs 126/271
+    \item
+    34/160 vs 94/111
+    \item
+    none of the above
+\end{enumerate}
+\item
+Is owning a car independent of using public transportation?
+\begin{enumerate}
+\item Yes, because P(uses public transit $|$ owns car ) $=$ P(uses public transit)
+\item Yes, because P(owns car AND uses public transit) $=$ P( uses public transit) $\times$ P(owns car)
+\item No, because P(uses public transit $|$ owns car ) $=$ P(uses public transit)
+\item No, because P(owns car AND uses public transit) $\neq$ P(uses public transit) $\times$ P(owns car)
+\item Both (iii) and (iv)
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+
+\item
+A researcher would like to study the effect of eating breakfast on a cognitive function. Volunteers are recruited through the study by posting flyers on campus.  He randomly assigns subjects to two groups, one told to eat before participating in the study and one asked to eat breakfast following the study, however, he suspects whether or not the person typically eats breakfast affects this relationship (their typical breakfast habits). In order to address this, what should he do prior to assigning subjects to experimental groups?
+\begin{enumerate}
+\item	Cluster on typical breakfast habits.
+\item	Randomly assign subjects to typical breakfast habits and do a multifactor experiment.
+\item	Sample from each strata, typical breakfast eater and not.
+\item	Block on typical breakfast habits.
+\end{enumerate}
+
+\vfill
+
+\item
+The plot below displays the distribution of the percent of days spent sleeping by male fruit flies.  Which of the following are valid estimates of the mean and median of this distribution?
+    \begin{center}
+    \includegraphics[width=0.50\textwidth]{histff.pdf}\\
+    \end{center}
+\begin{enumerate}
+    \item
+    mean = 24, median = 18
+    \item
+     mean = 18, median = 24
+    \item
+    mean = 18, median = 18
+    \item
+    mean = 20, median = 40
+    \item
+    mean = 25, median = 35
+\end{enumerate}
+
+\vfill
+
+\item A disease has a prevalence of 1\%. A test for the disease gives a positive result 94\% of the time when administered to an infected patient. The test gives a negative result 98\% of the time when administered to a healthy patient. Draw a tree diagram representing these given probabilities, and fill in the four joint probabilities on the leaves. What is the probability that a patient with a positive test result is infected with the disease?
+
+\vfill
+
+\item A gambler plays a game where she must pay \$10 to play. She has a 50\% chance of not winning anything, a 25\% chance of winning her \$10 back, a 20\% chance of winning \$20, and a 5\% chance of winning \$100. What is the expected value of playing the game? What should she expect to win if she plays 100 games? 
+
+
+\end{enumerate}
+\end{document}
+
+
+
+\vfill
+
+\item The length of the thorax of a population of fruit flies is
+  normally distributed with mean 0.8 mm and standard deviation 0.078
+  mm.
+  \begin{enumerate}
+  \item What proportion of the fruit flies have thorax length less
+    than 0.72 mm?\vfill
+  \item What proportion of the fruit flies have thorax length greater
+    than 0.82 mm?\vfill
+  \item What proportion of the fruit flies have thorax length between
+    0.7 and 0.9 mm?\vfill
+  \item We wish to select the fruit flies with the highest 20\% of
+    thorax length.  What is the shortest thorax length we should
+    consider?\vfill
+  \end{enumerate}
+  
+\item Which of the following statements about z-scores is/are \underline{true}?
+\begin{enumerate}
+\item	larger z-scores are always better
+\item	the z-score for an observation that is equal to the mean is 1
+\item	if a z-score is 2 that means that the observation is two times the value of the mean
+\item	if a z-score is negative that means that the observation is less than mean
+\item   none of the above are true
+\end{enumerate}
+\item
+The distribution of rhesus monkey tail lengths is bell-shaped, unimodal, and approximately symmetric.  The average tail length is 6.8 cm and the standard deviation is 0.44 cm.  Roscoe has a tail that is 10.2 cm long.  What conclusion can we make based on the information given?
+\begin{enumerate}
+    \item
+    We can apply the empirical rule to conclude that Roscoe is a potential outlier because he falls more than three standard deviations away from the mean.
+    \item
+	We can apply the empirical rule to conclude that Roscoe is not a potential outlier because he falls within three standard deviations away from the mean.
+    \item
+	We cannot apply the empirical rule because the distribution does not fit the criteria for the empirical rule.
+    \item
+      There is not enough information given to make any conclusions about potential outliers.
+
+      \vfill
+      
+\end{enumerate}
+
+
+## Fly sizes
+
+```{r}
+pnorm(0.72, 0.8, 0.078)
+1-pnorm(0.82, 0.8, 0.078)
+pnorm(0.9, 0.8, 0.078)-pnorm(0.7, 0.8, 0.078)
+qnorm(0.8, 0.8, 0.078)
+```
+
+## Z scores
+  
+if a z-score is negative that means that the observation is less than mean
+
+## Roscoe's tail
+
+We can apply the empirical rule to conclude that Roscoe is a potential outlier because he falls more than three standard deviations away from the mean.
+
+
