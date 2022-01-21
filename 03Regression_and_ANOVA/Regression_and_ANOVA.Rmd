@@ -1,7 +1,7 @@
 ---
 title: "Regression and ANOVA"
 author: "Zack Treisman"
-date: "Spring 2021"
+date: "Spring 2022"
 output: 
   beamer_presentation: 
     includes: 
@@ -12,7 +12,7 @@ citecolor: blue
 
 ```{r setup, include=FALSE}
 knitr::opts_knit$set(global.par = TRUE)
-
+options(scipen = 0, digits = 4) #set to four decimal 
 library(emdbook)
 library(ggplot2)
 library(car)
@@ -26,26 +26,63 @@ par(mar = c(4, 4, 0.5, 0.5)) # Set margins
 
 ## Philosophy
 
+
+Data analysis and statistics are tools used in modeling.
+
+* A **model** is a proposed distribution of a variable or variables
+* Separate any model into two parts: the **signal** and the **noise**.
+
+A fundamental setting is a pair of variables, $x$ and $y$. We know something about $x$, and would like to leverage this to learn something about $y$, to the extent that this is possible. We call $x$ the **predictor** and $y$ the **response**. Write
+$$
+y=f(x)+\epsilon
+$$
+where the model function $f(x)$ is what we call the **signal** and $\epsilon$ is the **noise**.
+
+
+"All models are wrong but some are useful" - George Box
+
+The usefulness of a model comes when the signal is not drowned out by the noise. 
+
+## Regression
+
 **Regression** generally refers to a family of techniques where a model $\hat{y}=f(x)$ is fit to data $(x_i, y_i)$ such that the **mean squared error** 
 $$
-MSE=\frac{1}{n}\sum_{i=1}^n(y_i-\hat{y})^2
+MSE=\frac{1}{n}\sum_{i=1}^n(y_i-\hat{y_i})^2
 $$
 is as small as possible given *a priori* assumptions on the form of $f(x)$, such as being a linear function $f(x)=\beta_0+\beta_1 x$. 
 
-Regression is the starting point for linear regression, ANOVA and several other classical techniques.
+* Regression is the starting point for linear regression, ANOVA and several other classical techniques.
+
+## One Variable: Only a response $y$ and no predictor $x$. 
+
+Goal: Find $\hat y$ to minimize $MSE=\frac{1}{n}\sum_{i=1}^n(y_i-\hat{y})^2$.
+
+Solution: Calculus says set $\frac{-2}{n}\sum_{i=1}^n(y_i-\hat y)=0$ and solve for $\hat y$.
+
+\begin{align*}
+\frac{-2}{n}\sum_{i=1}^n(y_i-\hat y)&=0\\
+\frac{-2}{n}\left(\sum_{i=1}^ny_i-\sum_{i=1}^n\hat y\right)&=0\\
+\frac{-1}{n}\sum_{i=1}^ny_i+\hat y&=0\\
+\hat y&=\frac{1}{n}\sum_{i=1}^ny_i\\
+\end{align*}
+
+So minimizing $MSE$ directs us to choose the mean.
 
 ## Linear Regression
 
-Linear regression posits a relationship between two numerical random variables $X$ and $Y$ of the form
+Suppose $f(x)$ is linear and $\epsilon$ is normally distributed.
+
+Another way to say this is that if $x$ and $y$ are values of two numerical random variables $X$ and $Y$, then
 $$
-Y \sim N(\beta_0+\beta_1 X, \sigma^2).
+Y \sim N(\beta_0+\beta_1 X, \sigma).
 $$
-The parameters $\beta_0$ (the **intercept**), $\beta_1$ (the **slope**) and $\sigma^2$ (the **variance**) are estimated from observations of $X$ and $Y$. Specifically, writing $\bar x = \sum^n_{i=1}x_i$, and $\bar y = \sum^n_{i=1}y_i$ for the sample means and using a little calculus,
+The parameters $\beta_0$ (the **intercept**), $\beta_1$ (the **slope**) and $\sigma$ (the **standard deviation**) are estimated from observations $(x_i,y_i)$ of $X$ and $Y$. Specifically, writing $\bar x = \sum^n_{i=1}x_i$, and $\bar y = \sum^n_{i=1}y_i$ for the sample means and using calculus just like above,
 $$
 \hat \beta_1 = \frac{\sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)}{\sum^n_{i=1}(x_i-\bar x)^2}, \quad
 \hat \beta_0 = \bar y - \hat\beta_1\bar x.
 $$
-The variance of the **residuals** $y_i-\hat{y}$ gives the estimate of $\sigma^2$.
+
+An estimate of $\sigma$ is the standard deviation of the **residuals** $y_i-\hat{y}_i$.
 
 ## The data linear regression expects
 
@@ -91,7 +128,7 @@ We'll discuss various ways to check homogeneity of variance. There's no one corr
 $R^2$ measures how much the variance in $Y$ is described by the model.
 
 $$
-R^2 = 1 - \frac{\sigma_\text{residuals}^2}{\sigma_y^2} = 1 - \frac{\sum_{i=1}^n(y_i-\hat y)^2}{\sum_{i=1}^n(y_i-\bar y)^2}
+R^2 = 1 - \frac{\sigma_\text{residuals}^2}{\sigma_y^2} = 1 - \frac{\sum_{i=1}^n(y_i-\hat y_i)^2}{\sum_{i=1}^n(y_i-\bar y)^2}=1-\frac{\text{blue on right}}{\text{blue on left}}
 $$
 ```{r, echo=FALSE, fig.width=8, fig.height=3.5}
 par(mfrow=c(1,2))
@@ -111,12 +148,12 @@ $$
 * Standard errors allow us to compute confidence intervals for these parameters.
 * For samples such as ours, there is a 95% chance that the interval 
 $$
-\hat\beta_1 \pm 2 \cdot SE(\hat\beta_1)
+\hat\beta_1 \pm 1.96 \cdot SE(\hat\beta_1)
 $$
 contains the true value of $\beta_1$. (Which is 2.) 
 * In our case, the 95% confidence interval is
 $$
-2.076 \pm 2 \cdot 0.161 = (1.754,2.399)
+2.076 \pm 1.96 \cdot 0.161 = (1.760,2.392)
 $$
 
 ## Simulate taking 5000 such samples and calculating $\beta_1$
@@ -153,7 +190,7 @@ $$
 
 The theory is similar if there are multiple predictor variables.
 $$
-Y \sim N(\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_pX_p, \sigma^2)
+Y \sim N(\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_pX_p, \sigma)
 $$
 
 * The parameter $\beta_j$ is the average effect on $Y$ of a one unit
@@ -169,7 +206,7 @@ increase in $X_j$, holding all other predictors fixed.
 
 $R^2$ is defined exactly as for one variable linear models. 
 
-Write $SS_{tot}=\sum_{i=1}^n(y_i-\bar y)^2$ and $SS_{res}=\sum_{i=1}^n(y_i-\hat y)^2$:
+Write $SS_{tot}=\sum_{i=1}^n(y_i-\bar y)^2$ and $SS_{res}=\sum_{i=1}^n(y_i-\hat y_i)^2$:
 $$
 R^2 = 1 - \frac{SS_{res}}{SS_{tot}}=\frac{SS_{tot}-SS_{res}}{SS_{tot}}.
 $$
@@ -268,7 +305,7 @@ $$
 
 Continuing with the above example. Given data, regression will estimate the parameters for a model
 $$
-Y \sim N(\beta_0+\beta_1Z_b+\beta_2Z_c, \sigma^2).
+Y \sim N(\beta_0+\beta_1Z_b+\beta_2Z_c, \sigma).
 $$
 
 * If $X=a$, the model predicts $\hat y= \hat\beta_0$.
@@ -284,7 +321,7 @@ is what is classically called **analysis of variance** or ANOVA.
 
 ## Multi-way ANOVA
 
-Regression with multilple categorical predictors is called **multi-way** or **multi-factor anova**. 
+Regression with multiple categorical predictors is called **multi-way** or **multi-factor anova**. 
 
 [Tadpole data](https://sakai.unc.edu/access/content/group/3d1eb92e-7848-4f55-90c3-7c72a54e7e43/public/docs/lectures/lecture2.htm#description) acquired from @weiss. Note unequal variances.
 \scriptsize

@@ -30,7 +30,7 @@ library(car)
 The data that we will be looking at today are from @houston. The goal of the experiment was to determine whether observed differences
 in fish growth resulted from environmental or genetic variation.
 
-The data are on [Canvas](https://western.instructure.com/courses/759/files/290733) or in my Pick Up folder in the file *redside_shiner.csv*. Save this file to the data folder in your working directory for this lab and load it as the data frame `shiners` with the command
+The data are on [GitHub](https://raw.githubusercontent.com/ztreisman/Statistical_Modeling/main/03Regression_and_ANOVA/data/redside_shiner.csv) or in my Pick Up folder in the file *redside_shiner.csv*. Save this file to the data folder in your working directory for this lab and load it as the data frame `shiners` with the command
 ```{r, eval=TRUE}
 shiners <- read.csv("data/redside_shiner.csv")
 ```
@@ -75,7 +75,7 @@ We can do a one-way anova to answer this question for mass. Start by examining t
 ```{r}
 ggplot(shiners, aes(smass))+
   geom_density()+
-  facet_wrap(vars(loc))
+  facet_wrap(~loc)
 ggplot(shiners, aes(loc, smass))+
   stat_summary(fun=var, geom = "bar")+
   labs(x="Location",y="Variance in Starting Mass")
@@ -168,7 +168,7 @@ First, check the distributions for these two groups. There appears to be some ri
 ```{r}
 ggplot(shiners, aes(mass.diff))+
   geom_density()+
-  facet_wrap(vars(food))
+  facet_wrap(~food)
 ```
 
 To do a t test, we can use the `t.test` function:  
