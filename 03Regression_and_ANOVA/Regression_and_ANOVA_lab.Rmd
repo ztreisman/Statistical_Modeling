@@ -1,11 +1,6 @@
 ---
 title: "Regression and ANOVA"
-output: 
-  html_document:
-    highlight: pygments
-    theme: sandstone
-    toc: true
-    toc_float: true
+output: pdf_document
 bibliography: ../bibliography.bib     
 ---
 
