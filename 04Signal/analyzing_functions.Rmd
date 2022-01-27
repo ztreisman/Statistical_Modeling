@@ -1,11 +1,6 @@
 ---
 title: "Functions and models in R"
-output: 
-  html_document:
-    highlight: tango
-    theme: readable
-    toc: true
-    toc_float: true
+output: pdf_document
 bibliography: ../bibliography.bib   
 ---
 
@@ -44,7 +39,7 @@ The object `lilymod1` contains quite a lot of information. To get a list of its 
 ```{r}
 names(lilymod1)
 ```
-Many of these you probably won't ever use, but `coefficients`, `residuals` and `fitted.values` are quite useful. To access to coefficients of the model, we can use `lilymod1$coefficients` or `coefficients(lilymod1)`, with the latter generally being considered better practice. (It makes no difference in this situation, but there are potential scenarios where using `$coefficients` instead of `coefficients()` wouldn't give you what you expect.) You can type `coef()`  instead of `coefficients()`. Similarly, get the residuals with `residuals()` or `resid()` and the fitted values (predictions) with `fitted.values()` or `fitted()`. 
+Many of these you probably won't ever use, but `coefficients`, `residuals` and `fitted.values` are quite useful. To access to coefficients of the model, we can use `lilymod1$coefficients` or `coefficients(lilymod1)`, with the latter generally being considered better practice. (It makes no difference in this situation, but using `$coefficients` instead of `coefficients()` when you are employing a link function might not give you what you expect.) You can type `coef()`  instead of `coefficients()`. Similarly, get the residuals with `residuals()` or `resid()` and the fitted values (predictions) with `fitted.values()` or `fitted()`. 
 
 
 
@@ -53,23 +48,25 @@ For some tasks, it is useful to add the residuals or the predictions to the data
 lilies$resid1 <- resid(lilymod1)
 ```
 
-(@) Add `pred1` to `lilies` using `fitted()` and make a plot showing the data and the predictions with the following code:
+(@) It is important to evaluate a model against the actual data. With one variableAdd `pred1` to `lilies` using `fitted()` and make a plot showing the data and the predictions with the following code:
 ```{r, echo=FALSE}
 lilies$pred1 <- fitted(lilymod1)
 ```
 ```{r, eval=FALSE}
 ggplot(lilies, aes(vegetative))+
-  geom_point(aes(y=flowers))+
-  geom_point(aes(y=pred1, color="red"), show.legend = FALSE)
+  geom_point(aes(y=flowers, color="actual"))+
+  geom_point(aes(y=pred1, color="predicted"))+
+  scale_color_manual("", values=c("blue", "red"))
+
 ```
-Explain how this plot illustrates that the coefficient of `gopher` in `lilymod1` is negative?
+The blue points are the actual data points, and the red points are the predictions. Observe that the predictions have a linear ceiling. Using the coefficients of `vegetative` and `gopher` in `lilymod1` explain why this is the case - what line is that linear ceiling, and why do we get a ceiling at all?
 
 
-It is important to note that **adding model output to data only works if there are no missing values**. 
+It is important to note that **this procedure for adding model output to data only works if there are no missing values**. If you need to tell R to skip missing values when adding predictions, it's a little trickier and beyond what I want to go into in this lab. 
 
 ## More information about a model
 
-Usually, the first thing one does after creating any sort of model is take a look at the `summary`. 
+Often, the first thing one does after creating any sort of model is take a look at the `summary`. 
 ```{r}
 summary(lilymod1)
 ```
@@ -80,13 +77,15 @@ coef(summary(lilymod1))[3,2]
 
 (@) Use the `coef()` command to calculate the upper and lower bounds of a 95% confidence interval for the `vegetative` coefficient. This task can also be accomplished using `confint(lilymod1)`. Use this to check your answer.
 
+Note: building confidence intervals can be used to check if differences in the coefficients of indicator variables are statistically significant. 
+
 To access the statistics such as $R^2$, use the `$` notation, for example `summary(lilymod1)$fstatistic`.
 
 ## Making predictions on new data
 
-Sometimes we want to see what a model would do with new input data. For this we will use the `predict()` function. We need to give the new data to `predict()` as a data frame where the variable names are the input variables in the model. Try the following code to compute what `lilymod1` predicts for sites with `gopher`=5 and `vegetative` between 20 and 25.
+Sometimes we want to see what a model would do with new input data. The `predict()` function does this too. We need to give the new data to `predict()` as a data frame where the variable names are the input variables in the model. Try the following code to compute what `lilymod1` predicts for sites with `gopher`=5 and `vegetative` between 20 and 25. The code `20:25` creates the list `c(20, 21, 22, 23, 24, 25)`, and setting `gopher = 5` works because R will repeat the 5 to match the six entries given for `vegetative`.
 ```{r, eval=FALSE}
-newlily <- data.frame(vegetative = 20:25, gopher = rep(5,6))
+newlily <- data.frame(vegetative = 20:25, gopher = 5)
 newlily$prediction <- predict(lilymod1, newdata = newlily)
 newlily
 ```
@@ -100,7 +99,7 @@ A histogram of the response variable `flowers` shows significant right skew, som
 ```{r, include=FALSE}
 par(mfrow=c(1,2))
 ```
-```{r}
+```{r fig.height=2.5}
 hist(lilies$flowers)
 hist(lilies$resid1)
 ```
@@ -128,7 +127,7 @@ lilymod2 <- lm(I(log(flowers+1))~vegetative+gopher, data = lilies)
 
 (@) Compare the output of `summary(lilymod2)` to `summary(lilymod1)`. In what ways do they tell the same story? 
 
-## Back-transforming to the original scale
+### Back-transforming to the original scale
 
 To make predictions on the scale of the original data, we have to reverse the computation log(`flowers`+1) by exponentiating and then subtracting 1. Also, we first add half the variance in the residuals to correct for how the error transforms. (In practice, this step is often ignored.)
 
@@ -154,7 +153,7 @@ lilymod3 <- glm(flowers~vegetative+gopher, data = lilies,
 
 We can compare the coefficients and their standard errors using `summary` on `lilymod2` and `lilymod3`. The bottom part of the `summary` output for `glm` is different though. Instead of *Residual standard error*, $R^2$, and $F$ statistics, we have *Null deviance*, *Residual deviance* and *AIC*.    
 
-As before, we can add the predicted values to the data. The `fitted` command for `glm` does the back transform automatically.
+As before, we can add the predicted values to the data. The `fitted` command for `glm` does the back transform automatically. (But `lilymod3$fitted` can be used to get the untransformed predictions.)
 
 ```{r}
 lilies$pred3 <- fitted(lilymod3)
@@ -256,7 +255,7 @@ model.sel(lilymod1,lilymod3,lilymod4,lilymod5,lilymod6)
 
 # More Practice
 
-(@) In this lab so far, we have not considered the other variables `seedlings`, `moisture` and `rockiness`, or any interactions between the predictors. Experiment with adding terms and come up with your preferred model. Describe your model. Support your preference by comparing it to other models that you considered. If you want to use the model selection and averaging routines introduced in Jacob Goheen's teaching demo, this would be a reasonable place to try that out. 
+(@) In this lab so far, we have not considered the other variables `seedlings`, `moisture` and `rockiness`, or any interactions between the predictors. Experiment with adding terms and come up with your preferred model. Describe your model. Support your preference by comparing it to other models that you considered.
 
 (@) Is there an ecological story you can tell based on the model you selected in the question above?
 
