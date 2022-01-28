@@ -11,7 +11,7 @@ knitr::opts_knit$set(global.par = TRUE)
 
 # Overview
 
-The goal of this lab is to visit the model functions created by R - to begin to learn how to build them, how to work with them, and how to compare different models. We will revisit the `Lily_sum` data from @lily used earlier lectures. As a reminder, the goal of this study was to determine the the effects of factors such as water, soil quality, and predation by gophers influencing glacier lily propagation and survival. We'll restrict our attention to columns 3 to 8 today. In addition to the data in the `emdbook` package, we'll be using `ggplot2` for graphics, `MASS` for the `glm.nb` function, and `MuMIn` for the `model.sel` function.
+The goal of this lab is to visit the model functions created by R - to begin to learn how to build them, how to work with them, and how to compare different models. We will revisit the `Lily_sum` data from @lily used in earlier lectures. As a reminder, the goal of this study was to determine the the effects of factors such as water, soil quality, and predation by gophers influencing glacier lily propagation and survival. We'll restrict our attention to columns 3 to 8 today. In addition to the data in the `emdbook` package, we'll be using `ggplot2` for graphics, `MASS` for the `glm.nb` function, and `MuMIn` for the `model.sel` function.
 
 ```{r}
 library(ggplot2)
