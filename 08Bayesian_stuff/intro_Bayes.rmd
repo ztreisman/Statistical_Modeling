@@ -36,6 +36,82 @@ Bayesian statistics is based on a fairly simple procedure, not dissimilar to wha
 
 The initial part of a Bayesian analysis is exactly the same as a frequentist analysis: Explore the data graphically and numerically, and come up with appropriate forms for models.
 
+## Bayes Rule
+
+Bayes' Rule allows us to **reverse the conditionality** in probability calculations. For any events $A$ and $B$:
+$$
+P(A|B)=\frac{P(B|A)P(A)}{P(B)}
+$$
+Turning the conditionality around is useful for **hypothesis testing**.
+
+* Hypothesis: $A$; Observed Data: $B$
+* $P(A|B)$ is the probability that the **hypothesis is true given the observed data**. (What we want to know.)
+* Everything on the right side we can calculate from **assumptions in the hypothesis** and **observations of the data**.
+
+## Derivation of Bayes' Rule
+
+Before we talk about how to use it, let's take a second to algebraically justify the rule. Going from the axioms of probability to Bayes' Rule is satisfyingly easy:
+
+* First, $A\cap B = B\cap A$ are just **two ways of writing the same event** "$A$ and $B$". 
+* Second, rephrasing **axiom 3** above gives 
+$$
+P(A\cap B) = P(A|B)P(B)
+$$
+and 
+$$
+P(B\cap A)=P(B|A)P(A).
+$$
+* Thus:
+$$
+P(A|B)P(B)=P(B|A)P(A).
+$$
+* Finally, **dividing both sides by** $P(B)$ gives Bayes' Rule.
+
+## From Bayes' Rule to Bayesian statistics
+
+\footnotesize
+Bayes' Rule applied to observed data $D$ and hypothesis $H$:
+$$
+P(H|D)=\frac{P(D|H)P(H)}{P(D)}
+$$
+We want the left hand side. What can we do with the three terms on the right?
+
+* $P(D|H)$: Called the **likelihood** of the data. 
+    * $H$ gives a distribution for calculating $P(\text{datum}|H)$. 
+    * Independent data means $P(D|H)=\prod_{\text{datum}\in D} P(\text{datum}|H)$.
+    * Often calculate *log likelihoods* in practice.
+* $P(H)$: This is called the **prior**. 
+    * Assumed before looking at the data. 
+    * Choosing appropriate priors can be difficult and controversial. 
+    * Default to *uninformative* or *uniform* priors.
+* $P(D)$: Using a set $H_1$ to $H_N$ of *exhaustive, mutually exclusive* hypotheses:
+\begin{align*}
+P(D) & = \sum_{j=1}^N P(D\cap H_j)\\
+& =  \sum_{j=1}^N P(D|H_j)P(H_j)
+\end{align*}
+
+## Bayes' Rule: Example ([Diagnostic Testing Accuracy](https://www.nytimes.com/2022/01/01/upshot/pregnancy-birth-genetic-testing.html))
+
+* Disease with prevalence of 10 per 100,000.
+* Test that is 99% accurate. (For both positive and negative results; these could also be different.)
+
+Two questions: Given a positive test result how likely is it that the subject is sick (sensitivity), and given a negative result, how likely is it that the subject is healthy (specificity)?
+
+* We'll calculate the sensitivity:
+
+\scriptsize
+\begin{align*}
+P(\text{sick}|\text{test}+) & = \frac{P(\text{test}+|\text{sick})P(\text{sick})}{P(\text{test}+)} \\
+      & = \frac{P(\text{test}+|\text{sick})P(\text{sick})}
+      {P(\text{test}+|\text{sick})P(\text{sick})+P(\text{test}+|\text{not sick})P(\text{not sick})} \\
+      & = \frac{0.99 \times 0.00001}{0.99 \times 0.00001 + 0.01 \times 0.99999}\\
+      & \approx 0.001
+\end{align*}
+  
+\normalsize      
+So this 99% accurate test is not *nearly* sensitive enough for reliably detecting cases of this disease.      
+
+
 ## Bayes' Rule
 
 Supposing a model with parameters $\theta$, and given observed data $x$, compute the probability distribution for $\theta$ conditioned on the observations $x$ using Bayes' Rule.

@@ -35,17 +35,17 @@ where $f(x)$ is the **deterministic** part of the model (the signal) and $\epsil
 
 We'll look at the how to model noise in the general context of studying probability, and we'll lay some groundwork for some additional applications of probability. 
 
-The noise is a probability distribution. So far, we have only considered models where the noise follows a normal (Gaussian) distribution. Choosing the best distribution is an important part of the modeling process.
+The noise is a probability distribution. So far, we have discussed models where the noise follows a normal (Gaussian) distribution. Choosing the best distribution is an important part of the modeling process.
 
 
 ## Breaking up the noise
 
-We have already talked about how the noise can be broken into irreducible and reducible error, and the reducible error can be split into bias and variance. This decomposition is model based.
+We have already talked about how the noise can be broken into **irreducible** and **reducible** error, and the reducible error can be split into **bias** and **variance**. This decomposition is **model based**.
 
-Another way that the noise can be decomposed is more observation based:
+Another way that the noise can be decomposed is more **observation based**:
 
-* Measurement error - Unavoidable, but hopefully minimal. If it has structure or pattern, this can cause difficulties, some of which can be overcome (eg. distance sampling).
-* Process noise - Natural demographic and environmental variability. Minimized with large samples and stable environments. The main input to the stochastic part of a model.
+* **Measurement error** - Unavoidable, but hopefully minimal. If it has structure or pattern, this can cause difficulties, some of which can be overcome (eg. distance sampling).
+* **Process noise** - Natural demographic and environmental variability. Minimized with large samples and stable environments. The main input to the stochastic part of a model.
 
 ## Conditional distributions
 
@@ -56,10 +56,15 @@ Y\sim \mathbb{P}(f(X))
 $$
 
 * $f(X)$ represents the expected value of $Y$ as a function of $X$.
-* $\mathbb{P}$ can be any distribution.
+* $\mathbb{P}$ can be any probability distribution.
 
-A model where applying a link function to $f$ makes it linear in its parameters is called a **generalized linear model** (GLM). Somewhat more general $f$ can be fit with a **generalized additive model** (GAM).
+A model where applying a link function to $f$ makes it linear in its parameters is called a **generalized linear model** (GLM). 
 
+* e.g. $f(x)=e^{\beta_0+\beta_1x}$
+
+Somewhat more general $f$ can be fit with a **generalized additive model** (GAM).
+
+* e.g. splines. local regression
 
 ## The `glm` and related commands
 
@@ -82,19 +87,16 @@ poisson(link = "log")
 ```
 
 
-
-# Probability
-
-## Definitions and notation
+## Probability: Definitions and notation
 
 The **sample space** is the set of all possible **outcomes**. Each opportunity for an outcome to occur is a **trial**. Outcomes are collected into **events**. To each event $A$ we assign a number $P(A)$ between 0 and 1 called the **probability** of $A$ representing the frequency with which $A$ occurs.
 
 \footnotesize
 Example: A feeder at my house is visited by various birds and mammals. Each visit is a trial. The set of all critters that visit the feeder is the sample space. A grey jay visiting is an event. By my estimation $P(\text{Grey Jay})=0.3$. One of the grey jays that visits I've named June. June visiting the feeder is an outcome.
 
-![](../images/grey_jay.jpg){height=40%}
+![](../images/grey_jay.jpg){height=30%}     ![](../images/sampleSpace.pdf){height=35%}
 
-## Notation
+## More Notation
 
 Let $A$ and $B$ be events from a sample space $S$. 
 
@@ -104,23 +106,23 @@ Let $A$ and $B$ be events from a sample space $S$.
 
 ![](../images/AB.png){height=50%}
 
-## Axioms of probability
+## Axioms of Probability
 
 The mathematics of probability can be derived from the following three algebraic axioms.
 
-1. $P(S)=1$: Something has to happen.
+1. $P(S)=1$: **Something** has to happen.
 
-1. $P(A\cup B)=P(A)+P(B)-P(A\cap B)$: The probability of either or both of $A$ or $B$ happening is the sum of their individual probabilities, less the probability that both happen (which was counted twice in the sum).
+1. $P(A\cup B)=P(A)+P(B)-P(A\cap B)$: The probability of **either or both** of $A$ or $B$ happening is the **sum** of their individual probabilities, less the probability that both happen (which was counted twice in the sum).
 
-1. $\displaystyle P(A|B)=\frac{P(A\cap B)}{P(B)}$: The probability that $A$ happens given that $B$ has happened can be computed by rescaling the probability that both $A$ and $B$ happen by the probability of $B$.
+1. $\displaystyle P(A|B)=\frac{P(A\cap B)}{P(B)}$: The probability that $A$ happens **given that** $B$ has happened can be computed by **rescaling** the probability that both $A$ and $B$ happen **by the probability of** $B$.
 
-## Algebra of probability
+## Algebra of Probability
 
 Some immediate consequences of the axioms that are very useful are the following.
 
-* Since $S=A\cup(\text{not }A)$, combining rules 1 and 2 gives that the probability that $A$ doesn't happen is $P(\text{not }A)=1-P(A)$.
-* More generally, if $A$ and $B$ are any mutually exclusive events, $P(A\cup B)=P(A)+P(B)$.
-* The unconditional probability of an event can be computed by making use of known conditional probabilities: $P(A)=P(A|B)P(B)+P(A|\text{not }B)P(\text{not }B)$
+* Since $S=A\cup(\text{not }A)$, combining rules 1 and 2 gives that the probability that $A$ **doesn't** happen is $P(\text{not }A)=1-P(A)$.
+* More generally, if $A$ and $B$ are any **mutually exclusive events**, $P(A\cup B)=P(A)+P(B)$.
+* An **unknown unconditional** probability of an event can be computed by making use of **known conditional** probabilities: $P(A)=P(A|B)P(B)+P(A|\text{not }B)P(\text{not }B)$
 * If $P(A)=P(A|B)$ we say that $A$ and $B$ are **independent**. In this situation, rule 3 implies that $P(A\cap B)=P(A)P(B)$.
 
 ## Application: Zero-inflated distributions
@@ -128,27 +130,27 @@ Some immediate consequences of the axioms that are very useful are the following
 
 Consider the seed predation example from @bolker: 
 
-A feeder has $N$ seeds. The sample space is the number of seeds taken between occasions when the feeder is checked, so the numbers between $0$ and $N$. 
+A feeder has $N$ seeds. The **sample space** is the number of seeds taken between occasions when the feeder is checked, so the **numbers between $0$ and $N$**. 
 
-On many occasions, no seeds are taken, in which case it is reasonable to assume that the feeder may not have been visited.
+On many occasions, **no seeds are taken**, in which case it is reasonable to assume that **the feeder may not have been visited**.
 
 * $P(\text{feeder is visited})=\nu$.
 
-Assume that a visitor to the feeder independently considers taking each seed.
+Assume that a visitor to the feeder **independently** considers taking each seed.
 
 * $P(\text{seed taken})=p$.
 
 ## Application: Zero-inflated distributions (cont.)
 
-If no seeds are taken that means that either nobody visited 
+If **no seeds are taken** that means that **either nobody visited** 
 $$
 P(\text{no visit})=1-\nu
 $$
-or a visitor came 
+**or** a visitor came 
 $$
 P(\text{visit})=\nu
 $$
-and decided not to take each seed
+and **decided not to take each seed**
 \begin{align*}
 P(\text{not seed 1}\cap\cdots\cap\text{not seed }N) &= P(\text{not seed 1})\cdots P(\text{not seed }N)\\
 &= (1-p)^N
@@ -160,11 +162,11 @@ $$
 
 ## Application: Zero-inflated distributions (cont. 2)
 
-On the other hand, the event that $x$ seeds are taken consists of 
+On the other hand, the **event that $x$ seeds are taken** consists of 
 $$
 {N\choose x}=\frac{N!}{x!(N-x)!}
 $$ 
-different outcomes (one for each way to select $x$ of $N$ seeds) each with probability
+**different outcomes** (one for each way to select $x$ of $N$ seeds) each with probability
 $$
 p^x(1-p)^{N-x}
 $$
@@ -172,7 +174,7 @@ So for $x>0$,
 $$
 P(x\text{ seeds taken})=\nu{N\choose x}p^x(1-p)^{N-x}
 $$
-The distribution that we have just derived is called the **zero-inflated binomial**. Other zero-inflated models are similar, and can be very useful in ecological applications.
+The distribution that we have just derived is called the **zero-inflated binomial**. Other zero-inflated models are similar, and can be very useful in myriad applications.
 
 ## Zero-inflated binomial in R
 
@@ -189,87 +191,8 @@ for(x in 1:N) { # x seeds taken
 barplot(dzibinom, names.arg=0:N, xlab="Taken", ylab="Probability")
 ```
 
-# Bayes' Rule and Bayesian Statistics
 
-## Bayes Rule
-
-Bayes' Rule allows us to reverse the conditionality in probability calculations. For any events $A$ and $B$:
-$$
-P(A|B)=\frac{P(B|A)P(A)}{P(B)}
-$$
-Turning the conditionality around is useful for hypothesis testing.
-
-* Hypothesis: $A$; Observed Data: $B$
-* $P(A|B)$ is the probability that the hypothesis is true given the observed data. (What we want to know.)
-* Everything on the right side we can calculate from assumptions in the hypothesis and observations of the data.
-
-## Derivation of Bayes' Rule
-
-Before we talk about how to use it, let's take a second to algebraically justify the rule. Going from the axioms of probability to Bayes' Rule is satisfyingly easy:
-
-First, $A\cap B = B\cap A$ are just two ways of writing the same event "$A$ and $B$". Second, rephrasing axiom 3 above gives 
-$$
-P(A\cap B) = P(A|B)P(B)
-$$
-and 
-$$
-P(B\cap A)=P(B|A)P(A).
-$$
-Thus
-$$
-P(A|B)P(B)=P(B|A)P(A)
-$$
-and dividing both sides by $P(B)$ gives Bayes' Rule.
-
-## From Bayes' Rule to Bayesian statistics
-
-\footnotesize
-Bayes' Rule applied to observed data $D$ and hypothesis $H$:
-$$
-P(H|D)=\frac{P(D|H)P(H)}{P(D)}
-$$
-We want the left hand side. What can we do with the three terms on the right?
-
-* $P(D|H)$: Called the **likelihood** of the data. 
-    * $H$ gives a distribution for calculating $P(\text{datum}|H)$. 
-    * Independent data means $P(D|H)=\prod_{\text{datum}\in D} P(\text{datum}|H)$.
-    * Often calculate *log likelihoods* in practice.
-* $P(H)$: This is called the **prior**. 
-    * Assumed before looking at the data. 
-    * Choosing appropriate priors can be difficult and controversial. 
-    * Default to *uninformative* or *uniform* priors.
-* $P(D)$: Using a set $H_1$ to $H_N$ of *exhaustive, mutually exclusive* hypotheses:
-\begin{align*}
-P(D) & = \sum_{j=1}^N P(D\cap H_j)\\
-& =  \sum_{j=1}^N P(D|H_j)P(H_j)
-\end{align*}
-
-## Bayes' Rule: Example
-
-* Disease with prevalence of 10 per 100,000.
-* Test that is 99% accurate. (For both positive and negative results; these could also be different.)
-
-Two questions: Given a positive test result how likely is it that the subject is sick (sensitivity), and given a negative result, how likely is it that the subject is healthy (specificity)?
-
-* We'll calculate the sensitivity:
-
-\scriptsize
-\begin{align*}
-P(\text{sick}|\text{test}+) & = \frac{P(\text{test}+|\text{sick})P(\text{sick})}{P(\text{test}+)} \\
-      & = \frac{P(\text{test}+|\text{sick})P(\text{sick})}
-      {P(\text{test}+|\text{sick})P(\text{sick})+P(\text{test}+|\text{not sick})P(\text{not sick})} \\
-      & = \frac{0.99 \times 0.00001}{0.99 \times 0.00001 + 0.01 \times 0.99999}\\
-      & \approx 0.001
-\end{align*}
-  
-\normalsize      
-So this 99% accurate test is not *nearly* sensitive enough for reliably detecting cases of this disease.      
-
-
-
-# Distributions
-
-## Definitions and notation
+## More Definitions and Notation
 
 Let $X$ be a random variable. Traditional notation uses $X$ for the variable and $x$ for particular values.
 
@@ -284,9 +207,9 @@ R has many distributions built in. See `?Distributions`.
 
 ## Moments
 
-A probability distribution defines an **expectation** operation.
+A probability distribution $f(x)$ on a sample space $S$ defines an **expectation** operation.
 $$
-E[z]=\sum_x z f(x) \text{ or } E[z]=\int z f(x) dx.
+E[z]=\sum_{x\in S} z f(x) \text{ or } E[z]=\int_{x\in S} z f(x) dx.
 $$
 
 * $E[x]=\mu=\bar x$ is the **mean**.
@@ -294,7 +217,33 @@ $$
 
 Continuing in a similar way defines the **skewness** and **kurtosis** (heavy-tailedness). If you need to numerically measure these things you are probably doing something fancy and mathematically impressive. 
 
-**Method of moments**: To choose a particular distribution from an assumed family, calculate moments for data and use these to compute appropriate parameters. 
+**Method of moments**: To choose a particular distribution from an assumed family, calculate moments for data and use these to compute appropriate parameters.
+
+
+## Normal
+
+$X$: The sum of many independent samples. 
+
+Parameters mean $\mu$ and variance $\sigma^2$ (or standard deviation $\sigma$). Write $N(\mu, \sigma^2)$.
+
+* Continuous, defined for all real numbers $x$
+* $f(x)=\displaystyle \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right)$
+
+```{r fig.height=2.5, fig.width=8, echo=FALSE}
+d <- data.frame(x = c(-3, 3))
+p1 <- ggplot(d, aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1), aes(color="1")) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 0.75), aes(color="0.75")) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1.25), aes(color="1.25")) +
+  scale_colour_manual("st. dev.", values = c("darkolivegreen", "darkorange", "firebrick")) +
+  ylab("Probability density") +
+  scale_y_continuous(breaks = NULL)
+p1+theme_minimal()
+```
+
+
+The gold standard for noise. Most classical statistical techniques rely on assuming that the noise is normal.
+
 
 ## Binomial
 
@@ -305,6 +254,8 @@ Parameters are $N$, the number of trials, and $p$, the probability of success on
 * Discrete, defined for $0\leq x \leq N$
 * $f(x)={N\choose x}p^x(1-p)^{N-x}$
 * $\mu=Np$, $\sigma^2=Np(1-p)$
+* Logistic regression estimates the probability of $y=\text{success}$ based on predictors $x$: `glm(p~x, family=binomial)`
+    * Default link is `logit`.
 
 Approximately normal for large $N$, intermediate $p$. Approximately Poisson for large $N$, small $p$.
 
@@ -332,10 +283,12 @@ Parameter is $\lambda$, the expected count.
 * Discrete, defined for $0\leq x$
 * $\displaystyle f(x)=\frac{e^{-\lambda}\lambda^x}{x!}$
 * $\mu=\lambda$, $\sigma^2=\lambda$
+* Poisson regression estimates a count $y$ based on predictors $x$: `glm(y~x, family=poisson)`
+    * Default link is `log`.
 
 Right skewed. Approximately normal for large $\lambda$.
 
-```{r fig.height = 2.5, fig.width = 8, echo=FALSE}
+```{r fig.height = 2, fig.width = 8, echo=FALSE}
 
 N <- 20
 d <- data.frame(count = rep(0:N,3),
@@ -356,6 +309,9 @@ Parameters are $\mu$, the expected count, and $k$, the overdispersion parameter.
 * Discrete, defined for $0\leq x$
 * $\displaystyle f(x)=\frac{\Gamma(k+x)}{\Gamma(k)x!}\left(\frac{k}{k+\mu}\right)^k\left(\frac{\mu}{k+\mu}\right)^x$
 * $\mu=\mu$, $\sigma^2=\mu+\mu^2/k$
+* Negative binomial regression: `glm.nb(y~x)`
+    * Default link is `log`.
+    * `glm.nb` is in `MASS`. Other options exist.
 
 ```{r fig.height = 2.5, fig.width = 8, echo=FALSE}
 
@@ -368,38 +324,6 @@ ggplot(d, aes(x=count, y=Probability, fill=k))+
   theme_minimal()
 
 ```
-
-Alternatively $X$: count of failures before a fixed number of successes. 
-
-## Uniform
-
-The most boring distribution. $X$ from $U(a,b)$ means all values between the lower limit $a$ and upper limit $b$ are equally likely. 
-
-* Generally continuous. Could be discrete depending on context.
-
-## Normal
-
-$X$: The sum of many independent samples. 
-
-Parameters mean $\mu$ and variance $\sigma^2$ (or standard deviation $\sigma$). Write $N(\mu, \sigma^2)$.
-
-* Continuous, defined for all real numbers $x$
-* $f(x)=\displaystyle \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right)$
-
-```{r fig.height=2.5, fig.width=8, echo=FALSE}
-d <- data.frame(x = c(-3, 3))
-p1 <- ggplot(d, aes(x)) +
-  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1), aes(color="1")) +
-  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 0.75), aes(color="0.75")) +
-  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1.25), aes(color="1.25")) +
-  scale_colour_manual("st. dev.", values = c("darkolivegreen", "darkorange", "firebrick")) +
-  ylab("Probability density") +
-  scale_y_continuous(breaks = NULL)
-p1+theme_minimal()
-```
-
-
-The gold standard for noise. Most classical statistical techniques rely on assuming that the noise is normal.
 
 
 ## Gamma
@@ -437,6 +361,7 @@ Parameters mean of the log $\mu$ and standard deviation of the log $\sigma$.
 
 * Continuous, $x>0$
 * $X\sim \exp(\mu+\sigma Z)$ for $Z\sim N(0,1)$.
+* The mean of $X$ is $\exp(\mu+\sigma^2/2)$.
 
 ```{r fig.height=2.5, fig.width=8, echo=FALSE}
 d <- data.frame(x = c(-0, 4))
@@ -454,7 +379,7 @@ p1 <- ggplot(d, aes(x)) +
 p1+theme_minimal()
 ```
 
-Recall that the mean is $\exp(\mu+\sigma^2/2)$.
+
 
 ## Mixtures and compounded distributions
 
