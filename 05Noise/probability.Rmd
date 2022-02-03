@@ -1,24 +1,25 @@
 ---
-title: "Stochastic models in R"
-output: 
-  html_document:
-    highlight: tango
-    theme: readable
-    toc: true
-    toc_float: true
+title: "Logistic Regression in R"
+output: pdf_document
 bibliography: "../bibliography.bib"   
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(global.par = TRUE)
+```
+```{r warning=FALSE, message=FALSE}
 library(ggplot2)
 library(dominanceanalysis)
+library(ggpubr)
+library(MuMIn)
+library(dplyr)
+tropicbird$pres <- factor(tropicbird$pres, labels = c("absent", "present"))
 ```
 
 # Overview
 
-The goal for today is to explore different conditional distributions. Most real world uses of the `glm` function either use a `binomial` or a `poisson` family. We looked at Poisson models last week (though we found that a negative binomial model was more appropriate) so today we will focus on models with binomial conditional distributions.
+The goal for today is to explore another popular use of a conditional distribution other than Normal. Most real world uses of the `glm` function either use a `binomial` or a `poisson` family. We looked at Poisson models last week (though we found that a negative binomial model was more appropriate - this is often the case). Today we will focus on models with binomial conditional distributions. This material is discussed in Sections 4.1-4.3 of @islr2. 
 
 # Binomial GLM
 
@@ -48,26 +49,30 @@ We use the tropicbird dataset, which is a collection of points distributed acros
 
 Please note that in this dataset there are no false negatives, hence the bird was always recorded if present. Also, the dataset has no missing values, so it is already prepared for the analysis."
 
-The relationship between each predictor and the response can be visualized by a series of boxplots. (These are made with base graphics, not ggplot.) 
+The relationship between each predictor and the response can be visualized by a series of boxplots. 
 
-```{r}
-par(mfrow=c(2,3)) # to draw multiple plots in one window
-boxplot(rem~pres, data=tropicbird, main="remoteness")
-points(x=jitter(tropicbird$pres+1), y=tropicbird$rem, col=rgb(0,0.2,0.5,0.5)) 
-# the +1 is because boxplot made the 0 and 1 of pres into 
-# levels 1 and 2 of a factor...
-# the inputs to rgb are red, green, blue, transparency
-boxplot(alt~pres, data=tropicbird, main="altitude")
-points(x=jitter(tropicbird$pres+1), y=tropicbird$alt, col=rgb(0,0.2,0.5,0.5))
-boxplot(slo~pres, data=tropicbird, main="slope")
-points(x=jitter(tropicbird$pres+1), y=tropicbird$slo, col=rgb(0,0.2,0.5,0.5))
-boxplot(rain~pres, data=tropicbird, main="rainfall")
-points(x=jitter(tropicbird$pres+1), y=tropicbird$rain, col=rgb(0,0.2,0.5,0.5))
-boxplot(coast~pres, data=tropicbird, main="dist. to coast")
-points(x=jitter(tropicbird$pres+1), y=tropicbird$coast, col=rgb(0,0.2,0.5,0.5))
-boxplot(land~pres, data=tropicbird, main="land use")
-points(x=jitter(tropicbird$pres+1), y=tropicbird$land, col=rgb(0,0.2,0.5,0.5))
-par(mfrow=c(1,1)) # To stop drawing multiple plots
+```{r, fig.height=3}
+
+a <- ggplot(tropicbird, aes(pres, rem))+
+  geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2, alpha=0.3)+
+  labs(x="", y="remoteness")
+b <- ggplot(tropicbird, aes(pres, alt))+
+  geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2, alpha=0.3)+
+  labs(x="", y="altitude")
+c <- ggplot(tropicbird, aes(pres, slo))+
+  geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2, alpha=0.3)+
+  labs(x="", y="slope")
+d <- ggplot(tropicbird, aes(pres, rain))+
+  geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2, alpha=0.3)+
+  labs(x="", y="rainfall")
+e <- ggplot(tropicbird, aes(pres, coast))+
+  geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2, alpha=0.3)+
+  labs(x="", y="dist. to coast")
+f <- ggplot(tropicbird, aes(pres, land))+
+  geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2, alpha=0.3)+
+  labs(x="", y="land use")
+
+ggarrange(a,b,c,d,e,f, nrow=2, ncol=3)
 ```
 
 ## Model predictions
@@ -83,29 +88,52 @@ modpres1 <- glm(pres~rem, data=tropicbird, family=binomial)
 summary(modpres1)
 ```
 
-We can see how well this model does by comparing predictions to data. First, we calculate the probabilities using the model. Let's do this in three different ways. First, we use the model coefficients directly, and the `plogis` function to invert the logit link. Second, we use the `fitted` command to pull the predictions out of the model object. Third, we use the `predict` command, and give it the original data. The `type="response"` is equivalent to the `plogis` command in the first computation. It tells R that we want the predictions on the scale of the response variable. The advantage to using `predict` is that if we want to make predictions on data other than the data that was used to build the model, we just give it appropriate `newdata`.
+How good is this model? We can look at the p-value for `rem` and see that it is very small and conclude that remoteness is correlated with presence. We will discuss the exact meaning of value 1.1 of the coefficient, but it measures the magnitude of the increase. In particular, since the coefficient is positive, more remoteness is associated with higher probabilities of bird presence. 
+
+Another thing that we can do is compare this model to another model using AIC. What other model can we compare to? A model with no predictors will allow us to quantify how useful remoteness is on its own as a predictor of bird presence.
+
+```{r}
+modpres0 <- glm(pres~1, data=tropicbird, family=binomial)
+model.sel(modpres1, modpres0)
+```
+
+
+We can also see how well this model does by comparing predictions to data. First, we calculate the probabilities using the model. Let's do this in three different ways. First, we use the model coefficients directly, and the `plogis` function to invert the logit link. Second, we use the `fitted` command to pull the predictions out of the model object. Third, we use the `predict` command. The `type="response"` is equivalent to the `plogis` command in the first computation. It tells R that we want the predictions on the scale of the response variable. The advantage to using `predict` is that if we want to make predictions on data other than the data that was used to build the model, we just give it appropriate `newdata`.
 ```{r}
 probs1 <- plogis(coef(modpres1)[1]+coef(modpres1)[2]*tropicbird$rem)
 probs1a <- fitted(modpres1) 
-probs1b <- predict(modpres1, newdata=tropicbird, type="response")
+probs1b <- predict(modpres1, type="response")
 ```
-Check that the above three vectors of predictions are the same. 
-
-One of the ways that we can use the `predict` function with new data is to make a common sort of graph to depict this logistic regression model. In addition to showing the predictions for a sequence of points from 0 to 6, spaced at intervals of 0.1, this plot adds "rugs" of points on the bottom and the top of the graph to indicate the values of remoteness for sites where birds were in fact found or not.
+To check that the above three vectors of predictions are the same, we can count the number of times that they differ with the following code. We round to eight decimal places because the numbers produced by the explicit calculation and `plogis` in `probs1` aren't exactly the same as those from `fitted` or `predict` because of rounding issues at the level of machine precision. 
 ```{r}
-# Create sequence of values for predictor
-newdata <- data.frame(rem=seq(0,6,0.1)) 
-# Use model to predict response
-newdata$pres <-predict(modpres1, newdata, type="response") 
-
-ggplot(tropicbird, aes(rem, pres)) +
-  geom_line(data=newdata)+
-  geom_rug(data=tropicbird[tropicbird$pres==0,], sides = "b") +
-  geom_rug(data=tropicbird[tropicbird$pres==1,], sides = "t")
+sum(round(probs1,8)!=round(probs1a,8))
+sum(probs1a!=probs1b)
 ```
+
+
+One of the ways that we can use the `predict` function with new data is to make a common sort of graph to depict this logistic regression model. First, we make a grid of predictor values. 
+```{r}
+newdata <- data.frame(rem=seq(0,6,0.1)) 
+```
+Then we use the model to predict responses.
+```{r}
+newdata$presprob <-predict(modpres1, newdata, type="response") 
+```
+Now we can plot the relationship between predictors and predictions. In addition, this plot adds "rugs" of points on the bottom and the top of the graph to indicate the values of remoteness for sites where birds were in fact found or not.
+
+```{r, fig.height=3}
+ggplot(newdata, aes(rem, presprob)) +
+  geom_line() + ylim(0,0.5) + labs(x="Remoteness", y="Probability of Presence") +
+  geom_rug(data=tropicbird[tropicbird$pres=="absent",], 
+           aes(y=as.numeric(pres)), sides = "b") +
+  geom_rug(data=tropicbird[tropicbird$pres=="present",],  
+           aes(y=as.numeric(pres)), sides = "t")
+```
+
+### Setting a threshold
 
 Now suppose we want to use this model to decide where to go look for birds. We can set a threshold probability and go to the sites where the predicted probabilities are above that probability. Deciding where to set that threshold is a matter of balancing our desire to find a bird with the effort involved in going to look for one that is wasted if there are no birds present. We can use the distribution of the predicted probabilities to guide our decision.
-```{r}
+```{r fig.height=3}
 hist(probs1)
 ```
 
@@ -132,12 +160,54 @@ modpres <- glm(pres~rem+land+alt+slo+rain+coast,
 summary(modpres)
 ```
 
-(@) Evaluate `modpres` as a bird locating model as we did with `modpres1` above. How does adding the rest of the predictors improve the resulting model? Two things to note: First, when calculating probabilities, `probs1a` and `probs1b` will translate with almost no modification, but to translate `probs1`, you will have to add the rest of the terms into the linear part of the predictor. Second, making a plot of the model with six predictors is more complicated - we discuss it below.
+(@) Evaluate `modpres` as a bird locating model using p-values as we did with `modpres1` above. Which predictors appear significant?
 
-Making a graph using the resulting model is more complicated because there are more variables that need to be provided as new data and represented in the graph. Instead of making a sequence of points filling out all possible combinations across the ranges of each variable (which would lead to an absolutely huge `newdata`), we can instead generate random values within those ranges. Defining the function `pts` to do this saves a bit of typing.
+### Using the `dredge` function from `MuMIn`
+
+We can also use AIC to compare models. Instead of explicitly computing all the models using only subsets of the predictors, we can use `dredge` from the `MuMIn` package. In order to do this, we need to rebuild the model using `na.action=na.fail` because AIC can only compare models built from the same data, and hence missing data causes problems. The output of `dredge` is a table listing all possible models using variables used in `modpres`.
+
+```{r, warning=FALSE, message=FALSE}
+modpres <- glm(pres~rem+land+alt+slo+rain+coast, 
+               data=tropicbird, family=binomial, na.action = na.fail)
+model_table <- dredge(modpres)
+```
+ There are $2^6=64$ such models, so we'll only look at the first 10 lines of the table.  
+
+```{r, warning=FALSE}
+round(model_table[1:10,c(1:7,10:12)],3)
+```
+### Normalizing predictors
+
+This table tells us that the model that omits `land` and `slo` has the lowest AICc. It also gives us the slopes of the coefficients for these predictors. Unfortunately, we can't use these coefficients to compare magnitudes of the effects, since the scales of the predictors are all different. We can fix this by normalizing the predictors. The `scale` function can be used to modify variables so that all of our predictors have mean zero and standard deviation one. The `mutate_at` function can be used to apply the function to the appropriate subset of columns of the data.
 
 ```{r}
+scaled_tropicbird <- tropicbird %>%
+  mutate_at(c("rem", "alt", "slo", "rain", "coast", "land"), scale)
+```
+
+Now when we look at coefficients, they can be more directly compared to one another. Notice that AIC does not change.
+
+```{r, warning=FALSE, message=FALSE}
+scaled_modpres <- glm(pres~rem+land+alt+slo+rain+coast, 
+               data=scaled_tropicbird, family=binomial, na.action = na.fail)
+scaled_model_table <- dredge(scaled_modpres)
+round(scaled_model_table[1:10,c(1:7,10:12)],3)
+```
+
+(@) Discuss the relative effects of the significant predictors on the model's probability of finding a bird.
+
+### Predictions from the full model
+
+Two things to note: First, when calculating probabilities, `probs1a` and `probs1b` will translate with almost no modification, but to translate `probs1`, you will have to add the rest of the terms into the linear part of the predictor. Second, making a plot of the model with six predictors is more complicated.
+
+Making a graph using the resulting model is more complicated because there are more variables that need to be provided as new data and represented in the graph. To make a grid of predictor values by building a sequence of points filling out all possible combinations across the ranges of each variable would lead to an absolutely huge `newdata`. Instead we can generate random values within those ranges. 
+
+To save some typing, we can define a function `pts` to randomly generate 10000 values within the range of a given variable.
+```{r}
 pts <- function(x){runif(10000,min(x),max(x))}
+```
+Then we can use this function to randomly choose 10000 points within the range of the values of the data.
+```{r}
 newdata <- with(tropicbird, data.frame(rem=pts(rem),
                                       land=pts(land),
                                       alt=pts(alt),
@@ -160,9 +230,12 @@ As before, we finally add predictions to the new data and make the plot.
 ```{r}
 newdata$pres <-predict(modpres, newdata, type="response")
 ggplot(tropicbird, aes(rem, pres, color=alt)) +
-  geom_point(data=newdata, alpha=0.5)+
-  geom_rug(data=tropicbird[tropicbird$pres==0,], sides = "b") +
-  geom_rug(data=tropicbird[tropicbird$pres==1,], sides = "t") +
+  geom_point(data=newdata, alpha=0.5)+ ylim(0,1) + 
+  labs(x="Remoteness", y="Probability of Presence") +
+  geom_rug(data=tropicbird[tropicbird$pres=="absent",], 
+           aes(y=as.numeric(pres)), sides = "b") +
+  geom_rug(data=tropicbird[tropicbird$pres=="present",], 
+           aes(y=as.numeric(pres)), sides = "t") +
   facet_grid(rain_discrete~coast_discrete)
 ```
 
@@ -178,7 +251,7 @@ The formula for the standard logistic function is
 $$
 \sigma(t)=\frac{e^t}{1+e^t}
 $$
-The inverse function is called the *logit*, and it is defined by the formula
+The inverse function is called the *logit*, and a little algebra tells us that it is defined by the formula
 $$
 \sigma^{-1}(p)=\log\left(\frac{p}{1-p}\right)
 $$
@@ -207,15 +280,13 @@ For example, in `modpres1`, the predictor remoteness (`rem`) has coefficient 1.1
 
 
 
-```{r}
+```{r, message=FALSE}
 exp(coef(modpres1))
 exp(confint(modpres1))
 ```
 Thus we can say that a 95% confidence interval for the expected factor by which the odds of a bird being present changes in response to a one unit increase in remoteness is (2.44,3.79). Our point estimate for this factor is $\exp(1.1)\approx3.00$. 
 
-Looking at the intercept, we see that our point estimate for the baseline odds of finding a bird at a site with a remoteness of 0 is $\exp(-7.68)\approx0.0005$ or approximately 1 to 2164. Remoteness is measured on a scale of 0 to 6 so we are interested in the numbers $3^0$ to $3^6$. For example the odds of finding a bird at a site with remoteness equal to the mean of `rem` (2.47) are predicted to increase from the baseline by a factor of approximately $3^{2.47}\approx15.1$. This factor could also be calculated by multiplying the coefficient and the mean remoteness value before exponentiating: $\exp(1.1\times 2.46)\approx15.1$.
-
-(@) Analyze `modpres` as a resource selection function. Which resources are significant? What are the point estimates and 95% confidence intervals for the effects of each resource? Analyze the numerical ranges and distributions of the resources, and try to determine which ones have the greatest effect on the predicted odds. 
+(@) Analyze `scaled_modpres` as a resource selection function. Which resources are significant? What are the point estimates and 95% confidence intervals for the relative effects of each resource, and what do these numbers mean in terms of predicted odds of finding a bird?
 
 # References
 
