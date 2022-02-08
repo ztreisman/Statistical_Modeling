@@ -1,7 +1,7 @@
 ---
 title: "Classification"
 author: "Zack Treisman"
-date: "Spring 2021"
+date: "Spring 2022"
 output: 
   beamer_presentation: 
     includes: 
@@ -22,6 +22,8 @@ par(mar = c(4, 4, 0.5, 0.5)) # Set margins
 
 ```{r, message=FALSE}
 library(tidyverse)
+library(GGally)
+library(nnet)
 library(caret)
 library(MASS)
 library(e1071)
@@ -32,21 +34,23 @@ set.seed(3)
 
 ## Philosophy
 
-In all of the modeling we have done so far, the response variable has been numeric.
+Thus far the response variables of our models have been numeric.
 
 * A binomial glm is used when the response is a binary categorical variable, but the response in the model is the probability of observing the level designated success.
 
-What are our options if we wish to predict a categorical response with more than two levels?
+Options to predict a categorical response with more than two levels:
 
-* Nearest-neighbor averaging (KNN, `class::knn`) 
+* Nearest-neighbor averaging (KNN, `class::knn`^[The R syntax `a_library::an_object` lets you use `an_object` from `a_library` without first loading the library. I'll use it in these notes as shorthand - "the function `knn` in the library `class`".]) 
 * Multinomial logistic regression
 * Discriminant analysis (linear, quadratic, naive Bayes, \ldots)
-* Classification trees or Random Forests
-* Support vector machines, neural networks and other machine learning methods
+* Classification trees and Random Forests
+* Support vector machines
+* Neural networks (aka deep learning)
+* Other machine learning methods
 
 ## Binomial GLMs
 
-Consider a binary categorical variable $Y$ with classes 0 and 1. 
+Consider a binary categorical response variable $Y$ (levels 0 and 1), and predictor variables $X=(X_1,X_2, \ldots,X_m)$. 
 
 In a binomial GLM, we model the expected probability $p(x)=P(Y=1|X=x)$ using
 $$
@@ -56,32 +60,114 @@ where
 $$
 \text{logit}(p(x))=\log\left(\frac{p(x)}{1-p(x)}\right).
 $$
-Equivalently
+Equivalently,
+$$
+\frac{p(x)}{1-p(x)}=e^{\beta_0+\beta_1x_1+\cdots+\beta_mx_m}
+$$
+or
 $$
 p(x)=\frac{e^{\beta_0+\beta_1x_1+\cdots+\beta_mx_m}}{1+e^{\beta_0+\beta_1x_1+\cdots+\beta_mx_m}}.
 $$
-When $Y$ is a categorical variable with more than 2 levels, it continues to be useful to model the probabilities that it takes each individual level.
+
+## Log-odds and interpreting coefficients
+
+For a probability $p$, the expression $\frac{p}{1-p}$ is called the **odds**. 
+
+Example: Let $A$ be some event with $P(A)=0.75$. 
+$$
+\text{odds}(A) =\frac{0.75}{1-0.75} =\frac{3}{1}
+$$
+This is referred to as **3 to 1 odds**, meaning $P(A)=3 P(\text{not }A)$. 
+
+An event whose odds are 1 is as likely to happen as not.
+
+We use this to **interpret** the model
+$$
+\text{odds}(Y=1|X=x))=e^{\beta_0+\beta_1x_1+\cdots+\beta_mx_m}
+$$
+by saying that
+
+* $e^{\beta_0}$ is the odds that $Y=1$ when all the $X_i=0$.
+* $e^{\beta_i}$ is the factor by which the odds that $Y=1$ changes when $x_i$ increases by 1 with all the other $x_j$ remaining fixed.
 
 ## Multinomial regression
 
-This technique seems like it doesn't get used as much. If you are interested, the tools that do it are `glmnet::glmnet` with `family=multinomial` or `nnet::multinom`.
+Now consider $Y$ with levels $1,\ldots, K$. We still want to know $P(Y=k|X=x)$ for an arbitrary level $k$.
 
-`glmnet` also does Lasso and Ridge Regression, which do something like dimension reduction by feature selection. See Chapter 6 of @islr.
+We either choose a reference level or not. The model is the same either way, this only affects the particular parameters that we have to estimate and get to interpret. 
+
+Suppose that it makes sense to set level $K$ as a reference level. Then for $k=1,\ldots,K-1$
+$$
+P(Y=k|X=x)=\frac{e^{\beta_{k0}+\beta_{k1}x_1+\cdots+\beta_{km}x_m}}{1+\sum_{l=1}^{K-1}e^{\beta_{l0}+\beta_{l1}x_1+\cdots+\beta_{lm}x_m}}
+$$
+and 
+$$
+P(Y=K|X=x)=\frac{1}{1+\sum_{l=1}^{K-1}e^{\beta_{l0}+\beta_{l1}x_1+\cdots+\beta_{lm}x_m}}
+$$
+
+## Log-odds in Multinomial Regression
+
+The same algebra as in the binary case shows that the odds of a particular level, relative to the chosen reference level are
+$$
+\frac{P(Y=k|X=x)}{P(Y=K|X=x)}=e^{\beta_{k0}+\beta_{k1}x_1+\cdots+\beta_{km}x_m}
+$$
+and so the interpretations of the parameters are similar:
+
+
+* $e^{\beta_{k0}}$ is the odds that $Y=k$ rather than $Y=K$ when all the $X_i=0$.
+* $e^{\beta_{ki}}$ is the factor by which the odds that $Y=k$ rather than $Y=K$ changes when $x_i$ increases by 1 with all the other $x_j$ remaining fixed.
+
+## The `iris` data
+
+A famous data set for testing classification methods.
+
+\scriptsize
+```{r, fig.height=5}
+ggpairs(iris[,1:4], aes(color=iris$Species))
+```
+
+## Multinomial regression example
+
+A tool for multinomial regression is `nnet::multinom`.
+\tiny
+```{r, results=FALSE, }
+iris$Species <- relevel(iris$Species, ref = "versicolor") # set the reference level
+mlr_iris <- multinom(Species~., data=iris) # Species in terms of everything else
+```
+\scriptsize
+```{r}
+summary(mlr_iris)
+```
+\normalsize
+
+
+Multinomial regression is unstable when classes are well separated. This is the case for setosa. Note the high standard errors.
+
+## Predictions from multinomial regression
+
+Even though the standard errors on the model coefficients are quite high for `setosa`, the model almost always makes correct predictions if we choose the level with the highest probability.
+
+\scriptsize
+```{r}
+mlr.pred <- predict(mlr_iris)
+table(iris$Species, mlr.pred)
+```
+\normalsize
 
 ## Discriminant Analysis
 
-Model the distribution of $X$ for each class, then apply Bayes' theorem. We'll follow @islr and use the following notation:
+Another way to approach classification is to model the distribution of $X$ for each class, then apply Bayes' theorem. We'll follow @islr2 and use the following terminology and notation:
 
-* $f_k(x)=P(X=x|Y=k)$ is the distribution of $X$ for class $k$. 
-* $\pi_k=P(Y=k)$ is the prior probability for class $k$.
-* $p_k(x)=P(Y=k|X=x)$ is the posterior probability for class $k$.
+* $f_k(x)=P(X=x|Y=k)$ is the **distribution** of $X$ for class $k$. 
+* $\pi_k=P(Y=k)$ is the **prior** probability of class $k$.
+* $p_k(x)=P(Y=k|X=x)$ is the **posterior** probability of class $k$ given values of the predictors $X$.
 
 Bayes' theorem says
 
 $$
 p_k(x)=\frac{\pi_kf_k(x)}{\sum_{l=1}^{K}\pi_lf_l(x)}.
 $$
-Given $X=x$, we can choose the class $k$ for $Y$ such that $p_k(x)$ is largest. Alternatively, we may wish to report all of the probabilities $p_k(x)$.
+Logistic regression was one method of estimating the probabilities $p_k(x)$. This is another. As before, given $X=x$, we can choose the class $k$ for $Y$ such that $p_k(x)$ is largest.
 
 ## Linear Discriminant Analysis
 
@@ -103,16 +189,7 @@ This is a linear function of $x$. It is easy to compute and $p_k(x)$ is greatest
 
 ![](../images/4.6.pdf)
 
-This graphic is from @islr. It shows simulated data from Gaussian distributions indicated by the ovals. Dotted lines are optimal decision boundaries. Solid lines are decision boundaries from LDA. 
-
-## LDA example
-
-We'll study Fisher's iris data. 
-
-\scriptsize
-```{r}
-pairs(iris[,1:4], col=iris$Species, pch=19)
-```
+This graphic is from @islr2. It shows simulated data from Gaussian distributions indicated by the ovals. Dotted lines are optimal decision boundaries. Solid lines are decision boundaries from LDA. 
 
 ## LDA example (model fitting)
 
@@ -259,8 +336,7 @@ west_fork$bc_sqrt_7 <- factor(west_fork$bc_sqrt_7)
 rf.mod <- randomForest(bc_sqrt_7~.,
                        data = west_fork[, c(4,8:32)], importance=TRUE)
 
-accuracy <- function(tab)sum(sapply(1:nrow(tab), 
-                                    function(x)tab[x,x]))/(sum(tab))
+accuracy <- function(tab)sum(diag(tab))/(sum(tab))
 rf.tab <- table(predict(rf.mod),west_fork$bc_sqrt_7)
 rf.tab
 accuracy(rf.tab)
