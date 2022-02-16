@@ -1,6 +1,8 @@
 ---
 title: "Classification, Decision Trees and Random Forests"
-output: pdf_document
+output: 
+  pdf_document: default
+urlcolor: blue  
 bibliography: "../bibliography.bib"   
 ---
 
@@ -11,7 +13,7 @@ knitr::opts_knit$set(global.par = TRUE)
 
 # Setup
 
-```{r}
+```{r message=F}
 library(dplyr)
 library(nnet)
 library(MASS)
@@ -20,25 +22,26 @@ library(randomForest)
 library(ggplot2)
 ```
 
-We will work with the `pierce_county_house_sales` data that was referenced in the exam. These data are avaialble here: Our goal will be to answer the obvious (and difficult) question: What makes a house cost more or less? 
+We will work with the `pierce_county_house_sales` data that was referenced in the exam. These data are avaialble here: [GitHub link](https://github.com/ztreisman/Statistical_Modeling/blob/main/Trees/data/pierce_county_house_sales.rda). Our goal will be to answer the obvious (and difficult) question: What makes a house cost more or less? 
 
-Once you have the data downloaded and saved in the folder you want, they can be loaded with an appropriate modification of the following command. (I put the file in a subdirectory of my working directory called `data`.) 
+Once you have the data downloaded and saved in the folder you want, they can be loaded with an appropriate modification of the following command. I put the file in a subdirectory of my working directory called `data`. If you do something different, edit the following command appropriately.
 ```{r}
 load("data/pierce_county_house_sales.rda")
 ```
 
-Take a look at the data.
+Take a look at the data. 
 
-```{r}
-#View(pierce_county_house_sales)
+```{r eval=FALSE}
+View(pierce_county_house_sales)
 summary(pierce_county_house_sales)
 ```
-
+\normalsize
 The data need a little preparation for our purposes. First, we want to make the *character* variables into *factor* variables. Many modeling tools do this automatically, but not all. We could change each variable one at a time, but the `mutate` and `across` commands allow us to adjust all seven of these variables at once.
 
 ```{r}
-pierce_county_house_sales <- pierce_county_house_sales %>% mutate(
-  across(c("hvac_description",  "exterior", "interior", "roof_cover", 
+pierce_county_house_sales <- pierce_county_house_sales %>% 
+  mutate(
+    across(c("hvac_description",  "exterior", "interior", "roof_cover", 
            "waterfront_type", "view_quality", "utility_sewer"), 
          as.factor))
 ```
@@ -60,11 +63,17 @@ Now we want to use the other variables to try to determine the price category fo
 
 ## Multinomial Regression
 
-Let's try multinomial regression first. The following code builds the model, and then builds a table, called a **confusion matrix**, that compares the predicted category to the actual category.
+Let's try multinomial regression first. The following code builds the model, 
 
-```{r}
+```{r results='hide'}
 mlr.house <- multinom(price_category~.-sale_price, data=pierce_county_house_sales)
+```
+computes the predicted values from the model,
+```{r}
 mlr.pred <- predict(mlr.house)
+```
+and then builds a table, called a **confusion matrix**, that compares the predicted category to the actual category.
+```{r}
 table(mlr.pred, pierce_county_house_sales$price_category)
 ```
 To assess the accuracy, we can add the entries on the diagonal, and see what fraction of the total houses were correctly categorized.
@@ -79,7 +88,7 @@ mean(mlr.pred==pierce_county_house_sales$price_category)
 
 ## Discriminant analysis
 
-We can run linear discriminant analysis and see how it does with these data.
+We can run linear discriminant analysis and see how it does with these data. As above, we build a model, compute predictions, and then compute the percentage of correct predictions.
 
 ```{r}
 lda.house <- lda(price_category~.-sale_price, data = pierce_county_house_sales)
@@ -94,7 +103,8 @@ ggplot(lda.obs,
        aes(LD1, LD2, 
            color=pierce_county_house_sales$price_category, 
            shape=lda.pred$class)) + 
-  geom_point()
+  geom_point()+
+  labs(shape="Predicted", color="Actual")
 ```
 
 ## Trees for classification
@@ -104,9 +114,18 @@ Trees are nice and intuitive. Let's build one.
 ```{r}
 tree.house <- tree(price_category~.-sale_price-sale_date, pierce_county_house_sales)
 summary(tree.house)
+```
+The following commands draw and label the tree.
+```{r eval=FALSE}
 plot(tree.house)
-text(tree.house) 
+text(tree.house)
+```
+More information about the tree, including probabilities that an observation is in a particular price category if it is in a particular node, can be read from the output of the following command.
+```{r eval=FALSE}
 tree.house # Note the legend at the top of the output.
+```
+As with any model you build, the predict function calculates model predictions. Setting `type="class"` gives predicted categories that can be compared to reality, as we did above.
+```{r}
 tree.pred <- predict(tree.house, type="class")
 mean(tree.pred==pierce_county_house_sales$price_category)
 ```
@@ -119,11 +138,13 @@ A problem with everything we have done so far to build and evaluate our models i
 
 To evaluate test error, we need to hold back some of our data and not use it to build the model. The following code pulls out 30% of the data to be used for testing and uses the remaining 70% for training.
 
-```{r}
-set.seed(2)
-train <- sample(1:nrow(pierce_county_house_sales), 0.7*nrow(pierce_county_house_sales))
+```{r eval=FALSE}
+set.seed(2) # Before doing anything random, set a seed
+train <- sample(1:nrow(pierce_county_house_sales), 
+                0.7*nrow(pierce_county_house_sales))
 houses.test <- pierce_county_house_sales[-train,]
-tree.house <- tree(price_category~.-sale_price-sale_date, pierce_county_house_sales, subset=train)
+tree.house <- tree(price_category~.-sale_price-sale_date, 
+                   data=pierce_county_house_sales, subset=train)
 plot(tree.house)
 text(tree.house)
 tree.pred <- predict(tree.house, newdata=houses.test, type="class")
@@ -145,11 +166,11 @@ method; we introduce it here because it is particularly useful and frequently us
 Recall that given a set of $n$ independent observations $Z_1 , \ldots , Z_n$ , each with variance $\sigma^2$ , the variance of the mean $\bar{Z}$ of the observations is given by $\sigma^2/n$. In other words, averaging a set of observations reduces
 variance. Of course, this is not practical because we generally do not have access to multiple training sets. Instead, we can bootstrap, by taking repeated samples from the (single) training data set.
 
-In this approach we generate $B$ different bootstrapped training data sets. We then train our method on the $b$th bootstrapped training set in order to get $\hat f^{∗b}(x)$, the prediction at a point $x$. If the response is numeric, we then average all the predictions to obtain
+In this approach we generate $B$ different bootstrapped training data sets. We then train our method on the $b$th bootstrapped training set in order to get $\hat f^{*b}(x)$, the prediction at a point $x$. If the response is numeric, we then average all the predictions to obtain
 $$
-\hat  f_{bag}(x) = \frac{1}{B}\sum_{b=1}^B f^{∗b}(x)
+\hat  f_{bag}(x) = \frac{1}{B}\sum_{b=1}^B f^{*b}(x)
 $$
-If the response is categorical, then $\hat  f_{bag}(x)$ is the most commonly occurring class among the $\hat f^{∗b}(x)$. This is called **bagging**.
+If the response is categorical, then $\hat  f_{bag}(x)$ is the most commonly occurring class among the $\hat f^{*b}(x)$. This is called **bagging**.
 
 ## Random Forest using all predictors is bagging. 
 
@@ -183,3 +204,5 @@ The Random Forest algorithm produces lots of trees, and it can be hard to interp
 importance(rf.house)
 varImpPlot(rf.house)
 ```
+
+(@) Using only the top 3-5 variables that the Random Forest lists as important and perhaps some of their interactions, build a multinomial logistic regression model to predict `price_category`, or if you prefer, a linear model to predict `sale_price`. What conclusions do you draw about our original question - what factors most influence the price of a house, and how?
