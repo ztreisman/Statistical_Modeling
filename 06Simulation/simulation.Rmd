@@ -1,7 +1,7 @@
 ---
 title: "Simulation and Randomization"
 author: "Zack Treisman"
-date: "Spring 2021"
+date: "Spring 2022"
 output: 
   beamer_presentation: 
     includes: 
@@ -43,9 +43,13 @@ crows <- read.csv("data/crows.csv")
 
 A study in @krwck examined sexual dimorphism in New Caledonian crows. Sex and weight for 18 birds were recorded.
 
-```{r, fig.width=4, fig.height=2}
+\scriptsize
+```{r, echo=F, fig.width=4, fig.height=1}
 ggplot(crows, aes(weight, sex))+geom_point()
 ```
+\normalsize
+
+![](../images/crow.jpg)
 
 ## Crow example (cont.)
 
@@ -85,16 +89,26 @@ mean(abs(obs)<=abs(diffs))
 \normalsize
 We see three examples in 10,000 runs where the observed difference in means is at least as large as the observed difference in absolute value. Note that this matches very closely to the p value of 0.000384 from the $t$-test.
 
-## Simulating crow weights
+## An existing model for crow weights
 
 Randomization allowed us to test our data against the null theory of complete independence of the sex and weight variables.
 
 Suppose instead that previous observations lead us to predict that New Caledonian crows will exhibit sexual dimorphism for weight, with female weights distributed as $N(250,20^2)$ and male weights distributed as $N(320, 35^2)$. 
 
-We will **simulate** data based on this model.
+```{r echo=F, fig.height=3}
+ggplot(data.frame(weight=175:425), aes(weight))+
+  geom_function(fun=dnorm, args=list(mean=250, sd=20), color="red")+
+  geom_function(fun=dnorm, args=list(mean=320, sd=35), color="blue")+
+  labs(y="")
+```
+
+
+## Simulation based on the model
+
+We will **simulate** data based on this model. 
 
 \scriptsize
-```{r}
+```{r, fig.height=3, warning=FALSE, message=FALSE}
 diffs <- numeric(num_sim)
 for(i in 1:num_sim){
   sim <- data.frame(sex = c(rep("f", 6), rep("m", 12)),
@@ -102,10 +116,11 @@ for(i in 1:num_sim){
   diffs[i] <- mean(sim[sim$sex=="f",]$weight)-
               mean(sim[sim$sex=="m",]$weight)
 }
-mean(abs(obs)<=abs(diffs)) 
+ggplot(data.frame(diffs), aes(diffs))+
+  geom_freqpoly()+geom_vline(xintercept = obs)
 ```
 \normalsize
-The observed difference in weights is at most the simulated difference 86.4% of the time, not inconsistent with the model.
+The observed differences in mean weights is not inconsistent with the model.
 
 
 ## A simple two variable example
