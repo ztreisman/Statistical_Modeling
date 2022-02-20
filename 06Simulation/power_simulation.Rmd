@@ -1,11 +1,10 @@
 ---
 title: "Power and Simulation"
 output: 
-  html_document:
-    highlight: tango
-    theme: readable
-    toc: true
-    toc_float: true
+  pdf_document:
+    includes: 
+      in_header: ../homework_style.tex
+citecolor: blue
 bibliography: "../bibliography.bib"   
 ---
 
@@ -23,20 +22,31 @@ library(paramtest)
 
 ## Overview
 
-Power calculations are an important part of study design, but power calculations based on all but relatively simple statistical models can be horribly complicated or even impossible. Simulation allows one to avoid these complicated or impossible calculations with a bit of programming.
+The **statistical power** of a hypothesis test is the probability that the data will lead to the rejection of the null hypothesis, if a particular version of the alternate hypothesis is in fact true. Power calculations are an important part of study design - being able to compute power means that one can answer the questions, "How much data do I need to gather in order to reliably notice the relationship that I think might exist?" or, "With the data available, what effect size will I reliably be able to notice?" But power calculations based on all but relatively simple statistical models can be horribly complicated or even impossible. Simulation allows one to avoid these complicated or impossible calculations with a bit of programming.
 
 ## Power calculations that can be done analytically
 
 Some power calculations can be solved with calculus. For these, there are off the shelf functions for computing power. Without loading any packages, you can use `power.t.test`, `power.prop.test` and `power.anova.test`. The `pwr` package gives a few more tools, such as `pwr.f2.test` for linear models. 
 
-For a first example, we'll look at a $t$-test. An key step in setting up a power calculation is determining effect size. (Power calculations can also be used to determine effect size if all other parameters are known, but this is less frequently done.) The effect size for a $t$-test used by `pwr.t.test` is the difference in means divided by the pooled standard deviation, known as Cohen's $d$, after @cohen.
+For a first example, we'll look at a $t$-test for the difference in means between two groups. Consider the following scenario:
+
+* $y$ is a numeric variable.
+* $x$ is a binary categorical variable. The two levels of $x$ are $a$ and $b$.
+* Write $\mu_a$ and $\sigma_a$ for the mean and standard deviation of $y$ when $x=a$, and similarly $\mu_b$ and $\sigma_b$ for when $x=b$.
+* The pooled standard deviation $\sigma_{pooled}$ is the standard deviation of $y$, ignoring $x$. 
+* We want to know if $y$ depends on $x$, so we will perform a $t$-test: `t.test(y~x)`.
+* We will collect a sample: $n_a$ observations where $x=a$ and $n_b$ observations where $x=b$. How large do $n_a$ and $n_b$ have to be so that if $\mu_a\neq\mu_b$ our $t$-test will detect it?
+
+An key step in setting up a power calculation is determining a particular version of the alternative hypothesis that we are interested in detecting, in other words, a suitable value for the effect size. (The effect size is our way of quantifying the difference between the null hypothesis and the particular version of the alternative hypothesis to be considered. Power calculations can also be used to determine effect size if all other parameters are known, but this is less frequently done.) The effect size for a $t$-test used by `pwr.t.test` is the difference in means divided by the pooled standard deviation, known as Cohen's $d$, after @cohen. 
 
 $$
-d=\frac{\mu_a-\mu_b}{\sigma_{pooled}}, \quad \sigma_{pooled}=\sqrt{\frac{(n_a-1)\sigma_a^2+(n_b-1)\sigma_b^2}{(n_a-1)+(n_b-1)}}
+d=\frac{\mu_a-\mu_b}{\sigma_{pooled}}
 $$
+We want to choose an effect size that is large enough to be interesting, and to be detectable at reasonable power with an achievable sample size, but not so large that it exceeds values that you would find interesting or useful, or is unlikely to really exist.
+
 To use any of the standard functions for computing power, specify the parameters you wish to fix, and the function will compute the one you leave unspecified. (Default significance level is 0.05, this does not have to be specified. If you want to compute the significance level where a certain power is achieved with fixed sample and effect sizes, you have to explicitly specify `sig.level=NULL`.) 
 
-Compute the required sample size for a $t$-test with an effect size of 1 and a desired power of 80%.
+### Example: Compute the required sample size for a $t$-test with an effect size of 1 and a desired power of 80%.
 
 ```{r}
 tpow<-pwr.t.test(d=1, power = 0.8)
@@ -48,9 +58,11 @@ We can also plot the result of this test, giving a bit more information about ho
 plot(tpow)
 ```
 
+(@) Suppose that $y$ is normally distributed with a mean of 50 and a standard deviation of 6. Let $x=a$ be the default, and let $x=b$ correspond to a sub-population. Our research question is if this sub-population has, on average, a different value for $y$. If $\mu_b$ is 53 or more, we would like to collect enough data so that we have at least a 90% chance of getting a statistically significant result from a $t$-test. How much data do we need to collect?
+
 ## Simulating a $t$-test
 
-To see how to use simulation to compute power, we can simulate to confirm this result. 
+To see how to use simulation to compute power, we can simulate to confirm the result from the example above. 
 ```{r}
 d <- 1 #effect size
 N <- 17 #number per group
@@ -87,6 +99,7 @@ while(pow<0.8){
 }
 cat("sample size =",N) #report result
 ```
+
 ### Using the `paramtest` package
 
 Simulating can be made a bit easier by using the `paramtest` package. The code that follows is taken from the `paramtest` vignette *Simulating Power*. Run `vignette("Simulating-Power")` to see the entire vignette.
@@ -148,11 +161,9 @@ ggplot(power, aes(x=N.test, y=power,
     theme_minimal()
 ```
 
-(@) The `pwr.f2.test` function can be used to compute the power for a linear model. Parameters are $u$, the number of predictors and $v$, the sample size less the number of coefficients, including the intercept. So a model with formula `y~x1+x2` built with 100 data points would have $u=2$ and $v=97$. In general, to find sample size compute $u+v+1$ and round up to the next whole number. The measure of effect size is `f2` and it is the ratio of variance explained by predictors to variance not explained by predictors:
-$$
-f^2=\frac{R^2}{1-R^2}
-$$
-Find the sample size needed to detect a linear effect with an $R^2$ of 0.5 with a power of 80%, in the scenario with two predictors: $\hat y=\beta_0+\beta_1x_1+\beta_2x_2$.
+(@) Continuing with the scenario from the first exercise, where $\mu_a=50$, $\sigma_{pooled}=6$, find the power for sample sizes of 50, 75, and 100, and for $\mu_b$ 53, 55, and 60.
+
+(@) The `pwr.f2.test` function can be used to compute the power for a linear model. Parameters are $u$, the number of predictors and $v$, the degrees of freedom (sample size less the number of coefficients, including the intercept). So a model with formula `y~x1+x2` built with 100 data points would have $u=2$ and $v=97$. In general, to find sample size compute $u+v+1$ and round up to the next whole number. The measure of effect size is `f2` and it is the ratio of variance explained by predictors to variance not explained by predictors: $f^2=\frac{R^2}{1-R^2}$. Find the sample size needed to detect a linear effect with an $R^2$ of 0.5 with a power of 80%, in the scenario with two predictors: $\hat y=\beta_0+\beta_1x_1+\beta_2x_2$.
 
 (@) Hopefully your answer to the above question was 14. Examples of linear models with a mean of about 0.5 for $R^2$ can be created by setting $\beta_1=0.7$ and the residual variance to $1-\beta_1^2$.
 ```{r eval=FALSE}
@@ -279,7 +290,18 @@ Apparently, these parameter shifts are not large enough to generate significant 
 
 (@) Using the tools we have developed, determine values of $M$ and $b$ that would be likely (power over 50%) to produce plots with significantly different seed production.
 
-## More Practice
+## Power for logistic regression
+
+Recall that the signal part of a binomial glm is the logistic function
+$$
+f(x)=\frac{e^{\beta_0+\beta_1x}}{1+e^{\beta_0+\beta_1x}}
+$$
+The inflection point is at $-\beta_0/\beta_1$, and the slope at this inflection point is $\beta_1/4$.
+```{r, echo=FALSE, fig.height=3}
+ggplot(data.frame(x=0:4), aes(x))+geom_function(fun=function(x){(exp(-6+3*x)/(1+exp(-6+3*x)))})+labs(title="b0=-6, b1=3", y="P(Y=1)")
+```
+
+Logistic regression interprets $f(x)$ as the probability that the (binary categorical) response is "success" or $Y=1$. The steepness of the logistic curve is therefore one way of quantifying the effect of the predictor on the response. A steeper curve means that smaller changes in $x$ have more pronounced effects on the probability of $Y=1$. 
 
 (@) The `lm_test` function above can be rewritten for a binomial glm:
 ```{r}
@@ -298,6 +320,6 @@ binom_glm_test <- function(simNum, N, b1, b0=1, xm=0, xsd=1) {
            sig=(p < .05)))
 }
 ```
-Effect size can be parameterized by the coefficient of $x$ in this model. Determine the sample size needed for 80% power if $\beta_1=1$.
+As explained above, effect size can be parameterized by the coefficient $\beta_1$ or `b1` of $x$ in this model. Determine the sample size needed for 80% power if $\beta_1=1$.
 
 ## References
