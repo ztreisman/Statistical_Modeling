@@ -1,3 +1,5 @@
+
+library(pwr)
 library(paramtest)
 library(dplyr)
 
@@ -20,6 +22,55 @@ while(pow<0.8){
 }
 cat("sample size =",N)
 proc.time() - ptm
+
+# create user-defined function to generate and analyze data
+t_func <- function(simNum, N, d) {
+  x1 <- rnorm(N, 0, 1)
+  x2 <- rnorm(N, d, 1)
+  
+  t <- t.test(x1, x2, var.equal=TRUE)  # run t-test on generated data
+  stat <- t$statistic
+  p <- t$p.value
+  
+  return(c(t=stat, p=p, sig=(p < .05)))
+  # return a named vector with the results we want to keep
+}
+
+power_ttest <- run_test(t_func, n.iter=5000, 
+                        output='data.frame', N=17, d=1)  # simulate data
+
+results(power_ttest) %>%
+  summarise(power=mean(sig))
+
+power_ttest_vary <- grid_search(t_func, params=list(N=c(5,10,15,20)),
+                                n.iter=5000, output='data.frame', d=1)
+
+results(power_ttest_vary) %>%
+  group_by(N.test) %>%
+  summarise(power=mean(sig))
+
+power_ttest_vary2 <- grid_search(t_func, params=list(N=c(25, 50, 100), 
+                                                     d=c(.2, .5)),
+                                 n.iter=5000, output='data.frame')
+
+power <- results(power_ttest_vary2) %>%
+  group_by(N.test, d.test) %>%
+  summarise(power=mean(sig))
+
+print(power)
+
+ggplot(power, aes(x=N.test, y=power, 
+                  group=factor(d.test), color=factor(d.test))) +
+  geom_point() +
+  geom_line() +
+  ylim(c(0, 1)) +
+  labs(x='Sample Size', y='Power', colour="Cohen's d") +
+  theme_minimal()
+
+tpow<-pwr.t.test(d=0.5, power = 0.9)
+tpow
+
+
 
 N <- 14
 b0 <- 0

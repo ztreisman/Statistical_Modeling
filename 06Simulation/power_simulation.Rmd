@@ -297,6 +297,7 @@ $$
 f(x)=\frac{e^{\beta_0+\beta_1x}}{1+e^{\beta_0+\beta_1x}}
 $$
 The inflection point is at $-\beta_0/\beta_1$, and the slope at this inflection point is $\beta_1/4$.
+
 ```{r, echo=FALSE, fig.height=3}
 ggplot(data.frame(x=0:4), aes(x))+geom_function(fun=function(x){(exp(-6+3*x)/(1+exp(-6+3*x)))})+labs(title="b0=-6, b1=3", y="P(Y=1)")
 ```
