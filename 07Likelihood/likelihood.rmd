@@ -1,7 +1,7 @@
 ---
 title: "Likelihood and Model Evaluation"
 author: "Zack Treisman"
-date: "Spring 2021"
+date: "Spring 2022"
 output: 
   beamer_presentation: 
     includes: 
@@ -13,10 +13,12 @@ citecolor: blue
 ```{r setup, include=FALSE}
 knitr::opts_knit$set(global.par = TRUE)
 library(ggplot2)
+library(ISLR2)
 library(emdbook)
 library(MASS)
 library(bbmle)
 library(MuMIn)
+set.seed(7)
 ```
 
 ```{r,include=FALSE}
@@ -31,7 +33,7 @@ The time has come for us to discuss in some detail how our models are being cons
 
 When do we say *likelihood* instead of *probability*?
 
-* The probability $P(\text{data}|\text{model})$ considers the model as fixed, and the data as variable.
+* The probability $P(\text{data}|\text{model})$ considers the model as fixed (it's the laws of nature or something), and the data as variable.
 * The likelihood $\mathcal{L}(\text{model}|\text{data})$ considers the data to be fixed (they are what has been observed) and the model as variable.
 
 This kind of model-space/ data-space parameter duality is all over the place in math, so it must be kind of important. But this is not a class for that sort of *abstract nonsense*\footnote{A technical term. No seriously.}.
@@ -41,42 +43,59 @@ This kind of model-space/ data-space parameter duality is all over the place in 
 To find a parametric model to fit data we need to choose values for the parameters according to some criteria.
 
 * Minimizing mean squared error is ideal if the true error distribution is normal with constant variance.
-* Non-normal errors are modeled with a GLM.
-* Heterogenous variance can be accounted for by a mixed/ multilevel model. (Coming soon)
+    * Non-normal errors are modeled with a GLM. (e.g. Poisson, negative binomial or logistic regression)
+    * Heterogenous variance can be accounted for by a mixed/ multilevel model. (Coming soon)
 * Finding parameters by maximizing the likelihood agrees with least squares when errors are normal and homoscedastic gives good results when they are not.
 
 ## Computing likelihood
 
-Since likelihoods are just probabilities with a shift in what we consider to be a variable, we have the tools to compute them.
+An experiment described in @bolker considers tadpoles in an aquarium undergoing predation. 
+
+* Four tanks, each with 10 tadpoles to start. The experiment ends with 7, 5, 9 and 9 tadpoles in the tanks. 
+
+What is the likelihood of the data if the survival probability is 70%?
+
+* `dbinom` computes binomial probabilities (likelihoods).
+* The tanks are independent, so the individual likelihoods can be multiplied to compute the total likelihood.
 
 \scriptsize
 ```{r}
-x <- subset(ReedfrogPred,pred=="pred" & density==10 & size=="small")
-x
-likhd_indiv <- dbinom(x$surv, x$density, p=0.7)
-likhd_indiv
-likhd <- prod(likhd_indiv)
-likhd
+x <- data.frame(survived=c(7,5,9,9), density=c(10,10,10,10))
+(individual_likelihood <- dbinom(x$survived, x$density, p=0.7))
+(likelihood <- prod(individual_likelihood))
+
 ```
+\normalsize
+
+Likelihoods tend to be quite small.
 
 ## Optimizing
 
-Given a parameter and a function of that parameter, the `optim` command searches for the value of the parameter that gives the optimal (minimum or maximum) value of the function.
+R has taken Calc I and can find local maxima or minima using the `optim` function.  
+
+* What value of the parameter `p` gives the maximum likelihood of the observed data? 
+
+
 \scriptsize
 ```{r}
-likhd_fn <- function(p){prod(dbinom(x$surv, x$density, p=p))}
+likhd_fn <- function(p){prod(dbinom(x$survived, x$density, p=p))}
 opt0 <- optim(fn = likhd_fn, par = list(p=0.7), 
               control=list(fnscale=-1), #maximize instead of minimize
               method="BFGS") #better for one variable
 opt0$par
-sum(x$surv)/sum(x$density)
+```
+\normalsize
+This is an example of process, not something we don't already know:
+\scriptsize
+```{r}
+sum(x$survived)/sum(x$density)
 ```  
 
 ## Negative log-likelihoods
 
 For computational reasons, it is easier to deal with the logs of likelihood values. 
 
-* Products of more than a few numbers between 0 and 1 get really small.
+* Products of more than a few numbers between 0 and 1 get really small. \tiny Like really really small.\normalsize
 * Logs turn products into sums.
 
 For emotional reasons, it's easier to minimize than to maximize.
@@ -87,7 +106,7 @@ Replace `prod` with `-sum` and add in `log=TRUE`. Same result.
 
 \scriptsize
 ```{r, warning=FALSE}
-nll_fn <- function(p){-sum(dbinom(x$surv, x$density, p=p, log = TRUE))}
+nll_fn <- function(p){-sum(dbinom(x$survived, x$density, p=p, log = TRUE))}
 opt1 <- optim(fn = nll_fn, par = list(p=0.7), 
               method="BFGS") #better for one variable
 opt1$par
@@ -118,12 +137,12 @@ mle2(nll_fn, start = list(a=2,b=3,s=1))
 
 \scriptsize
 ```{r}
-n <- 50; x <- runif(n, min=0, max=5); y <- rpois(n, 2+x)
+n <- 50; x <- runif(n, min=0, max=5); y <- rpois(n, exp(0.5+0.3*x))
 glm1 <- glm(y~x, family = poisson)
 coef(glm1)
 ```
 \normalsize
-* In `mle2` both the negative log-likelihood function and the parameters can be expressed as formulae.
+* In `mle2` both the negative log-likelihood function and the parameters can be expressed as formulas.
 
 \scriptsize
 ```{r}
@@ -134,7 +153,7 @@ mle2(y~dpois(exp(loglambda)),       ## use log link/exp inverse-link
 ```
 
 ## A plot of `glm1`
-Always plot your data and models.
+It is always helpful to plot your data and models.
 \scriptsize
 ```{r fig.width=6, fig.height=3}
 ggplot(data.frame(x=x, y=y), aes(x,y))+
@@ -170,13 +189,90 @@ Deviance is the difference between the log-likelihoods of the fitted and saturat
 $$
 D=-2(L(\text{model})-L_{sat})
 $$
-Deviance acts kind of like variance. Since likelihood is computed as a sum of contributions from each data point, it's easy to split total deviance into *residual deviances*.
+Deviance acts kind of like variance. Since likelihood is computed as a sum of contributions from each data point, it's easy to split total deviance into **residual deviances**.
 
 ## Dispersion
 
-For the models of the lily data we computed the ratio of residual deviance to degrees of freedom and compared this ratio to one. If this ratio was greater than one we called the model *overdispersed*.
+When modeling the lily data we computed the ratio of residual deviance to degrees of freedom and compared this ratio to one. If this ratio was greater than one we called the model *overdispersed*.
 
-In the Poisson distribution, the mean equals the variance, which ends up being really restrictive. 
+In a Poisson distribution, the mean equals the variance. This is really restrictive. 
+
+* For a Poisson GLM, $\text{variance} = \text{mean} \leadsto \text{residual deviance} = \text{degrees of freedom}$. Each degree of freedom contributes about 1 to the residual deviance.
+
+* Negative binomial/ quasipoisson GLMs usually work better.
+
+## Bikeshare example: Poisson vs. Negative Binomial
+
+How does temperature affect bike share use for people out late?
+
+\scriptsize
+```{r}
+# select only data between 10pm and 3am on non-work days.
+riders <- subset(Bikeshare, hr %in% c(22,23,0,1,2) & workingday==0)
+# build a Poisson and a negative binomial model
+glmRidersP <- glm(bikers~temp, data=riders, family = poisson)
+glmRidersNB <- glm.nb(bikers~temp, data=riders)
+```
+\normalsize
+
+The deterministic parts of the models are quite similar:
+\scriptsize
+```{r}
+glmRidersP$coefficients
+glmRidersNB$coefficients
+```
+\normalsize
+
+Both of these models say that at these times  $\mu_{bikers}\approx e^{3+2.5\cdot temp}$.
+
+## Bikeshare example: Poisson vs. Negative Binomial (cont.)
+
+The models differ in their estimates of the variability.
+
+\tiny
+```{r fig.height=3.5, echo=FALSE}
+ggplot(riders, aes(temp,bikers))+labs(title="Poisson")+geom_point(color="dodgerblue")+
+  geom_line(aes(y=exp(predict(glmRidersP))))+
+  geom_line(aes(y=qpois(0.025,lambda=exp(predict(glmRidersP)))),linetype=2)+
+  geom_line(aes(y=qpois(0.975,lambda=exp(predict(glmRidersP)))),linetype=2)
+  
+
+ggplot(riders, aes(temp,bikers))+labs(title="Negative Binomial")+geom_point(color="dodgerblue")+
+  geom_line(aes(y=exp(predict(glmRidersNB))))+
+  geom_line(aes(y=qnbinom(0.025,mu=exp(predict(glmRidersNB)),size=glmRidersNB$theta)),linetype=2)+
+  geom_line(aes(y=qnbinom(0.975,mu=exp(predict(glmRidersNB)),size=glmRidersNB$theta)),linetype=2)
+```
+\normalsize
+
+## Code for those plots
+
+\scriptsize
+```{r fig.height=3.5, eval=FALSE}
+ggplot(riders, aes(temp,bikers)) + 
+  geom_point(color="dodgerblue")+
+  geom_line(aes(y=exp(predict(glmRidersP))))+
+  geom_line(aes(y=qpois(0.025,
+                        lambda=exp(predict(glmRidersP)))),
+            linetype=2)+
+  geom_line(aes(y=qpois(0.975,
+                        lambda=exp(predict(glmRidersP)))),
+            linetype=2)+
+  labs(title="Poisson")
+  
+ggplot(riders, aes(temp,bikers))+
+  geom_point(color="dodgerblue")+
+  geom_line(aes(y=exp(predict(glmRidersNB))))+
+  geom_line(aes(y=qnbinom(0.025,
+                          mu=exp(predict(glmRidersNB)),
+                          size=glmRidersNB$theta)),
+            linetype=2)+
+  geom_line(aes(y=qnbinom(0.975,
+                          mu=exp(predict(glmRidersNB)),
+                          size=glmRidersNB$theta)),
+            linetype=2)+
+  labs(title="Negative Binomial")
+```
+\normalsize
 
 ## Null and residual deviance and how they connect to degrees of freedom
 
@@ -190,15 +286,16 @@ and the residual deviance is the deviance of the fitted model
 
 Dividing by degrees of freedom puts these on the same scale in a "number of ways to alter the model" sense of same.
 
+If residual deviance is a lot less than null deviance, the model is working in some sense.
+
 ## Likelihood and AIC
 
 Akaike's Information Criterion is the negative log-likelihood plus a penalty term for each coefficient that is estimated in the model. Times 2.
 
 ```{r}
-L <- logLik(glm1)[1]
-L
-k <- length(coef(glm1))
-k
+(L <- logLik(glm1)[1])
+
+(k <- length(coef(glm1)))
 -2*L+2*k
 AIC(glm1)
 ```
@@ -207,9 +304,9 @@ AIC(glm1)
 
 Given a set of $M$ different models $\text{mod}_1,\ldots,\text{mod}_M$ write $AIC_i$ for the AIC of the $i^{th}$ model and $AIC_{min}$ for the smallest of these values. 
 
-* Define $\Delta_i=AIC_i-AIC_{min}$. These differences in AIC values are more relevant than the actual AICs.
+* Define $\Delta_i=AIC_i-AIC_{min}$. These differences in AIC values are what is relevant, not the actual AICs.
 
-* An estimate of the relative likelihood of model $i$ is $\exp\left(-\frac{\Delta_i}{2}\right)$. These are sometimes called *evidence ratios*.
+* An estimate of the relative likelihood of model $i$ is $\exp\left(-\frac{\Delta_i}{2}\right)$. These are sometimes called **evidence ratios**.
 
 * Scaling the relative likelihoods by the sum of the relative likelihoods for all models in consideration give the AIC weight. 
 $$
@@ -220,16 +317,21 @@ This is roughly interpretable as the probability that the $i^{th}$ model is the 
 
 ## Customary meanings for differences in AIC
 
-There are no definite meanings for differences in AIC, but the following are somewhat customary interpretations. 
+The following are somewhat customary interpretations. Use these rules of thumb similar to the arbitrary bright lines for $p$-values of $0.05$, $0.01$, etc.
 
 * Models with $\Delta<2$ are basically indistinguishable from the model with $AIC_{min}$.
 * Models with $\Delta>10$ are much less predictive or explanatory than the model with $AIC_{min}$.
-* For $2<\Delta<10$ there are a variety of adjectives used to describe model quality.
+* Models with $2<\Delta<10$ are in a bit of a grey area. User discretion is advised. 
 
+\tiny
+```{r}
+model.sel(glmRidersNB, glmRidersP)
+```
+\normalsize
 
 ## Other information critera
 
-Other options exist, they are also all modifications of the likelihood, and behave and are interpreted similarly to AIC.
+Many other modifications of the likelihood are often used. Most behave and are interpreted similarly to AIC.
 
 ```{r}
 AIC(glm1)+2*k*(k+1)/(n-k-1)
@@ -257,7 +359,7 @@ The likelihood is a key element in Bayesian analysis, which takes the idea that 
 \scriptsize
 ```{r}
 x1 <- runif(n, min=0, max=5); x2 <- runif(n, min=0, max=10)
-y <- rpois(n, 2+2*x1+x2)
+y <- rpois(n, exp(2+2*x1+x2))
 glm2interact <- glm(y~x1*x2, family = poisson)
 glm2both <- glm(y~x1+x2, family = poisson)
 glm2x1 <- glm(y~x1, family = poisson)
@@ -265,6 +367,23 @@ glm2x2 <- glm(y~x2, family=poisson)
 glm2null <- glm(y~1, family = poisson)
 anova(glm2null,glm2x1,glm2both, glm2interact, test="LRT")
 ```
+
+## Could also use `dredge`
+
+\tiny
+```{r}
+glm2interact <- glm(y~x1*x2, family = poisson, na.action = "na.fail")
+dredge(glm2interact)
+```
+\normalsize
+
+\scriptsize
+From the `MuMIn` manual: Users should keep in mind the hazards that a “thoughtless approach” of evaluating all possible models poses. Although this procedure is in certain cases useful and justified, it may result in selecting a spurious “best” model, due to the model selection bias.
+
+*“Let the computer find out” is a poor strategy and usually reflects the fact that the researcher did
+not bother to think clearly about the problem of interest and its scientific setting* (Burnham and
+Anderson, 2002).
+
 
 ## Other applications of `mle2`
 
