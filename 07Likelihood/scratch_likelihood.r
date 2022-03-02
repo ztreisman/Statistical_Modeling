@@ -97,11 +97,26 @@ AICtab(mod0, mod1)
 
 #plot the model
 
-mod1_func <- function(x) coef(mod1)["a"]*x^coef(mod1)["b"]
+mod1func <- function(x) coef(mod1)["a"]*x^coef(mod1)["b"]
 
 ggplot(moose, aes(dev.intensity, dist.moved))+
   geom_point()+ 
   geom_rug()+
   geom_function(fun=mod1func)+
   geom_function(fun=function(x) qexp(0.025, rate = 1/mod1_func(x)), linetype=2)+
-  geom_function(fun=function(x) qexp(0.975, rate = 1/mod1_func(x)), linetype=2)
+  geom_function(fun=function(x) qexp(0.975, rate = 1/mod1_func(x)), linetype=2)+
+  lims(y=c(0,2500))
+
+
+ggplot(moose, aes(dev.intensity,dist.moved))+
+  geom_point(color="dodgerblue")+
+  geom_line(aes(y=exp(predict(glmRidersNB))))+
+  geom_line(aes(y=qnbinom(0.025,
+                          mu=exp(predict(glmRidersNB)),
+                          size=glmRidersNB$theta)),
+            linetype=2)+
+  geom_line(aes(y=qnbinom(0.975,
+                          mu=exp(predict(glmRidersNB)),
+                          size=glmRidersNB$theta)),
+            linetype=2)+
+  labs(title="Negative Binomial")

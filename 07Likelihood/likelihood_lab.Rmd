@@ -149,4 +149,6 @@ ggplot(moose, aes(dev.intensity, dist.moved))+
 
 (@) The hypothesis test can be carried out using a likelihood ratio test on the two models you have built. The `bbmle` library provides an `anova` method for `mle2` and the default test is a likelihood ratio test: `anova(mod0, mod1)`. If you want to do a likelihood ratio test on models built with other tools, such as `glm`, specify `test="LRT"`.
 
-(@) AIC can also be used to compare the null and alternate model. The `AICtab` command will create a table of AIC values for a list of models: `AICtab(mod0, mod1)`. This does not give a p-value, but a model with smaller AIC better represents the data.
+(@) AIC can also be used to compare the null and alternate model. Recall that $AIC=-2L+2k$ where $L$ is the log likelihood and $k$ is the number of predictors. Compute the AIC of `mod0` and `mod1` using the formula. This does not give a p-value, but a model with smaller AIC better represents the data.
+
+(@) The `AICtab` command will create a table of AIC values for a list of models: `AICtab(mod0, mod1)`. Use this command to check that you did the calculations above correctly.
