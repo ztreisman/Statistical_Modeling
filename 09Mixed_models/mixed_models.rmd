@@ -1,7 +1,7 @@
 ---
 title: "Mixed Models"
 author: "Zack Treisman"
-date: "Spring 2021"
+date: "Spring 2022"
 output: 
   beamer_presentation: 
     keep_tex: yes
@@ -13,6 +13,9 @@ citecolor: blue
 
 ```{r setup, include=FALSE}
 knitr::opts_knit$set(global.par = TRUE)
+```
+
+```{r message=FALSE}
 library(dplyr)
 library(ggplot2)
 library(nlme)
@@ -65,17 +68,15 @@ Accounting for these variables is essential for establishing appropriate baselin
 
 ## Dependent observations
 
-Measurements on the same individual are not independent. 
+Measurements on the same or similar individuals are not independent. 
 
 * Individual what? (organism, forest, drainage, \ldots)
 
-Even without discrete individuals, nearby observations can still be correlated.
-
-* Variograms show relationship between distance between observations and covariance. 
+![](../images/ruby.jpg){height=40%}
 
 Having dependent observations means that your data set is effectively smaller. 
 
-* Sample from enough individuals so that you get a statistically meaningful set of observations. An often cited minimum number of individuals is 5-6.   
+* Sample from enough individuals so that you get a statistically meaningful set of observations. (sufficient power)
 
 ## Tools
 
@@ -89,14 +90,21 @@ Many of the tools for mixed modeling also allow the specification of structure t
 
 ## Owls
 
-@owls (a running example in @zuur2009mixed) investigates begging behavior in nestling barn owls. They ask if vocal intensity of owl chick begging differs by parent.
+@owls (a running example in @zuur2009mixed) investigates begging behavior in nestling barn owls. 
+![](../images/owls.jpg){height=70%}
+They ask if vocal intensity of owl chick begging differs by parent.
+
+
+## Owl data
+
+The data are in the package `glmmTMB`.
 
 \tiny
 ```{r}
-head(Owls,3) # Data are in glmmTMB
+head(Owls,3)
 ```
 \normalsize
-Without other predictors, it does not appear so.
+Without other predictors, it does not appear that begging frequency depends on the parent.
 ```{r echo=FALSE, warning=FALSE, fig.height=3}
 ggplot(Owls, aes(SexParent, NegPerChick))+
   geom_boxplot(outlier.shape = NA)+
@@ -106,7 +114,7 @@ ggplot(Owls, aes(SexParent, NegPerChick))+
 
 ## Food Treatment
 
-Begging behavior is likely affected by the hunger levels in the nest. Impose this as an experimental treatment to control for unknown variation. Feed some nests extra, deprive others, then swap treatments the following night.
+Begging behavior is likely affected by the hunger levels in the nest. The researchers imposed this as an experimental treatment to control for unknown variation. Feed some nests extra, deprive others, then swap treatments the following night.
 
 ```{r echo=FALSE, warning=FALSE, fig.height=3}
 ggplot(Owls, aes(SexParent, NegPerChick, fill=FoodTreatment))+
@@ -155,16 +163,39 @@ plot(x=Owls$ArrivalTime,y=Elm,main="Arrival time",ylab=MyYlab,xlab="Time (hours)
 par(op)
 ```
 
+## Code for those diagnostic plots
+
+From @zuur2009mixed.
+
+\scriptsize
+```{r, eval=FALSE}
+Elm=rstandard(M.lm);  Flm<-fitted(M.lm)
+op<-par(mfrow=c(2,2),mar=c(4,4,3,2)) 
+MyYlab="Residuals"
+plot(x=Flm,y=Elm, 
+     xlab="Fitted values",ylab=MyYlab, main = "Fitted Values")
+boxplot(Elm~SexParent,data=Owls,
+        main="Sex of parent",ylab=MyYlab)
+boxplot(Elm~FoodTreatment,data=Owls,
+        main="Food treatment",ylab=MyYlab)
+plot(x=Owls$ArrivalTime,y=Elm,
+     main="Arrival time",ylab=MyYlab,xlab="Time (hours)")
+par(op)
+```
+
 ## Summary of `M.lm`
 
 \tiny
 ```{r, echo=FALSE}
 summary(M.lm)
 ```
+\normalsize
+
+Note the low $R^2$.
 
 ## Log-transform the negotiations per chick
 
-This helps some with the heteroscedasticity in variance.
+This helps some with the non-normality and heteroscedasticity in variance.
 
 \scriptsize
 ```{r}
@@ -187,6 +218,10 @@ par(op)
 ```{r, echo=F}
 summary(M2.lm)
 ```
+\normalsize
+
+Still a low $R^2$. We are missing most of the signal.
+
 
 ## A mixed model with `nlme::lme`
 
@@ -233,7 +268,7 @@ dredge(M1.lmeML)
 ```
 
 \normalsize
-It does not appear that sex of the parent is a significant predictor. It is close though. Perhaps there is more work to do.
+Sex of the parent is not quite a significant predictor according to AIC. It is close though. Perhaps there is more work to do.
 
 ## Fit the optimal linear mixed model
 
