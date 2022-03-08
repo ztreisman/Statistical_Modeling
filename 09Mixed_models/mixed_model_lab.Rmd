@@ -89,7 +89,7 @@ In the paper, they consider the interaction between mining and species `mined*sp
 \begin{quote}
 \ldots mean occupancy probabilities were $>0.85$ for all groups in reference reaches, whereas mean occupancy probabilities were relatively lower in MTR/VF reaches (ranging from $0.23$ to $0.66$). \ldots means of the difference in occupancy between site types were negative across all groups, although MTR/VF stream reaches were at least $95\%$ less likely to be occupied by spring salamander Gyrinophilus porphyriticus, adult southern two-lined salamander Eurycea cirrigera and larval dusky salamanders Desmognathus compared to reference reaches.
 
-\ldots means of the difference in conditional abundance between MTR/VF and reference stream reaches were negative across all groups; $95\%$ credible interval for difference in conditional abundance covered zero for only one species (red salamander Pseudotriton ruber). \ldots Additionally, MTR/VF reaches had higher ion concentrations, total organic carbon and specific conductance compared to reference reaches.
+\ldots means of the difference in conditional abundance between MTR/VF and reference stream reaches were negative across all groups; $95\%$ credible interval for difference in conditional abundance covered zero for only one species (red salamander Pseudotriton ruber). \ldots  Additionally, MTR/VF reaches had higher ion concentrations, total organic carbon and specific conductance compared to reference reaches.
 \end{quote}
 
 (@) Find your optimal model, using all of the ingredients discussed above. Do your results agree with those in the paper? (A Bayesian procedure was used to produce the published results.)
