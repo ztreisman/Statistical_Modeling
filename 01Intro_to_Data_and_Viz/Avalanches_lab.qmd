@@ -1,0 +1,146 @@
+---
+title: "Going to the Sun Road Avalanches"
+author: "Your Name"
+format: html
+editor: visual
+---
+
+-   
+-   **lubridate** for handling dates and times
+-   
+-   **readr** for a more convenient way to load data
+    -   The **tidyverse** "umbrella" package contains the four packages above. It takes a while to install and load.
+-   **emdbook** for data and custom functions related to Bolker, Ecological Models and Data in R.
+
+In the lower right hand corner click on the *Packages* tab. You can search for packages to install and load here. Alternatively you can type commands into the console.
+
+```{r install-packages, message = FALSE, eval = FALSE}
+install.packages("ggplot2") 
+install.packages("lubridate")
+install.packages("dplyr")
+install.packages("readr")
+install.packages("emdbook")
+```
+
+You only need to *install* packages once, but you need to *load* them each time you relaunch R. Load packages with the `library` function.
+
+```{r load-packages, message = FALSE,eval=TRUE}
+library(ggplot2)
+library(lubridate)
+library(dplyr)
+library(readr)
+library(emdbook)
+```
+
+# R scripts
+
+From the drop down menu in the upper left with the green + on a blank page, create a new R Script. This will give you a panel in the upper left of your RStudio window where you can input R commands. Unlike commands typed into the console, these commands will not be executed until you tell R to do so.
+
+![](figures/newScript.png)
+
+In the upper right of your screen, choose the *History* tab and select some or all of the code you just entered. You can use Shift+Mouse to select multiple lines. Press the *To Source* button - you should see those lines you just entered appear in your script window. This is handy for when you are trying various things in the console and find some commands that you want to save. Since you only need to install packages once on your computer, you probably want to either delete the lines with the `install.packages` commands, or comment them out by putting a `#` at the beginning of each line.
+
+You can run commands from your script by putting your cursor on the line that you would like to run and either clicking on the *Run* button in the upper right of the script window, or using *Control+Enter* (*Command+Enter* on a Mac). Run a command from your script and observe that the command and its output appeared in the console. You can run just part of a line or multiple lines by selecting exactly what you want to run from your script with the mouse.
+
+As you work in R, you will find yourself going back and forth between entering commands at the prompt and composing scripts.
+
+# Data
+
+The point of working with R is to use actual data. However you acquire your data, it is easiest to get it in to R if you have it or can save it as a spreadsheet in comma separated variable (.csv) format. More on that in a moment. See <https://datacarpentry.org/spreadsheet-ecology-lesson/> for a good lesson on organizing your data in a spreadsheet in preparation for analyzing it in R.
+
+The data that we will use for this lab are here: [GTSR Avalanche Occurrences 2003-2020.csv](https://westernstatecoloradou-my.sharepoint.com/:x:/g/personal/ztreisman_western_edu/IQCUqVzUp87nRoWEHixv1JViAd4yL8li6eBH13QFQpuC6N4?e=lBbkVx). Download it, find the downloaded file on your computer (it's probably either in Downloads or on your Desktop), and read on.
+
+## Project organization
+
+Keeping your work organized will make your life easier. For each project (lab, seminar, thesis, experiment, et cetera) it is good practice to set up a folder on your computer as the project's *working directory*. A good first task to always do upon saving a dataset to a working directory: immediately make a copy of your data and change the name of the file to *original_data* and then make a point of not changing that file. Now if you ever need to you can start any analysis over.
+
+As your project gets bigger, you might find that it makes sense to create subdirectories of your working directory. Common examples are *data*, *images*, *figures*, *documents, etc*.
+
+R needs to know your working directory. It is displayed at the top of the console window. You can set it with the command `setwd()`, or using the *More* menu on the *Files* tab in the lower right window.
+
+Let's save your script. Click on the disk icon in your script window (the upper left) or choose Save from the File menu.
+
+Optional: RStudio has an organizational system that can be handy. In the upper right there is a menu that says "Project: (None)". From this menu choose *New Project* and associate the project with your working directory. This way, if you have multiple projects in your life, they don't clutter each other and you have some ability to customize how you work on each. You will have to reopen the script you just saved after you move to your new project.
+
+### Comma separated variable format
+
+Often (ideally?) data are provided to us in spreadsheets. People often use programs like Excel to record data in a lab or fieldwork. One of the skills of a good Data Engineer is the ability to effectively query a database and return a useful "flat" dataset, where rows are observations and columns are variables. The value encoded in the cell (observation, variable) is the value of the specified variable during the specified observation. A great format for saving spreadsheets is *comma separated variable* or *csv*. When saving a spreadsheet in Excel, you can create a csv by choosing "Save As" from the File menu and then selecting csv as the format. This is probably the most common way that data is recorded and loaded into R. Using a simple format like csv instead of xlsx or another spreadsheet file format makes it easier to load the data into R, and less likely that future changes in technology will make the data unreadable.
+
+When saving a multiple sheet Excel spreadsheet to csv, you have to save each sheet individually, and other than column headings and possibly metadata at the top of the sheet, there should be nothing other than the data, and no formatting such as dollar signs, units or commas in large numbers.
+
+## FINALLY... The Data: Avalanche activity along the Going to the Sun Road in Glacier National Park
+
+Here's the link to the data again, for reference. [GTSR Avalanche Occurrences 2003-2020.csv](https://westernstatecoloradou-my.sharepoint.com/:x:/g/personal/ztreisman_western_edu/IQCUqVzUp87nRoWEHixv1JViAd4yL8li6eBH13QFQpuC6N4?e=lBbkVx). Avalanche activity is actively monitored along the Going to the Sun Road in Glacier National Park. [Here is the website of the program that does the monitoring.](https://www.usgs.gov/centers/norock/science/going-sun-road-avalanche-forecasting-program#data)
+
+The observations in this data set are individual avalanches. Variables include the date, the size, destructive force, elevation, aspect and slope angle, as well as the avalanche type, such as slab or loose and the observer who recorded the avalanche.
+
+Take a moment to think about the questions that you might want to ask these data. It might help to put yourself in the shoes of an employee of Glacier National Park who relies on this information to plan for activity in parts of the park accessed by this road.
+
+A very general question is: In what way is the destructive force of an avalanche a function of the other recorded variables? A more specific version of this might focus on the seasonal differences exhibited by slab and loose avalanches - for example can we show that large wet slab avalanches in the spring are potentially particularly destructive?
+
+In order to answer these questions, we look at the data.
+
+```{r}
+library(ggplot2) # part of tidyverse, you can skip this line if it loaded above
+library(lubridate) # ditto
+library(dplyr) # ditto
+library(readr) # ditto
+
+avalanches <- read_csv("GTSR Avalanche Occurrences 2003-2020.csv", 
+                       col_types = cols(Date = col_date(format = "%m/%d/%Y"), 
+                                        Time = col_time(format = "%H:%M:%S")))
+avy_paths <- sort(table(avalanches$PathName), decreasing=T)
+
+View(avalanches)
+```
+
+Hopefully you are now looking at the data in the upper left pane of RStudio. Scroll through the columns and see if you can find some variables that seem interesting or potentially useful. The following code will step you through first some initial investigation and cleaning of the data.
+
+```{r}
+summary(avalanches)
+
+table(avalanches$PathName, avalanches$AvalancheType)
+
+unique(avalanches$AvalancheType)
+
+avalanches <- avalanches %>%
+  filter(!is.na(AvalancheType))
+
+avalanches$slab <- avalanches$AvalancheType %in% c('WS', 'GS', 'SS', 'HS')
+avalanches$month <- month(avalanches$Date)
+avalanches$yday <- yday(avalanches$Date)
+
+ggplot(avalanches, aes(yday, jitter(SizeDestructiveForce), color=AvalancheType))+
+         geom_point()
+
+ggplot(avalanches, aes(yday, jitter(SizeDestructiveForce), color=AvalancheType, shape=slab, size=PercentPath))+
+  geom_point(alpha=0.7)
+
+
+ggplot(avalanches, aes(StartZoneAspect, SizeDestructiveForce, color=AvalancheType, shape=slab))+
+  geom_point()+
+  coord_polar(start = 0, direction = 1) +  # Circular mapping
+  scale_x_continuous(limits = c(0, 360), breaks = seq(0, 360, 45))
+
+ggplot(avalanches, aes(StartZoneAspect, SizeDestructiveForce, color=AvalancheType, shape=slab))+
+  geom_point()+
+  coord_polar(start = 0, direction = 1) +  # Circular mapping
+  scale_x_continuous(limits = c(0, 360), breaks = seq(0, 360, 45))+
+  facet_wrap(~AvalancheType)
+
+ggplot(avalanches, aes(yday, SizeDestructiveForce, color=AvalancheType, shape=slab))+
+  geom_point()+
+  coord_polar(start = 0, direction = 1) +  # Circular mapping
+  scale_x_continuous()+
+  facet_wrap(~AvalancheType)
+
+ggplot(avalanches, aes(StartZoneAspect, StartElevationFeet, color=yday))+
+  geom_point()+
+  coord_polar(start = 0, direction = 1) +  # Circular mapping
+  scale_x_continuous(limits = c(0, 360), breaks = seq(0, 360, 45))+
+  facet_wrap(~AvalancheType)+
+  scale_y_reverse()+
+  scale_color_gradientn(colors = c("blue", "green", "red", "yellow", "blue"), values = c(0, 90, 180, 270, 360)/360)
+  
+
+```

@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Your Name">
+
+<title>Going to the Sun Road Avalanches</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Avalanches_lab_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Avalanches_lab_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Avalanches_lab_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Avalanches_lab_files/libs/quarto-html/popper.min.js"></script>
+<script src="Avalanches_lab_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Avalanches_lab_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Avalanches_lab_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Avalanches_lab_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Avalanches_lab_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Avalanches_lab_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Avalanches_lab_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Going to the Sun Road Avalanches</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Your Name </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This lab introduces some basic data concepts, and you will begin exploring data in R. We will use RStudio, which is an IDE (Interactive Development Environment) that lets us use R in a convenient interface.</p>
+<p>In this course, we will either be using real data or developing simulations to model real situations. In either case, you will hopefully find yourself with questions beyond what is addressed in the labs. Exploration is encouraged and will make you a better data analyst.</p>
+<p>Today we begin with the fundamental building blocks of R and RStudio: the interface, reading in data, basic commands and some visualization.</p>
+<p>When you start RStudio the first time, you will see something like this:</p>
+<p><img src="figures/r-interface-2020.png" class="img-fluid"></p>
+<p>The window is split into three panels. Soon the left side of the window will grow another panel. Each panel has multiple tabs.</p>
+<p>The panel in the upper right shows your workspace - the data, variables and special functions that you are currently working with - in the <em>Environment</em> tab. The <em>History</em> tab lists the commands that you’ve previously entered.</p>
+<p>The lower right panel has a simple browser in the <em>Files</em> tab, displays graphics in the <em>Plots</em> tab, helps you install and load additional libraries of functions and data in the <em>Packages</em> tab, and lets you navigate the <em>Help</em> system.</p>
+<p>The panel on the left is where the action happens. The main tab shows the <em>Console</em>. The <code>&gt;</code> is called the <em>prompt</em>. The prompt is prompting you to type a command. Initially, interacting with R is all about typing commands and interpreting the output.</p>
+<section id="the-console-and-entering-commands" class="level3">
+<h3 class="anchored" data-anchor-id="the-console-and-entering-commands">The Console and entering commands</h3>
+<p>To get you started, enter the following commands at the R prompt (i.e.&nbsp;right after <code>&gt;</code> on the console). You can either type them in manually or copy and paste them from this document.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment. R will ignore any code preceded by a number sign. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Two very important commands: <em><code>&lt;-</code> is called “left assignment”. Whatever is on the left of the arrow becomes a name you can use to refer to whatever is on the right of the arrow. You can use <code>=</code> instead, but the arrow makes it clear what is being defined. The other arrow <code>-&gt;</code> for “right assignment” can also be used.</em> <code>c()</code> stands for “concatenate” or maybe “combine”. It makes a list of whatever is inside the parentheses.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>) <span class="co"># This makes a list with the numbers 1, 3, 2, 5 and calls it x. </span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice that x just appeared in your workspace in the upper right.</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>x <span class="co"># This reports the current value of x.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 3 2 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x<span class="sc">+</span><span class="dv">2</span> <span class="co"># You can do arithmetic to a list. This adds 2 to each element of x.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3 5 4 7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">0</span>) <span class="co"># Or you can make another list.</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>x<span class="sc">+</span>y <span class="co"># And add the two lists. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  5  5 -1  5</code></pre>
+</div>
+</div>
+<p>R is a language for doing statistics, so of course, some of the first commands you will use are for basic statisitical computations.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.75</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>We can redefine <code>x</code>, even in terms of the current value of <code>x</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">2</span>) </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 6 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x<span class="sc">*</span><span class="dv">2</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>x </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  2 12  4</code></pre>
+</div>
+</div>
+<p>Any command or object that comes with R has a help file. Type a question mark before something that you would like to know about. For example try <code>?mean</code>.</p>
+<p>R can do matrix arithmetic too, but be careful to tell it what you want it to do. For matrix multiplication use <code>%*%</code> instead of <code>*</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="at">data=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,]    1    3
+[2,]    2    4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>x<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,]    1    9
+[2,]    4   16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>x<span class="sc">%*%</span>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,]    7   15
+[2,]   10   22</code></pre>
+</div>
+</div>
+<p>R has many tools based on standard statistical distributions. For example, we can to generate data from assumptions about our variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="fu">runif</span>(<span class="dv">50</span>) <span class="co"># Generate 50 random numbers from a uniform distribution.</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span><span class="fu">rnorm</span>(<span class="dv">50</span>,<span class="at">mean=</span><span class="dv">2</span><span class="sc">*</span>x<span class="sc">+</span><span class="dv">5</span>,<span class="at">sd=</span>.<span class="dv">1</span>) <span class="co"># Add Gaussian noise with sd=1. </span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(y<span class="sc">~</span>x) <span class="co"># Show the data.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Avalanches_lab_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x,y) <span class="co"># Correlation coefficient.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.98706</code></pre>
+</div>
+</div>
+</section>
+<section id="r-packages" class="level3">
+<h3 class="anchored" data-anchor-id="r-packages">R Packages</h3>
+<p><code>R</code> is an open-source programming language, meaning that users can contribute packages that make our lives easier, and we can use them for free. For this lab, and many others in the future, we will use the following:</p>
+<ul>
+<li>The <strong>tidyverse</strong> “umbrella” package which houses a suite of many different <code>R</code> packages: for data wrangling and data visualization</li>
+<li>The <strong>emdbook</strong> <code>R</code> package: for data and custom functions related to Bolker, Ecological Models and Data in R.</li>
+</ul>
+<p>In the lower right hand corner click on the <em>Packages</em> tab. Type the name of each of these packages (tidyverse, emdbook) into the search box to see if they have been installed. If these packages do not appear when you type in their name, install them by copying and pasting or typing the following two lines of code into the console of your RStudio session. Be sure to press enter/return after each line of code. The tidyverse umbrella package contains many other packages, so it may take a little while to install.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>) <span class="co"># This package is large, so this command might take a while to complete. While your computer is computing, you might read ahead to the part where the data are described.</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"emdbook"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>After pressing enter/return, a stream of text will begin, communicating the process <code>R</code> is going through to install the package from the location you selected when you installed <code>R</code>. If you were not prompted to select a server for downloading packages when you installed <code>R</code>, RStudio may prompt you to select a server from which to download; any of them will work.</p>
+<p>You only need to <em>install</em> packages once, but you need to <em>load</em> them each time you relaunch RStudio. We load packages with the <code>library</code> function. Copy and paste or type the the following two lines in your console to load the tidyverse and emdbook packages into your working environment.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyr' was built under R version 4.3.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emdbook)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We are choosing to use the tidyverse package because it consists of a set of packages necessary for different aspects of working with data, from loading data to wrangling data to visualizing data to analyzing data. Additionally, these packages share common philosophies and are designed to work together. You can find more about the packages in the tidyverse at <a href="http://tidyverse.org/">tidyverse.org</a>.</p>
+</section>
+</section>
+<section id="r-scripts" class="level1">
+<h1>R scripts</h1>
+<p>From the drop down menu in the upper left with the green + on a blank page, create a new R Script. This will give you a panel in the upper left of your RStudio window where you can input R commands. Unlike commands typed into the console, these commands will not be executed until you tell R to do so.</p>
+<p><img src="figures/newScript.png" class="img-fluid"></p>
+<p>In the upper right of your screen, choose the <em>History</em> tab and select some or all of the code you just entered. You can use Shift+Mouse to select multiple lines. Press the <em>To Source</em> button - you should see those lines you just entered appear in your script window. This is handy for when you are trying various things in the console and find some commands that you want to save. Since you only need to install packages once on your computer, you probably want to either delete the lines with the <code>install.packages</code> commands, or comment them out by putting a <code>#</code> at the beginning of each line.</p>
+<p>You can run commands from your script by putting your cursor on the line that you would like to run and either clicking on the <em>Run</em> button in the upper right of the script window, or using <em>Control+Enter</em> (<em>Command+Enter</em> on a Mac). Run a command from your script and observe that the command and its output appeared in the console. You can run just part of a line or multiple lines by selecting exactly what you want to run from your script with the mouse.</p>
+<p>As you work in R, you will find yourself going back and forth between entering commands at the prompt and composing scripts.</p>
+</section>
+<section id="data" class="level1">
+<h1>Data</h1>
+<p>The point of working with R is to use actual data. However you acquire your data, it is easiest to get it in to R if you have it or can save it as a spreadsheet in comma separated variable (.csv) format. More on that in a moment. See <a href="https://datacarpentry.org/spreadsheet-ecology-lesson/" class="uri">https://datacarpentry.org/spreadsheet-ecology-lesson/</a> for a good lesson on organizing your data in a spreadsheet in preparation for analyzing it in R.</p>
+<p>The data that we will use for this lab are here: <a href="https://westernstatecoloradou-my.sharepoint.com/:x:/g/personal/ztreisman_western_edu/IQCUqVzUp87nRoWEHixv1JViAd4yL8li6eBH13QFQpuC6N4?e=lBbkVx">GTSR Avalanche Occurrences 2003-2020.csv</a>. Download it, find the downloaded file on your computer (it’s probably either in Downloads or on your Desktop), and read on.</p>
+<section id="project-organization" class="level2">
+<h2 class="anchored" data-anchor-id="project-organization">Project organization</h2>
+<p>Keeping your work organized will make your life easier. For each project (lab, seminar, thesis, experiment, et cetera) it is good practice to set up a folder on your computer as the project’s <em>working directory</em>. A good first task on saving a dataset to a working directory: immediately make a copy of your data and change the name of the file to <em>original_data</em> and then make a point of not changing that file. Now if you need to you can start any analysis over.</p>
+<p>As your project gets bigger, you might find that it makes sense to create subdirectories of your working directory. Common examples are <em>data</em>, <em>images</em>, <em>figures</em>, <em>documents, etc</em>.</p>
+<p>R needs to know your working directory. It is displayed at the top of the console window. You can set it with the command <code>setwd</code>, or using the <em>More</em> menu on the <em>Files</em> tab in the lower right window.</p>
+<p>Let’s save your script. Click on the disk icon in your script window (the upper left) or choose Save from the File menu.</p>
+<p>Optional: RStudio has an organizational system that can be handy. In the upper right there is a menu that says “Project: (None)”. From this menu choose <em>New Project</em> and associate the project with your working directory. This way, if you have multiple projects in your life, they don’t clutter each other and you have some ability to customize how you work on each. You will have to reopen the script you just saved after you move to your new project.</p>
+<section id="comma-separated-variable-format" class="level3">
+<h3 class="anchored" data-anchor-id="comma-separated-variable-format">Comma separated variable format</h3>
+<p>Often (ideally?) data are provided to us in spreadsheets. People often use program like Excel to record data in a lab or fieldwork. One of the skills of a good Data Engineer is the ability to effectively query a database and return a useful “flat” dataset, where rows are observations and columns are variables. The value encoded in the cell (observation, variable) is the value of the specified variable during the specified observation. A great format for saving spreadsheets is <em>comma separated variable</em> or <em>csv</em>. When saving a spreadsheet in Excel, you can create a csv by choosing “Save As” from the File menu and then selecting csv as the format. This is probably the most common way that data is recorded and loaded into R. Using a simple format like csv instead of xlsx or another spreadsheet file format makes it easier to load the data into R, and less likely that future changes in technology will make the data unreadable.</p>
+<p>When saving a multiple sheet Excel spreadsheet to csv, you have to save each sheet individually, and other than column headings and possibly metadata at the top of the sheet, there should be nothing other than the data, and no formatting such as dollar signs, units or commas in large numbers.</p>
+</section>
+</section>
+<section id="finally-the-data-avalanche-activity-along-the-going-to-the-sun-road-in-glacier-national-park" class="level2">
+<h2 class="anchored" data-anchor-id="finally-the-data-avalanche-activity-along-the-going-to-the-sun-road-in-glacier-national-park">FINALLY… The Data: Avalanche activity along the Going to the Sun Road in Glacier National Park</h2>
+<p>Here’s the link to the data again, for reference. <a href="https://westernstatecoloradou-my.sharepoint.com/:x:/g/personal/ztreisman_western_edu/IQCUqVzUp87nRoWEHixv1JViAd4yL8li6eBH13QFQpuC6N4?e=lBbkVx">GTSR Avalanche Occurrences 2003-2020.csv</a>. Avalanche activity is actively monitored along the Going to the Sun Road in Glacier National Park. <a href="https://www.usgs.gov/centers/norock/science/going-sun-road-avalanche-forecasting-program#data">Here is the website of the program that does the monitoring.</a></p>
+<p>The observations in this data set are individual avalanches. Variables include the date, the size, destructive force, elevation, aspect and slope angle, as well as the avalanche type, such as slab or loose and the observer who recorded the avalanche.</p>
+<p>Take a moment to think about the questions that you might want to ask these data. It might help to put yourself in the shoes of an employee of Glacier National Park who relies on this information to plan for activity in parts of the park accessed by this road.</p>
+<p>A very general question is: In what way is the destructive force of an avalanche a function of the other recorded variables? A more specific version of this might focus on the seasonal differences exhibited by slab and loose avalanches - for example can we show that large wet slab avalanches in the spring are potentially particularly destructive?</p>
+<p>In order to answer these questions, we look at the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># part of tidyverse, you can skip this line if it loaded above</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate) <span class="co"># ditto</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># ditto</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr) <span class="co"># ditto</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>avalanches <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"GTSR Avalanche Occurrences 2003-2020.csv"</span>, </span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">Date =</span> <span class="fu">col_date</span>(<span class="at">format =</span> <span class="st">"%m/%d/%Y"</span>), </span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">Time =</span> <span class="fu">col_time</span>(<span class="at">format =</span> <span class="st">"%H:%M:%S"</span>)))</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>avy_paths <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">table</span>(avalanches<span class="sc">$</span>PathName), <span class="at">decreasing=</span>T)</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(avalanches)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Hopefully you are now looking at the data in the upper left pane of RStudio. Scroll through the columns and see if you can find some variables that seem interesting or potentially useful. The following code will step you through first some initial investigation and cleaning of the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(avalanches)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       ID        RecorderName            Date            DateAccuracy      
+ Min.   :  9.0   Length:875         Min.   :2003-04-06   Length:875        
+ 1st Qu.:235.5   Class :character   1st Qu.:2006-04-06   Class :character  
+ Median :459.0   Mode  :character   Median :2012-04-11   Mode  :character  
+ Mean   :460.7                      Mean   :2011-05-25                     
+ 3rd Qu.:688.5                      3rd Qu.:2016-04-16                     
+ Max.   :908.0                      Max.   :2020-06-13                     
+                                    NA's   :2                              
+     Time          TimeAccuracy         PathName         SubPathName       
+ Length:875        Length:875         Length:875         Length:875        
+ Class1:hms        Class :character   Class :character   Class :character  
+ Class2:difftime   Mode  :character   Mode  :character   Mode  :character  
+ Mode  :numeric                                                            
+                                                                           
+                                                                           
+                                                                           
+  AffectRoad          HitRoad           RoadPlowed         TimeToClear    
+ Length:875         Length:875         Length:875         Min.   :0.0000  
+ Class :character   Class :character   Class :character   1st Qu.:0.1000  
+ Mode  :character   Mode  :character   Mode  :character   Median :0.2500  
+                                                          Mean   :0.4643  
+                                                          3rd Qu.:0.5000  
+                                                          Max.   :4.0000  
+                                                          NA's   :599     
+ RoadDamageLength AvalancheType      AvalancheTrigger   AvalancheBedSurface
+ Min.   : 0.00    Length:875         Length:875         Length:875         
+ 1st Qu.: 0.00    Class :character   Class :character   Class :character   
+ Median : 0.00    Mode  :character   Mode  :character   Mode  :character   
+ Mean   :10.45                                                             
+ 3rd Qu.:10.00                                                             
+ Max.   :70.00                                                             
+ NA's   :864                                                               
+  PercentPath     PercentSubPath   HorizStartZoneLoc  VertStartZoneLoc  
+ Min.   :  1.00   Min.   :  1.00   Length:875         Length:875        
+ 1st Qu.: 10.00   1st Qu.: 20.00   Class :character   Class :character  
+ Median : 25.00   Median : 40.00   Mode  :character   Mode  :character  
+ Mean   : 31.14   Mean   : 45.86                                        
+ 3rd Qu.: 50.00   3rd Qu.: 73.75                                        
+ Max.   :100.00   Max.   :100.00                                        
+ NA's   :543      NA's   :809                                           
+ SizeRelativeToPath SizeDestructiveForce ObservationPoint   MaxCrownDepth 
+ Min.   :1.00       Min.   :0.500        Length:875         Min.   : 0.1  
+ 1st Qu.:1.00       1st Qu.:1.500        Class :character   1st Qu.: 1.0  
+ Median :2.00       Median :2.000        Mode  :character   Median : 2.0  
+ Mean   :1.89       Mean   :1.888                           Mean   : 2.5  
+ 3rd Qu.:2.00       3rd Qu.:2.500                           3rd Qu.: 3.0  
+ Max.   :5.00       Max.   :5.000                           Max.   :20.0  
+ NA's   :320        NA's   :51                              NA's   :546   
+ AveCrownDepth    CrownWidth   StartElevationFeet VerticalRunFeet
+ Min.   : 0.1   Min.   : 0.1   Min.   :4600       Min.   :  10   
+ 1st Qu.: 1.0   1st Qu.: 1.0   1st Qu.:6800       1st Qu.: 500   
+ Median : 2.0   Median : 2.0   Median :7300       Median : 855   
+ Mean   : 2.5   Mean   : 2.5   Mean   :7204       Mean   :1179   
+ 3rd Qu.: 3.0   3rd Qu.: 3.0   3rd Qu.:7750       3rd Qu.:1462   
+ Max.   :20.0   Max.   :20.0   Max.   :9500       Max.   :5200   
+ NA's   :546    NA's   :546    NA's   :283        NA's   :307    
+ StartZoneAspect StartZoneSlope  StartZoneAlpha  RoadBurialLength
+ Min.   :  0.0   Min.   :25.00   Min.   :21.00   Min.   :  0.00  
+ 1st Qu.: 90.0   1st Qu.:36.00   1st Qu.:36.25   1st Qu.:  5.00  
+ Median :210.0   Median :38.00   Median :37.50   Median : 10.00  
+ Mean   :176.1   Mean   :37.68   Mean   :35.33   Mean   : 19.82  
+ 3rd Qu.:252.0   3rd Qu.:40.00   3rd Qu.:39.50   3rd Qu.: 20.00  
+ Max.   :353.0   Max.   :46.00   Max.   :40.00   Max.   :300.00  
+ NA's   :254     NA's   :834     NA's   :869     NA's   :545     
+ RoadBurialDepth    Comments        
+ Min.   : 0.000   Length:875        
+ 1st Qu.: 1.200   Class :character  
+ Median : 2.000   Mode  :character  
+ Mean   : 2.528                     
+ 3rd Qu.: 3.000                     
+ Max.   :20.000                     
+ NA's   :547                        </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(avalanches<span class="sc">$</span>PathName, avalanches<span class="sc">$</span>AvalancheType)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                      
+                                                       GS HS LL SS WL WS
+  1st Chute Below Arches                                1  0  0  1  7  0
+  2nd Chute Below Arches                                1  0  0  0  6  0
+  54-1                                                  2  0  0  1  3  1
+  54-2                                                  0  0  0  2  1  3
+  Above Lunch Creek Corner                              0  0  0  0  1  0
+  Alder Trail                                           0  0  0  3  5  0
+  Alps                                                  0  0  2  0  4  0
+  Alps 1                                                1  0  0  0  9  0
+  Alps 2                                                0  0  0  0 16  0
+  Alps 3                                                0  0  0  0 12  1
+  Bear Hat East Face                                    0  0  0  0  0  1
+  Beargrass                                             3  0  0  0 10  0
+  Below Big Drift                                       0  0  0  0  2  0
+  Below East Tunnel                                     0  0  0  0  0  1
+  Big Bend                                             14  0  0 11 12 19
+  Big Drift                                             0  0  0  1  1  0
+  Bird Woman                                            2  0  0  0 13  1
+  Bird Woman Basin Pass                                 0  0  0  0  0  1
+  Bird Woman Falls                                      0  0  0  0  0  0
+  Boyack's                                              0  0  1  0  0  0
+  BPR                                                   0  0  0  0 17  0
+  Chute Above Arches                                    1  0  0  0 16  1
+  Chute Above Russ' Slide                               0  0  0  0  4  0
+  Chute Above Triple Arches                             0  0  0  0  2  0
+  Chute Below Russ'                                     0  0  0  0  1  0
+  Chute Below SBRC                                      0  0  0  0  3  1
+  Clements                                              0  0  0  0  1  0
+  Clements - Oberlin Saddle                             0  0  0  1  0  0
+  Clements Mountain                                     0  1  0  0  0  0
+  Clown Couloir                                         0  0  0  0  6  0
+  Garden Wall                                           4  0  0  0  1  1
+  Geduhn-Trapper Ridge                                  2  0  0  0  0  0
+  Glacier Wall                                          2  0  0  0  1  0
+  Going-to-the-Sun Mountain                             0  0  0  0  0  1
+  Granite Creek                                        12  0  0  0  5  1
+  Greater Granite                                       4  0  0  1  2  5
+  Greater Granite Creek                                 1  0  0  0  0  0
+  Grizzly                                               1  0  0  0  6  0
+  GWWX Ridge                                            0  0  0  0  0  0
+  Half Tunnel                                           0  0  0  0  4  0
+  Haystack                                              6  0  0  0  1  0
+  Haystack Creek                                       24  1  9  6 16 23
+  Heaven's Gate                                         2  0  0  0  0  0
+  Heaven's Peak Glide Pocket #2                         1  0  0  0  0  0
+  Heaven's Peak Glide Pocket #3                         1  0  0  0  0  0
+  Heaven's Peak Glide Pocket #4                         1  0  0  0  0  0
+  Heaven's Peak Glide Pocket #6                         1  0  0  0  0  0
+  Heavens East Ridge                                    0  0  0  1  0  0
+  Heavens Gate                                         29  0  0  2  1  1
+  Heavens Peak Corner Pocket                            1  0  0  0  0  0
+  Heavens Peak East                                     1  0  0  0  0  0
+  Heavens Peak East Ridge                              45  2  0  0  2  2
+  Heavens Peak Glide Pocket #1                          1  0  0  0  0  0
+  Heavens Peak Glide Pocket #5                          1  0  0  0  0  0
+  Heavens Peak North Ridge                              1  1  0  3  1  2
+  Heavens Peak Remnant Glacier                          1  0  0  0  0  0
+  Heavens Peak South Ridge                              0  0  0  0  0  1
+  Heavy Runner Mountain                                 0  0  0  0  0  1
+  HPRG                                                 32  0  0  1  1  0
+  Little Granite                                        0  0  0  2  0  1
+  Longfellow Peak                                       0  0  0  0  1  0
+  Lower Grizzly                                         0  0  0  0  1  0
+  Lower Slopes                                          0  0  0  0 26  0
+  Middle Slopes                                         0  0  2  0 29  0
+  Mt Siyeh                                              0  0  0  0  1  0
+  Mt. Brown                                             1  0  0  0  0  2
+  Mt. Cannon                                            1  0  0  0  1  1
+  Mt. Geduhn                                            4  0  0  0  0  0
+  Mt. Gould                                             3  0  0  2  1  0
+  Mt. McPartland                                        1  0  0  0  0  0
+  Mt. Oberlin                                           0  0  0  0  1  0
+  Mt. Piegan                                            1  0  0  0  2  6
+  Mt. Siyeh                                             0  0  0  0  0  1
+  Mt. Vaught                                            8  0  0  0  0  1
+  No Stump Point                                        0  0  0  0  0  2
+  Path Below SBRC                                       0  0  0  0  1  0
+  Peak 7774                                            39  0  0  0  0  0
+  Peak 7850                                            32  0  0  0  1  1
+  Peak 8015                                             7  0  0  0  0  0
+  Peak 8015 Glide Path                                  1  0  0  0  0  0
+  Rainbow Peak                                          0  0  0  0  1  0
+  Red Rock                                              0  0  0  2  3  2
+  Red Rocks                                             0  0  0  0  1  0
+  Rim Rock                                              0  0  1  0  7  0
+  Russ' Slide                                           0  0  1  0 10  0
+  SBRC                                                  7  0  1  0 12  0
+  Siyeh Bend                                            0  0  0  0  2  1
+  Slopes                                                0  0  2  0 38  0
+  Slopes Below Big Drift                                0  1  0  0  8  0
+  Slopes Below East Tunnel                              0  0  0  0  9  0
+  Stanton South Face                                    0  0  0  0  0  3
+  Stanton/Vaught Bowl                                   0  0  0  0  1  0
+  Trapper Peak                                          5  0  0  0  0  0
+  Triple Arches                                         8  0  0  0 18  1
+  Upper Slopes                                          0  0  0  0 15  0
+  Upper snowfield above the East Face of Heaven's Peak  1  0  0  0  0  0
+  Weeping Wall                                          8  0  0  0  6  0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(avalanches<span class="sc">$</span>AvalancheType)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "WL" "GS" "WS" "LL" "SS" "HS" NA  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>avalanches <span class="ot">&lt;-</span> avalanches <span class="sc">%&gt;%</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(AvalancheType))</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>avalanches<span class="sc">$</span>slab <span class="ot">&lt;-</span> avalanches<span class="sc">$</span>AvalancheType <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'WS'</span>, <span class="st">'GS'</span>, <span class="st">'SS'</span>, <span class="st">'HS'</span>)</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>avalanches<span class="sc">$</span>month <span class="ot">&lt;-</span> <span class="fu">month</span>(avalanches<span class="sc">$</span>Date)</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>avalanches<span class="sc">$</span>yday <span class="ot">&lt;-</span> <span class="fu">yday</span>(avalanches<span class="sc">$</span>Date)</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(avalanches, <span class="fu">aes</span>(yday, <span class="fu">jitter</span>(SizeDestructiveForce), <span class="at">color=</span>AvalancheType))<span class="sc">+</span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 53 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Avalanches_lab_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(avalanches, <span class="fu">aes</span>(yday, <span class="fu">jitter</span>(SizeDestructiveForce), <span class="at">color=</span>AvalancheType, <span class="at">shape=</span>slab, <span class="at">size=</span>PercentPath))<span class="sc">+</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 560 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Avalanches_lab_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(avalanches, <span class="fu">aes</span>(StartZoneAspect, SizeDestructiveForce, <span class="at">color=</span>AvalancheType, <span class="at">shape=</span>slab))<span class="sc">+</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="at">start =</span> <span class="dv">0</span>, <span class="at">direction =</span> <span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># Circular mapping</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">360</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">360</span>, <span class="dv">45</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 261 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Avalanches_lab_files/figure-html/unnamed-chunk-8-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(avalanches, <span class="fu">aes</span>(StartZoneAspect, SizeDestructiveForce, <span class="at">color=</span>AvalancheType, <span class="at">shape=</span>slab))<span class="sc">+</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="at">start =</span> <span class="dv">0</span>, <span class="at">direction =</span> <span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># Circular mapping</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">360</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">360</span>, <span class="dv">45</span>))<span class="sc">+</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>AvalancheType)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 261 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Avalanches_lab_files/figure-html/unnamed-chunk-8-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(avalanches, <span class="fu">aes</span>(yday, SizeDestructiveForce, <span class="at">color=</span>AvalancheType, <span class="at">shape=</span>slab))<span class="sc">+</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="at">start =</span> <span class="dv">0</span>, <span class="at">direction =</span> <span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># Circular mapping</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>()<span class="sc">+</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>AvalancheType)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 53 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Avalanches_lab_files/figure-html/unnamed-chunk-8-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(avalanches, <span class="fu">aes</span>(StartZoneAspect, StartElevationFeet, <span class="at">color=</span>yday))<span class="sc">+</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="at">start =</span> <span class="dv">0</span>, <span class="at">direction =</span> <span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># Circular mapping</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">360</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">360</span>, <span class="dv">45</span>))<span class="sc">+</span></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>AvalancheType)<span class="sc">+</span></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_reverse</span>()<span class="sc">+</span></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradientn</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"yellow"</span>, <span class="st">"blue"</span>), <span class="at">values =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">90</span>, <span class="dv">180</span>, <span class="dv">270</span>, <span class="dv">360</span>)<span class="sc">/</span><span class="dv">360</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 324 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Avalanches_lab_files/figure-html/unnamed-chunk-8-6.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

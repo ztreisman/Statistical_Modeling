@@ -52,11 +52,11 @@ nll0(1000)
 nll0(500)
 nll0(250)
 nll0(750)
-as <- 100*(10^0.1)^(0:10)
+as <- 100*(10^0.1)^(0:10) # as <- c(100, 100*10^0.1, 100*10^0.2, ... 1000)
 as
 nll0s <- sapply(as, nll0)
 plot(nll0s~as, type="o")
-mod0 <- mle2(nll0, start = list(a=1000), data=moose)
+mod0 <- mle2(nll0, start = list(a=500), data=moose)
 mod0
 
 #4-6

@@ -1,0 +1,611 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\newif\ifbibliography
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% remove section numbering
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{section title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{subsection title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\pgfdeclareimage[width=3.5cm]{mcslogo}{../images/western_logo_hor_MCS_3C_pos.pdf}
+\pgfdeclareimage[width=1cm]{ccbysa}{../images/ccbysa88x31.png}
+\titlegraphic{\href{http://creativecommons.org/licenses/by-sa/4.0/}{\pgfuseimage{ccbysa}}
+\hfill
+\href{https://western.edu/program/mathematics/}{\pgfuseimage{mcslogo}}}
+%\usecolortheme{wcu}
+%\institute{Western Colorado University}
+%\setbeamertemplate{navigation symbols}{}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Review of Introductory Statistics and Motivation for This Class},
+  pdfauthor={Zack Treisman},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Review of Introductory Statistics and Motivation for This Class}
+\author{Zack Treisman}
+\date{Spring 2026}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Philosophy}
+\phantomsection\label{philosophy}
+\begin{itemize}
+\tightlist
+\item
+  multiple variables and high dimensional data,
+\item
+  situations where assuming normality is a bad idea,
+\item
+  classification problems,
+\item
+  and more.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Winter Recreation: Modeling Multiple Variables}
+\phantomsection\label{winter-recreation-modeling-multiple-variables}
+Visitation rates as a function of
+
+\begin{itemize}
+\item new snow in the previous three days, 
+\item modality,
+\item trailhead location,
+\item year. 
+\end{itemize}
+
+Motorized users head to Kebler, non-motorized users to Snodgrass. Some
+shift in these patterns year to year is visible.
+
+\pandocbounded{\includegraphics[keepaspectratio]{review_files/figure-beamer/unnamed-chunk-1-1.pdf}}
+\end{frame}
+
+\begin{frame}{SRA: Simulation and Nonparametric Models}
+\phantomsection\label{sra-simulation-and-nonparametric-models}
+Western's Strategic Resource Allocation process needed to avoid assuming
+normal distributions. Instead, randomization determined how a program's
+rankings compared with the rest of campus.
+
+\pandocbounded{\includegraphics[keepaspectratio]{../images/MATH.pdf}}
+\end{frame}
+
+\begin{frame}{Forest Fire Recovery: Plant Community Classifications}
+\phantomsection\label{forest-fire-recovery-plant-community-classifications}
+Unsupervised learning discovered plant communities from transect data.
+Gradient boosted regression trees detect these communities in satellite
+data.
+
+\pandocbounded{\includegraphics[keepaspectratio]{../images/brt_preds.png}}
+\end{frame}
+
+\begin{frame}[fragile]{Data frame \(\to\) Statistical analysis \(\to\)
+Model}
+\phantomsection\label{data-frame-to-statistical-analysis-to-model}
+Data frames are arrangements of \textbf{observations} of
+\textbf{variables}. An \textbf{observation} is a single unit. A
+\textbf{variable} is a measurement made on that unit
+
+\begin{itemize}
+\tightlist
+\item
+  Record observations as \textbf{rows} and variables in
+  \textbf{columns}.\\
+\item
+  Variables can be \textbf{categorical} or \textbf{numerical}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Categorical variables can be \textbf{binary} or not,
+    \textbf{ordered} or not.
+  \item
+    Numerical variables can be \textbf{discrete} or \textbf{continuous}.
+  \end{itemize}
+\item
+  Dates, times and locations merit special consideration.
+\item
+  Vocabulary is not universal: Factor, case, treatment \ldots
+\end{itemize}
+
+\footnotesize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(Sitka) }\CommentTok{\# from package MASS}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   size Time tree treat
+## 1 4.51  152    1 ozone
+## 2 4.98  174    1 ozone
+## 3 5.41  201    1 ozone
+## 4 5.90  227    1 ozone
+## 5 6.15  258    1 ozone
+## 6 4.24  152    2 ozone
+\end{verbatim}
+
+\normalsize
+\end{frame}
+
+\begin{frame}{Distributions}
+\phantomsection\label{distributions}
+The \textbf{distribution} of a variable is a description of how often it
+takes each possible value.
+
+\begin{itemize}
+\tightlist
+\item
+  An \textbf{observed distribution} is what we actually see.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ``the sample''
+  \item
+    column of a data frame
+  \item
+    summarized by computing means, standard deviations, medians, sample
+    proportions, et cetera.
+  \end{itemize}
+\item
+  A \textbf{theoretical distribution} is a mathematical guess.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ``assume \(X\) is normally distributed''
+  \item
+    ``assume the probability of success is 50\%''
+  \item
+    might come from a formula
+  \item
+    might come from randomization/ simulation
+  \end{itemize}
+\end{itemize}
+
+Much of statistics is concerned with comparing observed distributions to
+theoretical distributions.
+
+We often discuss distributions of variables other than those explicitly
+in our data, such as the mean of a variable in our data, a test
+statistic like \(\chi^2\), or the residuals of a linear model.
+\end{frame}
+
+\begin{frame}[fragile]{Distributions of Categorical Variables}
+\phantomsection\label{distributions-of-categorical-variables}
+\begin{itemize}
+\tightlist
+\item
+  The distribution of a categorical variable is a list of the percentage
+  of observations in each category.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{treat)}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{treat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##   control     ozone 
+## 0.3164557 0.6835443
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{barplot}\NormalTok{(}\FunctionTok{table}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{treat))}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{review_files/figure-beamer/unnamed-chunk-3-1.pdf}}
+\end{frame}
+
+\begin{frame}[fragile]{Distributions of Numeric Variables}
+\phantomsection\label{distributions-of-numeric-variables}
+\begin{itemize}
+\tightlist
+\item
+  Picture the distribution of a numeric variable with a histogram,
+  boxplot or density estimate.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{size)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[height=0.5\textheight]{review_files/figure-beamer/unnamed-chunk-4-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Shape: center, spread, skew, kurtosis
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Summaries of Numeric Variables}
+\phantomsection\label{summaries-of-numeric-variables}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   2.230   4.345   4.900   4.841   5.400   6.630
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{quantile}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{size, }\FunctionTok{c}\NormalTok{(}\FloatTok{0.025}\NormalTok{,}\FloatTok{0.975}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   2.5%  97.5% 
+## 3.2370 6.2815
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.7982084
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{var}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.6371367
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{IQR}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.055
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{A familiar theoretical distribution: the Normal
+distribution}
+\phantomsection\label{a-familiar-theoretical-distribution-the-normal-distribution}
+\begin{itemize}
+\tightlist
+\item
+  Sums of many independent effects are normally distributed.
+\item
+  Means are normally distributed.
+\item
+  Proportions of successes are eventually normally distributed.
+\item
+  Formula that you never use:
+  \(\displaystyle N(\mu,\sigma^2)(x)=\frac{1}{\sigma\sqrt{2 \pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}\)
+\item
+  The \textbf{standard normal distribution} has \(\mu=0\), \(\sigma=1\).
+\item
+  Observations on disparate scales can be standardized with z scores:
+  \(\displaystyle z=\frac{x-\mu}{\sigma}\)
+\end{itemize}
+
+\includegraphics[width=\linewidth,height=0.35\textheight,keepaspectratio]{../images/6895997.pdf}
+\end{frame}
+
+\begin{frame}[fragile]{Randomization for a Theoretical Distribution}
+\phantomsection\label{randomization-for-a-theoretical-distribution}
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(Sitka); num\_ozone }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{treat}\SpecialCharTok{==}\StringTok{"ozone"}\NormalTok{); num\_sim }\OtherTok{\textless{}{-}} \DecValTok{1000}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{17}\NormalTok{)                }\CommentTok{\# initialize the random number generator}
+\NormalTok{diffs }\OtherTok{\textless{}{-}} \FunctionTok{numeric}\NormalTok{(num\_sim)   }\CommentTok{\# initialize a vector to hold the differences}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{num\_sim)\{          }\CommentTok{\# loop: repeat the following num\_sim times}
+\NormalTok{  ozone }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{n,num\_ozone)       }\CommentTok{\# 1. randomly select observations}
+\NormalTok{  ozone\_mean }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{size[ozone])}\CommentTok{\# 2. average selected observations}
+\NormalTok{  control\_mean }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{size[}\SpecialCharTok{{-}}\NormalTok{ozone])}\CommentTok{\# 3. average the others}
+\NormalTok{  diffs[i] }\OtherTok{\textless{}{-}}\NormalTok{ ozone\_mean }\SpecialCharTok{{-}}\NormalTok{ control\_mean\}  }\CommentTok{\# 4. store difference in means}
+\FunctionTok{hist}\NormalTok{(diffs)     }\CommentTok{\# plot the resulting distribution}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{review_files/figure-beamer/unnamed-chunk-10-1.pdf}}
+\normalsize    
+\end{frame}
+
+\begin{frame}{Other Theoretical Distributions from Intro Stats}
+\phantomsection\label{other-theoretical-distributions-from-intro-stats}
+Your first statistics class introduced you to several useful
+distributions:
+
+\begin{itemize}
+\tightlist
+\item
+  t - Like the normal distribution, but adjusted for describing means of
+  small samples.
+\item
+  \(\chi^2\) - Sum of several squared standard normal distributions.
+  Useful when discussing several proportions at once, such as when
+  considering categorical variables with more than two possible values.
+\item
+  F - Similar to \(\chi^2\), used in ANOVA.
+\end{itemize}
+
+And maybe\ldots
+
+\begin{itemize}
+\tightlist
+\item
+  Binomial - How many successes in \(n\) trials?
+\item
+  Poisson - Count of discrete events in fixed time or space.
+\item
+  Perhaps others? We'll see lots more\ldots
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Sampling Distributions}
+\phantomsection\label{sampling-distributions}
+Given a data set (the sample) and a quantity that we can calculate from
+the data (a sample or test statistic) we propose an expected
+distribution for that calculated quantity (the sampling distribution).
+
+\begin{itemize}
+\tightlist
+\item
+  Sampling distributions are never observed, always theoretical.
+\end{itemize}
+
+Having a sampling distribution allows us to do inference.
+
+\pandocbounded{\includegraphics[keepaspectratio]{review_files/figure-beamer/unnamed-chunk-11-1.pdf}}
+\end{frame}
+
+\begin{frame}[fragile]{Inference: Confidence Intervals}
+\phantomsection\label{inference-confidence-intervals}
+Often, we assume the shape of a sampling distribution, but not its
+specific parameters. By using the data to estimate those parameters, we
+get a guess at the sampling distribution that we can use to compute a
+confidence interval.
+
+\footnotesize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\AttributeTok{x\_bar =} \FunctionTok{mean}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{size))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4.840785
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{s }\OtherTok{=} \FunctionTok{sd}\NormalTok{(Sitka}\SpecialCharTok{$}\NormalTok{size); n }\OtherTok{=} \FunctionTok{nrow}\NormalTok{(Sitka); (}\AttributeTok{se =}\NormalTok{ s}\SpecialCharTok{/}\FunctionTok{sqrt}\NormalTok{(n))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.04016222
+\end{verbatim}
+
+\normalsize
+
+\pandocbounded{\includegraphics[keepaspectratio]{review_files/figure-beamer/unnamed-chunk-13-1.pdf}}
+\end{frame}
+
+\begin{frame}[fragile]{Inference: Hypothesis Tests}
+\phantomsection\label{inference-hypothesis-tests}
+A null hypothesis determines a sampling distribution. Compare data to
+that proposed distribution. If the data are sufficiently unlikely, we
+reject the null hypothesis.
+
+\scriptsize
+
+\pandocbounded{\includegraphics[keepaspectratio]{review_files/figure-beamer/unnamed-chunk-14-1.pdf}}
+
+\begin{verbatim}
+## 
+##  Welch Two Sample t-test
+## 
+## data:  size by treat
+## t = 2.3163, df = 209.44, p-value = 0.02151
+## alternative hypothesis: true difference in means between group control and group ozone is not equal to 0
+## 95 percent confidence interval:
+##  0.03144833 0.39086574
+## sample estimates:
+## mean in group control   mean in group ozone 
+##              4.985120              4.773963
+\end{verbatim}
+
+\normalsize
+\end{frame}
+
+\begin{frame}[fragile]{The Key Question of Intro Stats:
+\alert{Which test to use?!}}
+\phantomsection\label{the-key-question-of-intro-stats}
+One variable:
+
+\begin{itemize}
+\tightlist
+\item
+  Numeric: t-test for the mean (\texttt{t.test})
+\item
+  Binary categorical: z-test or binomial test for the proportion of
+  success (\texttt{prop.test} or \texttt{binom.test})
+\item
+  Nonbinary categorical: \(\chi^2\) test for goodness of fit
+  (\texttt{chisq.test})
+\end{itemize}
+
+Two variables:
+
+\begin{itemize}
+\tightlist
+\item
+  Both numeric: linear regression (\texttt{lm})
+\item
+  One numeric, one binary categorical: t-test for a difference of means
+  (\texttt{t.test})
+\item
+  One numeric, one nonbinary categorical: analysis of variance
+  (\texttt{lm} and \texttt{anova} or \texttt{aov})
+\item
+  Both binary categorical: z-test or binomial test for equality of
+  proportions (\texttt{prop.test} or \texttt{binom.test})
+\item
+  Two categorical, at least one nonbinary: \(\chi^2\) test for
+  independence (\texttt{chisq.test})
+\end{itemize}
+\end{frame}
+
+\end{document}

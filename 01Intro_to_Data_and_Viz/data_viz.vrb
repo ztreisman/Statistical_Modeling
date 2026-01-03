@@ -1,0 +1,24 @@
+\frametitle{Fine tune and save graphics for presentation}
+\phantomsection\label{fine-tune-and-save-graphics-for-presentation}
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{emd2}\FloatTok{.1}\OtherTok{\textless{}{-}}\FunctionTok{ggplot}\NormalTok{(daily\_avgs,}\FunctionTok{aes}\NormalTok{(date,mean\_seeds,}\AttributeTok{color=}\NormalTok{species,}\AttributeTok{shape=}\NormalTok{dist))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{scale\_y\_log10}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y=}\StringTok{"Mean seeds remaining"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Date"}\NormalTok{, }
+       \AttributeTok{color =} \StringTok{"Species"}\NormalTok{, }\AttributeTok{shape =} \StringTok{"Distance to Forest"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_bw}\NormalTok{()}
+\NormalTok{emd2}\FloatTok{.1}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{data_viz_files/figure-beamer/unnamed-chunk-17-1.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggsave}\NormalTok{(}\StringTok{"figures/BolkerFig2.1.tiff"}\NormalTok{, }\AttributeTok{plot=}\NormalTok{emd2}\FloatTok{.1}\NormalTok{, }
+       \AttributeTok{width =} \DecValTok{10}\NormalTok{, }\AttributeTok{height =} \DecValTok{4}\NormalTok{, }\AttributeTok{units =} \StringTok{"cm"}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{800}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}

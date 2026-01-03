@@ -195,7 +195,13 @@ These data are provided in spreadsheets, like you might use with a program like 
 
 When saving a spreadsheet to csv, you have to save each sheet individually, and other than column headings and possibly metadata at the top of the sheet, there should be nothing other than the data, and no formatting such as dollar signs, units or commas in large numbers.
 
-## The Data: Fire influences on forest recovery and associated climate feedbacks in Siberian Larch Forests
+## The Data: Avalanche activity along the Going to the Sun road in Glacier National Park
+
+
+
+
+
+Fire influences on forest recovery and associated climate feedbacks in Siberian Larch Forests
 
 Dr. DeMarco's research group sampled nine fire scars in larch (Larix cajanderi) forests near the Northeast Science Station in Cherskiy and along the Bolshoi Annui River in Russia. Sampling examined 1m $\times$ 1m plots along transects representing a gradient in larch recruitment. Treatment levels were defined as unburned, no seedlings, moderate (2-4 recruits), or high density (6+ recruits). For up to ten recruits per plot they measured recruit characteristics of height, basal diameter, age, and length of fresh annual growth. Within each plot ground-layer vegetation was measured using grid-point intercepts: A 0.25 m$^2$ grid divided into 25 10 x 10 cm cells with a pin flag perpendicular to the ground in the top right corner of each cell. The identity and number of hits of each species that touched the pin flag were recorded as well as the ground cover (e.g. larch litter, moss) at each point.
 

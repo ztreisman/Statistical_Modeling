@@ -1,0 +1,254 @@
+---
+title: "Data Visualization With R"
+author: "Zack Treisman"
+date: "Spring 2026"
+output: 
+  beamer_presentation: 
+    includes: 
+bibliography: ../bibliography.bib    
+citecolor: blue   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(global.par = TRUE)
+
+library(emdbook)
+library(MASS)
+library(tidyverse)
+library(gridExtra)
+library(lubridate)
+
+```
+
+```{r,include=FALSE}
+par(mar = c(4, 4, 0.75, 0.5)) # Set margins
+``` 
+
+
+## Philosophy
+
+\centerline{Exploration\footnote{Be wary of inference based on purely exploratory data analysis. If you look at your data until you find a pattern, and then test for that pattern, the significance levels of that test are inflated.} $\leftarrow$ \textbf{Visualizations} $\rightarrow$ Publication}
+
+Graphics systems in R
+
+* Base R: intuitive, perhaps limited.
+* `ggplot2`: robust and widely used.
+* `lattice`: also nice, often older.
+
+
+
+## Loading data
+
+Step 0 of visualizing your data with R is loading it.
+
+* Clean your data spreadsheet: 
+    * Remove non-data (summaries, etc.)
+    * Fix typos
+    * Make good variable names 
+        * meaningful
+        * not too long
+        * no spaces - use under_score or camelCaps instead
+        * don't start with a number
+    * More good advice: [Data Carpentry](https://datacarpentry.org/spreadsheet-ecology-lesson/)
+* `csv` (comma separated variable)
+* working directory 
+  * possibly *data* subdirectory.
+* `read.csv` or `read_csv`.
+
+## Check the data loaded correctly
+
+* `str()` Are variables coded correctly? (factors, dates)
+* `head()` or `View()`
+
+\scriptsize
+```{r}
+str(ReedfrogPred) 
+head(SeedPred) 
+# data from R package emdbook
+```
+
+## Exploration
+
+Data are in R, now what? 
+
+* Check numerical summaries.
+
+\scriptsize
+```{r}
+summary(ReedfrogPred)
+```
+
+\normalsize
+* Make some graphics!
+    * patterns; expected/unexpected?
+    * Data issues?
+
+
+## Barplots and Histograms - one variable
+
+* Barplots $\leftrightarrow$ categorical variables.
+
+\scriptsize
+```{r, fig.width=9, fig.height=2.5}
+barplot(table(SeedPred$species))
+```
+
+\normalsize
+* Histograms, density estimates $\leftrightarrow$ numeric variables.
+
+\scriptsize
+```{r, fig.width=9, fig.height=2.5}
+hist(ReedfrogPred$propsurv,freq=F); lines(density(ReedfrogPred$propsurv))
+```
+
+## Scatterplots - two numeric variables 
+
+\scriptsize
+```{r, fig.width=8, fig.height=3.5}
+ggplot(Lily_sum, aes(vegetative, flowers)) + geom_point() 
+# data in emdbook
+```
+
+## Log scales
+
+* Right skew
+* Counts
+* Dimensional data
+
+\scriptsize
+```{r, fig.width=8, fig.height=3.5, warning=FALSE}
+ggplot(Lily_sum, aes(vegetative, flowers)) + 
+  geom_point() + 
+  scale_x_log10() + 
+  scale_y_log10()
+```
+
+log(0) is undefined 
+
+## Additional aesthetics 
+
+* `color`
+* `shape` (categorical)
+* `size` (numeric)
+* trendlines or other model graphs.
+
+\scriptsize
+```{r, fig.width=8, fig.height=3.5, message=FALSE, warning=FALSE}
+ggplot(Lily_sum, aes(vegetative, flowers, color = moisture)) + 
+  geom_point() +
+  geom_smooth()
+```
+
+## Categorical variables $\to$ facets 
+
+\scriptsize
+
+```{r, fig.width=8, fig.height=2.5, warning=FALSE}
+ggplot(SeedPred, aes(tint, taken)) + geom_point() + facet_wrap(~species)
+```
+
+```{r, fig.width=8, fig.height=2.5, warning=FALSE}
+ggplot(ReedfrogPred, aes(density, propsurv)) + geom_point() +
+  facet_grid(size~pred)
+```
+
+## Jittering and transparency
+
+
+\scriptsize
+
+```{r, fig.width=8, fig.height=3.5, warning=FALSE}
+ggplot(SeedPred, aes(date, seeds))+  
+  geom_jitter(alpha= 0.3)
+```
+
+
+## Boxplots - numeric response, categorical predictors
+
+\scriptsize
+
+```{r, fig.width=8, fig.height=3}
+g0 <- ggplot(OrchardSprays,aes(x=treatment,y=decrease)) + # data in MASS
+  scale_y_log10()
+g_boxplot <- g0 + geom_boxplot()
+g_point <- g0 + geom_point()
+g_ptrng <- g0 + stat_summary(fun.data=mean_cl_normal,geom="pointrange")
+g_errbar <- g0 +  
+  stat_summary(fun.data=mean_cl_normal,geom="errorbar",width=0.5)
+grid.arrange(g_boxplot,g_point,g_ptrng,g_errbar, nrow=1)
+```
+
+## Combining layers
+
+
+\scriptsize
+```{r, fig.width=8, fig.height=4}
+g0 + geom_boxplot() + geom_point() 
+```
+
+## Reshape and Summarize
+
+Figure 2.1 from @bolker:
+
+\scriptsize
+```{r, fig.width=8, fig.height=3.5, message=FALSE, warning=FALSE}
+daily_avgs <- SeedPred %>%   
+  group_by(date, species, dist) %>%
+  summarise(mean_seeds = mean(seeds))
+ggplot(daily_avgs, aes(date, mean_seeds, color=species, shape=dist)) +
+  geom_point() + geom_line() + scale_y_log10()
+```
+
+## Diagnostics, assessment of model validity.
+
+
+\scriptsize
+```{r, fig.width=8, fig.height=4}
+lm1 <- lm(flowers~vegetative, data = Lily_sum)
+par(mfrow=c(2, 2), mar = c(4, 4, 2, 2)) # see all 4 plots at once
+plot(lm1)
+par(mfrow=c(1, 1), mar = c(4, 4, 0.75, 0.5)) # restore graphics parameters
+```
+
+## Residuals v. predictors
+
+\scriptsize
+```{r, fig.width=8, fig.height=4}
+plot(lm1$residuals~Lily_sum$vegetative)
+abline(h=0)
+```
+
+## Fine tune and save graphics for presentation
+
+\scriptsize
+```{r, fig.width=8, fig.height=3.5, message=FALSE, warning=FALSE}
+emd2.1<-ggplot(daily_avgs,aes(date,mean_seeds,color=species,shape=dist))+
+  geom_point() + geom_line() + scale_y_log10() +
+  labs(y="Mean seeds remaining", x = "Date", 
+       color = "Species", shape = "Distance to Forest") +
+  scale_color_brewer(palette = "Dark2") +
+  theme_bw()
+emd2.1
+```
+```{r, eval =FALSE}
+ggsave("figures/BolkerFig2.1.tiff", plot=emd2.1, 
+       width = 10, height = 4, units = "cm", dpi = 800)
+```
+
+## Opinions on graphical style
+
+Plenty of people with good ideas about style.
+
+* [Leland Wilkinson](https://www.springer.com/gp/book/9780387245447)
+* [Edward Tufte](https://www.edwardtufte.com/tufte/books_vdqi)
+* [William Cleaveland](https://www.stat.purdue.edu/~wsc/)
+* [Andrew Gelman](http://www.stat.columbia.edu/~gelman/graphics.course/p755.pdf)
+
+Some graph types are controversial. That doesn't mean never use them, but if you do, be aware of the criticisms.
+
+* Pie charts, dynamite plots, dual-axes plots
+
+
+
+## References
+

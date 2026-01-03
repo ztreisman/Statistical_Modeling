@@ -1,7 +1,7 @@
 ---
 title: "Review of Introductory Statistics and Motivation for This Class"
 author: "Zack Treisman"
-date: "Spring 2022"
+date: "Spring 2026"
 output: 
   beamer_presentation: 
     includes: 
@@ -30,9 +30,9 @@ by_zone$Zone <- factor(by_zone$Zone, levels = c("Kebler", "Slate River Rd", "Was
 
 ## Philosophy
 
-This class builds on the knowledge and skills you acquired in your previous study of statistics. We are going to use mathematical language to develop a framework for bringing what may have seemed like a disparate collection of topics and tools into a unified way of thinking. With that framework in place we'll see what we can say about some of the problems that were too difficult for Introductory Statistics. 
+<!-- This class builds on the knowledge and skills you acquired in your previous study of statistics. We are going to use mathematical language to develop a framework for bringing what may have seemed like a disparate collection of topics and tools into a unified way of thinking. With that framework in place we'll see what we can say about some of the problems that were too difficult for Introductory Statistics. 
 
-For example, after this class you will be able to tackle
+For example, after this class you will be able to tackle -->
 
 * multiple variables and high dimensional data,
 * situations where assuming normality is a bad idea,
@@ -41,7 +41,14 @@ For example, after this class you will be able to tackle
 
 ##  Winter Recreation: Modeling Multiple Variables
 
-This plot shows visitation rates as a function of new snow in the previous three days for a variety of modalities and trailhead locations over the past four winters. Motorized users head to Kebler, non-motorized users to Snodgrass. Some shift in these patterns year to year is visible.
+Visitation rates as a function of 
+\begin{itemize}
+\item new snow in the previous three days, 
+\item modality,
+\item trailhead location,
+\item year. 
+\end{itemize}
+Motorized users head to Kebler, non-motorized users to Snodgrass. Some shift in these patterns year to year is visible.
 
 ```{r,echo=F, warning = F, fig.height=5}
 ggplot(by_zone, aes(past3snow, user.count, color = Zone))+
