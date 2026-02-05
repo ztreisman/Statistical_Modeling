@@ -1,0 +1,243 @@
+---
+title: "Regression and ANOVA"
+output: pdf_document
+bibliography: ../bibliography.bib     
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+library(ggplot2)
+library(car)
+```
+
+# Overview
+
+The goal of this lab is to give you practice using R to create and evaluate basic regression models. This includes both classical linear regression and analysis of variance. Even though there are certainly differences between these two scenarios, seeing them as aspects of a common technique can make life easier.
+
+We'll be using `ggplot2` to make graphics and `Anova` from the `car` package in this lab so load those libraries.
+```{r, eval=FALSE}
+library(ggplot2)
+library(car)
+```
+
+# The data: Growth of redside shiners
+
+The data that we will be looking at today are from @houston. The goal of the experiment was to determine whether observed differences
+in fish growth resulted from environmental or genetic variation.
+
+The data are on [GitHub](https://raw.githubusercontent.com/ztreisman/Statistical_Modeling/main/03Regression_and_ANOVA/data/redside_shiner.csv) or in my Pick Up folder in the file *redside_shiner.csv*. Save this file to the data folder in your working directory for this lab and load it as the data frame `shiners` with the command
+```{r, eval=TRUE}
+shiners <- read.csv("data/redside_shiner.csv")
+```
+
+Run `str(shiners)` or click on the blue circle with the white triangle icon next to the data in the *Environment* pane to get a list of the variables and their types. Observations in this data set are individual fish. The variables are:
+
+* `obs` is the observation number
+* `loc` is location
+* `block` is a part of the experimental design
+* `temp` is temperature where the fish were grown in deg C, an experimental treatment
+* `food` is frequency of feeding, another experimental treatment
+* `smass` is the starting mass
+* `emass` is the mass at the end of the experiment
+* `ssl` is the starting standard length
+* `esl` is the ending standard length
+* `days` is the length of time that the fish was in the experiment
+
+Use `summary(shiners)` and `View(shiners)` to get an idea of the data. There are a fair number of observations with missing data, but the data set is still sufficiently large if we drop the observations with missing entries, and it makes the analysis much easier.
+```{r}
+shiners <- na.omit(shiners)
+```
+
+Since `temp` only takes three values, it makes sense to convert it to a factor.
+```{r, eval=TRUE}
+shiners$temp <- factor(shiners$temp)
+```
+
+# Starting populations
+
+Let's examine the fish as they were at the beginning of the experiment. Make a plot showing `smass`, `ssl` and `loc`.
+```{r}
+ggplot(shiners, aes(ssl, smass, color = loc))+
+  geom_point()+
+  labs(x = "Starting Standard Length (cm)", y = "Starting Mass (g)", 
+       title = "Starting Fish Sizes", color = "Location")
+```
+
+(@) Does it appear that the fish from any one location are larger or smaller than the others either in mass, length or both?
+
+We can do a one-way anova to answer this question for mass. Start by examining the normality and homogeneity of variance in `smass` for the `loc` groups to confirm that anova is legitimate.
+
+```{r}
+ggplot(shiners, aes(smass))+
+  geom_density()+
+  facet_wrap(~loc)
+ggplot(shiners, aes(loc, smass))+
+  stat_summary(fun=var, geom = "bar")+
+  labs(x="Location",y="Variance in Starting Mass")
+tapply(shiners$smass, shiners$loc, var)
+```
+We perform the regression with the `lm` function.
+
+```{r}
+lm1 <- lm(smass~loc, data = shiners)
+summary(lm1)
+```
+The last line of the output gives us the p value for the $F$ test ($p<0.001$), and we can conclude that there is some difference in starting mass. The coefficients of the model tell us that while the Beaver Creek and Snake River fish do not appear different, even after correcting the p value for multiple comparisons (there are ${3\choose2}=\frac{3!}{2!(3-2)!}=3$ comparisons, so multiplying the coefficient of `locMainCreek`'s p value of $0.000238$ by 3 gives the Bonferroni correction, which tends to be conservative) we have $p<0.001$ for the comparison of Main Creek and Beaver Creek. Mean starting mass for the Main Creek fish appears to be about $0.1$g greater than the mean masses for the fish from the other locations. With only three levels to the single factor in this model it is possible to see the individual comparisons in the coefficients table, but in general after a significant $F$ test we will want to perform post-hoc tests with R.
+
+```{r}
+pairwise.t.test(shiners$smass, shiners$loc, p.adjust.method = "bonferroni")
+```
+
+(@) Are the Main Creek fish also longer on average at the start of the experiment?
+
+## An aside on dimensions
+
+Length and mass are both measuring size. Since mass is proportional to volume, and volume is measured in cubic cm while length is measured in cm, it makes sense to expect that the relationship between mass and length is roughly cubic.
+$$
+\text{mass}=k\cdot\text{length}^3
+$$
+where $k$ encompasses density and aspect ratio. Significant deviations from this exponent of 3 could potentially have interpretations in terms of the growth processes of the fish but we won't speculate on that here. Taking the log of this equation gives
+$$
+\log(\text{mass})=\log(k)+3\log(\text{length})
+$$
+Plotting this relationship can either be done by transforming the variables, or using a log scale.
+Let's examine the fish as they were at the beginning of the experiment. Make a plot showing `smass`, `ssl` and `loc`.
+```{r}
+ggplot(shiners, aes(ssl, smass, color = loc))+
+  geom_point()+
+  labs(x = "Starting Standard Length (cm)", y = "Starting Mass (g)", 
+       title = "Starting Fish Sizes (log scale)", color="Location")+
+  scale_x_log10() + scale_y_log10()
+```
+
+This does look like a more linear pattern than the plot made on the direct scales above. We can use a regression to confirm this relationship.
+```{r}
+lm2 <- lm(log(smass)~log(ssl), data = shiners)
+summary(lm2)
+```
+To evaluate this regression, we can plot the residuals against the explanatory variable.
+```{r}
+plot(lm2$residuals~log(shiners$ssl))
+abline(0,0, lty="dashed")
+```
+
+A linear model can also be evaluated by the four diagnostic plots produced by R. When you run the following line look at the console for a prompt to scroll through the four plots that follow.
+```{r}
+par(mfrow=c(2,2)) # to show all four plots at once
+plot(lm2)
+par(mfrow=c(1,1)) # to see one plot at a time again
+```
+
+We examine the first and third of these diagnostic plots for evidence of heteroscedatsicity. The second helps us asses normality of the residuals, and the fourth helps us asses the influence of any detected deviations from these assumptions. There do not appear to be any significant issues with the assumptions underlying this regression.
+
+We might wonder if location has any connection on this relationship. It can be introduced to the regression additively, so that it can only change the intercept, which is $\log(k)$:
+```{r}
+lm2a <- lm(log(smass)~log(ssl)+loc, data = shiners)
+anova(lm2a)
+summary(lm2a)
+```
+Or it can be an interaction term, so that it can potentially change the slope, which is in this case the exponent of approximately 3.
+```{r}
+lm2b <- lm(log(smass)~log(ssl)*loc, data = shiners)
+anova(lm2b)
+```
+The same checks for normality and homogeneity of variance in `smass` across locations above are also relevant to this regression. 
+
+It appears that the differences in mass due to location that we noted earlier are also reflected in this regression, though only the additive effect is only significant at the $\alpha=0.05$ level, not the interaction effect.
+
+(@) Does this result change after the experiment? Perform the same regressions for location's effect on the relationship between log(`emass`) in terms of log(`esl`). Report on your results, including the diagnostic checks.
+
+# The Experiment
+
+The goal is to evaluate growth, so it makes sense to create two new variables measuring the differences in mass and length at the beginning and end of the experiment. To create the mass difference variable:
+```{r}
+shiners$mass.diff <- shiners$emass - shiners$smass
+```
+(@) Also create a length difference variable. Call it `sl.diff`.
+
+## From t tests to regression
+
+Let's begin by asking if the mass difference is the same in the two feeding groups. We'd expect that the fish who were fed twice daily grew more, but why not test this? 
+
+First, check the distributions for these two groups. There appears to be some right skew but it isn't severe
+```{r}
+ggplot(shiners, aes(mass.diff))+
+  geom_density()+
+  facet_wrap(~food)
+```
+
+To do a t test, we can use the `t.test` function:  
+```{r}
+t.test(mass.diff~food, data = shiners)
+```
+Alternatively, we can try to answer the same question with regression:
+```{r}
+summary(lm(mass.diff~food, data = shiners))
+```
+Note that the p value is almost exactly the same. In fact, if you run `t.test` with the option `var.equal=TRUE`, you will get exactly the p value from the regression. The advantage of the t test is its ability to deal with unequal variances.
+
+(@) Do a t test or regression to determine if `food` has an effect on `sl.diff`. Confirm the suitability of the test and report the results.
+
+## Analysis
+
+The results of the experiment stated in @houston are:
+
+
+*Individuals grew faster at higher temperatures and
+with more food, and there was a significant interaction
+between location and temperature. There was
+no difference in growth rates among the three
+populations at 10C and 17C. However, at 24C,
+individuals from the Snake River population grew
+significantly slower than those from Badger Creek and
+Main Creek.*
+
+
+Let's come to this same conclusion. We'll fit a full interaction model. That's a lot of terms, but only a few of them are statistically significant. In many cases, especially observational studies, there is not enough data to test all of the interaction terms. When we have more terms in the model, we lose power. To test interactions only up to a specific level, you can use the symbol `^`. For example, to only test up to the two term interactions, replace `smass*block*loc*temp*food` with `(smass+block+loc+temp+food)^2` in the formula for `lm.mass`.
+
+```{r}
+lm.mass <- lm(mass.diff ~ smass*block*loc*temp*food, 
+              data=shiners)
+Anova(lm.mass)
+```
+Before we continue, we should make some diagnostic plots. We can start with the standard diagnostics from plotting `lm.mass`.
+```{r}
+par(mfrow=c(2,2))
+plot(lm.mass)
+par(mfrow=c(1,1))
+```
+
+There do appear to be some deviations from both heteroscedasticity (visible in the first plot) and normality (visible in the second plot). Let's also look at the residuals and the continuous variable, `smass`.
+```{r}
+plot(lm.mass$residuals~shiners$smass)
+abline(h=0)
+```
+     
+There doesn't seem to be an issue with this variable alone. To be thorough, we should look at all of the others. Instead we'll revisit these data when we have some more tools at our disposal, but for now let's continue with the present analysis.
+
+In order to probe the effects of the significant factors, we can build a simpler model that only includes these terms marked as significant in the full model.
+```{r}
+lm.mass2 <- lm(mass.diff ~  loc+temp+food+loc:temp, data=shiners)
+Anova(lm.mass2)
+summary(lm.mass2)
+```
+As reported in the paper, it appears that the fish grew faster at higher temperatures and with more food (the coefficients on `temp17`, `temp24` and `foodTwice Daily` are significant and positive), and the individuals from the Snake River grew more slowly at 24C (the coefficient on `locSnake River:temp24` is significant and negative). We can see this last effect in the following plot.
+
+```{r}
+ggplot(shiners, aes(temp, mass.diff, color = loc, group = loc))+
+  stat_summary(fun.data = mean_cl_normal, 
+               position = position_dodge(width = 0.2))+
+  stat_summary(fun = mean, geom = "line",
+               position = position_dodge(width = 0.2))+
+  labs(x = "Temperature (C)", y = "Gain in Mass (g)", color = "Location")
+```
+
+(@) Conduct the same analysis, but for `sl.diff`. Does it tell the same story?
+
+
+
+
+# References
+
+
+

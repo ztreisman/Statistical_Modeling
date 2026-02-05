@@ -1,7 +1,7 @@
 ---
 title: "Intro to R / Baseball"
 author: "Zachary Treisman"
-format: html
+format: pdf
 editor: visual
 ---
 
@@ -11,9 +11,7 @@ This lab introduces some basic data concepts, and you will begin exploring data 
 
 When you start RStudio the first time, you will see something like this:
 
-
-![](figures/r-interface-2020.png)
-
+![](figures/r-interface-2020.png){width="4in"}
 
 The window is split into three panels. Soon the left side of the window will grow another panel. Each panel has multiple tabs.
 
@@ -85,12 +83,15 @@ A[1,2]
 In your previous encounters with statistics, you used distributions such as the normal distribution (also called the Gaussian distribution) and the uniform distribution. R knows about these and many more. For any distribution, there are four R functions: the distribution function (d), the cumulative probability function (p), the quantile function (q) and the random number generator (r).
 
 ```{r eval=FALSE}
-dunif(x=0.1, min=0, max=1) # Uniform Distribution: For any x, this is 1/(max-min). 
-dnorm(x=0.1, mean=0, sd=1) # Normal Distribution: Uses the formula for the bell curve. 
-pnorm(q=0, mean=0, sd=1) # Half of the possible values are less than the mean. 
-qnorm(p=0.5, mean=0, sd=1) # And the mean is the number where half of possible values are less than it.
+dunif(x=0.1, min=0, max=1) # Uniform Distribution: Constant 1/(max-min). 
+dnorm(x=0.1, mean=0, sd=1) # Normal Distribution: The bell curve. 
+pnorm(q=0, mean=0, sd=1)   # Half of the possible values are less than the mean. 
+qnorm(p=0.5, mean=0, sd=1) # And the mean is the number where half of possible 
+                           # values are less than it.
+
 x<-runif(50) # Generate 50 random numbers from a uniform distribution. 
-y<-rnorm(50,mean=2*x+5,sd=.1) # Put these random inputs into a linear function and add Gaussian noise.  
+y<-rnorm(50,mean=2*x+5,sd=.1) # Put these random inputs into a linear function 
+                              # and add Gaussian noise.  
 plot(y~x) # Show the data. 
 cor(x,y) # Correlation coefficient
 ```
@@ -125,7 +126,7 @@ A common mistake comes from the fact that when you install a package the name of
 
 From the drop down menu in the upper left with the green + on a white square, create a new R Script. This will give you a panel in the upper left of your RStudio window where you can input R code. Unlike commands typed into the console, this code can be edited and will not be executed until you tell R to do so.
 
-![](figures/newScript.png)
+![](figures/newScript.png){width="4in"}
 
 In the upper right of your screen, choose the *History* tab and select some or all of the code you just entered. You can use Shift+Mouse to select multiple lines. Press the *To Source* button - you should see those lines you just entered appear in your script window. This is handy for when you are trying various things in the console and find some commands that you want to save. Since you only need to install packages once on your computer, you probably want to either delete the lines with the `install.packages` commands. Alternatively, comment them out by putting a `#` at the beginning of each line.
 
@@ -144,7 +145,7 @@ Today, we will use an example data set from the openintro package. Next week, we
 ```{r eval=FALSE}
 data("mlb_players_18") # Load the data into your Environment.
 
-head(mlb_players_18) # Look at the first 6 lines of the data set as output in the console.
+head(mlb_players_18) # Look at the first 6 rows of data as output.
 View(mlb_players_18) # Explore the data set in spreadsheet form in RStudio.
 ?mlb_players_18 # Information about the data.
 ```
@@ -157,11 +158,7 @@ Recall some of the different types of variable:
 
 -   Categorical
 
--   Numeric
-
-    -   Discrete
-
-    -   Continuous
+-   Numeric (Discrete or Continuous)
 
 What are the types of the variables in this data set?
 
@@ -180,7 +177,7 @@ As with any science, we are ideally motivated by a question. The fourth variable
 
 In order to investigate our question, we have to decide how we are going to measure if a player was overplayed or underplayed. In order to do that, we'll have to figure out how to guess, based on a players batting statistics, how many games we expect them to play. Then we can just calculate the difference:
 
-overplayed =  games - expected_games
+overplayed = games - expected_games
 
 ## Explore the data for good predictors of games
 
@@ -190,7 +187,7 @@ Now we need to figure out what other variables in the data are helpful predictor
 
 We made a scatter plot above using the `plot()` command, but the ggplot2 package is much better in many ways than the tools included in "base R" so we are going to use it for most of our visualizations. The "gg" stands for Grammar of Graphics, and the key ideas are that
 
--    **variables** in the data are mapped to **aesthetics** in a graphic, such as position, color, and shape; and
+-   **variables** in the data are mapped to **aesthetics** in a graphic, such as position, color, and shape; and
 
 -   **aesthetics** are represented by various **geometries**, such as points, boxplots, and histograms.
 
@@ -228,14 +225,14 @@ You are encouraged to experiment with this graphic. Try some other variables. Se
 When you see a scatter plot like this one, you are probably tempted to compute the correlation and a regression line (also called a line of best fit). That's a great idea - here's how to do it:
 
 ```{r eval=FALSE}
-cor(mlb_players_18$R, mlb_players_18$games) # The correlation between two numeric variables.
+cor(mlb_players_18$R, mlb_players_18$games) 
 
 lm1 <- lm(games~R, data=mlb_players_18) # lm is for linear model
 lm1
 
 ggplot(mlb_players_18, aes(R, games))+
   geom_point()+
-  geom_smooth(method = "lm") # this function fits a cubic spline curve unless you specify otherwise
+  geom_smooth(method = "lm") # fits a cubic spline curve by default
 ```
 
 Interpret the coefficients of the linear model `lm1` in terms of baseball. If a player scored 50 runs during the 2018 season, how many games does this model estimate that they played?
@@ -250,7 +247,8 @@ Look at the data again and you will see the new column on the far right. Now we 
 
 ```{r eval=FALSE}
 mlb_players_18$overplayed1 <- mlb_players_18$games - mlb_players_18$pred1
-# Use the sorting feature in the spreadsheet view to find the player with the highest value of overplayed. Or you can use the following code.
+# Use the sorting feature in the spreadsheet view to find the player with the 
+# highest value of overplayed. Or you can use the following code.
 x <- which.max(mlb_players_18$overplayed1)
 mlb_players_18$name[x]
 ```
@@ -259,10 +257,10 @@ This model hands the dubious honor to third baseman Yadiel Rivera of the Miami M
 
 ## Filtering data
 
-Looking at the plot you made earlier that included `position`, note that the pitchers seem to be doing something different. Ask your domain expert what is going on, and if it might make sense to leave them out of this particular model. They will probably say yes. Here's how to filter out the pitchers, and create a new data set called `batters18`.
+Looking at the plot you made earlier that included `position`, note that the pitchers seem to be doing something different. Ask your domain expert what is going on, and if it might make sense to leave them out of this particular model. They will probably say yes. Here's how to filter out the pitchers, and create a new data set called `batters18`. The `%>%` is called a pipe - it feeds `mlb_players_18` into the `filter` function. These commands are from the `dplyr` package.
 
 ```{r}
-batters18 <- mlb_players_18 %>% # the %>% is called a pipe - it feeds mlb_players_18 into the filter function. These commands are from the dplyr package.
+batters18 <- mlb_players_18 %>% 
   filter(position!="P") # != means "is not equal to"
 
 ```
@@ -283,7 +281,8 @@ Now make a new model without the pitchers.
 
 ```{r eval=FALSE}
 lm2 <- lm(games~R, data=batters18)
-batters18$overplayed2 <- lm2$residuals # A shortcut. For any model, residual=actual-predicted.
+batters18$overplayed2 <- lm2$residuals # A shortcut. 
+# For any model, residual=actual-predicted.
 x <- which.max(batters18$overplayed2)
 batters18$name[x] 
 ```
@@ -295,13 +294,13 @@ Poor Yadiel.
 As you have learned in your math classes, linear functions with one input are great, but they can be limited. We will be moving past $y=mx+b$ in our pursuit of useful models. Here are two more models.
 
 ```{r eval=FALSE}
-lm3 <- lm(games~poly(R,3), data=batters18) # fit a degree 3 polynomial instead of a linear function
-batters18$overplayed3 <- lm3$residuals # For any model, residual=actual-predicted.
+lm3 <- lm(games~poly(R,3), data=batters18) # fit a degree 3 polynomial
+batters18$overplayed3 <- lm3$residuals # residual=actual-predicted.
 x <- which.max(batters18$overplayed3)
 batters18$name[x]
 
 lm4 <- lm(games~poly(R,3) + OPS + RBI, data=batters18) # include more variables 
-batters18$overplayed4 <- lm4$residuals # For any model, residual=actual-predicted.
+batters18$overplayed4 <- lm4$residuals # residual=actual-predicted.
 x <- which.max(batters18$overplayed4)
 batters18$name[x]
 ```
@@ -310,15 +309,15 @@ Poor Yadiel.
 
 # Assignment
 
-Your assignment is to produce a document that uses the investigations performed in this lab, and reports on the question, "Who were the most underplayed batters in the 2018 MLB season?" Note that underplayed is just the negative of overplayed, so you don't have to do any new analysis. If you are so inclined, playing with the models is encouraged - try different variables, only look at left fielders, ... get creative and it will serve you well.
+Your assignment is to produce a document that uses the investigations performed in this lab, and reports on the question, "Who were the most underplayed batters in the 2018 MLB season?" Note that underplayed is just the negative of overplayed, so you don't have to do any new analysis. If you are so inclined, playing with the models is encouraged - try different variables, only look at left fielders, \ldots get creative and it will serve you well as you develop your data skills.
 
-You are encouraged to work together on this, as long as the work is equitably shared. I will gladly accept lab reports with up to three names on them.
+-   You are encouraged to work together on this, as long as the work is equitably shared. I will gladly accept lab reports with up to three names on them. Everyone should turn in their own copy of the lab report on Canvas - even if that means three identical submissions.
 
 -   Your audience is both future you and present me. I want to have an easy time looking at your report and knowing what you figured out and what you are struggling with. Future you wants a useful reference that will jog their memory when the time comes to apply this knowledge.
 
 -   You don't need to discuss the work that you did in the Overview section, unless you explored and learned something that you want either me or future you to know about.
 
--   If you include code and output, use a fixed width (typewriter) font for code and output and another font for text.
+-   If you include code and output, use a \texttt{fixed width (typewriter) font} for code and output and another font for text.
 
 -   The export button in the Plots tab opens a dialog so you can save your graphics.
 

@@ -1,0 +1,161 @@
+---
+title: "Going to the Sun Road Avalanches: Briefing for Road Crews"
+author: "Your Name"
+format:
+  pdf:
+    keep-md: false
+    toc: false
+editor: visual
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup-packages
+#| include: false
+
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+
+avalanches <- read_csv(
+  "GTSR Avalanche Occurrences 2003-2020.csv",
+  col_types = cols(
+    Date = col_date(format = "%m/%d/%Y"),
+    Time = col_time(format = "%H:%M:%S")
+  )
+)
+
+avalanches <- avalanches %>%
+  filter(!is.na(AvalancheType))
+```
+
+## Introduction
+
+Briefly describe the dataset (where it comes from, what an observation is, and a few key variables).\
+State the practical goal of your report in 1–2 sentences, for example: $y=mx+b$
+
+> The goal of this report is to identify avalanche paths and time periods along Going to the Sun Road that deserve the highest priority from road‑clearing crews.
+
+## When avalanches happen
+
+```{r}
+#| label: fig-monthly-avalanches
+#| fig-cap: "Number of recorded avalanches by month and type."
+
+avalanches$month <- month(avalanches$Date, label = TRUE)
+
+ggplot(avalanches, aes(x = month, fill = AvalancheType)) +
+  geom_bar(position = "stack")
+```
+
+In 2–3 sentences:
+
+-   Identify which months have the most recorded avalanches.
+-   Comment on whether certain avalanche types are more common in particular months.
+-   Mention any limitations (for example, convenience sampling and missing data).
+
+If you explore time of day, you may insert an additional plot and description:
+
+```{r}
+#| label: fig-time-of-day
+#| fig-cap: "Avalanche times of day for records with time available."
+#| eval: false
+
+have_time <- avalanches %>%
+  filter(!is.na(TimeAccuracy))
+
+ggplot(have_time, aes(Time, fill = AvalancheType)) +
+  geom_histogram() +
+  facet_wrap(~ TimeAccuracy)
+```
+
+## Key avalanche paths
+
+```{r}
+#| label: key-paths-table
+#| echo: true
+
+key_paths <- avalanches %>%
+  group_by(PathName) %>%
+  summarise(
+    clearing_time = sum(TimeToClear, na.rm = TRUE),
+    mean_depth    = mean(RoadBurialDepth, na.rm = TRUE),
+    mean_length   = mean(RoadBurialLength, na.rm = TRUE),
+    road_index    = mean((HitRoad == "Yes") * SizeDestructiveForce, na.rm = TRUE),
+    frequency     = n()
+  )
+
+top10_paths <- key_paths %>%
+  arrange(desc(road_index)) %>%
+  slice_head(n = 10)
+
+top10_paths
+```
+
+```{r}
+#| label: fig-road-index
+#| fig-cap: "Top 10 paths by average destructive force for avalanches that hit the road."
+#| echo: true
+
+ggplot(top10_paths, aes(x = reorder(PathName, road_index), y = road_index)) +
+  geom_col() +
+  coord_flip() +
+  xlab("Path name") +
+  ylab("Road index (mean destructive force for road-hitting avalanches)")
+```
+
+In 3–4 sentences:
+
+-   Name 2–3 paths that appear highest‑priority and explain why (for example, high clearing_time, high road_index, and/or high frequency).
+-   Comment briefly on road burial depth and length if relevant.
+
+## Avalanche size and type
+
+```{r}
+#| label: fig-size-vs-run
+#| fig-cap: "Vertical run versus destructive force, colored by avalanche type."
+
+ggplot(avalanches, aes(VerticalRunFeet, SizeDestructiveForce,
+                       color = AvalancheType)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = TRUE)
+```
+
+In 2–3 sentences:
+
+-   Describe the relationship between vertical run and destructive force.
+-   Explain in words what the slope of the regression line represents.
+-   Mention any differences you see between avalanche types.
+
+(Optional) Faceted version:
+
+```{r}
+#| label: fig-size-vs-run-facet
+#| fig-cap: "Vertical run versus destructive force, faceted by avalanche type."
+#| eval: false
+
+ggplot(avalanches, aes(VerticalRunFeet, SizeDestructiveForce,
+                       color = AvalancheType)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = TRUE) +
+  facet_wrap(~ AvalancheType) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## Briefing for the road-crew supervisor
+
+Use bullet points to summarize your findings in non‑technical language. Aim for 5–7 bullets total, for example:
+
+-   2–3 bullets naming specific paths and why they are high‑priority (referring to clearing_time, road_index, frequency from `key_paths`).
+-   1–2 bullets about when avalanches are most commonly recorded (months and, if you used it, time of day).
+-   1–2 bullets connecting avalanche type to destructive force or timing.
+
+Example starter sentences (modify based on your results):
+
+-   “The paths that appear to require the most attention are \_\_\_\_ and \_\_\_\_ because they have high road_index and long total clearing times.”\
+-   “Most recorded avalanches occur in \_\_\_\_, so crews might prioritize staffing during these months.”\
+-   “Avalanches that hit the road tend to be of type \_\_\_\_ in season \_\_\_\_, with an average destructive force of about \_\_ on the SizeDestructiveForce scale.”

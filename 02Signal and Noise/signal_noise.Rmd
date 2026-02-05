@@ -1,0 +1,129 @@
+---
+title: "Signal and Noise"
+author: "Zack Treisman"
+date: "Spring 2026"
+output: 
+  beamer_presentation: 
+    includes: 
+bibliography: ../bibliography.bib    
+citecolor: blue   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(global.par = TRUE)
+
+library(emdbook)
+library(MASS)
+library(tidyverse)
+library(gridExtra)
+library(lubridate)
+
+```
+
+```{r,include=FALSE}
+par(mar = c(4, 4, 0.75, 0.5)) # Set margins
+``` 
+
+
+## Philosophy
+
+
+Basic scenario: $x$ is a **predictor** and $y$ the **response**. 
+
+We want to build and understand a model
+
+$$
+y=f(x)+\epsilon
+$$
+where 
+
+* $f(x)$ is **signal** 
+* $\epsilon$ is **noise**.
+
+## xkcd
+
+![https://xkcd.com/2048](../images/curve_fitting.png){height=75%}
+
+## Parametric vs Non-parametric models
+
+* **parametric** model: defined using arithmetic and analytic functions. 
+
+    * Coefficients, exponents *et cetera* defining the function are called the **parameters**.
+    
+    * Often more interpretable and meaningful.
+    
+* **non-parametric** model: decision trees, random forests, neural networks etc.
+
+   * Often have better predictive power and fit data more effectively.
+   
+   * Might be a black box. Not as explanatory.
+ 
+
+## Reducible and irreducible error
+
+* $\mu(x) =$ true\footnote{requires perfect knowledge} expected value of $y$ given $x$. 
+
+$$
+y=\mu(x)+\varepsilon
+$$
+
+* $\varepsilon$ is the **irreducible error** or **intrinsic variance**. 
+
+* $E=f(x)-\mu(x)$ is the **reducible error**. 
+
+## Bias and Variance
+
+$E=\text{Bias} + \text{Variance}$
+
+* **Bias**: model can't change when it needs to. $\to$ **underfit**
+* **Variance**: model adapts to match particular data. $\to$ **overfit**
+
+**bias-variance tradeoff** $\leftarrow$ consideration for many model types
+
+```{r, fig.width=8, fig.height=3, echo=FALSE, warning=FALSE}
+ggplot(mtcars, aes(mpg, hp)) + geom_point(alpha=0.5) +
+  geom_smooth(method = lm, formula = y~x, se=F, aes(color="degree 1, low variance, high bias")) +
+  geom_smooth(method = lm, formula = y~poly(x,2), se=F, aes(color="degree 2"))+
+  geom_smooth(method = lm, formula = y~poly(x,8), se=F, aes(color="degree 8, high variance, low bias"))+
+  scale_colour_manual("Flexibility (polynomial degree)", values = c("darkolivegreen", "darkorange", "firebrick"))
+```
+
+
+## Breaking up the noise
+
+**Model based** error decomposition:
+
+* $\epsilon = \varepsilon + E$
+* $E=\text{Bias} + \text{Variance}$ 
+
+**Observation based** error decomposition:
+
+* **Measurement error** - Unavoidable, but hopefully minimal. 
+  * Structured measurement error $\to$ problems to solve 
+  * eg. distance sampling
+* **Process noise** - Natural demographic and environmental variability. 
+  * Minimized with large samples and stable environments. 
+  * The main input to the stochastic part of a model.
+  
+## Conditional distributions
+
+Alternative notation to $y=f(x)+\epsilon$: 
+
+$$
+Y\sim \mathbb{P}(f(X))
+$$
+
+* $f(X)$: expected value of $Y$ as a function of $X$.
+* $\mathbb{P}$: probability distribution of the error 
+
+For example a linear model is: 
+
+$$
+Y\sim\textsf{Norm}(\text{mean}=\beta_0+\beta_1 X,\, \text{sd}=\sigma)
+$$
+The parameters of this model are:
+
+* $\beta_0$ - intercept
+* $\beta_1$ - slope
+* $\sigma^2$ - residual variance (describes $\epsilon$)
+

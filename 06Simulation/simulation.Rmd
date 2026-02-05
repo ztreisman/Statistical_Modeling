@@ -1,11 +1,11 @@
 ---
 title: "Simulation and Randomization"
 author: "Zack Treisman"
-date: "Spring 2022"
+date: "Spring 2026"
 output: 
   beamer_presentation: 
     includes: 
-      in_header: ../slide_style.tex
+      in_header: 
 bibliography: ../bibliography.bib    
 citecolor: blue
 ---
@@ -23,15 +23,17 @@ par(mar = c(4, 4, 0.5, 0.5)) # Set margins
 
 ## Philosophy
 
-Now that we have the components for building models, we need to study how to evaluate and use our models. 
+Question: Given a statistical model, how do we evaluate it? 
 
-One of the things that having a model (and a computer) allows us to do is generate simulated data. With simulated data we can:
+model $+$ computer $\implies$ generate simulated data. 
+
+With simulated data we can:
 
 * Compare models to data (hypothesis testing)
 * Make predictions (confidence intervals)
 * Plan data collection (power analysis)
 
-Since we'll be generating random numbers in these slides, I'll set a seed now to initialize the process.
+
 ```{r}
 set.seed(222)
 ```
@@ -242,7 +244,7 @@ heatmap(ndist, Rowv = NA, Colv=NA)
 ```
 \normalsize
 
-Count the number of plants other the plant being considered within a distance of 2. Multiply the result by 3 and add 1.
+Count the number of plants other the plant being considered  within a distance of 2. Call it $N_2(x)$. $CI(x)=3N_2(x)+1$ is the crowding index.
 
 \scriptsize
 ```{r}
@@ -312,7 +314,7 @@ Suppose that in a $30\times30$ plot with 50 parent plants, each having 10 offspr
 mean(total_seeds>=23000)
 ```
 
-At the $\alpha=0.05$ threshold, this does register as significantly more seeds than expected. Note this is a one-sided test. In some cases (crows for example) we can explicitly check a two-sided condition. Otherwise, doubling p values is a common adjustment to make a one-sided p value comparable with two-sided ones.
+So this data point would be a somewhat unlikely output from the model. 
 
 ## Confidence intervals from a simulated distribution
 
@@ -382,11 +384,11 @@ poly$id <- factor(poly$id,  labels=c("power","beta","alpha"))
 
 # plot with ggplot2
 ggplot(poly, aes(x,y, fill=id, group=id)) +
-  geom_polygon(show_guide=F, alpha=I(8/10)) +
+  geom_polygon(show.legend = F, alpha=I(8/10)) +
   # add line for treatment group
-  geom_line(data=df1, aes(x,y, color="H0", group=NULL, fill=NULL), size=1.5, show_guide=F) + 
+  geom_line(data=df1, aes(x,y, color="H0", group=NULL, fill=NULL), size=1.5, show_legend=F) + 
   # add line for treatment group. These lines could be combined into one dataframe.
-  geom_line(data=df2, aes(color="HA", group=NULL, fill=NULL),size=1.5, show_guide=F) +
+  geom_line(data=df2, aes(color="HA", group=NULL, fill=NULL),size=1.5, show.legend =F) +
   # add vlines for z_crit
   geom_vline(xintercept = z_crit, size=1, linetype="dashed") +
   # change colors 

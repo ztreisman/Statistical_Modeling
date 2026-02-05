@@ -1,0 +1,478 @@
+---
+title: "Linear Regression"
+author: "Zack Treisman"
+date: "Spring 2026"
+output: 
+  beamer_presentation: 
+    includes: 
+      in_header: 
+bibliography: ../bibliography.bib    
+citecolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(global.par = TRUE)
+options(scipen = 0, digits = 4) #set to four decimal 
+library(emdbook)
+library(ggplot2)
+library(car)
+
+```
+
+```{r,include=FALSE}
+par(mar = c(4, 4, 0.5, 0.5)) # Set margins
+``` 
+
+
+## Linear Regression
+
+- Model $\hat{y}=f(x)$ 
+- Data $(x_i, y_i)$
+\vspace{1cm}
+
+- Choose parameters that minimize **mean squared error** 
+$$
+MSE=\frac{1}{n}\sum_{i=1}^n(y_i-\hat{y_i})^2
+$$
+
+## No predictor: $\hat y =\beta_0$. 
+
+Goal: Find $\hat y$ to minimize $MSE=\frac{1}{n}\sum_{i=1}^n(y_i-\hat{y})^2$.
+
+Solution: Calculus $\implies$ $\frac{-2}{n}\sum_{i=1}^n(y_i-\hat y)=0$ and solve for $\hat y$.
+
+\begin{align*}
+\frac{-2}{n}\sum_{i=1}^n(y_i-\hat y)&=0\\
+\frac{-2}{n}\left(\sum_{i=1}^ny_i-\sum_{i=1}^n\hat y\right)&=0\\
+\frac{-1}{n}\sum_{i=1}^ny_i+\hat y&=0\\
+\hat y&=\frac{1}{n}\sum_{i=1}^ny_i\\
+\end{align*}
+
+Minimizing $MSE$ $\implies$ $\hat y = \text{mean}(y_i)$.
+
+## Linear $f(x)$, normal errors
+
+
+$$
+Y \sim N(\beta_0+\beta_1 X, \sigma).
+$$
+Parameters:
+
+- $\beta_0$ (the **intercept**)
+- $\beta_1$ (the **slope**) 
+- $\sigma$ (the **standard deviation**)
+
+\textbf{Analytic solution:}
+
+Notation: $\bar x = \frac1n\sum^n_{i=1}x_i$, $\bar y = \frac1n\sum^n_{i=1}y_i$. 
+
+Calculus $\implies$
+$$
+\hat \beta_1 = \frac{\sum^n_{i=1}(x_i-\bar x)(y_i-\bar y)}{\sum^n_{i=1}(x_i-\bar x)^2}, \quad
+\hat \beta_0 = \bar y - \hat\beta_1\bar x.
+$$
+
+$$
+\hat\sigma = \text{st.dev}(y_i-\hat{y}_i)
+$$
+
+## Simulate an example
+
+- $\beta_0=1,\, \beta_1=2,\, \sigma=0.5$
+- $X$ is uniformly distributed 
+- $Y$ is normally distributed about $1+2X$.
+\scriptsize
+```{r, fig.width=8, fig.height=3.5}
+set.seed(5)
+x <- runif(100)
+y <- rnorm(100, mean = 1 + 2*x, sd = 0.5)
+plot(y~x)
+abline(1,2, col="blue")
+```
+
+## The `lm` function in R
+
+\scriptsize
+```{r, fig.width=8, fig.height=3.5}
+lm1 <- lm(y~x)
+lm1$coefficients
+plot(y~x); abline(1,2, col="blue"); abline(lm1, col="red")
+```
+
+## Evaluating a linear model
+
+\scriptsize
+```{r}
+summary(lm1)
+```
+
+## Check residuals
+
+- Normally distributed around 0?
+- Consistent variance?
+\scriptsize
+```{r, fig.width=8, fig.height=3.5}
+plot(lm1$residuals~x); abline(0,0, lty="dashed")
+```
+
+
+## Overall accuracy
+
+$R^2$: how much of the variance in $Y$ is described by the model.
+
+$$
+R^2 = 1 - \frac{\sigma_\text{residuals}^2}{\sigma_y^2} = 1 - \frac{\sum_{i=1}^n(y_i-\hat y_i)^2}{\sum_{i=1}^n(y_i-\bar y)^2}=1-\frac{(\text{blue on right})^2}{(\text{blue on left})^2}
+$$
+```{r, echo=FALSE, fig.width=8, fig.height=3.5}
+par(mfrow=c(1,2))
+plot(y~x); abline(mean(y),0, lty="dashed"); segments(x,y,x,mean(y), col="deepskyblue")
+plot(y~x); abline(lm1, col="red"); segments(x,y,x,lm1$fitted.values, col = "deepskyblue")
+par(mfrow=c(1,1))
+```
+
+
+## Accuracy of the coefficient estimates
+
+$SE(\hat\beta)$ $\leftarrow$ how $\hat\beta\sim\beta$ varies from sample to sample.
+$$
+SE(\hat\beta_1)=\sqrt{\frac{\sigma^2}{\sum_{i=1}^n(x_i-\bar x)^2}}, \quad SE(\hat\beta_0)=\sqrt{\frac{\sigma^2}{n}+\frac{\sigma^2\bar x^2}{\sum_{i=1}^n(x_i-\bar x^2)}}
+$$
+
+* Standard errors $\rightarrow$ confidence intervals
+* 95% chance that the interval 
+$$
+\hat\beta_1 \pm 1.96 \cdot SE(\hat\beta_1)
+$$
+contains the true value of $\beta_1$.
+* $\beta_1=2$
+$$
+2.076 \pm 1.96 \cdot 0.161 = (1.760,2.392)
+$$
+
+## Simulate: $N= 5000$, calculate $\beta_1$
+
+\scriptsize
+```{r, fig.width=8, fig.height=3}
+betas <- numeric(5000); b_captured <- logical(5000)
+for(i in 1:5000){
+ x <- runif(100); y <- rnorm(100, mean = 1 + 2*x, sd = 0.5)
+ lmi <- lm(y~x); slope <- coef(summary(lmi))[2,]
+ betas[i] <- slope[1]
+ b_captured[i] <- (2>slope[1]-1.96*slope[2]) & (2<slope[1]+1.96*slope[2]) 
+}
+mean(b_captured); hist(betas)
+```
+
+## Hypothesis testing
+
+standard errors $\implies$ hypothesis tests. 
+
+$$
+H_0: \beta_1=0
+$$
+(no relationship between $X$ and $Y$)
+
+* The $t$ statistic for this test is 
+$$
+t=\frac{\hat\beta_1}{SE(\hat\beta_1)}.
+$$
+* Null hypothesis distribution: $t_{n-2}$ 
+
+## Multiple Linear Regression
+
+$$
+Y \sim N(\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_pX_p, \sigma)
+$$
+
+* $\beta_j$: average effect on $Y$ of a one unit increase in $X_j$, holding all other predictors fixed.
+* **balanced design** $\leftrightarrow$ uncorrelated predictors
+    * Each coefficient can be estimated and tested separately.
+    * Interpreting $\beta_j$ as above is possible.
+* Correlated predictors cause problems:
+    * coefficient variance $\uparrow$
+    * Interpretability $\downarrow$
+    
+## Accuracy revisited: $R^2$ 
+
+Write $SS_{tot}=\sum_{i=1}^n(y_i-\bar y)^2$ and $SS_{res}=\sum_{i=1}^n(y_i-\hat y_i)^2$:
+$$
+R^2 = 1 - \frac{SS_{res}}{SS_{tot}}=\frac{SS_{tot}-SS_{res}}{SS_{tot}}.
+$$
+
+* Problem: 
+  - Suppose $X_j$ has *nothing* to do with $Y$. 
+  - $\hat\beta_j=0$ is *very* unlikely - it comes from real data.
+  - $SS_{res}$ is smaller because $X_j$ fit some noise.
+  - $R^2$ is larger because of $X_j$. 
+
+## Two alternatives to $R^2$
+
+* Penalize models for having more predictors:
+$$
+\text{Adjusted } R^2 = 1 - \frac{SS_{res}/(n-p-1)}{SS_{tot}/(n-1)}
+$$
+    
+    * $R^2$ when $n>>p$. 
+    * Interpret as the proportion of the variance in the response explained by the model.
+
+
+* $F$ statistic.
+$$
+F = \frac{(SS_{tot}-SS_{res})/p}{SS_{res}/(n-p-1)}
+$$
+    
+    * Distributed as $F_{p,n-p-1}$ if $\beta_j=0$ for all $j\neq0$
+    \begin{align*}
+    H_0 &: \beta_1=\beta_2=\cdots=\beta_p=0 \\
+    H_a &: \text{At least one of the $\beta_j$ is non-zero.}
+    \end{align*}
+    
+## Multiple regression with `lm`
+
+Lily data from @lily.
+\scriptsize
+```{r}
+lm2 <- lm(flowers~vegetative+gopher+moisture, data=Lily_sum) # data in emdbook
+summary(lm2)
+```
+
+## Pairs plot of the Lily data
+
+\scriptsize
+```{r, fig.width=8, fig.height=5}
+pairs(Lily_sum[,c("flowers", "vegetative", "gopher", "moisture")])
+```
+
+## Confounders
+The Lily data contain an additional variable.
+\scriptsize
+```{r, fig.width=8, fig.height=2.5}
+lm3 <- lm(flowers~vegetative+gopher+moisture+rockiness, data=Lily_sum)
+summary(lm3)$coefficients; summary(lm3)$adj.r.squared
+
+ggplot(Lily_sum, aes(moisture, flowers, color=rockiness))+
+  geom_jitter(height = 0)
+```
+
+## Interactions
+To include an interaction term use `*` in the formula.
+\scriptsize
+```{r, fig.width=8, fig.height=2.5}
+lm4 <- lm(flowers~vegetative+gopher+moisture*rockiness, data=Lily_sum)
+summary(lm4)$coefficients; summary(lm4)$adj.r.squared
+```
+
+\normalsize
+
+The resulting model:
+$$
+\widehat{\text{flw}}=4.51+0.73\text{veg}-1.07\text{gph}+2.98\text{mst}+0.24\text{rck}-\alert{0.02(\text{mst}\times\text{rck})}
+$$
+
+Or, alternatively
+$$
+\widehat{\text{flw}}=4.51+0.73\text{veg}-1.07\text{gph}+\alert{(2.98-0.02\text{rck})\text{mst}}+0.24\text{rck}
+$$
+
+## Categorical predictors
+
+
+* Presence/ Absence
+* Treatment levels: (low, medium, high)
+* Species
+
+Encoded for regression using **indicator variables**.
+
+- Also called **dummy variables**, **one-hot encoding**
+
+
+Example: $X$ is a categorical variable with levels $a$, $b$, $c$. Arbitrarily choose $a$ as the **reference level** and define
+$$
+Z_b=\begin{cases} 
+0 & \mbox{if } X =a\text{ or }c \\
+1 & \mbox{if } X=b 
+\end{cases}
+\qquad
+Z_c=\begin{cases} 
+0 & \mbox{if } X = a \text{ or } b\\
+1 & \mbox{if } X=c 
+\end{cases}
+$$
+
+## One way ANOVA
+
+Continuing with the above example. 
+$$
+Y \sim N(\beta_0+\beta_1Z_b+\beta_2Z_c, \sigma).
+$$
+Regression gives a model.
+
+* If $X=a$, the model predicts $\hat y= \hat\beta_0$.
+* If $X=b$, the model predicts $\hat y= \hat\beta_0 + \hat\beta_1$.
+* If $X=c$, the model predicts $\hat y= \hat\beta_0 + \hat\beta_2$.
+
+Using the $F$ statistic to test
+$$
+H_0: \beta_1=\beta_2=0, \quad H_a: \text{At least one of $\beta_1$ or $\beta_2$ is non-zero}
+$$
+is called **analysis of variance** or ANOVA.
+
+
+## Multi-way ANOVA
+
+Data from an experiment involving tadpoles.
+
+* `fac1` = experimental treatment
+* `fac2` = diet
+* `fac3` = tadpole genetics
+
+\scriptsize
+```{r, fig.width=8, fig.height=3.5, warning=FALSE}
+tadpoles <- read.csv("data/tadpoles.csv")
+tadpoles$fac3 <- as.factor(tadpoles$fac3) # It's coded as 1 or 2.
+ggplot(tadpoles, aes(fac3, response, fill = fac2))+
+  geom_boxplot()+facet_wrap(~fac1)+
+  scale_fill_brewer(palette = "Dark2")    # The default colors get boring.
+```
+
+
+## A more general $F$ statistic
+
+$F$ can compare nested models.
+$$
+F = \frac{(SS_{old}-SS_{new})/df_{num}}{SS_{new}/df_{den}}.
+$$
+
+* **numerator degrees of freedom** = number of new parameters
+* **denominator degrees of freedom**  = (number of data points) -  (total number of parameters in the extended model)
+
+
+## `anova()`
+
+\scriptsize
+```{r}
+lm5 <- lm(response~fac1*fac2*fac3, data = tadpoles)
+anova(lm5) # summary is not as useful as it analyzes indicator variables
+```
+\normalsize
+It appears that `fac1`, `fac2` and `fac3` all have significant effects on the response, as do the interactions `fac1:fac2` and `fac2:fac3`.
+
+## The model suggested by ANOVA
+
+Now we can build a model using only those terms listed as significant.
+\scriptsize
+```{r}
+lm5a <- lm(response~fac1+fac2+fac3+fac1:fac2+fac2:fac3, data = tadpoles)
+summary(lm5a)$coefficients
+```
+\normalsize
+- The coefficients on `fac2S` and `fac1No:fac2S` are not significant, but are included because 
+  - include an interaction effect $\implies$ include the corresponding main effects, and 
+  - include an effect from one level of a factor $\implies$ include all levels.
+
+## Interpreting the result
+Plot the coefficients with confidence intervals.
+\tiny
+```{r fig.width=8, fig.height=2}
+ests <- coef(lm5a)[-1] # The reference level is not of immediate interest.  
+tad_model <- data.frame(var.labels=factor(names(ests), levels=names(ests)), ests, 
+                        low95 = confint(lm5a)[-1,1], up95 = confint(lm5a)[-1,2])
+ggplot(tad_model, aes(var.labels, ests))+
+  geom_pointrange(aes(ymin=low95, ymax=up95))+
+  geom_hline(yintercept=0, linetype = "dashed", color = "red")+
+  labs(x = "Term", y =  "Effect")+ coord_flip()
+```
+\normalsize
+The reference treatment is `CoD1`. 
+
+* `Ru` and `No` differ from `Co` but not each other.
+* On its own, diet does not have a significant effect.
+* Genetic factors 1 and 2 have different baseline response levels.
+* Diet `S` in combination with `Ru` or genetic factor 2 has an effect.
+
+## Type I (Sequential) and Type II (Marginal) ANOVA
+
+**Type I** anova **sequential**ly adds each term in a list to a model.
+
+**Type II** or **marginal** anova compares a model to the model including all possible other terms. 
+
+Often, type II is preferred. 
+
+* Why evaluate `fac1` against the null model, `fac2` against `fac1`, and `fac3` against `fac1` and `fac2` if the order in which they are labelled is arbitrary? 
+
+* Type II anova is more robust to unequal group sizes.
+
+## Marginal ANOVA using the `car` package
+
+`anova()` $\rightarrow$ sequential anova. 
+
+`Anova()` from package `car` $\rightarrow$ marginal anova.
+
+\scriptsize
+```{r}
+Anova(lm5)
+```
+\normalsize
+Results are similar to the type I analysis, but the p values for `fac1:fac2` are on opposite sides of the bright line of $0.05$.
+
+## Combining numerical and categorical predictors
+
+Often we have both numerical and categorical predictors. 
+
+Rabbits grazing on plants example from @crawley [p. 538].
+
+\scriptsize
+```{r, fig.width=8, fig.height=3.5}
+ipo <- read.csv('data/ipomopsis.csv')
+ggplot(data=ipo, aes(x=Root, y=Fruit, color = Grazing))+
+  geom_point()
+```
+
+## ANCOVA
+
+Does the categorical predictor `Grazing` affect the numerical response `Fruit`? 
+
+* The numerical variable `Root` is a confounder. 
+* This is classical **analysis of covariance** or ANCOVA.
+
+\scriptsize
+```{r}
+lm6<- lm(Fruit~Root*Grazing, data=ipo)
+anova(lm6) # sequential and marginal are identical in this case
+```
+\normalsize
+
+* `Root` $\rightarrow$ best fit lines have slope.
+* `Grazing` $\rightarrow$ groups have different intercepts.
+* `Root:Grazing` $\rightarrow$ slope is the same for both groups.
+
+## Assumption: Homogeneity of Variance
+
+**homoscedasticity** = Constant residual variance
+
+`CoD1`, `CoD2` and `RuD1` have higher variance. Is this a problem?
+\scriptsize
+```{r, fig.width=6, fig.height=1.5, warning=FALSE}
+ggplot(tadpoles, aes(treatment, response))+
+  stat_summary(fun=var, geom="point", shape = 23)+ # Show variances.
+  labs(y="variance")
+```
+\normalsize
+
+* `CoD1` and `CoD2`: variance is due to outliers. Run the analysis without them - does the result change?
+* `RuD1`: variance is large, but errors are symmetric. Maybe okay?
+
+## Assumption: Independence of observations
+
+
+**Pseudoreplication** = dependent observations 
+
+* Artificially increases power.
+* Common scenarios where it is encountered:
+  * **Repeated measures**: Observe one individual multiple times.
+  * **Block designs** and **Split plots**: Values of one variable are constant for grouped sets of observations.
+
+We will discuss solutions to these issues later in the course.
+
+## References
+

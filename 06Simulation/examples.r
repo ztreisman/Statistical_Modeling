@@ -13,7 +13,7 @@ y <- rnorm(N, mean = y_det, sd = 2) # Create noise around the signal
 data1 <- data.frame(x1=x1, x2=x2, y=y)
 ggplot(data1, aes(x1,y, color=x2))+
   geom_point()
-write.csv(data1, file = "06Simulation/data1.csv")
+write.csv(data1, file = "Simulation/data1.csv")
 
 # An exponential function model with poisson errors:
 N <- 50  
@@ -32,7 +32,7 @@ ggplot(data2, aes(x1,y, color=x2))+
 glm2 <- glm(y~x1+x2, data = data2, family = poisson())  
 summary(glm2)
 
-write.csv(data2, file = "06Simulation/data2.csv")
+write.csv(data2, file = "Simulation/data2.csv")
 
 
 # A binary categorical output
@@ -48,7 +48,7 @@ ggplot(data3, aes(x1,y, color=x2))+
   geom_point()+
   geom_line(aes(y=y_det))
 
-write.csv(data3, file = "06Simulation/data3.csv")
+write.csv(data3, file = "Simulation/data3.csv")
 
 
 # lots of variables
@@ -80,7 +80,7 @@ ggplot(data4, aes(x6,y))+
 lm4 <- lm(y~x1+x2+x3+x4+x5+x6, data=data4)
 summary(lm4)
 
-write.csv(data4, file = "06Simulation/data4.csv")
+write.csv(data4, file = "Simulation/data4.csv")
 
 
 # lots of variables, nbinom
@@ -114,7 +114,7 @@ ggplot(data5, aes(x6,y))+
 glm5 <- glmmTMB(y~x1+x2+x3+x4+x5+x6, data=data5, family = nbinom2)
 summary(glm5)
 
-write.csv(data5, file = "06Simulation/data5.csv")
+write.csv(data5, file = "Simulation/data5.csv")
 
 
 # lots of variables, interactions
@@ -147,4 +147,4 @@ ggplot(data6, aes(x6,y))+
 lm4 <- lm(y~x1+x2+x3+x4+x5+x6, data=data4)
 summary(lm4)
 
-write.csv(data6, file = "06Simulation/data6.csv")
+write.csv(data6, file = "Simulation/data6.csv")
